@@ -28,12 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            menuStrip1 = new MenuStrip();
+            cADASTROSToolStripMenuItem = new ToolStripMenuItem();
+            cadastroUsuarioToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
+            SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { cADASTROSToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.TabIndex = 1;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // cADASTROSToolStripMenuItem
+            // 
+            cADASTROSToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroUsuarioToolStripMenuItem });
+            cADASTROSToolStripMenuItem.Name = "cADASTROSToolStripMenuItem";
+            cADASTROSToolStripMenuItem.Size = new Size(86, 20);
+            cADASTROSToolStripMenuItem.Text = "CADASTROS";
+            // 
+            // cadastroUsuarioToolStripMenuItem
+            // 
+            cadastroUsuarioToolStripMenuItem.Name = "cadastroUsuarioToolStripMenuItem";
+            cadastroUsuarioToolStripMenuItem.Size = new Size(180, 22);
+            cadastroUsuarioToolStripMenuItem.Text = "Cadastro Usuario";
+            cadastroUsuarioToolStripMenuItem.Click += cadastroUsuarioToolStripMenuItem_Click;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(menuStrip1);
+            IsMdiContainer = true;
+            MainMenuStrip = menuStrip1;
+            Name = "Form1";
+            Text = "Form1";
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem cADASTROSToolStripMenuItem;
+        private ToolStripMenuItem cadastroUsuarioToolStripMenuItem;
     }
 }
