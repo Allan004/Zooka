@@ -31,6 +31,9 @@
             menuStrip1 = new MenuStrip();
             cADASTROSToolStripMenuItem = new ToolStripMenuItem();
             cadastroUsuarioToolStripMenuItem = new ToolStripMenuItem();
+            cadastroClienteToolStripMenuItem = new ToolStripMenuItem();
+            cadastroPetToolStripMenuItem = new ToolStripMenuItem();
+            cadastroFuncionarioToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -45,7 +48,7 @@
             // 
             // cADASTROSToolStripMenuItem
             // 
-            cADASTROSToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroUsuarioToolStripMenuItem });
+            cADASTROSToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroUsuarioToolStripMenuItem, cadastroClienteToolStripMenuItem, cadastroPetToolStripMenuItem, cadastroFuncionarioToolStripMenuItem });
             cADASTROSToolStripMenuItem.Name = "cADASTROSToolStripMenuItem";
             cADASTROSToolStripMenuItem.Size = new Size(86, 20);
             cADASTROSToolStripMenuItem.Text = "CADASTROS";
@@ -56,6 +59,24 @@
             cadastroUsuarioToolStripMenuItem.Size = new Size(180, 22);
             cadastroUsuarioToolStripMenuItem.Text = "Cadastro Usuario";
             cadastroUsuarioToolStripMenuItem.Click += cadastroUsuarioToolStripMenuItem_Click;
+            // 
+            // cadastroClienteToolStripMenuItem
+            // 
+            cadastroClienteToolStripMenuItem.Name = "cadastroClienteToolStripMenuItem";
+            cadastroClienteToolStripMenuItem.Size = new Size(180, 22);
+            cadastroClienteToolStripMenuItem.Text = "Cadastro Cliente";
+            // 
+            // cadastroPetToolStripMenuItem
+            // 
+            cadastroPetToolStripMenuItem.Name = "cadastroPetToolStripMenuItem";
+            cadastroPetToolStripMenuItem.Size = new Size(180, 22);
+            cadastroPetToolStripMenuItem.Text = "Cadastro Pet";
+            // 
+            // cadastroFuncionarioToolStripMenuItem
+            // 
+            cadastroFuncionarioToolStripMenuItem.Name = "cadastroFuncionarioToolStripMenuItem";
+            cadastroFuncionarioToolStripMenuItem.Size = new Size(187, 22);
+            cadastroFuncionarioToolStripMenuItem.Text = "Cadastro Funcionario";
             // 
             // Form1
             // 
@@ -78,5 +99,8 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem cADASTROSToolStripMenuItem;
         private ToolStripMenuItem cadastroUsuarioToolStripMenuItem;
+        private ToolStripMenuItem cadastroClienteToolStripMenuItem;
+        private ToolStripMenuItem cadastroPetToolStripMenuItem;
+        private ToolStripMenuItem cadastroFuncionarioToolStripMenuItem;
     }
 }
