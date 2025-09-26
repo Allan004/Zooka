@@ -53,7 +53,7 @@
             // cadastroUsuarioToolStripMenuItem
             // 
             cadastroUsuarioToolStripMenuItem.Name = "cadastroUsuarioToolStripMenuItem";
-            cadastroUsuarioToolStripMenuItem.Size = new Size(180, 22);
+            cadastroUsuarioToolStripMenuItem.Size = new Size(164, 22);
             cadastroUsuarioToolStripMenuItem.Text = "Cadastro Usuario";
             cadastroUsuarioToolStripMenuItem.Click += cadastroUsuarioToolStripMenuItem_Click;
             // 
@@ -67,6 +67,7 @@
             MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

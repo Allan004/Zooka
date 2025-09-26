@@ -1,3 +1,7 @@
+using MySql.Data.MySqlClient;
+using SisVendas;
+using System.Data;
+
 namespace Zooka
 {
     public partial class Form1 : Form
@@ -5,6 +9,7 @@ namespace Zooka
         public Form1()
         {
             InitializeComponent();
+            TESTE();
         }
 
         private void cadastroUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -24,5 +29,41 @@ namespace Zooka
             }
 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+        public DataTable TESTE()
+
+        {
+
+            string sql = "SELECT * FROM gridprod";
+
+            Conexao conexao = new Conexao();
+
+            using (var conn = conexao.GetConnection())
+
+            {
+
+                using (MySqlDataAdapter da = new MySqlDataAdapter(sql, conn))
+
+                {
+
+                    DataTable dt = new DataTable();
+
+                    da.Fill(dt);
+
+                    return dt;
+
+                }
+
+            }
+
+
+
+        }
+
+
     }
 }
