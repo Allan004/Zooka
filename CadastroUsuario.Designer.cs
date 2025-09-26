@@ -44,6 +44,8 @@
             label5 = new Label();
             label6 = new Label();
             btnCadastrar = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtNome
@@ -186,6 +188,17 @@
             btnCadastrar.TabIndex = 15;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = true;
+            btnCadastrar.Click += btnCadastrar_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.Captura_de_tela_2025_09_26_191727_removebg_preview;
+            pictureBox1.Location = new Point(12, 9);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(134, 130);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 16;
+            pictureBox1.TabStop = false;
             // 
             // CadastroUsuario
             // 
@@ -193,6 +206,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(828, 463);
+            Controls.Add(pictureBox1);
             Controls.Add(btnCadastrar);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -211,6 +225,7 @@
             Controls.Add(txtNome);
             Name = "CadastroUsuario";
             Text = "Cadastro Usuário";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -233,6 +248,7 @@
         private Label label5;
         private Label label6;
         private Button btnCadastrar;
+        private PictureBox pictureBox1;
     }
 }
 
