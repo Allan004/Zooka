@@ -183,7 +183,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
-            BackgroundImage = Properties.Resources.Design_sem_nome__1_;
+            BackgroundImage = Properties.Resources.Captura_de_tela_2025_09_26_191727_removebg_preview;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(981, 450);
             Controls.Add(btnSKU_search);
