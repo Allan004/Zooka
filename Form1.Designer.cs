@@ -67,6 +67,7 @@
             cadastroClienteToolStripMenuItem.Name = "cadastroClienteToolStripMenuItem";
             cadastroClienteToolStripMenuItem.Size = new Size(187, 22);
             cadastroClienteToolStripMenuItem.Text = "Cadastro Cliente";
+            cadastroClienteToolStripMenuItem.Click += cadastroClienteToolStripMenuItem_Click;
             // 
             // cadastroPetToolStripMenuItem
             // 

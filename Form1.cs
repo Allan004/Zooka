@@ -85,5 +85,23 @@ namespace Zooka
                 this.MdiChildren[0].Activate();
             }
         }
+
+        private void cadastroClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.MdiChildren.Length == 0)
+            {
+
+
+                CadastroCliente abrirform = new CadastroCliente();
+                abrirform.MdiParent = this;
+                abrirform.Show();
+            }
+            else
+            {
+
+                this.MdiChildren[0].Activate();
+            }
+
+        }
     }
 }

@@ -274,7 +274,7 @@
             // txtrg
             // 
             txtrg.Location = new Point(130, 172);
-            txtrg.Mask = "00.000.000-00";
+            txtrg.Mask = "00.000.000-0";
             txtrg.Name = "txtrg";
             txtrg.Size = new Size(68, 23);
             txtrg.TabIndex = 20;
