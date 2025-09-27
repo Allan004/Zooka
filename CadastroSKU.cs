@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Zooka
 {
-    public partial class CadastroSKU: Form
+    public partial class CadastroSKU : Form
     {
         public CadastroSKU()
         {
             InitializeComponent();
+        }
+
+        private void btnSKU_search_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CadastroSKU_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
