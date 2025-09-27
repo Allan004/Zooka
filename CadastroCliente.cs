@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Zooka
 {
-    public partial class CadastroCliente: Form
+    public partial class CadastroCliente : Form
     {
         public CadastroCliente()
         {
             InitializeComponent();
+        }
+
+        private void CadastroCliente_Load(object sender, EventArgs e)
+        {
+            string casa = null;
         }
     }
 }
