@@ -29,25 +29,29 @@
         private void InitializeComponent()
         {
             lblSKU = new Label();
-            textBox1 = new TextBox();
+            txtSKU = new TextBox();
             SuspendLayout();
             // 
             // lblSKU
             // 
             lblSKU.BackColor = Color.Transparent;
             lblSKU.Font = new Font("Sans Serif Collection", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSKU.ForeColor = Color.MidnightBlue;
+            lblSKU.ImageAlign = ContentAlignment.MiddleLeft;
             lblSKU.Location = new Point(41, 40);
             lblSKU.Name = "lblSKU";
             lblSKU.Size = new Size(53, 25);
             lblSKU.TabIndex = 0;
             lblSKU.Text = "SKU";
+            lblSKU.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // txtSKU
             // 
-            textBox1.Location = new Point(41, 68);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(119, 23);
-            textBox1.TabIndex = 1;
+            txtSKU.ForeColor = Color.MidnightBlue;
+            txtSKU.Location = new Point(41, 68);
+            txtSKU.Name = "txtSKU";
+            txtSKU.Size = new Size(119, 23);
+            txtSKU.TabIndex = 1;
             // 
             // CadastroSKU
             // 
@@ -55,7 +59,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
             ClientSize = new Size(800, 450);
-            Controls.Add(textBox1);
+            Controls.Add(txtSKU);
             Controls.Add(lblSKU);
             Name = "CadastroSKU";
             Text = "Cadastro de SKU";
@@ -66,6 +70,6 @@
         #endregion
 
         private Label lblSKU;
-        private TextBox textBox1;
+        private TextBox txtSKU;
     }
 }
