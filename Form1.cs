@@ -64,6 +64,26 @@ namespace Zooka
 
         }
 
+        private void estoqueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void cadastroDeSKUToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.MdiChildren.Length == 0)
+            {
+
+
+                CadastroSKU abrirform = new CadastroSKU();
+                abrirform.MdiParent = this;
+                abrirform.Show();
+            }
+            else
+            {
+
+                this.MdiChildren[0].Activate();
+            }
+        }
     }
 }
