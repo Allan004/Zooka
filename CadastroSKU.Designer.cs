@@ -43,6 +43,21 @@
             btnSKU_cancelar = new Button();
             SuspendLayout();
             // 
+            // btnSKU_cancelar
+            // 
+            btnSKU_cancelar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnSKU_cancelar.BackColor = Color.LightSteelBlue;
+            btnSKU_cancelar.Font = new Font("Sans Serif Collection", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSKU_cancelar.ForeColor = Color.MidnightBlue;
+            btnSKU_cancelar.Location = new Point(518, 302);
+            btnSKU_cancelar.Name = "btnSKU_cancelar";
+            btnSKU_cancelar.Size = new Size(76, 40);
+            btnSKU_cancelar.TabIndex = 11;
+            btnSKU_cancelar.Text = "CANCELAR";
+            btnSKU_cancelar.TextAlign = ContentAlignment.BottomCenter;
+            btnSKU_cancelar.UseCompatibleTextRendering = true;
+            btnSKU_cancelar.UseVisualStyleBackColor = false;
+            // 
             // lblSKU_id
             // 
             lblSKU_id.BackColor = Color.Transparent;
@@ -147,21 +162,6 @@
             cbSKU_udm.Size = new Size(93, 23);
             cbSKU_udm.TabIndex = 10;
             // 
-            // btnSKU_cancelar
-            // 
-            btnSKU_cancelar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnSKU_cancelar.BackColor = Color.LightSteelBlue;
-            btnSKU_cancelar.Font = new Font("Sans Serif Collection", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSKU_cancelar.ForeColor = Color.MidnightBlue;
-            btnSKU_cancelar.Location = new Point(518, 302);
-            btnSKU_cancelar.Name = "btnSKU_cancelar";
-            btnSKU_cancelar.Size = new Size(76, 40);
-            btnSKU_cancelar.TabIndex = 11;
-            btnSKU_cancelar.Text = "CANCELAR";
-            btnSKU_cancelar.TextAlign = ContentAlignment.BottomCenter;
-            btnSKU_cancelar.UseCompatibleTextRendering = true;
-            btnSKU_cancelar.UseVisualStyleBackColor = false;
-            // 
             // btnSKU_search
             // 
             btnSKU_search.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -183,7 +183,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
-            BackgroundImage = Properties.Resources.Design_sem_nome__1_;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(981, 450);
             Controls.Add(btnSKU_search);
