@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Agenda));
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel1 = new Panel();
             panel2 = new Panel();
@@ -71,7 +72,11 @@
             cmbAno = new ComboBox();
             btnProximo = new Button();
             btnAnterior = new Button();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
             flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -428,11 +433,31 @@
             btnAnterior.Text = "Anterior";
             btnAnterior.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.Ativo_1;
+            pictureBox1.Location = new Point(385, 24);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 50);
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(826, 19);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(100, 50);
+            pictureBox2.TabIndex = 4;
+            pictureBox2.TabStop = false;
+            // 
             // Agenda
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1486, 729);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
             Controls.Add(btnAnterior);
             Controls.Add(btnProximo);
             Controls.Add(cmbAno);
@@ -447,7 +472,10 @@
             Controls.Add(flowLayoutPanel1);
             Name = "Agenda";
             Text = "Agenda";
+            Load += Agenda_Load;
             flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -497,5 +525,7 @@
         private ComboBox cmbAno;
         private Button btnProximo;
         private Button btnAnterior;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }
