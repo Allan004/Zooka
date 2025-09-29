@@ -265,7 +265,7 @@
             // 
             // txtcpf
             // 
-            txtcpf.Location = new Point(136, 126);
+            txtcpf.Location = new Point(130, 126);
             txtcpf.Mask = "000.000.000-00";
             txtcpf.Name = "txtcpf";
             txtcpf.Size = new Size(75, 23);
