@@ -49,7 +49,7 @@
             btnSKU_cancelar.BackColor = Color.LightSteelBlue;
             btnSKU_cancelar.Font = new Font("Sans Serif Collection", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSKU_cancelar.ForeColor = Color.MidnightBlue;
-            btnSKU_cancelar.Location = new Point(518, 302);
+            btnSKU_cancelar.Location = new Point(539, 302);
             btnSKU_cancelar.Name = "btnSKU_cancelar";
             btnSKU_cancelar.Size = new Size(76, 40);
             btnSKU_cancelar.TabIndex = 11;
@@ -73,24 +73,27 @@
             // 
             // txtSKU_id
             // 
+            txtSKU_id.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtSKU_id.BackColor = SystemColors.Window;
-            txtSKU_id.Font = new Font("Sans Serif Collection", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtSKU_id.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtSKU_id.ForeColor = Color.MidnightBlue;
             txtSKU_id.Location = new Point(164, 199);
             txtSKU_id.Multiline = true;
             txtSKU_id.Name = "txtSKU_id";
             txtSKU_id.Size = new Size(93, 23);
             txtSKU_id.TabIndex = 1;
+            txtSKU_id.TextAlign = HorizontalAlignment.Center;
             // 
             // txtSKU_descricao
             // 
-            txtSKU_descricao.Font = new Font("Sans Serif Collection", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtSKU_descricao.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtSKU_descricao.ForeColor = Color.MidnightBlue;
             txtSKU_descricao.Location = new Point(289, 199);
             txtSKU_descricao.Multiline = true;
             txtSKU_descricao.Name = "txtSKU_descricao";
             txtSKU_descricao.Size = new Size(360, 23);
             txtSKU_descricao.TabIndex = 3;
+            txtSKU_descricao.TextAlign = HorizontalAlignment.Center;
             // 
             // lblSKU_descricao
             // 
@@ -137,7 +140,7 @@
             btnSKU_criar.BackColor = Color.AliceBlue;
             btnSKU_criar.Font = new Font("Sans Serif Collection", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSKU_criar.ForeColor = Color.MidnightBlue;
-            btnSKU_criar.Location = new Point(333, 302);
+            btnSKU_criar.Location = new Point(354, 302);
             btnSKU_criar.Name = "btnSKU_criar";
             btnSKU_criar.Size = new Size(76, 40);
             btnSKU_criar.TabIndex = 8;
@@ -145,9 +148,11 @@
             btnSKU_criar.TextAlign = ContentAlignment.BottomCenter;
             btnSKU_criar.UseCompatibleTextRendering = true;
             btnSKU_criar.UseVisualStyleBackColor = false;
+            btnSKU_criar.Click += btnSKU_criar_Click;
             // 
             // cbSKU_estoque
             // 
+            cbSKU_estoque.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cbSKU_estoque.FormattingEnabled = true;
             cbSKU_estoque.Location = new Point(810, 199);
             cbSKU_estoque.Name = "cbSKU_estoque";
@@ -156,6 +161,7 @@
             // 
             // cbSKU_udm
             // 
+            cbSKU_udm.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cbSKU_udm.FormattingEnabled = true;
             cbSKU_udm.Location = new Point(685, 199);
             cbSKU_udm.Name = "cbSKU_udm";
@@ -169,9 +175,9 @@
             btnSKU_search.Font = new Font("Sans Serif Collection", 9.749998F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSKU_search.ForeColor = Color.MidnightBlue;
             btnSKU_search.Image = (Image)resources.GetObject("btnSKU_search.Image");
-            btnSKU_search.Location = new Point(89, 178);
+            btnSKU_search.Location = new Point(104, 190);
             btnSKU_search.Name = "btnSKU_search";
-            btnSKU_search.Size = new Size(48, 44);
+            btnSKU_search.Size = new Size(34, 32);
             btnSKU_search.TabIndex = 12;
             btnSKU_search.TextAlign = ContentAlignment.BottomCenter;
             btnSKU_search.TextImageRelation = TextImageRelation.ImageBeforeText;
