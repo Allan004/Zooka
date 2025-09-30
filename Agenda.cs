@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Zooka
 {
-    public partial class Agenda: Form
+    public partial class Agenda : Form
     {
         public Agenda()
         {
             InitializeComponent();
+        }
+
+        private void Agenda_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
