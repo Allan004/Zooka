@@ -36,6 +36,7 @@
             cadastroFuncionarioToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeSKUToolStripMenuItem = new ToolStripMenuItem();
             estoqueToolStripMenuItem = new ToolStripMenuItem();
+            agendaToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             // 
             // cADASTROSToolStripMenuItem
             // 
-            cADASTROSToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroUsuarioToolStripMenuItem, cadastroClienteToolStripMenuItem, cadastroPetToolStripMenuItem, cadastroFuncionarioToolStripMenuItem, cadastroDeSKUToolStripMenuItem });
+            cADASTROSToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroUsuarioToolStripMenuItem, cadastroClienteToolStripMenuItem, cadastroPetToolStripMenuItem, cadastroFuncionarioToolStripMenuItem, cadastroDeSKUToolStripMenuItem, agendaToolStripMenuItem });
             cADASTROSToolStripMenuItem.Name = "cADASTROSToolStripMenuItem";
             cADASTROSToolStripMenuItem.Size = new Size(86, 20);
             cADASTROSToolStripMenuItem.Text = "CADASTROS";
@@ -95,6 +96,13 @@
             estoqueToolStripMenuItem.Text = "ESTOQUE";
             estoqueToolStripMenuItem.Click += estoqueToolStripMenuItem_Click;
             // 
+            // agendaToolStripMenuItem
+            // 
+            agendaToolStripMenuItem.Name = "agendaToolStripMenuItem";
+            agendaToolStripMenuItem.Size = new Size(187, 22);
+            agendaToolStripMenuItem.Text = "Agenda";
+            agendaToolStripMenuItem.Click += agendaToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -122,5 +130,6 @@
         private ToolStripMenuItem cadastroFuncionarioToolStripMenuItem;
         private ToolStripMenuItem cadastroDeSKUToolStripMenuItem;
         private ToolStripMenuItem estoqueToolStripMenuItem;
+        private ToolStripMenuItem agendaToolStripMenuItem;
     }
 }

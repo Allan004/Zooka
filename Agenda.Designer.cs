@@ -28,15 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Agenda));
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            lpDay = new FlowLayoutPanel();
+            lblDomingo = new Label();
+            lblSegunda = new Label();
+            lblTerça = new Label();
+            lblQuarta = new Label();
+            lblQuinta = new Label();
+            lblSexta = new Label();
+            lblSabado = new Label();
+            btnProximo = new Button();
+            btnAnterior = new Button();
+            lblMesAno = new Label();
+            panel7 = new Panel();
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
             panel4 = new Panel();
             panel5 = new Panel();
             panel6 = new Panel();
-            panel7 = new Panel();
             panel8 = new Panel();
             panel9 = new Panel();
             panel10 = new Panel();
@@ -61,435 +70,506 @@
             panel29 = new Panel();
             panel30 = new Panel();
             panel31 = new Panel();
-            lblDomingo = new Label();
-            lblSegunda = new Label();
-            lblTerça = new Label();
-            lblQuarta = new Label();
-            lblQuinta = new Label();
-            lblSexta = new Label();
-            lblSabado = new Label();
-            cmbMes = new ComboBox();
-            cmbAno = new ComboBox();
-            btnProximo = new Button();
-            btnAnterior = new Button();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel32 = new Panel();
+            panel33 = new Panel();
+            panel34 = new Panel();
+            panel35 = new Panel();
+            panel36 = new Panel();
+            panel37 = new Panel();
+            panel38 = new Panel();
+            panel39 = new Panel();
+            panel40 = new Panel();
+            panel41 = new Panel();
+            panel42 = new Panel();
+            lpDay.SuspendLayout();
             SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // lpDay
             // 
-            flowLayoutPanel1.Controls.Add(panel1);
-            flowLayoutPanel1.Controls.Add(panel2);
-            flowLayoutPanel1.Controls.Add(panel3);
-            flowLayoutPanel1.Controls.Add(panel4);
-            flowLayoutPanel1.Controls.Add(panel5);
-            flowLayoutPanel1.Controls.Add(panel6);
-            flowLayoutPanel1.Controls.Add(panel7);
-            flowLayoutPanel1.Controls.Add(panel8);
-            flowLayoutPanel1.Controls.Add(panel9);
-            flowLayoutPanel1.Controls.Add(panel10);
-            flowLayoutPanel1.Controls.Add(panel11);
-            flowLayoutPanel1.Controls.Add(panel12);
-            flowLayoutPanel1.Controls.Add(panel13);
-            flowLayoutPanel1.Controls.Add(panel14);
-            flowLayoutPanel1.Controls.Add(panel15);
-            flowLayoutPanel1.Controls.Add(panel16);
-            flowLayoutPanel1.Controls.Add(panel17);
-            flowLayoutPanel1.Controls.Add(panel18);
-            flowLayoutPanel1.Controls.Add(panel19);
-            flowLayoutPanel1.Controls.Add(panel20);
-            flowLayoutPanel1.Controls.Add(panel21);
-            flowLayoutPanel1.Controls.Add(panel22);
-            flowLayoutPanel1.Controls.Add(panel23);
-            flowLayoutPanel1.Controls.Add(panel24);
-            flowLayoutPanel1.Controls.Add(panel25);
-            flowLayoutPanel1.Controls.Add(panel26);
-            flowLayoutPanel1.Controls.Add(panel27);
-            flowLayoutPanel1.Controls.Add(panel28);
-            flowLayoutPanel1.Controls.Add(panel29);
-            flowLayoutPanel1.Controls.Add(panel30);
-            flowLayoutPanel1.Controls.Add(panel31);
-            flowLayoutPanel1.Location = new Point(12, 118);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1449, 538);
-            flowLayoutPanel1.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            panel1.Location = new Point(3, 3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(200, 100);
-            panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            panel2.Location = new Point(209, 3);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(200, 100);
-            panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            panel3.Location = new Point(415, 3);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(200, 100);
-            panel3.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            panel4.Location = new Point(621, 3);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(200, 100);
-            panel4.TabIndex = 3;
-            // 
-            // panel5
-            // 
-            panel5.Location = new Point(827, 3);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(200, 100);
-            panel5.TabIndex = 4;
-            // 
-            // panel6
-            // 
-            panel6.Location = new Point(1033, 3);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(200, 100);
-            panel6.TabIndex = 5;
-            // 
-            // panel7
-            // 
-            panel7.Location = new Point(1239, 3);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(200, 100);
-            panel7.TabIndex = 6;
-            // 
-            // panel8
-            // 
-            panel8.Location = new Point(3, 109);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(200, 100);
-            panel8.TabIndex = 7;
-            // 
-            // panel9
-            // 
-            panel9.Location = new Point(209, 109);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(200, 100);
-            panel9.TabIndex = 8;
-            // 
-            // panel10
-            // 
-            panel10.Location = new Point(415, 109);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(200, 100);
-            panel10.TabIndex = 9;
-            // 
-            // panel11
-            // 
-            panel11.Location = new Point(621, 109);
-            panel11.Name = "panel11";
-            panel11.Size = new Size(200, 100);
-            panel11.TabIndex = 10;
-            // 
-            // panel12
-            // 
-            panel12.Location = new Point(827, 109);
-            panel12.Name = "panel12";
-            panel12.Size = new Size(200, 100);
-            panel12.TabIndex = 11;
-            // 
-            // panel13
-            // 
-            panel13.Location = new Point(1033, 109);
-            panel13.Name = "panel13";
-            panel13.Size = new Size(200, 100);
-            panel13.TabIndex = 12;
-            // 
-            // panel14
-            // 
-            panel14.Location = new Point(1239, 109);
-            panel14.Name = "panel14";
-            panel14.Size = new Size(200, 100);
-            panel14.TabIndex = 13;
-            // 
-            // panel15
-            // 
-            panel15.Location = new Point(3, 215);
-            panel15.Name = "panel15";
-            panel15.Size = new Size(200, 100);
-            panel15.TabIndex = 14;
-            // 
-            // panel16
-            // 
-            panel16.Location = new Point(209, 215);
-            panel16.Name = "panel16";
-            panel16.Size = new Size(200, 100);
-            panel16.TabIndex = 15;
-            // 
-            // panel17
-            // 
-            panel17.Location = new Point(415, 215);
-            panel17.Name = "panel17";
-            panel17.Size = new Size(200, 100);
-            panel17.TabIndex = 16;
-            // 
-            // panel18
-            // 
-            panel18.Location = new Point(621, 215);
-            panel18.Name = "panel18";
-            panel18.Size = new Size(200, 100);
-            panel18.TabIndex = 17;
-            // 
-            // panel19
-            // 
-            panel19.Location = new Point(827, 215);
-            panel19.Name = "panel19";
-            panel19.Size = new Size(200, 100);
-            panel19.TabIndex = 18;
-            // 
-            // panel20
-            // 
-            panel20.Location = new Point(1033, 215);
-            panel20.Name = "panel20";
-            panel20.Size = new Size(200, 100);
-            panel20.TabIndex = 19;
-            // 
-            // panel21
-            // 
-            panel21.Location = new Point(1239, 215);
-            panel21.Name = "panel21";
-            panel21.Size = new Size(200, 100);
-            panel21.TabIndex = 20;
-            // 
-            // panel22
-            // 
-            panel22.Location = new Point(3, 321);
-            panel22.Name = "panel22";
-            panel22.Size = new Size(200, 100);
-            panel22.TabIndex = 21;
-            // 
-            // panel23
-            // 
-            panel23.Location = new Point(209, 321);
-            panel23.Name = "panel23";
-            panel23.Size = new Size(200, 100);
-            panel23.TabIndex = 22;
-            // 
-            // panel24
-            // 
-            panel24.Location = new Point(415, 321);
-            panel24.Name = "panel24";
-            panel24.Size = new Size(200, 100);
-            panel24.TabIndex = 23;
-            // 
-            // panel25
-            // 
-            panel25.Location = new Point(621, 321);
-            panel25.Name = "panel25";
-            panel25.Size = new Size(200, 100);
-            panel25.TabIndex = 24;
-            // 
-            // panel26
-            // 
-            panel26.Location = new Point(827, 321);
-            panel26.Name = "panel26";
-            panel26.Size = new Size(200, 100);
-            panel26.TabIndex = 25;
-            // 
-            // panel27
-            // 
-            panel27.Location = new Point(1033, 321);
-            panel27.Name = "panel27";
-            panel27.Size = new Size(200, 100);
-            panel27.TabIndex = 26;
-            // 
-            // panel28
-            // 
-            panel28.Location = new Point(1239, 321);
-            panel28.Name = "panel28";
-            panel28.Size = new Size(200, 100);
-            panel28.TabIndex = 27;
-            // 
-            // panel29
-            // 
-            panel29.Location = new Point(3, 427);
-            panel29.Name = "panel29";
-            panel29.Size = new Size(200, 100);
-            panel29.TabIndex = 28;
-            // 
-            // panel30
-            // 
-            panel30.Location = new Point(209, 427);
-            panel30.Name = "panel30";
-            panel30.Size = new Size(200, 100);
-            panel30.TabIndex = 29;
-            // 
-            // panel31
-            // 
-            panel31.Location = new Point(415, 427);
-            panel31.Name = "panel31";
-            panel31.Size = new Size(200, 100);
-            panel31.TabIndex = 30;
+            lpDay.Controls.Add(panel7);
+            lpDay.Controls.Add(panel1);
+            lpDay.Controls.Add(panel2);
+            lpDay.Controls.Add(panel3);
+            lpDay.Controls.Add(panel4);
+            lpDay.Controls.Add(panel5);
+            lpDay.Controls.Add(panel6);
+            lpDay.Controls.Add(panel8);
+            lpDay.Controls.Add(panel9);
+            lpDay.Controls.Add(panel10);
+            lpDay.Controls.Add(panel11);
+            lpDay.Controls.Add(panel12);
+            lpDay.Controls.Add(panel13);
+            lpDay.Controls.Add(panel14);
+            lpDay.Controls.Add(panel15);
+            lpDay.Controls.Add(panel16);
+            lpDay.Controls.Add(panel17);
+            lpDay.Controls.Add(panel18);
+            lpDay.Controls.Add(panel19);
+            lpDay.Controls.Add(panel20);
+            lpDay.Controls.Add(panel21);
+            lpDay.Controls.Add(panel22);
+            lpDay.Controls.Add(panel23);
+            lpDay.Controls.Add(panel24);
+            lpDay.Controls.Add(panel25);
+            lpDay.Controls.Add(panel26);
+            lpDay.Controls.Add(panel27);
+            lpDay.Controls.Add(panel28);
+            lpDay.Controls.Add(panel29);
+            lpDay.Controls.Add(panel30);
+            lpDay.Controls.Add(panel31);
+            lpDay.Controls.Add(panel32);
+            lpDay.Controls.Add(panel33);
+            lpDay.Controls.Add(panel34);
+            lpDay.Controls.Add(panel35);
+            lpDay.Controls.Add(panel36);
+            lpDay.Controls.Add(panel37);
+            lpDay.Controls.Add(panel38);
+            lpDay.Controls.Add(panel39);
+            lpDay.Controls.Add(panel40);
+            lpDay.Controls.Add(panel41);
+            lpDay.Controls.Add(panel42);
+            lpDay.Location = new Point(12, 118);
+            lpDay.Name = "lpDay";
+            lpDay.Size = new Size(1126, 698);
+            lpDay.TabIndex = 0;
             // 
             // lblDomingo
             // 
             lblDomingo.AutoSize = true;
-            lblDomingo.Location = new Point(93, 100);
+            lblDomingo.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDomingo.Location = new Point(44, 78);
             lblDomingo.Name = "lblDomingo";
-            lblDomingo.Size = new Size(57, 15);
+            lblDomingo.Size = new Size(96, 25);
             lblDomingo.TabIndex = 1;
             lblDomingo.Text = "Domingo";
             // 
             // lblSegunda
             // 
             lblSegunda.AutoSize = true;
-            lblSegunda.Location = new Point(297, 100);
+            lblSegunda.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            lblSegunda.Location = new Point(202, 78);
             lblSegunda.Name = "lblSegunda";
-            lblSegunda.Size = new Size(53, 15);
+            lblSegunda.Size = new Size(91, 25);
             lblSegunda.TabIndex = 1;
             lblSegunda.Text = "Segunda";
             // 
             // lblTerça
             // 
             lblTerça.AutoSize = true;
-            lblTerça.Location = new Point(498, 100);
+            lblTerça.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            lblTerça.Location = new Point(373, 78);
             lblTerça.Name = "lblTerça";
-            lblTerça.Size = new Size(35, 15);
+            lblTerça.Size = new Size(58, 25);
             lblTerça.TabIndex = 1;
             lblTerça.Text = "Terça";
             // 
             // lblQuarta
             // 
             lblQuarta.AutoSize = true;
-            lblQuarta.Location = new Point(707, 100);
+            lblQuarta.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            lblQuarta.Location = new Point(522, 78);
             lblQuarta.Name = "lblQuarta";
-            lblQuarta.Size = new Size(43, 15);
+            lblQuarta.Size = new Size(74, 25);
             lblQuarta.TabIndex = 1;
             lblQuarta.Text = "Quarta";
             // 
             // lblQuinta
             // 
             lblQuinta.AutoSize = true;
-            lblQuinta.Location = new Point(907, 100);
+            lblQuinta.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            lblQuinta.Location = new Point(678, 78);
             lblQuinta.Name = "lblQuinta";
-            lblQuinta.Size = new Size(43, 15);
+            lblQuinta.Size = new Size(72, 25);
             lblQuinta.TabIndex = 1;
             lblQuinta.Text = "Quinta";
             // 
             // lblSexta
             // 
             lblSexta.AutoSize = true;
-            lblSexta.Location = new Point(1116, 100);
+            lblSexta.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            lblSexta.Location = new Point(838, 78);
             lblSexta.Name = "lblSexta";
-            lblSexta.Size = new Size(34, 15);
+            lblSexta.Size = new Size(61, 25);
             lblSexta.TabIndex = 1;
             lblSexta.Text = "Sexta";
             // 
             // lblSabado
             // 
             lblSabado.AutoSize = true;
-            lblSabado.Location = new Point(1330, 100);
+            lblSabado.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            lblSabado.Location = new Point(983, 78);
             lblSabado.Name = "lblSabado";
-            lblSabado.Size = new Size(46, 15);
+            lblSabado.Size = new Size(79, 25);
             lblSabado.TabIndex = 1;
             lblSabado.Text = "Sábado";
             // 
-            // cmbMes
-            // 
-            cmbMes.FormattingEnabled = true;
-            cmbMes.Location = new Point(503, 35);
-            cmbMes.Name = "cmbMes";
-            cmbMes.Size = new Size(121, 23);
-            cmbMes.TabIndex = 2;
-            cmbMes.Text = "Mês";
-            // 
-            // cmbAno
-            // 
-            cmbAno.FormattingEnabled = true;
-            cmbAno.Location = new Point(668, 35);
-            cmbAno.Name = "cmbAno";
-            cmbAno.Size = new Size(121, 23);
-            cmbAno.TabIndex = 2;
-            cmbAno.Text = "Ano";
-            // 
             // btnProximo
             // 
-            btnProximo.Location = new Point(1367, 672);
+            btnProximo.Location = new Point(1044, 834);
             btnProximo.Name = "btnProximo";
             btnProximo.Size = new Size(94, 37);
             btnProximo.TabIndex = 3;
             btnProximo.Text = "Próximo";
             btnProximo.UseVisualStyleBackColor = true;
+            btnProximo.Click += btnProximo_Click;
             // 
             // btnAnterior
             // 
-            btnAnterior.Location = new Point(1251, 672);
+            btnAnterior.Location = new Point(944, 834);
             btnAnterior.Name = "btnAnterior";
             btnAnterior.Size = new Size(94, 37);
             btnAnterior.TabIndex = 3;
             btnAnterior.Text = "Anterior";
             btnAnterior.UseVisualStyleBackColor = true;
+            btnAnterior.Click += btnAnterior_Click;
             // 
-            // pictureBox1
+            // lblMesAno
             // 
-            pictureBox1.Image = Properties.Resources.Ativo_1;
-            pictureBox1.Location = new Point(385, 24);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(100, 50);
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
+            lblMesAno.AutoSize = true;
+            lblMesAno.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMesAno.Location = new Point(537, 9);
+            lblMesAno.Name = "lblMesAno";
+            lblMesAno.Size = new Size(200, 50);
+            lblMesAno.TabIndex = 1;
+            lblMesAno.Text = "Mês / Ano";
             // 
-            // pictureBox2
+            // panel7
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(826, 19);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(100, 50);
-            pictureBox2.TabIndex = 4;
-            pictureBox2.TabStop = false;
+            panel7.Location = new Point(3, 3);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(150, 108);
+            panel7.TabIndex = 6;
+            // 
+            // panel1
+            // 
+            panel1.Location = new Point(159, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(150, 108);
+            panel1.TabIndex = 7;
+            // 
+            // panel2
+            // 
+            panel2.Location = new Point(315, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(150, 108);
+            panel2.TabIndex = 8;
+            // 
+            // panel3
+            // 
+            panel3.Location = new Point(471, 3);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(150, 108);
+            panel3.TabIndex = 9;
+            // 
+            // panel4
+            // 
+            panel4.Location = new Point(627, 3);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(150, 108);
+            panel4.TabIndex = 10;
+            // 
+            // panel5
+            // 
+            panel5.Location = new Point(783, 3);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(150, 108);
+            panel5.TabIndex = 11;
+            // 
+            // panel6
+            // 
+            panel6.Location = new Point(939, 3);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(150, 108);
+            panel6.TabIndex = 12;
+            // 
+            // panel8
+            // 
+            panel8.Location = new Point(3, 117);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(150, 108);
+            panel8.TabIndex = 13;
+            // 
+            // panel9
+            // 
+            panel9.Location = new Point(159, 117);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(150, 108);
+            panel9.TabIndex = 14;
+            // 
+            // panel10
+            // 
+            panel10.Location = new Point(315, 117);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(150, 108);
+            panel10.TabIndex = 15;
+            // 
+            // panel11
+            // 
+            panel11.Location = new Point(471, 117);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(150, 108);
+            panel11.TabIndex = 16;
+            // 
+            // panel12
+            // 
+            panel12.Location = new Point(627, 117);
+            panel12.Name = "panel12";
+            panel12.Size = new Size(150, 108);
+            panel12.TabIndex = 17;
+            // 
+            // panel13
+            // 
+            panel13.Location = new Point(783, 117);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(150, 108);
+            panel13.TabIndex = 18;
+            // 
+            // panel14
+            // 
+            panel14.Location = new Point(939, 117);
+            panel14.Name = "panel14";
+            panel14.Size = new Size(150, 108);
+            panel14.TabIndex = 19;
+            // 
+            // panel15
+            // 
+            panel15.Location = new Point(3, 231);
+            panel15.Name = "panel15";
+            panel15.Size = new Size(150, 108);
+            panel15.TabIndex = 20;
+            // 
+            // panel16
+            // 
+            panel16.Location = new Point(159, 231);
+            panel16.Name = "panel16";
+            panel16.Size = new Size(150, 108);
+            panel16.TabIndex = 21;
+            // 
+            // panel17
+            // 
+            panel17.Location = new Point(315, 231);
+            panel17.Name = "panel17";
+            panel17.Size = new Size(150, 108);
+            panel17.TabIndex = 22;
+            // 
+            // panel18
+            // 
+            panel18.Location = new Point(471, 231);
+            panel18.Name = "panel18";
+            panel18.Size = new Size(150, 108);
+            panel18.TabIndex = 23;
+            // 
+            // panel19
+            // 
+            panel19.Location = new Point(627, 231);
+            panel19.Name = "panel19";
+            panel19.Size = new Size(150, 108);
+            panel19.TabIndex = 24;
+            // 
+            // panel20
+            // 
+            panel20.Location = new Point(783, 231);
+            panel20.Name = "panel20";
+            panel20.Size = new Size(150, 108);
+            panel20.TabIndex = 25;
+            // 
+            // panel21
+            // 
+            panel21.Location = new Point(939, 231);
+            panel21.Name = "panel21";
+            panel21.Size = new Size(150, 108);
+            panel21.TabIndex = 26;
+            // 
+            // panel22
+            // 
+            panel22.Location = new Point(3, 345);
+            panel22.Name = "panel22";
+            panel22.Size = new Size(150, 108);
+            panel22.TabIndex = 27;
+            // 
+            // panel23
+            // 
+            panel23.Location = new Point(159, 345);
+            panel23.Name = "panel23";
+            panel23.Size = new Size(150, 108);
+            panel23.TabIndex = 28;
+            // 
+            // panel24
+            // 
+            panel24.Location = new Point(315, 345);
+            panel24.Name = "panel24";
+            panel24.Size = new Size(150, 108);
+            panel24.TabIndex = 29;
+            // 
+            // panel25
+            // 
+            panel25.Location = new Point(471, 345);
+            panel25.Name = "panel25";
+            panel25.Size = new Size(150, 108);
+            panel25.TabIndex = 30;
+            // 
+            // panel26
+            // 
+            panel26.Location = new Point(627, 345);
+            panel26.Name = "panel26";
+            panel26.Size = new Size(150, 108);
+            panel26.TabIndex = 31;
+            // 
+            // panel27
+            // 
+            panel27.Location = new Point(783, 345);
+            panel27.Name = "panel27";
+            panel27.Size = new Size(150, 108);
+            panel27.TabIndex = 32;
+            // 
+            // panel28
+            // 
+            panel28.Location = new Point(939, 345);
+            panel28.Name = "panel28";
+            panel28.Size = new Size(150, 108);
+            panel28.TabIndex = 33;
+            // 
+            // panel29
+            // 
+            panel29.Location = new Point(3, 459);
+            panel29.Name = "panel29";
+            panel29.Size = new Size(150, 108);
+            panel29.TabIndex = 34;
+            // 
+            // panel30
+            // 
+            panel30.Location = new Point(159, 459);
+            panel30.Name = "panel30";
+            panel30.Size = new Size(150, 108);
+            panel30.TabIndex = 35;
+            // 
+            // panel31
+            // 
+            panel31.Location = new Point(315, 459);
+            panel31.Name = "panel31";
+            panel31.Size = new Size(150, 108);
+            panel31.TabIndex = 36;
+            // 
+            // panel32
+            // 
+            panel32.Location = new Point(471, 459);
+            panel32.Name = "panel32";
+            panel32.Size = new Size(150, 108);
+            panel32.TabIndex = 37;
+            // 
+            // panel33
+            // 
+            panel33.Location = new Point(627, 459);
+            panel33.Name = "panel33";
+            panel33.Size = new Size(150, 108);
+            panel33.TabIndex = 38;
+            // 
+            // panel34
+            // 
+            panel34.Location = new Point(783, 459);
+            panel34.Name = "panel34";
+            panel34.Size = new Size(150, 108);
+            panel34.TabIndex = 39;
+            // 
+            // panel35
+            // 
+            panel35.Location = new Point(939, 459);
+            panel35.Name = "panel35";
+            panel35.Size = new Size(150, 108);
+            panel35.TabIndex = 40;
+            // 
+            // panel36
+            // 
+            panel36.Location = new Point(3, 573);
+            panel36.Name = "panel36";
+            panel36.Size = new Size(150, 108);
+            panel36.TabIndex = 41;
+            // 
+            // panel37
+            // 
+            panel37.Location = new Point(159, 573);
+            panel37.Name = "panel37";
+            panel37.Size = new Size(150, 108);
+            panel37.TabIndex = 42;
+            // 
+            // panel38
+            // 
+            panel38.Location = new Point(315, 573);
+            panel38.Name = "panel38";
+            panel38.Size = new Size(150, 108);
+            panel38.TabIndex = 43;
+            // 
+            // panel39
+            // 
+            panel39.Location = new Point(471, 573);
+            panel39.Name = "panel39";
+            panel39.Size = new Size(150, 108);
+            panel39.TabIndex = 44;
+            // 
+            // panel40
+            // 
+            panel40.Location = new Point(627, 573);
+            panel40.Name = "panel40";
+            panel40.Size = new Size(150, 108);
+            panel40.TabIndex = 45;
+            // 
+            // panel41
+            // 
+            panel41.Location = new Point(783, 573);
+            panel41.Name = "panel41";
+            panel41.Size = new Size(150, 108);
+            panel41.TabIndex = 46;
+            // 
+            // panel42
+            // 
+            panel42.Location = new Point(939, 573);
+            panel42.Name = "panel42";
+            panel42.Size = new Size(150, 108);
+            panel42.TabIndex = 47;
             // 
             // Agenda
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1486, 729);
-            Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
+            ClientSize = new Size(1251, 883);
             Controls.Add(btnAnterior);
             Controls.Add(btnProximo);
-            Controls.Add(cmbAno);
-            Controls.Add(cmbMes);
             Controls.Add(lblSabado);
             Controls.Add(lblSexta);
             Controls.Add(lblQuinta);
             Controls.Add(lblQuarta);
+            Controls.Add(lblMesAno);
             Controls.Add(lblTerça);
             Controls.Add(lblSegunda);
             Controls.Add(lblDomingo);
-            Controls.Add(flowLayoutPanel1);
+            Controls.Add(lpDay);
             Name = "Agenda";
             Text = "Agenda";
             Load += Agenda_Load;
-            flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            lpDay.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel lpDay;
+        private Label lblDomingo;
+        private Label lblSegunda;
+        private Label lblTerça;
+        private Label lblQuarta;
+        private Label lblQuinta;
+        private Label lblSexta;
+        private Label lblSabado;
+        private Button btnProximo;
+        private Button btnAnterior;
+        private Panel panel7;
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;
         private Panel panel4;
         private Panel panel5;
         private Panel panel6;
-        private Panel panel7;
         private Panel panel8;
         private Panel panel9;
         private Panel panel10;
@@ -514,18 +594,17 @@
         private Panel panel29;
         private Panel panel30;
         private Panel panel31;
-        private Label lblDomingo;
-        private Label lblSegunda;
-        private Label lblTerça;
-        private Label lblQuarta;
-        private Label lblQuinta;
-        private Label lblSexta;
-        private Label lblSabado;
-        private ComboBox cmbMes;
-        private ComboBox cmbAno;
-        private Button btnProximo;
-        private Button btnAnterior;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
+        private Panel panel32;
+        private Panel panel33;
+        private Label lblMesAno;
+        private Panel panel34;
+        private Panel panel35;
+        private Panel panel36;
+        private Panel panel37;
+        private Panel panel38;
+        private Panel panel39;
+        private Panel panel40;
+        private Panel panel41;
+        private Panel panel42;
     }
 }

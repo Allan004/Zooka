@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Zooka
 {
-    public partial class Cadastro_Pet : Form
+    public partial class ControlAgendaBranco: UserControl
     {
-        public Cadastro_Pet()
+        public ControlAgendaBranco()
         {
             InitializeComponent();
-        }
-
-        private void Cadastro_Pet_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
