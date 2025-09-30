@@ -49,7 +49,7 @@
             Controls.Add(lblDia);
             Name = "ControleAgendaDias";
             Size = new Size(200, 100);
-            Load += ControleAgendaDias_Load;
+            //Load += ControleAgendaDias_Load;
             ResumeLayout(false);
             PerformLayout();
         }

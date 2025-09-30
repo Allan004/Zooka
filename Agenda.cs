@@ -14,6 +14,7 @@ namespace Zooka
     public partial class Agenda : Form
     {
         int mes, ano;
+        //public static int static_mes, static_ano;
         public Agenda()
         {
             InitializeComponent();
@@ -33,6 +34,8 @@ namespace Zooka
             String nomeMes = DateTimeFormatInfo.CurrentInfo.GetMonthName(mes);
             lblMesAno.Text = nomeMes + " " + ano;
 
+            //static_mes = mes;
+            //static_ano = ano;
             DateTime inicioDoMes = new DateTime(ano, mes, 1);
 
             int dias = DateTime.DaysInMonth(ano, mes);
@@ -52,15 +55,20 @@ namespace Zooka
                 controlAgendaDias.days(i);
                 lpDay.Controls.Add(controlAgendaDias);
             }
+
         }
 
         private void btnProximo_Click(object sender, EventArgs e)
         {
+
             lpDay.Controls.Clear();
 
             mes++;
             String nomeMes = DateTimeFormatInfo.CurrentInfo.GetMonthName(mes);
             lblMesAno.Text = nomeMes + " " + ano;
+
+            //static_mes = mes;
+            //static_ano = ano;
 
             DateTime agora = DateTime.Now;
 
@@ -83,7 +91,9 @@ namespace Zooka
                 controlAgendaDias.days(i);
                 lpDay.Controls.Add(controlAgendaDias);
             }
+
         }
+
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
@@ -92,6 +102,9 @@ namespace Zooka
             mes--;
             String nomeMes = DateTimeFormatInfo.CurrentInfo.GetMonthName(mes);
             lblMesAno.Text = nomeMes + " " + ano;
+
+            //static_mes = mes;
+            //static_ano = ano;
 
             DateTime agora = DateTime.Now;
 
