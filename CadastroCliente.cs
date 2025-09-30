@@ -18,6 +18,7 @@ namespace Zooka
         public CadastroCliente()
         {
             InitializeComponent();
+
         }
 
         private void CadastroCliente_Load(object sender, EventArgs e)
@@ -37,19 +38,19 @@ namespace Zooka
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             Conexao conexao = new Conexao();
 
 
             using (var conn = conexao.GetConnection())
             {
                 string novonome = txtnome.Text;
-                string novocpf = txtcpf.Text.Replace(",","").Replace("-","");
-                string novotelefone = txttelefone.Text.Replace(",","").Replace("(","").Replace(")","");
+                string novocpf = txtcpf.Text.Replace(",", "").Replace("-", "");
+                string novotelefone = txttelefone.Text.Replace(",", "").Replace("(", "").Replace(")", "");
                 string novorg = txtrg.Text.Replace(",", "").Replace("-", "");
                 string novoemail = txtemail.Text;
                 string novocep = txtcep.Text.Replace(",", "").Replace("-", "");
-                string novodatanascimento = txtdata.Text.Replace("/","-");
+                string novodatanascimento = txtdata.Text;
                 string novogenero = comboBox1.Text;
                 string novobairro = txtbairro.Text;
                 string novologradouro = txtlogradouro.Text;
@@ -57,7 +58,7 @@ namespace Zooka
                 string novoestado = txtestado.Text;
 
                 string comando = "INSERT INTO cliente (nome_cliente,genero,cpf_cliente,rg_cliente,nascimento_cliente,telefone_cliente,email_cliente,cep_cliente,logradouro_cliente,bairro_cliente,cidade_cliente,estado_cliente) " +
-                    "VALUES (@nome,@genero,@cpf,@rg,@nascimento,@telefone,@email,@cep,@logradouro,@bairro,@cidade,@estado)";
+                    "VALUES (@nome,@genero,@cpf,@rg,STR_TO_DATE(@nascimento, '%d/%m/%Y'),@telefone,@email,@cep,@logradouro,@bairro,@cidade,@estado)";
 
 
                 using (var cmd = new MySqlCommand(comando, conn))
@@ -66,19 +67,19 @@ namespace Zooka
 
                     cmd.Parameters.AddWithValue("@nome", novonome);
 
-                    cmd.Parameters.AddWithValue("@genero",novogenero);
+                    cmd.Parameters.AddWithValue("@genero", novogenero);
 
                     cmd.Parameters.AddWithValue("@cpf", novocpf);
 
                     cmd.Parameters.AddWithValue("@rg", novorg);
 
-                    cmd.Parameters.AddWithValue("@nascimento",novodatanascimento);
+                    cmd.Parameters.AddWithValue("@nascimento", novodatanascimento);
 
                     cmd.Parameters.AddWithValue("@telefone", novotelefone);
 
                     cmd.Parameters.AddWithValue("@email", novoemail);
 
-                    cmd.Parameters.AddWithValue("@cep",novocep);
+                    cmd.Parameters.AddWithValue("@cep", novocep);
 
                     cmd.Parameters.AddWithValue("@logradouro", novologradouro);
 
@@ -94,5 +95,24 @@ namespace Zooka
             }
 
         }
+
+       
+
+        private void txtnome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+         
+        
+
+        private void txtdata_Click_1(object sender, EventArgs e)
+        {
+            if (txtdata.SelectionLength == 0) // Apenas se não houver seleção
+            {
+                txtdata.SelectionStart = 0; // Move o cursor para o início
+            }
+        }
     }
 }
+
