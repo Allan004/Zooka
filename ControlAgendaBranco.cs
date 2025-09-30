@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Zooka
 {
-    public partial class ControlAgendaBranco: UserControl
+    public partial class ControlAgendaBranco : UserControl
     {
         public ControlAgendaBranco()
         {
             InitializeComponent();
+        }
+
+        private void ControlAgendaBranco_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
