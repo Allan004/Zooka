@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using SisVendas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Zooka
 {
@@ -16,72 +19,75 @@ namespace Zooka
         {
             InitializeComponent();
             CarregarCombos();
-
         }
+
         private void CarregarCombos()
         {
-
-            cxDia.Items.Clear();
-            cxMes.Items.Clear();
-            cxAno.Items.Clear();
-
-            // Dias (1 a 31)
-            for (int d = 1; d <= 31; d++)
-            {
-                cxDia.Items.Add(d.ToString());
-            }
-
-
-            string[] meses = { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
-                               "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" };
-            cxMes.Items.AddRange(meses);
-
-
-            for (int a = 1900; a <= DateTime.Now.Year; a++)
-            {
-                cxAno.Items.Add(a.ToString());
-            }
-
-
-            if (cxDia.Items.Count > 0) cxDia.SelectedIndex = 0;
-            if (cxMes.Items.Count > 0) cxMes.SelectedIndex = 0;
-            if (cxAno.Items.Count > 0) cxAno.SelectedIndex = cxAno.Items.Count - 1;
+            
         }
 
+       
 
-        private void btnCadastrar_Click(object sender, EventArgs e)
+        private void CadastroUsuario_Load(object sender, EventArgs e)
         {
-            string nome = txtNome.Text.Trim();
-            string email = txtEmail.Text.Trim();
-            string senha = txtSenha.Text.Trim();
 
-            string dia = cxDia.SelectedItem?.ToString();
-            string mes = cxMes.SelectedItem?.ToString();
-            string ano = cxAno.SelectedItem?.ToString();
+        }
 
-            string genero = "";
-            if (GeneroF.Checked) genero = "Feminino";
-            else if (GeneroM.Checked) genero = "Masculino";
-            else if (Outro.Checked) genero = "Outro";
+        private void btnCadastrar_Click_1(object sender, EventArgs e)
+        {
+            Conexao conexao = new Conexao();
+            string novonome = txtNome.Text.Trim();
+            string novoemail = txtEmail.Text.Trim();
+            string novasenha = txtSenha.Text.Trim();
 
 
-            if (string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(senha) ||
-                string.IsNullOrEmpty(dia) || string.IsNullOrEmpty(mes) || string.IsNullOrEmpty(ano) ||
-                string.IsNullOrEmpty(genero))
+            using (var conn = conexao.GetConnection())
+
             {
-                MessageBox.Show("Por favor, preencha todos os campos antes de cadastrar.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //conn.Open();
+
+                // faça os comandos CRUD normalmente
+
+
+               
+
+                string comando = "INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario) VALUES (@nome, @email, @senha)";
+
+
+                using (var cmd = new MySqlCommand(comando, conn))
+
+                {
+
+                    cmd.Parameters.AddWithValue("@nome", novonome);
+
+                    cmd.Parameters.AddWithValue("@email", novoemail);
+
+                    cmd.Parameters.AddWithValue("@senha", novasenha);
+
+                    conn.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+
+           
+
+            if (string.IsNullOrEmpty(novonome) || string.IsNullOrEmpty(novoemail) || string.IsNullOrEmpty(novasenha))
+            {
+                MessageBox.Show("Por favor, preencha todos os campos antes de cadastrar.", "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-
             MessageBox.Show(
-                $"Nome: {nome}\n" +
-                $"Email: {email}\n" +
-                $"Senha: {senha}\n" +
-                $"Data Nasc: {dia}/{mes}/{ano}\n" +
-                $"Gênero: {genero}",
-                "Cadastro concluído");
-
+                $"Nome: {novonome}\n" +
+                $"Email: {novoemail}\n" +
+                $"Senha: {novasenha}\n",
+                "Dados Cadastrados",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
         }
     }
 }
