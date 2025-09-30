@@ -63,9 +63,25 @@ namespace Zooka.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap Bem_Vindo__3_ {
             get {
                 object obj = ResourceManager.GetObject("Bem-Vindo (3)", resourceCulture);
+=======
+        internal static System.Drawing.Bitmap _5272056 {
+            get {
+                object obj = ResourceManager.GetObject("5272056", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ativo_1 {
+            get {
+                object obj = ResourceManager.GetObject("Ativo 1", resourceCulture);
+>>>>>>> dbbf6d4a151842d691e6732935cc60f9c7eb5f57
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -76,6 +92,16 @@ namespace Zooka.Properties {
         internal static System.Drawing.Bitmap Captura_de_tela_2025_09_26_191727_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("Captura_de_tela_2025-09-26_191727-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Design_sem_nome__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Design sem nome (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

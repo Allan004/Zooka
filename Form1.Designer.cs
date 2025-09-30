@@ -34,12 +34,15 @@
             cadastroClienteToolStripMenuItem = new ToolStripMenuItem();
             cadastroPetToolStripMenuItem = new ToolStripMenuItem();
             cadastroFuncionarioToolStripMenuItem = new ToolStripMenuItem();
+            cadastroDeSKUToolStripMenuItem = new ToolStripMenuItem();
+            estoqueToolStripMenuItem = new ToolStripMenuItem();
+            agendaToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { cADASTROSToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { cADASTROSToolStripMenuItem, estoqueToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -48,7 +51,7 @@
             // 
             // cADASTROSToolStripMenuItem
             // 
-            cADASTROSToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroUsuarioToolStripMenuItem, cadastroClienteToolStripMenuItem, cadastroPetToolStripMenuItem, cadastroFuncionarioToolStripMenuItem });
+            cADASTROSToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroUsuarioToolStripMenuItem, cadastroClienteToolStripMenuItem, cadastroPetToolStripMenuItem, cadastroFuncionarioToolStripMenuItem, cadastroDeSKUToolStripMenuItem, agendaToolStripMenuItem });
             cADASTROSToolStripMenuItem.Name = "cADASTROSToolStripMenuItem";
             cADASTROSToolStripMenuItem.Size = new Size(86, 20);
             cADASTROSToolStripMenuItem.Text = "CADASTROS";
@@ -56,20 +59,21 @@
             // cadastroUsuarioToolStripMenuItem
             // 
             cadastroUsuarioToolStripMenuItem.Name = "cadastroUsuarioToolStripMenuItem";
-            cadastroUsuarioToolStripMenuItem.Size = new Size(164, 22);
+            cadastroUsuarioToolStripMenuItem.Size = new Size(187, 22);
             cadastroUsuarioToolStripMenuItem.Text = "Cadastro Usuario";
             cadastroUsuarioToolStripMenuItem.Click += cadastroUsuarioToolStripMenuItem_Click;
             // 
             // cadastroClienteToolStripMenuItem
             // 
             cadastroClienteToolStripMenuItem.Name = "cadastroClienteToolStripMenuItem";
-            cadastroClienteToolStripMenuItem.Size = new Size(180, 22);
+            cadastroClienteToolStripMenuItem.Size = new Size(187, 22);
             cadastroClienteToolStripMenuItem.Text = "Cadastro Cliente";
+            cadastroClienteToolStripMenuItem.Click += cadastroClienteToolStripMenuItem_Click;
             // 
             // cadastroPetToolStripMenuItem
             // 
             cadastroPetToolStripMenuItem.Name = "cadastroPetToolStripMenuItem";
-            cadastroPetToolStripMenuItem.Size = new Size(180, 22);
+            cadastroPetToolStripMenuItem.Size = new Size(187, 22);
             cadastroPetToolStripMenuItem.Text = "Cadastro Pet";
             // 
             // cadastroFuncionarioToolStripMenuItem
@@ -77,6 +81,27 @@
             cadastroFuncionarioToolStripMenuItem.Name = "cadastroFuncionarioToolStripMenuItem";
             cadastroFuncionarioToolStripMenuItem.Size = new Size(187, 22);
             cadastroFuncionarioToolStripMenuItem.Text = "Cadastro Funcionario";
+            // 
+            // cadastroDeSKUToolStripMenuItem
+            // 
+            cadastroDeSKUToolStripMenuItem.Name = "cadastroDeSKUToolStripMenuItem";
+            cadastroDeSKUToolStripMenuItem.Size = new Size(187, 22);
+            cadastroDeSKUToolStripMenuItem.Text = "Cadastro de SKU";
+            cadastroDeSKUToolStripMenuItem.Click += cadastroDeSKUToolStripMenuItem_Click;
+            // 
+            // estoqueToolStripMenuItem
+            // 
+            estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
+            estoqueToolStripMenuItem.Size = new Size(69, 20);
+            estoqueToolStripMenuItem.Text = "ESTOQUE";
+            estoqueToolStripMenuItem.Click += estoqueToolStripMenuItem_Click;
+            // 
+            // agendaToolStripMenuItem
+            // 
+            agendaToolStripMenuItem.Name = "agendaToolStripMenuItem";
+            agendaToolStripMenuItem.Size = new Size(187, 22);
+            agendaToolStripMenuItem.Text = "Agenda";
+            agendaToolStripMenuItem.Click += agendaToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -103,5 +128,8 @@
         private ToolStripMenuItem cadastroClienteToolStripMenuItem;
         private ToolStripMenuItem cadastroPetToolStripMenuItem;
         private ToolStripMenuItem cadastroFuncionarioToolStripMenuItem;
+        private ToolStripMenuItem cadastroDeSKUToolStripMenuItem;
+        private ToolStripMenuItem estoqueToolStripMenuItem;
+        private ToolStripMenuItem agendaToolStripMenuItem;
     }
 }
