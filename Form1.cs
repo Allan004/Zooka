@@ -103,5 +103,11 @@ namespace Zooka
             }
 
         }
+
+        private void agendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Agenda agenda = new Agenda();
+            agenda.Show();
+        }
     }
 }

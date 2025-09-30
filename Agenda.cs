@@ -19,7 +19,12 @@ namespace Zooka
 
         private void Agenda_Load(object sender, EventArgs e)
         {
-            
+            displayDias();
+        }
+
+        public void displayDias()
+        {
+            DateTime agora = new DateTime();
         }
     }
 }
