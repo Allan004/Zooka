@@ -18,9 +18,9 @@ namespace Zooka
             {
 
 
-                CadastroUsuario abrirfo1 = new CadastroUsuario();
-                abrirfo1.MdiParent = this;
-                abrirfo1.Show();
+                CadastroUsuario abrirusuario = new CadastroUsuario();
+                abrirusuario.MdiParent = this;
+                abrirusuario.Show();
             }
             else
             {
@@ -75,9 +75,9 @@ namespace Zooka
             {
 
 
-                CadastroSKU abrirform = new CadastroSKU();
-                abrirform.MdiParent = this;
-                abrirform.Show();
+                CadastroSKU abrirsku = new CadastroSKU();
+                abrirsku.MdiParent = this;
+                abrirsku.Show();
             }
             else
             {
@@ -88,7 +88,7 @@ namespace Zooka
 
         private void cadastroClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (this.MdiChildren.Length == 0)
+            if (this.MdiChildren.Length ==0)
             {
 
 
