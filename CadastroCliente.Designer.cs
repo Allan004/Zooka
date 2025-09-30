@@ -192,42 +192,43 @@
             txtnome.Location = new Point(148, 84);
             txtnome.Name = "txtnome";
             txtnome.Size = new Size(270, 23);
-            txtnome.TabIndex = 13;
+            txtnome.TabIndex = 1;
+            txtnome.TextChanged += txtnome_TextChanged;
             // 
             // txtemail
             // 
             txtemail.Location = new Point(148, 214);
             txtemail.Name = "txtemail";
             txtemail.Size = new Size(188, 23);
-            txtemail.TabIndex = 14;
+            txtemail.TabIndex = 7;
             // 
             // txtlogradouro
             // 
             txtlogradouro.Location = new Point(177, 266);
             txtlogradouro.Name = "txtlogradouro";
             txtlogradouro.Size = new Size(241, 23);
-            txtlogradouro.TabIndex = 14;
+            txtlogradouro.TabIndex = 9;
             // 
             // txtbairro
             // 
             txtbairro.Location = new Point(148, 315);
             txtbairro.Name = "txtbairro";
             txtbairro.Size = new Size(270, 23);
-            txtbairro.TabIndex = 14;
+            txtbairro.TabIndex = 11;
             // 
             // txtcidade
             // 
             txtcidade.Location = new Point(475, 261);
             txtcidade.Name = "txtcidade";
             txtcidade.Size = new Size(255, 23);
-            txtcidade.TabIndex = 14;
+            txtcidade.TabIndex = 10;
             // 
             // txtestado
             // 
             txtestado.Location = new Point(475, 315);
             txtestado.Name = "txtestado";
             txtestado.Size = new Size(255, 23);
-            txtestado.TabIndex = 14;
+            txtestado.TabIndex = 12;
             // 
             // txtdata
             // 
@@ -235,7 +236,8 @@
             txtdata.Mask = "00/00/0000";
             txtdata.Name = "txtdata";
             txtdata.Size = new Size(59, 23);
-            txtdata.TabIndex = 15;
+            txtdata.TabIndex = 2;
+            txtdata.Click += txtdata_Click_1;
             // 
             // txttelefone
             // 
@@ -243,7 +245,7 @@
             txttelefone.Mask = "(00)0 0000-0000";
             txttelefone.Name = "txttelefone";
             txttelefone.Size = new Size(79, 23);
-            txttelefone.TabIndex = 16;
+            txttelefone.TabIndex = 4;
             // 
             // comboBox1
             // 
@@ -252,7 +254,7 @@
             comboBox1.Location = new Point(485, 171);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(255, 23);
-            comboBox1.TabIndex = 17;
+            comboBox1.TabIndex = 6;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // txtcep
@@ -261,7 +263,7 @@
             txtcep.Mask = "00.000-000";
             txtcep.Name = "txtcep";
             txtcep.Size = new Size(57, 23);
-            txtcep.TabIndex = 18;
+            txtcep.TabIndex = 8;
             // 
             // txtcpf
             // 
@@ -269,7 +271,7 @@
             txtcpf.Mask = "000.000.000-00";
             txtcpf.Name = "txtcpf";
             txtcpf.Size = new Size(75, 23);
-            txtcpf.TabIndex = 19;
+            txtcpf.TabIndex = 3;
             // 
             // txtrg
             // 
@@ -277,7 +279,7 @@
             txtrg.Mask = "00.000.000-0";
             txtrg.Name = "txtrg";
             txtrg.Size = new Size(68, 23);
-            txtrg.TabIndex = 20;
+            txtrg.TabIndex = 5;
             // 
             // button1
             // 
@@ -326,6 +328,11 @@
             Load += CadastroCliente_Load;
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void Txtdata_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
