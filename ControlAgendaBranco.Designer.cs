@@ -1,6 +1,6 @@
 ﻿namespace Zooka
 {
-    partial class ControlCalendario
+    partial class ControlAgendaBranco
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -28,16 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            lblBranco = new Label();
             SuspendLayout();
             // 
-            // ControlCalendario
+            // lblBranco
+            // 
+            lblBranco.AutoSize = true;
+            lblBranco.Location = new Point(79, 44);
+            lblBranco.Name = "lblBranco";
+            lblBranco.Size = new Size(19, 15);
+            lblBranco.TabIndex = 0;
+            lblBranco.Text = "aa";
+            // 
+            // ControlAgendaBranco
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Name = "ControlCalendario";
+            Controls.Add(lblBranco);
+            Name = "ControlAgendaBranco";
+            Size = new Size(200, 100);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label lblBranco;
     }
 }

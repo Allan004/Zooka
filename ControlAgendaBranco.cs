@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Zooka
 {
-    public partial class ControlCalendario: UserControl
+    public partial class ControlAgendaBranco: UserControl
     {
-        public ControlCalendario()
+        public ControlAgendaBranco()
         {
             InitializeComponent();
         }
