@@ -35,8 +35,8 @@
             cadastroPetToolStripMenuItem = new ToolStripMenuItem();
             cadastroFuncionarioToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeSKUToolStripMenuItem = new ToolStripMenuItem();
-            estoqueToolStripMenuItem = new ToolStripMenuItem();
             agendaToolStripMenuItem = new ToolStripMenuItem();
+            estoqueToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -75,6 +75,7 @@
             cadastroPetToolStripMenuItem.Name = "cadastroPetToolStripMenuItem";
             cadastroPetToolStripMenuItem.Size = new Size(187, 22);
             cadastroPetToolStripMenuItem.Text = "Cadastro Pet";
+            cadastroPetToolStripMenuItem.Click += cadastroPetToolStripMenuItem_Click;
             // 
             // cadastroFuncionarioToolStripMenuItem
             // 
@@ -89,19 +90,19 @@
             cadastroDeSKUToolStripMenuItem.Text = "Cadastro de SKU";
             cadastroDeSKUToolStripMenuItem.Click += cadastroDeSKUToolStripMenuItem_Click;
             // 
-            // estoqueToolStripMenuItem
-            // 
-            estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
-            estoqueToolStripMenuItem.Size = new Size(69, 20);
-            estoqueToolStripMenuItem.Text = "ESTOQUE";
-            estoqueToolStripMenuItem.Click += estoqueToolStripMenuItem_Click;
-            // 
             // agendaToolStripMenuItem
             // 
             agendaToolStripMenuItem.Name = "agendaToolStripMenuItem";
             agendaToolStripMenuItem.Size = new Size(187, 22);
             agendaToolStripMenuItem.Text = "Agenda";
             agendaToolStripMenuItem.Click += agendaToolStripMenuItem_Click;
+            // 
+            // estoqueToolStripMenuItem
+            // 
+            estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
+            estoqueToolStripMenuItem.Size = new Size(69, 20);
+            estoqueToolStripMenuItem.Text = "ESTOQUE";
+            estoqueToolStripMenuItem.Click += estoqueToolStripMenuItem_Click;
             // 
             // Form1
             // 
