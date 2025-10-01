@@ -56,7 +56,7 @@
             button1.Location = new Point(298, 291);
             button1.Name = "button1";
             button1.Size = new Size(191, 71);
-            button1.TabIndex = 47;
+            button1.TabIndex = 10;
             button1.Text = "Cadastrar";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
@@ -67,21 +67,21 @@
             txtrganimal.Mask = "00.000.000-0";
             txtrganimal.Name = "txtrganimal";
             txtrganimal.Size = new Size(68, 23);
-            txtrganimal.TabIndex = 32;
+            txtrganimal.TabIndex = 2;
             // 
             // txt_Peso
             // 
             txt_Peso.Location = new Point(448, 213);
             txt_Peso.Name = "txt_Peso";
             txt_Peso.Size = new Size(270, 23);
-            txt_Peso.TabIndex = 44;
+            txt_Peso.TabIndex = 8;
             // 
             // txtnomepet
             // 
             txtnomepet.Location = new Point(130, 94);
             txtnomepet.Name = "txtnomepet";
             txtnomepet.Size = new Size(270, 23);
-            txtnomepet.TabIndex = 24;
+            txtnomepet.TabIndex = 1;
             // 
             // label13
             // 
@@ -168,7 +168,7 @@
             txtIdade.Location = new Point(130, 172);
             txtIdade.Name = "txtIdade";
             txtIdade.Size = new Size(255, 23);
-            txtIdade.TabIndex = 45;
+            txtIdade.TabIndex = 5;
             // 
             // label4
             // 
@@ -186,7 +186,7 @@
             txtcpfcliente.Mask = "000.000.000-00";
             txtcpfcliente.Name = "txtcpfcliente";
             txtcpfcliente.Size = new Size(100, 23);
-            txtcpfcliente.TabIndex = 50;
+            txtcpfcliente.TabIndex = 9;
             // 
             // boxRaca
             // 
@@ -195,7 +195,7 @@
             boxRaca.Location = new Point(448, 172);
             boxRaca.Name = "boxRaca";
             boxRaca.Size = new Size(256, 23);
-            boxRaca.TabIndex = 51;
+            boxRaca.TabIndex = 6;
             // 
             // comboEspecie
             // 
@@ -204,7 +204,7 @@
             comboEspecie.Location = new Point(465, 128);
             comboEspecie.Name = "comboEspecie";
             comboEspecie.Size = new Size(266, 23);
-            comboEspecie.TabIndex = 52;
+            comboEspecie.TabIndex = 4;
             // 
             // label5
             // 
@@ -221,7 +221,7 @@
             txtPelagem.Location = new Point(139, 128);
             txtPelagem.Name = "txtPelagem";
             txtPelagem.Size = new Size(232, 23);
-            txtPelagem.TabIndex = 54;
+            txtPelagem.TabIndex = 3;
             // 
             // boxSexo
             // 
@@ -230,7 +230,7 @@
             boxSexo.Location = new Point(130, 210);
             boxSexo.Name = "boxSexo";
             boxSexo.Size = new Size(184, 23);
-            boxSexo.TabIndex = 55;
+            boxSexo.TabIndex = 7;
             // 
             // Cadastro_Pet
             // 

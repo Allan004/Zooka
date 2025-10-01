@@ -51,7 +51,7 @@ namespace Zooka
 
 
 
-                string comando = "INSERT INTO pet (sexo_pet,rg_pet raca_pet,peso_pet,pelagem_pet,nome_pet,idade_pet,id_cliente,especie_pet) " +
+                string comando = "INSERT INTO pet (sexo_pet,rg_pet,raca_pet,peso_pet,pelagem_pet,nome_pet,idade_pet,id_cliente,especie_pet) " +
                     "VALUES (@sexo,@rg,@raca,@peso,@pelagem,@nome,@idade,@idcliente,@especie)";
 
 
