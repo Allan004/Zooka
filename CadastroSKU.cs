@@ -79,7 +79,7 @@ namespace Zooka
             string sql = "INSERT INTO produto (nome_produto, udm_produto, tipo_estoque) " +
                 "VALUES (@nomeproduto, @udm, @tipoestoque)";
 
-            try 
+            try
             {
                 using (var conn = new MySqlConnection(connStr))
                 using (var cmd = new MySqlCommand(sql, conn))
@@ -110,7 +110,8 @@ namespace Zooka
 
         private void btnSKU_search_Click_1(object sender, EventArgs e)
         {
-
+            searchSKU searchForm = new searchSKU();
+            searchForm.ShowDialog();
         }
     }
 }

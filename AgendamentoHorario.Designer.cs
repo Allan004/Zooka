@@ -33,6 +33,8 @@
             lblDia = new Label();
             lblEvento = new Label();
             btnSalvar = new Button();
+            txtHora = new TextBox();
+            lblHora = new Label();
             SuspendLayout();
             // 
             // txtDia
@@ -44,7 +46,7 @@
             // 
             // txtEvento
             // 
-            txtEvento.Location = new Point(94, 171);
+            txtEvento.Location = new Point(92, 277);
             txtEvento.Name = "txtEvento";
             txtEvento.Size = new Size(606, 23);
             txtEvento.TabIndex = 0;
@@ -61,7 +63,7 @@
             // lblEvento
             // 
             lblEvento.AutoSize = true;
-            lblEvento.Location = new Point(94, 143);
+            lblEvento.Location = new Point(92, 249);
             lblEvento.Name = "lblEvento";
             lblEvento.Size = new Size(43, 15);
             lblEvento.TabIndex = 1;
@@ -77,13 +79,31 @@
             btnSalvar.UseVisualStyleBackColor = true;
             btnSalvar.Click += btnSalvar_Click;
             // 
+            // txtHora
+            // 
+            txtHora.Location = new Point(92, 195);
+            txtHora.Name = "txtHora";
+            txtHora.Size = new Size(604, 23);
+            txtHora.TabIndex = 3;
+            // 
+            // lblHora
+            // 
+            lblHora.AutoSize = true;
+            lblHora.Location = new Point(94, 177);
+            lblHora.Name = "lblHora";
+            lblHora.Size = new Size(33, 15);
+            lblHora.TabIndex = 1;
+            lblHora.Text = "Hora";
+            // 
             // AgendamentoHorario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtHora);
             Controls.Add(btnSalvar);
             Controls.Add(lblEvento);
+            Controls.Add(lblHora);
             Controls.Add(lblDia);
             Controls.Add(txtEvento);
             Controls.Add(txtDia);
@@ -101,5 +121,7 @@
         private Label lblDia;
         private Label lblEvento;
         private Button btnSalvar;
+        private TextBox txtHora;
+        private Label lblHora;
     }
 }
