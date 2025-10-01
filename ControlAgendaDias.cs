@@ -12,7 +12,8 @@ using System.Windows.Forms;
 namespace Zooka
 {
     public partial class ControlAgendaDias : UserControl
-    { //public static string static_dia;
+    {
+        public static string static_dia;
         public ControlAgendaDias()
         {
             InitializeComponent();
@@ -27,11 +28,18 @@ namespace Zooka
             lblDia.Text = numDia + "";
         }
 
-        //private void ControlAgendaDias_Click(object sender, EventArgs e)
-        //{
-        //    static_dia = lblDias.Text; 
-        //    AgendandoHorario agendandoHorario = new AgendandoHorario();
-        //    agendandoHorario.Show();
-        //}
+        private void ControlAgendaDias_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        private void ControleAgendaDias(object sender, EventArgs e)
+        {
+            static_dia = lblDia.Text;
+            AgendamentoHorario agendamentoHorario = new AgendamentoHorario();
+            agendamentoHorario.Show();
+        }
     }
 }

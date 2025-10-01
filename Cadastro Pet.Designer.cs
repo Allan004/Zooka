@@ -28,20 +28,263 @@
         /// </summary>
         private void InitializeComponent()
         {
+            button1 = new Button();
+            txtrganimal = new MaskedTextBox();
+            txt_Peso = new TextBox();
+            txtnomepet = new TextBox();
+            label13 = new Label();
+            label11 = new Label();
+            label9 = new Label();
+            label6 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            label3 = new Label();
+            label12 = new Label();
+            txtIdade = new TextBox();
+            label4 = new Label();
+            txtcpfcliente = new MaskedTextBox();
+            boxRaca = new ComboBox();
+            comboEspecie = new ComboBox();
+            label5 = new Label();
+            txtPelagem = new TextBox();
+            boxSexo = new ComboBox();
             SuspendLayout();
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Sans Serif Collection", 15.7499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Location = new Point(298, 291);
+            button1.Name = "button1";
+            button1.Size = new Size(191, 71);
+            button1.TabIndex = 47;
+            button1.Text = "Cadastrar";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // txtrganimal
+            // 
+            txtrganimal.Location = new Point(484, 89);
+            txtrganimal.Mask = "00.000.000-0";
+            txtrganimal.Name = "txtrganimal";
+            txtrganimal.Size = new Size(68, 23);
+            txtrganimal.TabIndex = 32;
+            // 
+            // txt_Peso
+            // 
+            txt_Peso.Location = new Point(448, 213);
+            txt_Peso.Name = "txt_Peso";
+            txt_Peso.Size = new Size(270, 23);
+            txt_Peso.TabIndex = 44;
+            // 
+            // txtnomepet
+            // 
+            txtnomepet.Location = new Point(130, 94);
+            txtnomepet.Name = "txtnomepet";
+            txtnomepet.Size = new Size(270, 23);
+            txtnomepet.TabIndex = 24;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Sans Serif Collection", 8.999999F);
+            label13.Location = new Point(78, 208);
+            label13.Name = "label13";
+            label13.Size = new Size(48, 41);
+            label13.TabIndex = 46;
+            label13.Text = "Sexo:";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Sans Serif Collection", 8.999999F);
+            label11.Location = new Point(406, 164);
+            label11.Name = "label11";
+            label11.Size = new Size(48, 41);
+            label11.TabIndex = 41;
+            label11.Text = "Raça:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Sans Serif Collection", 8.999999F);
+            label9.Location = new Point(406, 205);
+            label9.Name = "label9";
+            label9.Size = new Size(48, 41);
+            label9.TabIndex = 37;
+            label9.Text = "Peso:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Sans Serif Collection", 8.999999F);
+            label6.Location = new Point(405, 84);
+            label6.Name = "label6";
+            label6.Size = new Size(78, 41);
+            label6.TabIndex = 31;
+            label6.Text = "RG Animal:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Sans Serif Collection", 8.999999F);
+            label2.Location = new Point(78, 89);
+            label2.Name = "label2";
+            label2.Size = new Size(55, 41);
+            label2.TabIndex = 23;
+            label2.Text = "Nome:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Sans Serif Collection", 14.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(328, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(170, 68);
+            label1.TabIndex = 22;
+            label1.Text = "CADASTRO PET";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Sans Serif Collection", 8.999999F);
+            label3.Location = new Point(79, 167);
+            label3.Name = "label3";
+            label3.Size = new Size(50, 41);
+            label3.TabIndex = 26;
+            label3.Text = "Idade";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Sans Serif Collection", 8.999999F);
+            label12.Location = new Point(406, 123);
+            label12.Name = "label12";
+            label12.Size = new Size(64, 41);
+            label12.TabIndex = 43;
+            label12.Text = "Especie:";
+            // 
+            // txtIdade
+            // 
+            txtIdade.Location = new Point(130, 172);
+            txtIdade.Name = "txtIdade";
+            txtIdade.Size = new Size(255, 23);
+            txtIdade.TabIndex = 45;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Sans Serif Collection", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(292, 244);
+            label4.Name = "label4";
+            label4.Size = new Size(83, 41);
+            label4.TabIndex = 49;
+            label4.Text = "CPF Cliente:";
+            // 
+            // txtcpfcliente
+            // 
+            txtcpfcliente.Location = new Point(370, 249);
+            txtcpfcliente.Mask = "000.000.000-00";
+            txtcpfcliente.Name = "txtcpfcliente";
+            txtcpfcliente.Size = new Size(100, 23);
+            txtcpfcliente.TabIndex = 50;
+            // 
+            // boxRaca
+            // 
+            boxRaca.FormattingEnabled = true;
+            boxRaca.Items.AddRange(new object[] { "Labrador Retriever", "Siamês", "Golden Retriever", "Persa", "Bulldog Francês", "Maine Coon", "Pastor Alemão", "Ragdoll", "Poodle", "Bengal", "Beagle", "Sphynx", "Shih Tzu", "British Shorthair", "Chihuahua", "Abissínio", "Dachshund", "Birmanês", "Border Collie", "Scottish Fold", "Boxer", "Russian Blue", "Cocker Spaniel", "Savannah", "Husky Siberiano", "Oriental Shorthair", "Pug", "Chartreux", "Yorkshire Terrier", "American Shorthair", "Rottweiler", "Exotic Shorthair", "Doberman", "Angorá Turco", "Malamute do Alasca", "Cornish Rex", "Buldogue Inglês", "Balinês", "Pinscher Miniatura", "Havana Brown", "Maltês", "Burmês", "Akita Inu", "Tonquinês", "Bichon Frisé", "Manx", "Lhasa Apso", "Somali", "Basenji", "Ocicat", "Shar Pei", "Snowshoe", "Boston Terrier", "Singapura", "Setter Irlandês", "Peterbald", "Weimaraner", "Cymric", "Cão de Crista Chinês", "Munchkin", "Fox Terrier", "LaPerm", "Samoieda", "Selkirk Rex", "Schnauzer Miniatura", "American Curl", "Whippet", "Turkish Van", "Pekingese", "Japanese Bobtail", "Cão de Água Português", "Nebelung", "Cairn Terrier", "Ragamuffin", "Galgo Afegão", "Oriental Longhair", "Bloodhound", "Bombay", "Setter Inglês", "Javanês", "Bullmastiff", "Thai", "Cão de São Bernardo", "Chausie", "Buldogue Americano", "Khao Manee", "Borzoi", "Cão Esquimó Americano", "Skye Terrier", "Devon Rex", "Schipperke", "Toyger", "Leonberger", "Lykoi", "Cão de Montanha dos Pirineus", "Singapura", "Cão de Caça Afegão", "Pixie-Bob", "Terrier Tibetano", "Exotic Longhair" });
+            boxRaca.Location = new Point(448, 172);
+            boxRaca.Name = "boxRaca";
+            boxRaca.Size = new Size(256, 23);
+            boxRaca.TabIndex = 51;
+            // 
+            // comboEspecie
+            // 
+            comboEspecie.FormattingEnabled = true;
+            comboEspecie.Items.AddRange(new object[] { "Leão  ", "Tigre  ", "Elefante  ", "Girafa  ", "Zebra  ", "Rinoceronte  ", "Hipopótamo  ", "Urso-pardo  ", "Urso-polar  ", "Lobo  ", "Raposa  ", "Cervo  ", "Veado  ", "Anta  ", "Bicho-preguiça  ", "Tamanduá-bandeira  ", "Capivara  ", "Onça-pintada  ", "Puma  ", "Gato-doméstico  ", "Cachorro-doméstico  ", "Coelho  ", "Lebre  ", "Cavalo  ", "Pônei  ", "Burro  ", "Jumento  ", "Vaca  ", "Boi  ", "Touro  ", "Ovelha  ", "Cabra  ", "Porco  ", "Galinha  ", "Galo  ", "Pato  ", "Ganso  ", "Peru  ", "Avestruz  ", "Ema  ", "Tatu  ", "Armadilho  ", "Jacaré  ", "Crocodilo  ", "Camaleão  ", "Lagarto  ", "Iguana  ", "Cobra  ", "Jararaca  ", "Sucuri  ", "Coral  ", "Peixe-palhaço  ", "Tubarão-branco  ", "Orca  ", "Golfinho  ", "Baleia-azul  ", "Foca  ", "Leão-marinho  ", "Morsa  ", "Pinguim  ", "Pelicano  ", "Garça  ", "Coruja  ", "Falcão  ", "Águia  ", "Gavião  ", "Papagaio  ", "Arara  ", "Canário  ", "Pardal  ", "Andorinha  ", "Beija-flor  ", "Morcego  ", "Esquilo  ", "Castor  ", "Lontra  ", "Rato  ", "Ratazana  ", "Camundongo  ", "Hamster  ", "Porquinho-da-índia  ", "Chinchila  ", "Macaco-prego  ", "Bugio  ", "Gorila  ", "Chimpanzé  ", "Orangotango  ", "Lêmure  ", "Suricata  ", "Canguru  ", "Coala  ", "Diabo-da-tasmânia  ", "Formiga  ", "Abelha  ", "Vespa  ", "Borboleta  ", "Mariposa  ", "Besouro  ", "Joaninha  ", "Grilo  ", "Gafanhoto  ", "Libélula  ", "Caracol  ", "Lesma  " });
+            comboEspecie.Location = new Point(465, 128);
+            comboEspecie.Name = "comboEspecie";
+            comboEspecie.Size = new Size(266, 23);
+            comboEspecie.TabIndex = 52;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Sans Serif Collection", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(77, 123);
+            label5.Name = "label5";
+            label5.Size = new Size(72, 41);
+            label5.TabIndex = 53;
+            label5.Text = "Pelagem: ";
+            // 
+            // txtPelagem
+            // 
+            txtPelagem.Location = new Point(139, 128);
+            txtPelagem.Name = "txtPelagem";
+            txtPelagem.Size = new Size(232, 23);
+            txtPelagem.TabIndex = 54;
+            // 
+            // boxSexo
+            // 
+            boxSexo.FormattingEnabled = true;
+            boxSexo.Items.AddRange(new object[] { "macho", "femea" });
+            boxSexo.Location = new Point(130, 210);
+            boxSexo.Name = "boxSexo";
+            boxSexo.Size = new Size(184, 23);
+            boxSexo.TabIndex = 55;
             // 
             // Cadastro_Pet
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 388);
+            Controls.Add(boxSexo);
+            Controls.Add(txtPelagem);
+            Controls.Add(label5);
+            Controls.Add(comboEspecie);
+            Controls.Add(boxRaca);
+            Controls.Add(txtcpfcliente);
+            Controls.Add(label4);
+            Controls.Add(button1);
+            Controls.Add(txtrganimal);
+            Controls.Add(txtIdade);
+            Controls.Add(txt_Peso);
+            Controls.Add(txtnomepet);
+            Controls.Add(label13);
+            Controls.Add(label12);
+            Controls.Add(label11);
+            Controls.Add(label9);
+            Controls.Add(label6);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Name = "Cadastro_Pet";
             Text = "Cadastro_Pet";
             Load += Cadastro_Pet_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
+        private Button button1;
+        private MaskedTextBox txtrganimal;
+        private TextBox txt_Peso;
+        private TextBox txtnomepet;
+        private Label label13;
+        private Label label11;
+        private Label label9;
+        private Label label6;
+        private Label label2;
+        private Label label1;
+        private Label label3;
+        private Label label12;
+        private TextBox txtIdade;
+        private Label label4;
+        private MaskedTextBox txtcpfcliente;
+        private ComboBox boxRaca;
+        private ComboBox comboEspecie;
+        private Label label5;
+        private TextBox txtPelagem;
+        private ComboBox boxSexo;
     }   
 }

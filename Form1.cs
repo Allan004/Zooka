@@ -14,19 +14,13 @@ namespace Zooka
 
         private void cadastroUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (this.MdiChildren.Length == 0)
-            {
+            
 
 
                 CadastroUsuario abrirusuario = new CadastroUsuario();
                 abrirusuario.MdiParent = this;
                 abrirusuario.Show();
-            }
-            else
-            {
-
-                this.MdiChildren[0].Activate();
-            }
+            
 
         }
 
@@ -71,36 +65,25 @@ namespace Zooka
 
         private void cadastroDeSKUToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (this.MdiChildren.Length == 0)
-            {
 
 
                 CadastroSKU abrirsku = new CadastroSKU();
                 abrirsku.MdiParent = this;
                 abrirsku.Show();
-            }
-            else
-            {
-
-                this.MdiChildren[0].Activate();
-            }
+            
+            
         }
 
         private void cadastroClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (this.MdiChildren.Length ==0)
-            {
+           
 
 
                 CadastroCliente abrirform = new CadastroCliente();
                 abrirform.MdiParent = this;
                 abrirform.Show();
-            }
-            else
-            {
-
-                this.MdiChildren[0].Activate();
-            }
+            
+            
 
         }
 
@@ -108,6 +91,14 @@ namespace Zooka
         {
             Agenda agenda = new Agenda();
             agenda.Show();
+        }
+
+        private void cadastroPetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cadastro_Pet pet = new Cadastro_Pet();
+            pet.MdiParent = this;
+            pet.Show();
+            
         }
     }
 }
