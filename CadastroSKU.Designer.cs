@@ -183,6 +183,7 @@
             btnSKU_search.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSKU_search.UseCompatibleTextRendering = true;
             btnSKU_search.UseVisualStyleBackColor = false;
+            btnSKU_search.Click += btnSKU_search_Click_1;
             // 
             // CadastroSKU
             // 

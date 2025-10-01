@@ -20,7 +20,7 @@ namespace SisVendas
 
     {
 
-        private static string connString = "server=10.37.44.26;user id=root;password=root;database=Zooka";
+        public static string connString = "server=10.37.44.26;user id=root;password=root;database=Zooka";
 
         public MySqlConnection GetConnection()
 
