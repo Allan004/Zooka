@@ -25,6 +25,7 @@ namespace Zooka
         private void AgendamentoHorario_Load(object sender, EventArgs e)
         {
             txtDia.Text = Agenda.static_ano + "-" + Agenda.static_mes + "-" + ControlAgendaDias.static_dia;
+            txtHora.Text = Agenda.static_hora.ToString();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)

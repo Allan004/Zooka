@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.DirectoryServices.ActiveDirectory;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -13,8 +14,11 @@ namespace Zooka
 {
     public partial class Agenda : Form
     {
-        int mes, ano;
-        public static int static_mes, static_ano;
+        int mes, ano, hora;
+         
+        public static int static_mes, static_ano, static_hora;
+
+
         public Agenda()
         {
             InitializeComponent();
@@ -36,6 +40,7 @@ namespace Zooka
 
             static_mes = mes;
             static_ano = ano;
+            static_hora = hora;
             DateTime inicioDoMes = new DateTime(ano, mes, 1);
 
             int dias = DateTime.DaysInMonth(ano, mes);
@@ -69,6 +74,7 @@ namespace Zooka
 
             static_mes = mes;
             static_ano = ano;
+            static_hora = hora;
 
             DateTime agora = DateTime.Now;
 
@@ -105,6 +111,7 @@ namespace Zooka
 
             static_mes = mes;
             static_ano = ano;
+            static_hora = hora;
 
             DateTime agora = DateTime.Now;
 
