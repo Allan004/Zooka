@@ -77,7 +77,7 @@ namespace Zooka
 
                     cmd.Parameters.AddWithValue("@rg", novorg);
 
-                   
+                    conn.Open();
 
                     cmd.ExecuteNonQuery();
                 }
