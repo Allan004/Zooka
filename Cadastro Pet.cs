@@ -16,6 +16,7 @@ namespace Zooka
 {
     public partial class Cadastro_Pet : Form
     {
+        consulta_cliente teste = new consulta_cliente();
         public Cadastro_Pet()
         {
             InitializeComponent();
@@ -47,21 +48,8 @@ namespace Zooka
                 string novopelagem = txtPelagem.Text;
                 string novosexo = boxSexo.Text;
                 string cpf = txtcpfcliente.Text.Replace(",", "").Replace("-", "");
-                int idcliente = 0;
 
-                
-                string sql = "SELECT * FROM cliente WHERE cpf_cliente Like @cpf";
-                
-                
-                    using (MySqlDataAdapter da = new MySqlDataAdapter(sql, conn))
-                    {
-                        
-                        da.SelectCommand.Parameters.AddWithValue("@cpf", $"%{cpf}%");
-                        DataTable dt = new DataTable();
-                        da.Fill(dt);
-                        idcliente = Convert.ToInt32(dt.Rows[0]["id_cliente"]);
-                    }
-                
+
 
                 string comando = "INSERT INTO pet (sexo_pet,rg_pet raca_pet,peso_pet,pelagem_pet,nome_pet,idade_pet,id_cliente,especie_pet) " +
                     "VALUES (@sexo,@rg,@raca,@peso,@pelagem,@nome,@idade,@idcliente,@especie)";
@@ -83,7 +71,7 @@ namespace Zooka
 
                     cmd.Parameters.AddWithValue("@idade",novoidade );
 
-                    cmd.Parameters.AddWithValue("@idcliente", idcliente);
+                    cmd.Parameters.AddWithValue("@idcliente",Convert.ToInt32( teste.Verificarcpf(cpf).Rows[0]["id_cliente"]));
 
                     cmd.Parameters.AddWithValue("@especie",novoespecie );
 
@@ -97,5 +85,5 @@ namespace Zooka
 
         }
     }
-    }
 }
+
