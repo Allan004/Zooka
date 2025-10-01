@@ -41,15 +41,16 @@
             lblDia.TabIndex = 0;
             lblDia.Text = "00";
             // 
-            // ControleAgendaDias
+            // ControlAgendaDias
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Controls.Add(lblDia);
-            Name = "ControleAgendaDias";
+            Name = "ControlAgendaDias";
             Size = new Size(200, 100);
-            //Load += ControleAgendaDias_Load;
+            Load += ControlAgendaDias_Load_1;
+            Click += ControleAgendaDias;
             ResumeLayout(false);
             PerformLayout();
         }
