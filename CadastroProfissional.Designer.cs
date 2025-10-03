@@ -58,20 +58,24 @@ namespace Zooka
             label1 = new Label();
             Especialidade = new Label();
             textBox1 = new TextBox();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(88, 120, 248);
+            button1.BackColor = Color.FromArgb(255, 118, 40);
             button1.Font = new Font("Sans Serif Collection", 15.7499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(319, 334);
-            button1.Margin = new Padding(4, 3, 4, 3);
+            button1.ForeColor = SystemColors.ButtonHighlight;
+            button1.Location = new Point(324, 322);
+            button1.Margin = new Padding(4);
             button1.Name = "button1";
-            button1.Size = new Size(191, 71);
+            button1.Size = new Size(191, 64);
             button1.TabIndex = 47;
             button1.Text = "Cadastrar";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
+            button1.Paint += button1_Paint;
             // 
             // txtrg
             // 
@@ -93,7 +97,7 @@ namespace Zooka
             // 
             // txtcep
             // 
-            txtcep.Location = new Point(128, 225);
+            txtcep.Location = new Point(128, 216);
             txtcep.Margin = new Padding(4, 3, 4, 3);
             txtcep.Mask = "00.000-000";
             txtcep.Name = "txtcep";
@@ -104,7 +108,7 @@ namespace Zooka
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Mulher Cisgênero", "Homem Cisgênero", "Mulher Transgênero", "Homem Transgênero", "Não Binárie", "Gênero Fluido", "Agênero", "Bigênero", "Trigênero", "Gênero Queer", "Gênero Demigênero", "Gênero Andrógeno", "Gênero Andrógino", "Gênero Apagado", "Gênero Clivado", "Gênero Enviado", "Gênero Fugitivo", "Gênero Híbrido", "Gênero Intermediário", "Gênero Livre", "Gênero Místico", "Gênero Padrão", "Gênero Queer Não Binário", "Gênero Radiante", "Gênero Sutil", "Gênero Solar", "Gênero Lunar", "Gênero Transfeminino", "Gênero Transmasculino", "Gênero Elevado", "Gênero Espiritual", "Gênero Específico", "Gênero Livre", "Gênero Metamórfico", "Gênero Mutante", "Gênero Natural", "Gênero Oculto", "Gênero Plural", "Gênero Preciso", "Gênero Profundo", "Gênero Resiliente", "Gênero Sagrado", "Gênero Secundário", "Gênero Superior", "Gênero Transcendente", "Gênero Universal", "Gênero Versátil", "Gênero Virtual", "Gênero Xenogênero", "Gênero Yin", "Gênero Yang", "Gênero Zero" });
-            comboBox1.Location = new Point(449, 180);
+            comboBox1.Location = new Point(449, 171);
             comboBox1.Margin = new Padding(4, 3, 4, 3);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(265, 23);
@@ -130,7 +134,7 @@ namespace Zooka
             // 
             // txtestado
             // 
-            txtestado.Location = new Point(459, 270);
+            txtestado.Location = new Point(459, 261);
             txtestado.Margin = new Padding(4, 3, 4, 3);
             txtestado.Name = "txtestado";
             txtestado.Size = new Size(255, 23);
@@ -138,7 +142,7 @@ namespace Zooka
             // 
             // txtcidade
             // 
-            txtcidade.Location = new Point(553, 225);
+            txtcidade.Location = new Point(553, 216);
             txtcidade.Margin = new Padding(4, 3, 4, 3);
             txtcidade.Name = "txtcidade";
             txtcidade.Size = new Size(161, 23);
@@ -146,7 +150,7 @@ namespace Zooka
             // 
             // txtbairro
             // 
-            txtbairro.Location = new Point(130, 270);
+            txtbairro.Location = new Point(130, 261);
             txtbairro.Margin = new Padding(4, 3, 4, 3);
             txtbairro.Name = "txtbairro";
             txtbairro.Size = new Size(270, 23);
@@ -154,7 +158,7 @@ namespace Zooka
             // 
             // txtlogradouro
             // 
-            txtlogradouro.Location = new Point(263, 225);
+            txtlogradouro.Location = new Point(263, 216);
             txtlogradouro.Margin = new Padding(4, 3, 4, 3);
             txtlogradouro.Name = "txtlogradouro";
             txtlogradouro.Size = new Size(231, 23);
@@ -162,7 +166,7 @@ namespace Zooka
             // 
             // txtemail
             // 
-            txtemail.Location = new Point(130, 185);
+            txtemail.Location = new Point(130, 176);
             txtemail.Margin = new Padding(4, 3, 4, 3);
             txtemail.Name = "txtemail";
             txtemail.Size = new Size(250, 23);
@@ -180,7 +184,8 @@ namespace Zooka
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Sans Serif Collection", 8.999999F);
-            label13.Location = new Point(182, 222);
+            label13.ForeColor = SystemColors.ButtonHighlight;
+            label13.Location = new Point(182, 213);
             label13.Margin = new Padding(4, 0, 4, 0);
             label13.Name = "label13";
             label13.Size = new Size(86, 41);
@@ -191,7 +196,8 @@ namespace Zooka
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Sans Serif Collection", 8.999999F);
-            label12.Location = new Point(502, 220);
+            label12.ForeColor = SystemColors.ButtonHighlight;
+            label12.Location = new Point(502, 211);
             label12.Margin = new Padding(4, 0, 4, 0);
             label12.Name = "label12";
             label12.Size = new Size(60, 41);
@@ -202,7 +208,8 @@ namespace Zooka
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Sans Serif Collection", 8.999999F);
-            label11.Location = new Point(78, 180);
+            label11.ForeColor = SystemColors.ButtonHighlight;
+            label11.Location = new Point(78, 171);
             label11.Margin = new Padding(4, 0, 4, 0);
             label11.Name = "label11";
             label11.Size = new Size(52, 41);
@@ -213,6 +220,7 @@ namespace Zooka
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Sans Serif Collection", 8.999999F);
+            label10.ForeColor = SystemColors.ButtonHighlight;
             label10.Location = new Point(529, 128);
             label10.Margin = new Padding(4, 0, 4, 0);
             label10.Name = "label10";
@@ -224,7 +232,8 @@ namespace Zooka
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Sans Serif Collection", 8.999999F);
-            label9.Location = new Point(78, 265);
+            label9.ForeColor = SystemColors.ButtonHighlight;
+            label9.Location = new Point(78, 256);
             label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
             label9.Size = new Size(56, 41);
@@ -235,7 +244,8 @@ namespace Zooka
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Sans Serif Collection", 8.999999F);
-            label8.Location = new Point(80, 220);
+            label8.ForeColor = SystemColors.ButtonHighlight;
+            label8.Location = new Point(80, 211);
             label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
             label8.Size = new Size(43, 41);
@@ -246,7 +256,8 @@ namespace Zooka
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Sans Serif Collection", 8.999999F);
-            label7.Location = new Point(388, 175);
+            label7.ForeColor = SystemColors.ButtonHighlight;
+            label7.Location = new Point(388, 166);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(63, 41);
@@ -257,6 +268,7 @@ namespace Zooka
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Sans Serif Collection", 8.999999F);
+            label6.ForeColor = SystemColors.ButtonHighlight;
             label6.Location = new Point(228, 128);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
@@ -268,6 +280,7 @@ namespace Zooka
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Sans Serif Collection", 8.999999F);
+            label5.ForeColor = SystemColors.ButtonHighlight;
             label5.Location = new Point(361, 128);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
@@ -279,6 +292,7 @@ namespace Zooka
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Sans Serif Collection", 8.999999F);
+            label4.ForeColor = SystemColors.ButtonHighlight;
             label4.Location = new Point(78, 131);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
@@ -290,7 +304,8 @@ namespace Zooka
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Sans Serif Collection", 8.999999F);
-            label3.Location = new Point(398, 265);
+            label3.ForeColor = SystemColors.ButtonHighlight;
+            label3.Location = new Point(398, 256);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(59, 41);
@@ -301,6 +316,7 @@ namespace Zooka
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Sans Serif Collection", 8.999999F);
+            label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(78, 89);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
@@ -310,20 +326,22 @@ namespace Zooka
             // 
             // label1
             // 
-            label1.BackColor = Color.FromArgb(255, 118, 40);
+            label1.BackColor = Color.FromArgb(88, 120, 248);
             label1.Font = new Font("Arial Rounded MT Bold", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ActiveCaptionText;
-            label1.Location = new Point(281, 9);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(277, 23);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(281, 68);
+            label1.Size = new Size(268, 30);
             label1.TabIndex = 22;
             label1.Text = "CADASTRO PROFISIONAL";
             label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Click += label1_Click;
             // 
             // Especialidade
             // 
             Especialidade.AutoSize = true;
+            Especialidade.ForeColor = SystemColors.ButtonHighlight;
             Especialidade.Location = new Point(406, 98);
             Especialidade.Name = "Especialidade";
             Especialidade.Size = new Size(81, 15);
@@ -337,12 +355,24 @@ namespace Zooka
             textBox1.Size = new Size(221, 23);
             textBox1.TabIndex = 49;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.Captura_de_tela_2025_09_26_191727_removebg_preview;
+            pictureBox1.InitialImage = Properties.Resources.Captura_de_tela_2025_09_26_191727_removebg_preview;
+            pictureBox1.Location = new Point(21, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(75, 74);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 50;
+            pictureBox1.TabStop = false;
+            // 
             // CadastroProfissional
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(255, 118, 40);
+            BackColor = Color.FromArgb(88, 120, 248);
             ClientSize = new Size(800, 429);
+            Controls.Add(pictureBox1);
             Controls.Add(textBox1);
             Controls.Add(Especialidade);
             Controls.Add(button1);
@@ -375,6 +405,7 @@ namespace Zooka
             Name = "CadastroProfissional";
             Text = "CadastroProfissional";
             Load += CadastroProfissional_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -409,5 +440,6 @@ namespace Zooka
         private Label label1;
         private Label Especialidade;
         private TextBox textBox1;
+        private PictureBox pictureBox1;
     }
 }

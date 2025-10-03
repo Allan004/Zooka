@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Zooka
 {
-    
+
     public partial class CadastroProfissional : Form
     {
         consulta_cliente limpa = new consulta_cliente();
@@ -87,8 +87,19 @@ namespace Zooka
 
 
                 }
+                MessageBox.Show("CADASTRO CONCLUIDO!!!");
             }
 
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
