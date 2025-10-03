@@ -14,9 +14,11 @@ namespace Zooka
 {
     public partial class Agenda : Form
     {
-        int mes, ano, hora;
-         
-        public static int static_mes, static_ano, static_hora;
+        int mes, ano;
+        string hora;
+
+        public static int static_mes, static_ano; 
+        public static string static_hora;
 
 
         public Agenda()
@@ -34,6 +36,7 @@ namespace Zooka
             DateTime agora = DateTime.Now;
             mes = agora.Month;
             ano = agora.Year;
+            hora = agora.ToString("HH:mm");
 
             String nomeMes = DateTimeFormatInfo.CurrentInfo.GetMonthName(mes);
             lblMesAno.Text = nomeMes + " " + ano;

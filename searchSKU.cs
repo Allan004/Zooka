@@ -15,6 +15,8 @@ namespace Zooka
 {
     public partial class searchSKU : Form
     {
+        private DataTable dtOriginal;
+
         public searchSKU()
         {
             InitializeComponent();
@@ -23,6 +25,55 @@ namespace Zooka
         private void searchSKU_Load(object sender, EventArgs e)
         {
             CarregarProdutos();
+            txtSKUCad_search.TextChanged += txtSKUCad_search_TextChanged;
+
+        }
+        private void txtSKUCad_search_TextChanged(object sender, EventArgs e)
+        {
+            if (dtOriginal == null) return;
+
+            string filtro = txtSKUCad_search.Text.Trim().Replace("'", "''");
+
+            if (string.IsNullOrEmpty(filtro))
+            {
+                dgvSKU_search.DataSource = dtOriginal;
+                return;
+            }
+
+            DataView dv = new DataView(dtOriginal);
+            dv.RowFilter = $"nome_produto LIKE '%{filtro}%' OR Convert(id_skuproduto, 'System.String') LIKE '%{filtro}%'";
+            dgvSKU_search.DataSource = dv;
+        }
+
+        private void dgvSKU_search_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex == -1) // HEADER
+            {
+                
+                using (SolidBrush brush = new SolidBrush(Color.MidnightBlue))
+                {
+                    e.Graphics.FillRectangle(brush, e.CellBounds);
+                }
+
+                // FORMATAÇÃO
+                TextRenderer.DrawText(
+                    e.Graphics,
+                    e.FormattedValue?.ToString(),
+                    new Font("Segoe UI", 10, FontStyle.Bold),
+                    e.CellBounds,
+                    Color.White,
+                    TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter
+                );
+                using (Pen pen = new Pen(Color.White, 1))
+                {
+                    Rectangle rect = e.CellBounds;
+                    rect.Width -= 1;
+                    rect.Height -= 1;
+                    e.Graphics.DrawRectangle(pen, rect);
+                }
+
+                e.Handled = true;
+            }
         }
         private void CarregarProdutos()
         {
@@ -52,22 +103,29 @@ namespace Zooka
                     }
 
                     // CONFIGURAÇÃO DATAGRIDVIEW
+                    dtOriginal = dt;
                     dgvSKU_search.AutoGenerateColumns = false;
                     dgvSKU_search.Columns.Clear();
                     dgvSKU_search.RowHeadersVisible = false;
                     dgvSKU_search.AllowUserToResizeRows = false;
                     dgvSKU_search.RowTemplate.Height = 24;
+                    dgvSKU_search.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                    dgvSKU_search.MultiSelect = false;
+                    dgvSKU_search.EnableHeadersVisualStyles = false;
+                    dgvSKU_search.CellPainting += dgvSKU_search_CellPainting;
 
+                    // ESTILO DO HEADER
+                    dgvSKU_search.EnableHeadersVisualStyles = false;
                     dgvSKU_search.Columns.Add(new DataGridViewTextBoxColumn()
                     {
                         DataPropertyName = "id_skuproduto",
-                        HeaderText = "ID",
+                        HeaderText = "SKU",
                         ReadOnly = true
                     });
                     dgvSKU_search.Columns.Add(new DataGridViewTextBoxColumn()
                     {
                         DataPropertyName = "nome_produto",
-                        HeaderText = "Produto",
+                        HeaderText = "PRODUTO",
                         ReadOnly = true
                     });
                     dgvSKU_search.Columns.Add(new DataGridViewTextBoxColumn()
@@ -79,17 +137,17 @@ namespace Zooka
                     dgvSKU_search.Columns.Add(new DataGridViewTextBoxColumn()
                     {
                         DataPropertyName = "tipo_estoque",
-                        HeaderText = "Tipo Estoque",
+                        HeaderText = "ESTOQUE",
                         ReadOnly = true
                     });
                     dgvSKU_search.Columns.Add(new DataGridViewTextBoxColumn()
                     {
                         DataPropertyName = "Status",
-                        HeaderText = "Status",
+                        HeaderText = "STATUS",
                         ReadOnly = true
                     });
 
-                    dgvSKU_search.DataSource = dt;
+                    dgvSKU_search.DataSource = dtOriginal;
                     dgvSKU_search.AutoResizeColumns();
                 }
             }
@@ -97,6 +155,18 @@ namespace Zooka
             {
                 MessageBox.Show("Erro ao carregar SKUs: " + ex.Message);
             }
+        }
+
+        private void btnSKUCad_search_Click(object sender, EventArgs e)
+        {
+            string filtro = txtSKUCad_search.Text.Trim().ToLower();
+
+            if (dtOriginal == null) return;
+
+            // Cria uma view filtrada
+            DataView dv = new DataView(dtOriginal);
+            dv.RowFilter = $"nome_produto LIKE '%{filtro}%' OR Convert(id_skuproduto, 'System.String') LIKE '%{filtro}%'";
+            dgvSKU_search.DataSource = dv;
         }
     }
 }

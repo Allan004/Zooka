@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SisVendas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,6 +41,13 @@ namespace Zooka
             static_dia = lblDia.Text;
             AgendamentoHorario agendamentoHorario = new AgendamentoHorario();
             agendamentoHorario.Show();
+        }
+
+        private void displayCalendario()
+        {
+            Conexao concexao = new Conexao();
+
+
         }
     }
 }
