@@ -15,6 +15,7 @@ namespace Zooka
 {
     public partial class CadastroCliente : Form
     {
+        consulta_cliente teste = new consulta_cliente();
         public CadastroCliente()
         {
             InitializeComponent();
@@ -92,28 +93,14 @@ namespace Zooka
 
                     cmd.ExecuteNonQuery();
                 }
+
             }
+            teste.Limpeza(this);
            
 
         }
 
-       
-
-        private void txtnome_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-         
         
-
-        private void txtdata_Click_1(object sender, EventArgs e)
-        {
-            if (txtdata.SelectionLength == 0) // Apenas se não houver seleção
-            {
-                txtdata.SelectionStart = 0; // Move o cursor para o início
-            }
-        }
     }
 }
 
