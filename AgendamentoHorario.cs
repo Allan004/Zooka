@@ -16,6 +16,7 @@ namespace Zooka
 {
     public partial class AgendamentoHorario : Form
     {
+        consulta_cliente conulta = new consulta_cliente();
         Conexao conexao = new Conexao();
         public AgendamentoHorario()
         {
@@ -24,7 +25,7 @@ namespace Zooka
 
         private void AgendamentoHorario_Load(object sender, EventArgs e)
         {
-            txtDia.Text = Agenda.static_ano + "-" + Agenda.static_mes + "-" + ControlAgendaDias.static_dia;
+            txtDia.Text = Agenda.static_ano  + "-" + Agenda.static_mes + "-" + ControlAgendaDias.static_dia;
             txtHora.Text = Agenda.static_hora.ToString();
         }
 
@@ -35,18 +36,31 @@ namespace Zooka
             using (var conn = conexao.GetConnection())
             {
                 string dia = txtDia.Text;
-                string evento = txtEvento.Text;
+                string hora = txtHora.Text;
+                string statusAgenda = txtStatus.Text;
+                string statusDia = txtStatusDia.Text;
+                string cliente = txtAgendaCliente.Text;
+                string pet = txtPet.Text;
+                string profissional = txtProfissional.Text;
+                string servico = txtServico.Text;
 
 
-                string comando = "INSERT INTO produto (nome_produto, udm_produto) VALUES (@dias, @eventos)";
+                string comando = "INSERT INTO agenda_vet (id_cliente,id_pet,id_profissional,id_servico, horario, data_agendamento, status_agenda_vet, status_dia_horario_agenda_vet) " +
+                                 "VALUES (@cliente, @pet, @profissional, @servico, @hora, @dia,  @statusAgenda, @statusDia)";
 
 
                 using (var cmd = new MySqlCommand(comando, conn))
 
                 {
-                    cmd.Parameters.AddWithValue("@dias", dia);
+                    cmd.Parameters.AddWithValue("@dia", dia);
+                    cmd.Parameters.AddWithValue("@hora", hora);
+                    cmd.Parameters.AddWithValue("@statusAgenda", statusAgenda);
+                    cmd.Parameters.AddWithValue("@statusDia", statusDia);
+                    cmd.Parameters.AddWithValue("@cliente", cliente);
+                    cmd.Parameters.AddWithValue("@pet", pet);
+                    cmd.Parameters.AddWithValue("@profissional", profissional);
+                    cmd.Parameters.AddWithValue("@servico", servico);
 
-                    cmd.Parameters.AddWithValue("@eventos", evento);
 
                     conn.Open();
 
