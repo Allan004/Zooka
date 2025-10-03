@@ -28,17 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroUsuario));
             txtSenha = new TextBox();
             btnCadastrar = new Button();
             txtEmail = new TextBox();
             txtNome = new TextBox();
+            txtConfirmarSenha = new TextBox();
             SuspendLayout();
             // 
             // txtSenha
             // 
             txtSenha.BackColor = Color.FromArgb(166, 166, 166);
             txtSenha.BorderStyle = BorderStyle.None;
-            txtSenha.Location = new Point(474, 341);
+            txtSenha.Location = new Point(474, 274);
             txtSenha.Name = "txtSenha";
             txtSenha.PasswordChar = '*';
             txtSenha.Size = new Size(240, 16);
@@ -52,7 +54,7 @@
             btnCadastrar.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 0);
             btnCadastrar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 192, 128);
             btnCadastrar.FlatStyle = FlatStyle.Flat;
-            btnCadastrar.Location = new Point(556, 388);
+            btnCadastrar.Location = new Point(550, 388);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(78, 28);
             btnCadastrar.TabIndex = 7;
@@ -64,7 +66,7 @@
             // 
             txtEmail.BackColor = Color.FromArgb(166, 166, 166);
             txtEmail.BorderStyle = BorderStyle.None;
-            txtEmail.Location = new Point(474, 280);
+            txtEmail.Location = new Point(474, 215);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(240, 16);
             txtEmail.TabIndex = 3;
@@ -73,19 +75,30 @@
             // 
             txtNome.BackColor = Color.FromArgb(166, 166, 166);
             txtNome.BorderStyle = BorderStyle.None;
-            txtNome.Location = new Point(474, 228);
+            txtNome.Location = new Point(474, 158);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(240, 16);
             txtNome.TabIndex = 3;
+            // 
+            // txtConfirmarSenha
+            // 
+            txtConfirmarSenha.BackColor = Color.FromArgb(166, 166, 166);
+            txtConfirmarSenha.BorderStyle = BorderStyle.None;
+            txtConfirmarSenha.Location = new Point(474, 338);
+            txtConfirmarSenha.Name = "txtConfirmarSenha";
+            txtConfirmarSenha.PasswordChar = '*';
+            txtConfirmarSenha.Size = new Size(240, 16);
+            txtConfirmarSenha.TabIndex = 8;
             // 
             // CadastroUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            BackgroundImage = Properties.Resources.Bem_Vindo__3_;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(828, 463);
+            Controls.Add(txtConfirmarSenha);
             Controls.Add(txtNome);
             Controls.Add(txtEmail);
             Controls.Add(btnCadastrar);
@@ -102,6 +115,7 @@
         private Button btnCadastrar;
         private TextBox txtEmail;
         private TextBox txtNome;
+        private TextBox txtConfirmarSenha;
     }
 }
 
