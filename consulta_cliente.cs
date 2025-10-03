@@ -32,5 +32,36 @@ namespace Zooka
 
 
         }
+        public void Limpeza(Control controle)
+        {
+
+            foreach (Control c in controle.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Clear();
+
+                else if (c is ComboBox)
+                    ((ComboBox)c).SelectedIndex = -1;
+
+                else if (c is CheckBox)
+                    ((CheckBox)c).Checked = false;
+
+                else if (c is RadioButton)
+                    ((RadioButton)c).Checked = false;
+
+                else if (c is ListBox)
+                    ((ListBox)c).ClearSelected();
+
+                else if (c is DateTimePicker)
+                    ((DateTimePicker)c).Value = DateTime.Now;
+                
+                else if (c is MaskedTextBox)
+                    ((MaskedTextBox)c).Clear();
+
+               
+            }
+        }
     }
-}
+    }
+    
+

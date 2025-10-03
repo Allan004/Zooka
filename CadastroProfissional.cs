@@ -12,8 +12,10 @@ using System.Windows.Forms;
 
 namespace Zooka
 {
+    
     public partial class CadastroProfissional : Form
     {
+        consulta_cliente limpa = new consulta_cliente();
         public CadastroProfissional()
         {
             InitializeComponent();
@@ -45,7 +47,7 @@ namespace Zooka
                 string novoestado = txtestado.Text;
                 string novoespecializacao = textBox1.Text;
 
-                string comando = "INSERT INTO cliente (nome_profissional,genero_profissional,cpf_profissional,rg_profissional,nascimento_profissional,telefone_profissional,email_profissional,cep_profissional,logradouro_profissional,bairro_profissional,cidade_profissional,estado_profissional,especializacao_profissional) " +
+                string comando = "INSERT INTO profissional (nome_profissional,genero_profissional,cpf_profissional,rg_profissional,data_nasc_profissional,telefone_profissional,email_profissional,cep_profissional,logradouro_profissional,bairro_profissional,cidade_profissional,estado_profissional,especializacao_profissional) " +
                     "VALUES (@nome,@genero,@cpf,@rg,STR_TO_DATE(@nascimento, '%d/%m/%Y'),@telefone,@email,@cep,@logradouro,@bairro,@cidade,@estado,@especialidade)";
 
 
@@ -80,6 +82,10 @@ namespace Zooka
                     conn.Open();
 
                     cmd.ExecuteNonQuery();
+
+                    limpa.Limpeza(this);
+
+
                 }
             }
 
