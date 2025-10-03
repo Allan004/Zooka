@@ -82,6 +82,7 @@
             cadastroFuncionarioToolStripMenuItem.Name = "cadastroFuncionarioToolStripMenuItem";
             cadastroFuncionarioToolStripMenuItem.Size = new Size(187, 22);
             cadastroFuncionarioToolStripMenuItem.Text = "Cadastro Funcionario";
+            cadastroFuncionarioToolStripMenuItem.Click += cadastroFuncionarioToolStripMenuItem_Click;
             // 
             // cadastroDeSKUToolStripMenuItem
             // 

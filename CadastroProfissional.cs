@@ -9,36 +9,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Zooka
 {
-    public partial class CadastroCliente : Form
+    
+    public partial class CadastroProfissional : Form
     {
-        public CadastroCliente()
+        consulta_cliente limpa = new consulta_cliente();
+        public CadastroProfissional()
         {
             InitializeComponent();
-
         }
 
-        private void CadastroCliente_Load(object sender, EventArgs e)
-        {
-            string casa = null;
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void CadastroProfissional_Load(object sender, EventArgs e)
         {
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             Conexao conexao = new Conexao();
 
 
@@ -56,9 +45,10 @@ namespace Zooka
                 string novologradouro = txtlogradouro.Text;
                 string novocidade = txtcidade.Text;
                 string novoestado = txtestado.Text;
+                string novoespecializacao = textBox1.Text;
 
-                string comando = "INSERT INTO cliente (nome_cliente,genero,cpf_cliente,rg_cliente,nascimento_cliente,telefone_cliente,email_cliente,cep_cliente,logradouro_cliente,bairro_cliente,cidade_cliente,estado_cliente) " +
-                    "VALUES (@nome,@genero,@cpf,@rg,STR_TO_DATE(@nascimento, '%d/%m/%Y'),@telefone,@email,@cep,@logradouro,@bairro,@cidade,@estado)";
+                string comando = "INSERT INTO profissional (nome_profissional,genero_profissional,cpf_profissional,rg_profissional,data_nasc_profissional,telefone_profissional,email_profissional,cep_profissional,logradouro_profissional,bairro_profissional,cidade_profissional,estado_profissional,especializacao_profissional) " +
+                    "VALUES (@nome,@genero,@cpf,@rg,STR_TO_DATE(@nascimento, '%d/%m/%Y'),@telefone,@email,@cep,@logradouro,@bairro,@cidade,@estado,@especialidade)";
 
 
                 using (var cmd = new MySqlCommand(comando, conn))
@@ -88,32 +78,18 @@ namespace Zooka
                     cmd.Parameters.AddWithValue("@cidade", novocidade);
 
                     cmd.Parameters.AddWithValue("@estado", novoestado);
+                    cmd.Parameters.AddWithValue("especialidade", novoespecializacao);
                     conn.Open();
 
                     cmd.ExecuteNonQuery();
+
+                    limpa.Limpeza(this);
+
+
                 }
             }
-           
 
-        }
 
-       
-
-        private void txtnome_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-         
-        
-
-        private void txtdata_Click_1(object sender, EventArgs e)
-        {
-            if (txtdata.SelectionLength == 0) // Apenas se não houver seleção
-            {
-                txtdata.SelectionStart = 0; // Move o cursor para o início
-            }
         }
     }
 }
-
