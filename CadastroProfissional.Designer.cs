@@ -72,8 +72,6 @@ namespace Zooka
             button1.Text = "Cadastrar";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
-            button1.FlatStyle = FlatStyle.Popup;
-            button1.FlatAppearance.BorderSize = 0;
             // 
             // txtrg
             // 
@@ -314,7 +312,7 @@ namespace Zooka
             // 
             label1.BackColor = Color.FromArgb(255, 118, 40);
             label1.Font = new Font("Arial Rounded MT Bold", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ActiveCaption;
+            label1.ForeColor = SystemColors.ActiveCaptionText;
             label1.Location = new Point(281, 9);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";

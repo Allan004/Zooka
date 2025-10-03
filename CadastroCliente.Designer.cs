@@ -193,7 +193,6 @@
             txtnome.Name = "txtnome";
             txtnome.Size = new Size(270, 23);
             txtnome.TabIndex = 1;
-            txtnome.TextChanged += txtnome_TextChanged;
             // 
             // txtemail
             // 
@@ -237,7 +236,6 @@
             txtdata.Name = "txtdata";
             txtdata.Size = new Size(59, 23);
             txtdata.TabIndex = 2;
-            txtdata.Click += txtdata_Click_1;
             // 
             // txttelefone
             // 
