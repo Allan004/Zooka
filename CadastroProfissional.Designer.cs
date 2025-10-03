@@ -1,4 +1,6 @@
-﻿namespace Zooka
+﻿using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
+
+namespace Zooka
 {
     partial class CadastroProfissional
     {
@@ -60,6 +62,7 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.FromArgb(88, 120, 248);
             button1.Font = new Font("Sans Serif Collection", 15.7499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.Location = new Point(319, 334);
             button1.Margin = new Padding(4, 3, 4, 3);
@@ -67,8 +70,10 @@
             button1.Size = new Size(191, 71);
             button1.TabIndex = 47;
             button1.Text = "Cadastrar";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.FlatAppearance.BorderSize = 0;
             // 
             // txtrg
             // 
@@ -307,14 +312,16 @@
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Sans Serif Collection", 14.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(297, 9);
+            label1.BackColor = Color.FromArgb(255, 118, 40);
+            label1.Font = new Font("Arial Rounded MT Bold", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ActiveCaption;
+            label1.Location = new Point(281, 9);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(265, 68);
+            label1.Size = new Size(281, 68);
             label1.TabIndex = 22;
             label1.Text = "CADASTRO PROFISIONAL";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Especialidade
             // 
@@ -336,6 +343,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(255, 118, 40);
             ClientSize = new Size(800, 429);
             Controls.Add(textBox1);
             Controls.Add(Especialidade);

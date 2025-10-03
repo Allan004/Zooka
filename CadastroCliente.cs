@@ -23,7 +23,7 @@ namespace Zooka
 
         private void CadastroCliente_Load(object sender, EventArgs e)
         {
-            string casa = null;
+            
         }
 
         private void label9_Click(object sender, EventArgs e)
