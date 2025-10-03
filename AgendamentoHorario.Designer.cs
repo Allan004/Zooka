@@ -29,45 +29,55 @@
         private void InitializeComponent()
         {
             txtDia = new TextBox();
-            txtEvento = new TextBox();
-            lblDia = new Label();
-            lblEvento = new Label();
+            txtStatus = new TextBox();
+            lblData = new Label();
+            lblStatusAgenda = new Label();
             btnSalvar = new Button();
             txtHora = new TextBox();
-            lblHora = new Label();
+            lblHorario = new Label();
+            txtAgendaCliente = new TextBox();
+            lblAgendaCliente = new Label();
+            txtPet = new TextBox();
+            lblPet = new Label();
+            txtProfissional = new TextBox();
+            txtServico = new TextBox();
+            txtStatusDia = new TextBox();
+            lblProfissional = new Label();
+            lblServico = new Label();
+            lblStatusDia = new Label();
             SuspendLayout();
             // 
             // txtDia
             // 
-            txtDia.Location = new Point(92, 105);
+            txtDia.Location = new Point(92, 27);
             txtDia.Name = "txtDia";
-            txtDia.Size = new Size(606, 23);
+            txtDia.Size = new Size(250, 23);
             txtDia.TabIndex = 0;
             // 
-            // txtEvento
+            // txtStatus
             // 
-            txtEvento.Location = new Point(92, 277);
-            txtEvento.Name = "txtEvento";
-            txtEvento.Size = new Size(606, 23);
-            txtEvento.TabIndex = 0;
+            txtStatus.Location = new Point(92, 267);
+            txtStatus.Name = "txtStatus";
+            txtStatus.Size = new Size(250, 23);
+            txtStatus.TabIndex = 0;
             // 
-            // lblDia
+            // lblData
             // 
-            lblDia.AutoSize = true;
-            lblDia.Location = new Point(94, 73);
-            lblDia.Name = "lblDia";
-            lblDia.Size = new Size(24, 15);
-            lblDia.TabIndex = 1;
-            lblDia.Text = "Dia";
+            lblData.AutoSize = true;
+            lblData.Location = new Point(92, 9);
+            lblData.Name = "lblData";
+            lblData.Size = new Size(31, 15);
+            lblData.TabIndex = 1;
+            lblData.Text = "Data";
             // 
-            // lblEvento
+            // lblStatusAgenda
             // 
-            lblEvento.AutoSize = true;
-            lblEvento.Location = new Point(92, 249);
-            lblEvento.Name = "lblEvento";
-            lblEvento.Size = new Size(43, 15);
-            lblEvento.TabIndex = 1;
-            lblEvento.Text = "Evento";
+            lblStatusAgenda.AutoSize = true;
+            lblStatusAgenda.Location = new Point(92, 239);
+            lblStatusAgenda.Name = "lblStatusAgenda";
+            lblStatusAgenda.Size = new Size(83, 15);
+            lblStatusAgenda.TabIndex = 1;
+            lblStatusAgenda.Text = "Status Agenda";
             // 
             // btnSalvar
             // 
@@ -81,19 +91,99 @@
             // 
             // txtHora
             // 
-            txtHora.Location = new Point(92, 195);
+            txtHora.Location = new Point(92, 196);
             txtHora.Name = "txtHora";
-            txtHora.Size = new Size(604, 23);
+            txtHora.Size = new Size(250, 23);
             txtHora.TabIndex = 3;
             // 
-            // lblHora
+            // lblHorario
             // 
-            lblHora.AutoSize = true;
-            lblHora.Location = new Point(94, 177);
-            lblHora.Name = "lblHora";
-            lblHora.Size = new Size(33, 15);
-            lblHora.TabIndex = 1;
-            lblHora.Text = "Hora";
+            lblHorario.AutoSize = true;
+            lblHorario.Location = new Point(94, 178);
+            lblHorario.Name = "lblHorario";
+            lblHorario.Size = new Size(47, 15);
+            lblHorario.TabIndex = 1;
+            lblHorario.Text = "Horário";
+            // 
+            // txtAgendaCliente
+            // 
+            txtAgendaCliente.Location = new Point(92, 83);
+            txtAgendaCliente.Name = "txtAgendaCliente";
+            txtAgendaCliente.Size = new Size(250, 23);
+            txtAgendaCliente.TabIndex = 0;
+            // 
+            // lblAgendaCliente
+            // 
+            lblAgendaCliente.AutoSize = true;
+            lblAgendaCliente.Location = new Point(92, 65);
+            lblAgendaCliente.Name = "lblAgendaCliente";
+            lblAgendaCliente.Size = new Size(44, 15);
+            lblAgendaCliente.TabIndex = 1;
+            lblAgendaCliente.Text = "Cliente";
+            // 
+            // txtPet
+            // 
+            txtPet.Location = new Point(94, 139);
+            txtPet.Name = "txtPet";
+            txtPet.Size = new Size(248, 23);
+            txtPet.TabIndex = 0;
+            // 
+            // lblPet
+            // 
+            lblPet.AutoSize = true;
+            lblPet.Location = new Point(94, 121);
+            lblPet.Name = "lblPet";
+            lblPet.Size = new Size(24, 15);
+            lblPet.TabIndex = 1;
+            lblPet.Text = "Pet";
+            // 
+            // txtProfissional
+            // 
+            txtProfissional.Location = new Point(406, 27);
+            txtProfissional.Name = "txtProfissional";
+            txtProfissional.Size = new Size(250, 23);
+            txtProfissional.TabIndex = 0;
+            // 
+            // txtServico
+            // 
+            txtServico.Location = new Point(406, 83);
+            txtServico.Name = "txtServico";
+            txtServico.Size = new Size(250, 23);
+            txtServico.TabIndex = 0;
+            // 
+            // txtStatusDia
+            // 
+            txtStatusDia.Location = new Point(406, 149);
+            txtStatusDia.Name = "txtStatusDia";
+            txtStatusDia.Size = new Size(250, 23);
+            txtStatusDia.TabIndex = 0;
+            // 
+            // lblProfissional
+            // 
+            lblProfissional.AutoSize = true;
+            lblProfissional.Location = new Point(406, 9);
+            lblProfissional.Name = "lblProfissional";
+            lblProfissional.Size = new Size(68, 15);
+            lblProfissional.TabIndex = 1;
+            lblProfissional.Text = "Profissional";
+            // 
+            // lblServico
+            // 
+            lblServico.AutoSize = true;
+            lblServico.Location = new Point(406, 65);
+            lblServico.Name = "lblServico";
+            lblServico.Size = new Size(45, 15);
+            lblServico.TabIndex = 1;
+            lblServico.Text = "Serviço";
+            // 
+            // lblStatusDia
+            // 
+            lblStatusDia.AutoSize = true;
+            lblStatusDia.Location = new Point(406, 121);
+            lblStatusDia.Name = "lblStatusDia";
+            lblStatusDia.Size = new Size(59, 15);
+            lblStatusDia.TabIndex = 1;
+            lblStatusDia.Text = "Status Dia";
             // 
             // AgendamentoHorario
             // 
@@ -102,10 +192,20 @@
             ClientSize = new Size(800, 450);
             Controls.Add(txtHora);
             Controls.Add(btnSalvar);
-            Controls.Add(lblEvento);
-            Controls.Add(lblHora);
-            Controls.Add(lblDia);
-            Controls.Add(txtEvento);
+            Controls.Add(lblStatusDia);
+            Controls.Add(lblStatusAgenda);
+            Controls.Add(lblHorario);
+            Controls.Add(lblPet);
+            Controls.Add(lblServico);
+            Controls.Add(lblAgendaCliente);
+            Controls.Add(lblProfissional);
+            Controls.Add(lblData);
+            Controls.Add(txtStatusDia);
+            Controls.Add(txtStatus);
+            Controls.Add(txtPet);
+            Controls.Add(txtServico);
+            Controls.Add(txtProfissional);
+            Controls.Add(txtAgendaCliente);
             Controls.Add(txtDia);
             Name = "AgendamentoHorario";
             Text = "AgendamentoHorario";
@@ -117,11 +217,21 @@
         #endregion
 
         private TextBox txtDia;
-        private TextBox txtEvento;
-        private Label lblDia;
-        private Label lblEvento;
+        private TextBox txtStatus;
+        private Label lblData;
+        private Label lblStatusAgenda;
         private Button btnSalvar;
         private TextBox txtHora;
-        private Label lblHora;
+        private Label lblHorario;
+        private TextBox txtAgendaCliente;
+        private Label lblAgendaCliente;
+        private TextBox txtPet;
+        private Label lblPet;
+        private TextBox txtProfissional;
+        private TextBox txtServico;
+        private TextBox txtStatusDia;
+        private Label lblProfissional;
+        private Label lblServico;
+        private Label lblStatusDia;
     }
 }
