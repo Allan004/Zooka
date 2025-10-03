@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             txtDia = new TextBox();
-            txtStatus = new TextBox();
             lblData = new Label();
             lblStatusAgenda = new Label();
             btnSalvar = new Button();
@@ -41,10 +40,11 @@
             lblPet = new Label();
             txtProfissional = new TextBox();
             txtServico = new TextBox();
-            txtStatusDia = new TextBox();
             lblProfissional = new Label();
             lblServico = new Label();
             lblStatusDia = new Label();
+            cmbStatusDia = new ComboBox();
+            cmbStatusAgenda = new ComboBox();
             SuspendLayout();
             // 
             // txtDia
@@ -53,13 +53,6 @@
             txtDia.Name = "txtDia";
             txtDia.Size = new Size(250, 23);
             txtDia.TabIndex = 0;
-            // 
-            // txtStatus
-            // 
-            txtStatus.Location = new Point(92, 267);
-            txtStatus.Name = "txtStatus";
-            txtStatus.Size = new Size(250, 23);
-            txtStatus.TabIndex = 0;
             // 
             // lblData
             // 
@@ -73,7 +66,7 @@
             // lblStatusAgenda
             // 
             lblStatusAgenda.AutoSize = true;
-            lblStatusAgenda.Location = new Point(92, 239);
+            lblStatusAgenda.Location = new Point(406, 191);
             lblStatusAgenda.Name = "lblStatusAgenda";
             lblStatusAgenda.Size = new Size(83, 15);
             lblStatusAgenda.TabIndex = 1;
@@ -151,13 +144,6 @@
             txtServico.Size = new Size(250, 23);
             txtServico.TabIndex = 0;
             // 
-            // txtStatusDia
-            // 
-            txtStatusDia.Location = new Point(406, 149);
-            txtStatusDia.Name = "txtStatusDia";
-            txtStatusDia.Size = new Size(250, 23);
-            txtStatusDia.TabIndex = 0;
-            // 
             // lblProfissional
             // 
             lblProfissional.AutoSize = true;
@@ -185,11 +171,29 @@
             lblStatusDia.TabIndex = 1;
             lblStatusDia.Text = "Status Dia";
             // 
+            // cmbStatusDia
+            // 
+            cmbStatusDia.FormattingEnabled = true;
+            cmbStatusDia.Location = new Point(406, 152);
+            cmbStatusDia.Name = "cmbStatusDia";
+            cmbStatusDia.Size = new Size(121, 23);
+            cmbStatusDia.TabIndex = 4;
+            // 
+            // cmbStatusAgenda
+            // 
+            cmbStatusAgenda.FormattingEnabled = true;
+            cmbStatusAgenda.Location = new Point(406, 209);
+            cmbStatusAgenda.Name = "cmbStatusAgenda";
+            cmbStatusAgenda.Size = new Size(121, 23);
+            cmbStatusAgenda.TabIndex = 4;
+            // 
             // AgendamentoHorario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(cmbStatusAgenda);
+            Controls.Add(cmbStatusDia);
             Controls.Add(txtHora);
             Controls.Add(btnSalvar);
             Controls.Add(lblStatusDia);
@@ -200,8 +204,6 @@
             Controls.Add(lblAgendaCliente);
             Controls.Add(lblProfissional);
             Controls.Add(lblData);
-            Controls.Add(txtStatusDia);
-            Controls.Add(txtStatus);
             Controls.Add(txtPet);
             Controls.Add(txtServico);
             Controls.Add(txtProfissional);
@@ -217,7 +219,6 @@
         #endregion
 
         private TextBox txtDia;
-        private TextBox txtStatus;
         private Label lblData;
         private Label lblStatusAgenda;
         private Button btnSalvar;
@@ -229,9 +230,10 @@
         private Label lblPet;
         private TextBox txtProfissional;
         private TextBox txtServico;
-        private TextBox txtStatusDia;
         private Label lblProfissional;
         private Label lblServico;
         private Label lblStatusDia;
+        private ComboBox cmbStatusDia;
+        private ComboBox cmbStatusAgenda;
     }
 }
