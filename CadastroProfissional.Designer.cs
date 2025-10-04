@@ -59,15 +59,17 @@ namespace Zooka
             Especialidade = new Label();
             textBox1 = new TextBox();
             pictureBox1 = new PictureBox();
+            label14 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
             button1.BackColor = Color.FromArgb(255, 118, 40);
+            button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Sans Serif Collection", 15.7499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(324, 322);
+            button1.Location = new Point(310, 333);
             button1.Margin = new Padding(4);
             button1.Name = "button1";
             button1.Size = new Size(191, 64);
@@ -366,16 +368,25 @@ namespace Zooka
             pictureBox1.TabIndex = 50;
             pictureBox1.TabStop = false;
             // 
+            // label14
+            // 
+            label14.BackColor = Color.FromArgb(255, 118, 40);
+            label14.Location = new Point(-6, 297);
+            label14.Name = "label14";
+            label14.Size = new Size(805, 135);
+            label14.TabIndex = 51;
+            // 
             // CadastroProfissional
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(88, 120, 248);
             ClientSize = new Size(800, 429);
+            Controls.Add(button1);
+            Controls.Add(label14);
             Controls.Add(pictureBox1);
             Controls.Add(textBox1);
             Controls.Add(Especialidade);
-            Controls.Add(button1);
             Controls.Add(txtrg);
             Controls.Add(txtcpf);
             Controls.Add(txtcep);
@@ -441,5 +452,6 @@ namespace Zooka
         private Label Especialidade;
         private TextBox textBox1;
         private PictureBox pictureBox1;
+        private Label label14;
     }
 }

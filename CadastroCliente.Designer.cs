@@ -55,6 +55,7 @@
             txtrg = new MaskedTextBox();
             button1 = new Button();
             pictureBox1 = new PictureBox();
+            label14 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -85,7 +86,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Sans Serif Collection", 8.999999F);
             label3.ForeColor = SystemColors.ButtonHighlight;
-            label3.Location = new Point(440, 255);
+            label3.Location = new Point(420, 255);
             label3.Name = "label3";
             label3.Size = new Size(59, 41);
             label3.TabIndex = 2;
@@ -107,7 +108,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Sans Serif Collection", 8.999999F);
             label5.ForeColor = SystemColors.ButtonHighlight;
-            label5.Location = new Point(273, 132);
+            label5.Location = new Point(253, 132);
             label5.Name = "label5";
             label5.Size = new Size(69, 41);
             label5.TabIndex = 4;
@@ -118,7 +119,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Sans Serif Collection", 8.999999F);
             label6.ForeColor = SystemColors.ButtonHighlight;
-            label6.Location = new Point(433, 132);
+            label6.Location = new Point(413, 132);
             label6.Name = "label6";
             label6.Size = new Size(37, 41);
             label6.TabIndex = 5;
@@ -140,7 +141,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Sans Serif Collection", 8.999999F);
             label8.ForeColor = SystemColors.ButtonHighlight;
-            label8.Location = new Point(549, 171);
+            label8.Location = new Point(529, 171);
             label8.Name = "label8";
             label8.Size = new Size(43, 41);
             label8.TabIndex = 7;
@@ -163,7 +164,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Sans Serif Collection", 8.999999F);
             label10.ForeColor = SystemColors.ButtonHighlight;
-            label10.Location = new Point(539, 132);
+            label10.Location = new Point(519, 132);
             label10.Name = "label10";
             label10.Size = new Size(133, 41);
             label10.TabIndex = 9;
@@ -174,7 +175,7 @@
             label11.AutoSize = true;
             label11.Font = new Font("Sans Serif Collection", 8.999999F);
             label11.ForeColor = SystemColors.ButtonHighlight;
-            label11.Location = new Point(440, 90);
+            label11.Location = new Point(420, 90);
             label11.Name = "label11";
             label11.Size = new Size(52, 41);
             label11.TabIndex = 10;
@@ -196,7 +197,7 @@
             label13.AutoSize = true;
             label13.Font = new Font("Sans Serif Collection", 8.999999F);
             label13.ForeColor = SystemColors.ButtonHighlight;
-            label13.Location = new Point(440, 210);
+            label13.Location = new Point(420, 210);
             label13.Name = "label13";
             label13.Size = new Size(86, 41);
             label13.TabIndex = 12;
@@ -204,49 +205,49 @@
             // 
             // txtnome
             // 
-            txtnome.Location = new Point(159, 95);
+            txtnome.Location = new Point(139, 95);
             txtnome.Name = "txtnome";
             txtnome.Size = new Size(270, 23);
             txtnome.TabIndex = 1;
             // 
             // txtemail
             // 
-            txtemail.Location = new Point(517, 95);
+            txtemail.Location = new Point(497, 95);
             txtemail.Name = "txtemail";
             txtemail.Size = new Size(240, 23);
             txtemail.TabIndex = 7;
             // 
             // txtlogradouro
             // 
-            txtlogradouro.Location = new Point(517, 215);
+            txtlogradouro.Location = new Point(497, 215);
             txtlogradouro.Name = "txtlogradouro";
             txtlogradouro.Size = new Size(240, 23);
             txtlogradouro.TabIndex = 9;
             // 
             // txtbairro
             // 
-            txtbairro.Location = new Point(161, 260);
+            txtbairro.Location = new Point(139, 260);
             txtbairro.Name = "txtbairro";
-            txtbairro.Size = new Size(268, 23);
+            txtbairro.Size = new Size(270, 23);
             txtbairro.TabIndex = 11;
             // 
             // txtcidade
             // 
-            txtcidade.Location = new Point(159, 215);
+            txtcidade.Location = new Point(139, 215);
             txtcidade.Name = "txtcidade";
             txtcidade.Size = new Size(268, 23);
             txtcidade.TabIndex = 10;
             // 
             // txtestado
             // 
-            txtestado.Location = new Point(517, 260);
+            txtestado.Location = new Point(497, 260);
             txtestado.Name = "txtestado";
             txtestado.Size = new Size(240, 23);
             txtestado.TabIndex = 12;
             // 
             // txtdata
             // 
-            txtdata.Location = new Point(675, 137);
+            txtdata.Location = new Point(655, 137);
             txtdata.Mask = "00/00/0000";
             txtdata.Name = "txtdata";
             txtdata.Size = new Size(59, 23);
@@ -254,7 +255,7 @@
             // 
             // txttelefone
             // 
-            txttelefone.Location = new Point(348, 137);
+            txttelefone.Location = new Point(328, 137);
             txttelefone.Mask = "(00)0 0000-0000";
             txttelefone.Name = "txttelefone";
             txttelefone.Size = new Size(79, 23);
@@ -264,7 +265,7 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Mulher Cisgênero", "Homem Cisgênero", "Mulher Transgênero", "Homem Transgênero", "Não Binárie", "Gênero Fluido", "Agênero", "Bigênero", "Trigênero", "Gênero Queer", "Gênero Demigênero", "Gênero Andrógeno", "Gênero Andrógino", "Gênero Apagado", "Gênero Clivado", "Gênero Enviado", "Gênero Fugitivo", "Gênero Híbrido", "Gênero Intermediário", "Gênero Livre", "Gênero Místico", "Gênero Padrão", "Gênero Queer Não Binário", "Gênero Radiante", "Gênero Sutil", "Gênero Solar", "Gênero Lunar", "Gênero Transfeminino", "Gênero Transmasculino", "Gênero Elevado", "Gênero Espiritual", "Gênero Específico", "Gênero Livre", "Gênero Metamórfico", "Gênero Mutante", "Gênero Natural", "Gênero Oculto", "Gênero Plural", "Gênero Preciso", "Gênero Profundo", "Gênero Resiliente", "Gênero Sagrado", "Gênero Secundário", "Gênero Superior", "Gênero Transcendente", "Gênero Universal", "Gênero Versátil", "Gênero Virtual", "Gênero Xenogênero", "Gênero Yin", "Gênero Yang", "Gênero Zero" });
-            comboBox1.Location = new Point(161, 176);
+            comboBox1.Location = new Point(141, 176);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(268, 23);
             comboBox1.TabIndex = 6;
@@ -272,7 +273,7 @@
             // 
             // txtcep
             // 
-            txtcep.Location = new Point(598, 176);
+            txtcep.Location = new Point(578, 176);
             txtcep.Mask = "00.000-000";
             txtcep.Name = "txtcep";
             txtcep.Size = new Size(57, 23);
@@ -280,7 +281,7 @@
             // 
             // txtcpf
             // 
-            txtcpf.Location = new Point(161, 137);
+            txtcpf.Location = new Point(141, 137);
             txtcpf.Mask = "000.000.000-00";
             txtcpf.Name = "txtcpf";
             txtcpf.Size = new Size(75, 23);
@@ -288,7 +289,7 @@
             // 
             // txtrg
             // 
-            txtrg.Location = new Point(465, 137);
+            txtrg.Location = new Point(445, 137);
             txtrg.Mask = "00.000.000-0";
             txtrg.Name = "txtrg";
             txtrg.Size = new Size(68, 23);
@@ -297,8 +298,10 @@
             // button1
             // 
             button1.BackColor = Color.FromArgb(255, 118, 40);
+            button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Sans Serif Collection", 15.7499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(335, 325);
+            button1.ForeColor = SystemColors.ButtonHighlight;
+            button1.Location = new Point(322, 327);
             button1.Name = "button1";
             button1.Size = new Size(191, 71);
             button1.TabIndex = 21;
@@ -318,14 +321,24 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
+            // label14
+            // 
+            label14.BackColor = Color.FromArgb(255, 118, 40);
+            label14.Location = new Point(-4, 286);
+            label14.Name = "label14";
+            label14.Size = new Size(809, 151);
+            label14.TabIndex = 15;
+            label14.Click += label14_Click;
+            // 
             // CadastroCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(88, 120, 248);
             ClientSize = new Size(800, 429);
-            Controls.Add(pictureBox1);
             Controls.Add(button1);
+            Controls.Add(label14);
+            Controls.Add(pictureBox1);
             Controls.Add(txtrg);
             Controls.Add(txtcpf);
             Controls.Add(txtcep);
@@ -393,5 +406,6 @@
         private MaskedTextBox txtrg;
         private Button button1;
         private PictureBox pictureBox1;
+        private Label label14;
     }
 }
