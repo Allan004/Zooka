@@ -126,7 +126,7 @@ namespace Zooka
                 }
 
 
-                string comando = "INSERT INTO agenda_vet (id_cliente, id_pet, id_profissional, id_servico, horario, data_agenda, status_agenda_vet, status_dia_horario_agenda_vet) " +
+                string comando = "INSERT INTO agenda_vet (id_cliente, id_pet, id_profissional, id_servico, horario, data_agendamento , status_agenda_vet, status_dia_horario_agenda_vet) " +
                                       "VALUES (@cliente, @pet, @profissional, @servico, @hora, @dia, @statusAgenda, @statusDia)";
                 try
                 {

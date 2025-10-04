@@ -17,7 +17,7 @@ namespace Zooka
         int mes, ano;
         string hora;
 
-        public static int static_mes, static_ano; 
+        public static int static_mes, static_ano;
         public static string static_hora;
 
 
@@ -137,6 +137,11 @@ namespace Zooka
                 controlAgendaDias.days(i);
                 lpDay.Controls.Add(controlAgendaDias);
             }
+        }
+
+        private void lpDay_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

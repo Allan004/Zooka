@@ -32,13 +32,14 @@
             lblDia = new Label();
             lblDetalheAgenda = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            label1 = new Label();
             SuspendLayout();
             // 
             // lblDia
             // 
             lblDia.AutoSize = true;
             lblDia.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDia.Location = new Point(10, 11);
+            lblDia.Location = new Point(0, 42);
             lblDia.Name = "lblDia";
             lblDia.Size = new Size(28, 21);
             lblDia.TabIndex = 0;
@@ -47,20 +48,32 @@
             // lblDetalheAgenda
             // 
             lblDetalheAgenda.AutoSize = true;
-            lblDetalheAgenda.Location = new Point(9, 61);
+            lblDetalheAgenda.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblDetalheAgenda.Location = new Point(9, 49);
             lblDetalheAgenda.Name = "lblDetalheAgenda";
-            lblDetalheAgenda.Size = new Size(0, 15);
+            lblDetalheAgenda.Size = new Size(0, 14);
             lblDetalheAgenda.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.BackColor = Color.RosyBrown;
+            label1.Location = new Point(0, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(238, 33);
+            label1.TabIndex = 2;
+            label1.Text = "Domingo";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ControlAgendaDias
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(label1);
             Controls.Add(lblDetalheAgenda);
             Controls.Add(lblDia);
             Name = "ControlAgendaDias";
-            Size = new Size(200, 100);
+            Size = new Size(238, 170);
             Load += ControlAgendaDias_Load_1;
             Click += ControleAgendaDias;
             ResumeLayout(false);
@@ -72,5 +85,6 @@
         private Label lblDia;
         private Label lblDetalheAgenda;
         private System.Windows.Forms.Timer timer1;
+        private Label label1;
     }
 }

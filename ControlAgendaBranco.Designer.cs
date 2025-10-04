@@ -35,7 +35,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Name = "ControlAgendaBranco";
-            Size = new Size(200, 100);
+            Size = new Size(238, 170);
             Load += ControlAgendaBranco_Load;
             ResumeLayout(false);
         }

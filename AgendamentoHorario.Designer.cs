@@ -74,6 +74,9 @@
             // 
             // btnSalvar
             // 
+            btnSalvar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnSalvar.FlatAppearance.BorderColor = Color.Red;
+            btnSalvar.FlatAppearance.BorderSize = 7;
             btnSalvar.Location = new Point(703, 398);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(75, 23);
