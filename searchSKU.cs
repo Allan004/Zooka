@@ -49,7 +49,7 @@ namespace Zooka
         {
             if (e.RowIndex == -1) // HEADER
             {
-                
+
                 using (SolidBrush brush = new SolidBrush(Color.MidnightBlue))
                 {
                     e.Graphics.FillRectangle(brush, e.CellBounds);
@@ -118,6 +118,7 @@ namespace Zooka
                     dgvSKU_search.EnableHeadersVisualStyles = false;
                     dgvSKU_search.Columns.Add(new DataGridViewTextBoxColumn()
                     {
+                        Name = "id_skuproduto",
                         DataPropertyName = "id_skuproduto",
                         HeaderText = "SKU",
                         ReadOnly = true
@@ -142,6 +143,7 @@ namespace Zooka
                     });
                     dgvSKU_search.Columns.Add(new DataGridViewTextBoxColumn()
                     {
+                        Name = "Status",
                         DataPropertyName = "Status",
                         HeaderText = "STATUS",
                         ReadOnly = true
@@ -163,10 +165,57 @@ namespace Zooka
 
             if (dtOriginal == null) return;
 
-            // Cria uma view filtrada
+            // SEARCH FILTRADO
             DataView dv = new DataView(dtOriginal);
             dv.RowFilter = $"nome_produto LIKE '%{filtro}%' OR Convert(id_skuproduto, 'System.String') LIKE '%{filtro}%'";
             dgvSKU_search.DataSource = dv;
+        }
+
+        private void btnSKU_des_atv_Click(object sender, EventArgs e)
+        {
+            if (dgvSKU_search.SelectedRows.Count == 0) return;
+
+            // LINHA SELECIONADA AO CLICAR
+            DataGridViewRow linha = dgvSKU_search.SelectedRows[0];
+
+            int idProduto = Convert.ToInt32(linha.Cells["id_skuproduto"].Value);
+
+            // LÊ O STATUS ATUAL (APENAS NO GRID)
+            string statusAtual = linha.Cells["Status"].Value.ToString();
+
+            // CONVERTE PARA BOOLEAN
+            int novoStatusDb = (statusAtual == "ATIVO") ? 0 : 1;
+
+            // TRADUZ O NÚMERO E EXIBE O NOVO STATUS NO GRID
+            string novoStatusTexto = novoStatusDb == 1 ? "ATIVO" : "DESATIVADO";
+
+            try
+            {
+                using (var conn = new MySqlConnection(Conexao.connString))
+                using (var cmd = new MySqlCommand("UPDATE produto SET status_sku = @novoStatus WHERE id_skuproduto = @id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@novoStatus", novoStatusDb);
+                    cmd.Parameters.AddWithValue("@id", idProduto);
+
+                    conn.Open();
+                    int linhasAfetadas = cmd.ExecuteNonQuery();
+
+                    if (linhasAfetadas > 0)
+                    {
+                        // ATUALIZA A COLUNA STATUS
+                        linha.Cells["Status"].Value = novoStatusTexto;
+                        MessageBox.Show("Status atualizado com sucesso!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nenhuma linha foi atualizada. Verifique o ID do produto.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao atualizar status: " + ex.Message);
+            }
         }
     }
 }
