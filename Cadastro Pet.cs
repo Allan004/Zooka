@@ -61,19 +61,19 @@ namespace Zooka
 
                     cmd.Parameters.AddWithValue("@nome", novonome);
 
-                    cmd.Parameters.AddWithValue("@sexo",novosexo);
+                    cmd.Parameters.AddWithValue("@sexo", novosexo);
 
-                    cmd.Parameters.AddWithValue("@raca",novoraca );
+                    cmd.Parameters.AddWithValue("@raca", novoraca);
 
                     cmd.Parameters.AddWithValue("@peso", novopeso);
 
-                    cmd.Parameters.AddWithValue("@pelagem",novopelagem );
+                    cmd.Parameters.AddWithValue("@pelagem", novopelagem);
 
-                    cmd.Parameters.AddWithValue("@idade",novoidade );
+                    cmd.Parameters.AddWithValue("@idade", novoidade);
 
-                    cmd.Parameters.AddWithValue("@idcliente",Convert.ToInt32( teste.Verificarcpf(cpf).Rows[0]["id_cliente"]));
+                    cmd.Parameters.AddWithValue("@idcliente", Convert.ToInt32(teste.Verificarcpf(cpf).Rows[0]["id_cliente"]));
 
-                    cmd.Parameters.AddWithValue("@especie",novoespecie );
+                    cmd.Parameters.AddWithValue("@especie", novoespecie);
 
                     cmd.Parameters.AddWithValue("@rg", novorg);
 
@@ -81,13 +81,35 @@ namespace Zooka
 
                     cmd.ExecuteNonQuery();
                 }
+                MessageBox.Show("Concluido!!!", "Notificação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                teste.Limpeza(this);
             }
-            
+
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void boxSexo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
 
         }
     }
 
-    }
+}
 
 
 
