@@ -178,7 +178,7 @@
             // 
             cmsAgendamento.Items.AddRange(new ToolStripItem[] { tsmIncluir, tsmEditar, tsmRemover, tsmStatus });
             cmsAgendamento.Name = "cmsAgendamento";
-            cmsAgendamento.Size = new Size(122, 92);
+            cmsAgendamento.Size = new Size(181, 114);
             // 
             // tsmIncluir
             // 

@@ -28,18 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            lblControleAgendaBrancoDia = new Label();
             SuspendLayout();
+            // 
+            // lblControleAgendaBrancoDia
+            // 
+            lblControleAgendaBrancoDia.AutoSize = true;
+            lblControleAgendaBrancoDia.Location = new Point(103, 3);
+            lblControleAgendaBrancoDia.Name = "lblControleAgendaBrancoDia";
+            lblControleAgendaBrancoDia.Size = new Size(19, 15);
+            lblControleAgendaBrancoDia.TabIndex = 0;
+            lblControleAgendaBrancoDia.Text = "00";
             // 
             // ControlAgendaBranco
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(lblControleAgendaBrancoDia);
             Name = "ControlAgendaBranco";
             Size = new Size(238, 170);
             Load += ControlAgendaBranco_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label lblControleAgendaBrancoDia;
     }
 }

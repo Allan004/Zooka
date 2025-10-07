@@ -53,30 +53,53 @@ namespace Zooka
 
             lpDay.Controls.Clear();
 
-            for (int i = 1; i < diaDaSemana; i++)
+            // Lógica para DIAS DO MÊS ANTERIOR
+            int numTrailingDays = diaDaSemana - 1;
+
+            if (numTrailingDays > 0)
             {
-                ControlAgendaBranco controlAgendaBranco = new ControlAgendaBranco();
-                lpDay.Controls.Add(controlAgendaBranco);
+                DateTime prevMonth = inicioDoMes.AddMonths(-1);
+                int diasPrevMonth = DateTime.DaysInMonth(prevMonth.Year, prevMonth.Month);
+                int startDay = diasPrevMonth - numTrailingDays + 1;
+
+                for (int i = startDay; i <= diasPrevMonth; i++)
+                {
+                    ControlAgendaBranco controlAgendaBranco = new ControlAgendaBranco();
+                    lpDay.Controls.Add(controlAgendaBranco);
+                    controlAgendaBranco.days(i);
+                }
             }
 
+            // DIAS DO MÊS ATUAL
             for (int i = 1; i <= dias; i++)
             {
                 ControlAgendaDias controlAgendaDias = new ControlAgendaDias();
+                lpDay.Controls.Add(controlAgendaDias);
                 controlAgendaDias.days(i);
 
-                // Assinatura do evento MouseDown
                 controlAgendaDias.MouseDown += SeuControleDeAgendamentos_MouseDown;
-
-                lpDay.Controls.Add(controlAgendaDias);
             }
 
-            // Comandos de redesenho FORÇADO
+            // LÓGICA PARA DIAS DO PRÓXIMO MÊS
+            int totalDaysDisplayed = numTrailingDays + dias;
+            int remainingSlots = 42 - totalDaysDisplayed;
+
+            if (remainingSlots > 0)
+            {
+                for (int i = 1; i <= remainingSlots; i++)
+                {
+                    ControlAgendaBranco controlAgendaBranco = new ControlAgendaBranco();
+                    lpDay.Controls.Add(controlAgendaBranco);
+                    controlAgendaBranco.days(i);
+                }
+            }
+
             lpDay.Invalidate();
             lpDay.Update();
             this.Refresh();
         }
 
-        // --- NAVEGAÇÃO DOS MESES ---
+        // --- NAVEGAÇÃO E LÓGICA DE CLIQUE ---
 
         private void btnProximo_Click(object sender, EventArgs e)
         {
@@ -91,8 +114,6 @@ namespace Zooka
             if (mes < 1) { mes = 12; ano--; }
             displayDias();
         }
-
-        // --- LÓGICA DO MENU DE CONTEXTO (CLIQUE DIREITO) ---
 
         private void SeuControleDeAgendamentos_MouseDown(object sender, MouseEventArgs e)
         {
@@ -112,6 +133,7 @@ namespace Zooka
                 tsmStatusConfirmado.Visible = temAgendamento;
                 tsmStatusCancelado.Visible = temAgendamento;
                 tsmStatusCompareceu.Visible = temAgendamento;
+                tsmStatusRemarcado.Visible = temAgendamento;
 
                 cmsAgendamento.Show(Cursor.Position);
             }
@@ -122,8 +144,6 @@ namespace Zooka
         private void tsmIncluir_Click(object sender, EventArgs e)
         {
             AgendamentoHorario frm = new AgendamentoHorario();
-
-            // O evento deve ser assinado ANTES do ShowDialog!
             frm.AgendamentoAlterado += displayDias;
             frm.ShowDialog();
             displayDias();
@@ -131,21 +151,19 @@ namespace Zooka
 
         private void tsmEditar_Click(object sender, EventArgs e)
         {
+            // Apenas abre o formulário para edição. A atualização é feita após o fechamento.
             if (_idAgendamentoSelecionado > 0)
             {
                 AgendamentoHorario frm = new AgendamentoHorario(_idAgendamentoSelecionado);
-
-                // O evento deve ser assinado ANTES do ShowDialog!
                 frm.AgendamentoAlterado += displayDias;
                 frm.ShowDialog();
-
                 displayDias();
             }
         }
 
         private void tsmRemover_Click(object sender, EventArgs e)
         {
-            // --- RESTAURAÇÃO: EXCLUSÃO DIRETA POR SQL ---
+            // *** FIX DEFINITIVO: EXCLUSÃO DIRETA POR SQL ***
             if (_idAgendamentoSelecionado <= 0)
             {
                 MessageBox.Show("Nenhum agendamento válido selecionado para exclusão.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -161,9 +179,11 @@ namespace Zooka
 
             if (confirmacao == DialogResult.No) return;
 
+            // Execução do DELETE no banco de dados
             using (var conn = conexao.GetConnection())
             {
                 string comando = "DELETE FROM agenda_vet WHERE id_agenda_vet = @idExclusao";
+
                 try
                 {
                     using (var cmd = new MySqlCommand(comando, conn))
@@ -175,11 +195,11 @@ namespace Zooka
                         if (linhasAfetadas > 0)
                         {
                             MessageBox.Show("Agendamento excluído com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            displayDias(); // Atualiza instantaneamente
+                            displayDias(); // ATUALIZA A TELA INSTANTANEAMENTE
                         }
                         else
                         {
-                            MessageBox.Show("Agendamento não encontrado no banco de dados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Agendamento não encontrado para exclusão.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                 }
@@ -205,7 +225,7 @@ namespace Zooka
         {
             if (_idAgendamentoSelecionado > 0)
             {
-                UpdateStatusAgendamento(_idAgendamentoSelecionado, "CANDELADO");
+                UpdateStatusAgendamento(_idAgendamentoSelecionado, "CANCELADO"); // <<-- CORRIGIDO PARA CANCELADO
                 displayDias();
             }
         }
@@ -215,6 +235,15 @@ namespace Zooka
             if (_idAgendamentoSelecionado > 0)
             {
                 UpdateStatusAgendamento(_idAgendamentoSelecionado, "COMPARECEU");
+                displayDias();
+            }
+        }
+
+        private void tsmStatusRemarcado_Click(object sender, EventArgs e)
+        {
+            if (_idAgendamentoSelecionado > 0)
+            {
+                UpdateStatusAgendamento(_idAgendamentoSelecionado, "REMARCADO");
                 displayDias();
             }
         }

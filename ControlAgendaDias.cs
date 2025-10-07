@@ -3,12 +3,15 @@ using SisVendas;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace Zooka
 {
     public partial class ControlAgendaDias : UserControl
     {
         Conexao conexao = new Conexao();
+
+        private ToolTip agendaToolTip = new ToolTip();
 
         public static string static_dia;
         private string _diaDoCard;
@@ -17,6 +20,15 @@ namespace Zooka
         public ControlAgendaDias()
         {
             InitializeComponent();
+
+            // --- ESTILIZAÇÃO DO TOOLTIP PADRÃO ---
+            agendaToolTip.OwnerDraw = false;
+            agendaToolTip.IsBalloon = true;
+            agendaToolTip.ToolTipIcon = ToolTipIcon.Info;
+            agendaToolTip.ToolTipTitle = "Detalhes do Agendamento";
+            agendaToolTip.BackColor = SystemColors.Info;
+            agendaToolTip.ForeColor = SystemColors.ControlText;
+            // ------------------------------------
         }
 
         public void days(int numDia)
@@ -33,6 +45,7 @@ namespace Zooka
             if (IdAgendamento > 0)
             {
                 agendamentoHorario = new AgendamentoHorario(IdAgendamento);
+                agendamentoHorario.AgendamentoAlterado += ((Agenda)this.FindForm()).displayDias;
                 agendamentoHorario.ShowDialog();
             }
             else
@@ -40,16 +53,19 @@ namespace Zooka
                 static_dia = _diaDoCard;
                 timer1.Start();
                 agendamentoHorario = new AgendamentoHorario();
-                agendamentoHorario.Show();
+                agendamentoHorario.AgendamentoAlterado += ((Agenda)this.FindForm()).displayDias;
+                agendamentoHorario.ShowDialog();
             }
-            // A atualização será feita pelo formulário Agenda após o retorno do ShowDialog
+
+            displayDetalheAgenda();
         }
 
         private void displayDetalheAgenda()
         {
             if (string.IsNullOrEmpty(_diaDoCard))
             {
-                lblDetalheAgenda.Text = "Aguardando Dia...";
+                agendaToolTip.SetToolTip(lblDetalheAgenda, "");
+                lblDetalheAgenda.Text = "";
                 lblDetalheAgenda.BackColor = Color.LightGray;
                 IdAgendamento = 0;
                 return;
@@ -59,11 +75,12 @@ namespace Zooka
             string diaFormatado = _diaDoCard.PadLeft(2, '0');
             string dataAgenda = Agenda.static_ano + "-" + Agenda.static_mes + "-" + diaFormatado;
 
-            // FIX FINAL: Adiciona SQL_NO_CACHE para forçar o MySQL a ler o dado mais atualizado
+
             string comando = @"
                 SELECT 
                     SQL_NO_CACHE t1.horario, 
                     t1.id_agenda_vet, 
+                    t1.status_agenda_vet, 
                     t2.nome_cliente,
                     t3.nome_pet,
                     t4.nome_servico,
@@ -98,25 +115,45 @@ namespace Zooka
                             string nomeServico = reader["nome_servico"].ToString();
                             string nomeProfissional = reader["nome_profissional"].ToString();
                             string horario = reader["horario"].ToString();
+                            string status = reader["status_agenda_vet"].ToString(); // Pega o status para a cor
                             int total = Convert.ToInt32(reader["total_agendamentos"]);
 
+                            // Texto que aparece no card
                             lblDetalheAgenda.Text =
                                 $"{horario}\n {nomeCliente}\n {nomePet}\n {nomeServico}\n {nomeProfissional}\n";
+
+                            // Constrói o ToolTip
+                            string toolTipText =
+                                $"Horário: {horario}\n" +
+                                $"Cliente: {nomeCliente}\n" +
+                                $"Pet: {nomePet}\n" +
+                                $"Serviço: {nomeServico}\n" +
+                                $"Profissional: {nomeProfissional}";
+
+                            // --- LÓGICA DE COR FINAL COM STATUS CORRIGIDOS ---
+                            switch (status)
+                            {
+                                case "CONFIRMADO": lblDetalheAgenda.BackColor = Color.LightBlue; break;
+                                case "CANCELADO": lblDetalheAgenda.BackColor = Color.Red; break;       // Assume que 'CANDELADO' é o que está sendo salvo (Cancelado)
+                                case "REMARCADO": lblDetalheAgenda.BackColor = Color.Orange; break;     // Cor adicionada (Laranja)
+                                case "COMPARECEU": lblDetalheAgenda.BackColor = Color.Green; break;     // Sucesso/Conclusão
+                                default: lblDetalheAgenda.BackColor = Color.LightBlue; break;
+                            }
 
                             if (total > 1)
                             {
                                 lblDetalheAgenda.Text += $"\n(+ {total - 1} agendamentos)";
-                                lblDetalheAgenda.BackColor = Color.Orange;
+                                toolTipText += $"\n--- Múltiplos Agendamentos ({total}) ---";
+                                lblDetalheAgenda.BackColor = Color.Gray; // Sobrescreve para Cinza se houver muitos
                             }
-                            else
-                            {
-                                lblDetalheAgenda.BackColor = Color.LightBlue;
-                            }
+
+                            agendaToolTip.SetToolTip(lblDetalheAgenda, toolTipText);
                         }
                         else
                         {
                             lblDetalheAgenda.Text = "";
                             lblDetalheAgenda.BackColor = Color.LightGray;
+                            agendaToolTip.SetToolTip(lblDetalheAgenda, "");
                         }
 
                         reader.Dispose();
@@ -130,10 +167,8 @@ namespace Zooka
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e) { displayDetalheAgenda(); }
-        private void ControlAgendaDias_Load(object sender, EventArgs e) { }
         private void ControlAgendaDias_Load_1(object sender, EventArgs e) { }
-        private void displayCalendario() { }
-        private void lblDetalheAgenda_Click(object sender, EventArgs e) { }
+        private void timer1_Tick(object sender, EventArgs e) { displayDetalheAgenda(); }
+
     }
 }

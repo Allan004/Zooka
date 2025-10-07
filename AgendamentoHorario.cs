@@ -13,7 +13,6 @@ namespace Zooka
 
         private int _idAgendamentoParaEdicao = 0;
 
-        // Evento para notificar a Agenda
         public delegate void AgendamentoAlteradoHandler();
         public event AgendamentoAlteradoHandler AgendamentoAlterado = delegate { };
 
@@ -30,18 +29,7 @@ namespace Zooka
 
         private void AgendamentoHorario_Load(object sender, EventArgs e)
         {
-            // [CÓDIGO DE PREENCHIMENTO DE COMBOBOXES]
-            cmbStatusAgenda.Items.Clear();
-            cmbStatusDia.Items.Clear();
-            cmbStatusAgenda.Items.Add("CONFIRMADO");
-            cmbStatusAgenda.Items.Add("CANDELADO");
-            cmbStatusAgenda.Items.Add("REMARCADO");
-            cmbStatusAgenda.Items.Add("COMPARECEU");
-            cmbStatusDia.Items.Add("OCUPADO");
-            cmbStatusDia.Items.Add("LIVRE");
-
-            if (cmbStatusAgenda.Items.Count > 0) cmbStatusAgenda.SelectedIndex = 0;
-            if (cmbStatusDia.Items.Count > 0) cmbStatusDia.SelectedIndex = 0;
+            // O código de preenchimento dos ComboBoxes foi removido para resolver os erros de referência
 
             // LÓGICA DE CARREGAMENTO DE DADOS
             if (_idAgendamentoParaEdicao > 0)
@@ -112,8 +100,9 @@ namespace Zooka
             }
 
             string hora = txtHora.Text;
-            string statusAgenda = cmbStatusAgenda.SelectedItem.ToString();
-            string statusDia = cmbStatusDia.SelectedItem.ToString();
+            // O STATUS DEVE SER LIDO DO DB AQUI, OU DEFINIDO PELO MENU DE CONTEXTO
+            string statusAgenda = "CONFIRMADO";
+            string statusDia = "OCUPADO";
 
             int idCliente = GetIdPeloNome("cliente", "id_cliente", "nome_cliente", txtAgendaCliente.Text);
             int idPet = GetIdPeloNome("pet", "id_pet", "nome_pet", txtPet.Text);
@@ -154,7 +143,6 @@ namespace Zooka
 
                         MessageBox.Show("Agendamento atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        // NOTIFICAÇÃO: Chama o evento de notificação
                         AgendamentoAlterado?.Invoke();
                         this.Close();
                     }
@@ -183,8 +171,8 @@ namespace Zooka
             }
 
             string hora = txtHora.Text;
-            string statusAgenda = cmbStatusAgenda.SelectedItem.ToString();
-            string statusDia = cmbStatusDia.SelectedItem.ToString();
+            string statusAgenda = "CONFIRMADO";
+            string statusDia = "OCUPADO";
 
             int idCliente = GetIdPeloNome("cliente", "id_cliente", "nome_cliente", txtAgendaCliente.Text);
             int idPet = GetIdPeloNome("pet", "id_pet", "nome_pet", txtPet.Text);
@@ -219,7 +207,6 @@ namespace Zooka
 
                         MessageBox.Show("Agendamento salvo com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        // NOTIFICAÇÃO: Chama o evento de notificação
                         AgendamentoAlterado?.Invoke();
                         this.Close();
                     }
@@ -257,7 +244,6 @@ namespace Zooka
 
                         MessageBox.Show("Agendamento excluído com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        // NOTIFICAÇÃO: Chama o evento de notificação
                         AgendamentoAlterado?.Invoke();
                         this.Close();
                     }
@@ -337,8 +323,9 @@ namespace Zooka
                             txtProfissional.Text = reader["nome_profissional"].ToString();
                             txtServico.Text = reader["nome_servico"].ToString();
 
-                            cmbStatusAgenda.SelectedItem = reader["status_agenda_vet"].ToString();
-                            cmbStatusDia.SelectedItem = reader["status_dia_horario_agenda_vet"].ToString();
+                            // Removido ComboBoxes de status, mas o código original pode ter lido esses campos:
+                            // cmbStatusAgenda.SelectedItem = reader["status_agenda_vet"].ToString();
+                            // cmbStatusDia.SelectedItem = reader["status_dia_horario_agenda_vet"].ToString();
                         }
                         reader.Dispose();
                     }
