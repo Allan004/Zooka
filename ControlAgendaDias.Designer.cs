@@ -32,16 +32,15 @@
             lblDia = new Label();
             lblDetalheAgenda = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
-            label1 = new Label();
             SuspendLayout();
             // 
             // lblDia
             // 
             lblDia.AutoSize = true;
-            lblDia.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDia.Location = new Point(0, 42);
+            lblDia.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDia.Location = new Point(105, 0);
             lblDia.Name = "lblDia";
-            lblDia.Size = new Size(28, 21);
+            lblDia.Size = new Size(27, 19);
             lblDia.TabIndex = 0;
             lblDia.Text = "00";
             // 
@@ -54,22 +53,11 @@
             lblDetalheAgenda.Size = new Size(0, 14);
             lblDetalheAgenda.TabIndex = 1;
             // 
-            // label1
-            // 
-            label1.BackColor = Color.RosyBrown;
-            label1.Location = new Point(0, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(238, 33);
-            label1.TabIndex = 2;
-            label1.Text = "Domingo";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // ControlAgendaDias
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            Controls.Add(label1);
             Controls.Add(lblDetalheAgenda);
             Controls.Add(lblDia);
             Name = "ControlAgendaDias";
@@ -85,6 +73,5 @@
         private Label lblDia;
         private Label lblDetalheAgenda;
         private System.Windows.Forms.Timer timer1;
-        private Label label1;
     }
 }

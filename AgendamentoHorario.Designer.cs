@@ -45,6 +45,7 @@
             lblStatusDia = new Label();
             cmbStatusDia = new ComboBox();
             cmbStatusAgenda = new ComboBox();
+            btnExcluir = new Button();
             SuspendLayout();
             // 
             // txtDia
@@ -190,11 +191,21 @@
             cmbStatusAgenda.Size = new Size(121, 23);
             cmbStatusAgenda.TabIndex = 4;
             // 
+            // btnExcluir
+            // 
+            btnExcluir.Location = new Point(581, 398);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(75, 23);
+            btnExcluir.TabIndex = 5;
+            btnExcluir.Text = "Excluir";
+            btnExcluir.UseVisualStyleBackColor = true;
+            // 
             // AgendamentoHorario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnExcluir);
             Controls.Add(cmbStatusAgenda);
             Controls.Add(cmbStatusDia);
             Controls.Add(txtHora);
@@ -238,5 +249,6 @@
         private Label lblStatusDia;
         private ComboBox cmbStatusDia;
         private ComboBox cmbStatusAgenda;
+        private Button btnExcluir;
     }
 }
