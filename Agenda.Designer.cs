@@ -49,6 +49,7 @@
             tsmStatusConfirmado = new ToolStripMenuItem();
             tsmStatusCancelado = new ToolStripMenuItem();
             tsmStatusCompareceu = new ToolStripMenuItem();
+            tsmStatusRemarcado = new ToolStripMenuItem();
             cmsAgendamento.SuspendLayout();
             SuspendLayout();
             // 
@@ -178,31 +179,34 @@
             // 
             cmsAgendamento.Items.AddRange(new ToolStripItem[] { tsmIncluir, tsmEditar, tsmRemover, tsmStatus });
             cmsAgendamento.Name = "cmsAgendamento";
-            cmsAgendamento.Size = new Size(181, 114);
+            cmsAgendamento.Size = new Size(122, 92);
             // 
             // tsmIncluir
             // 
             tsmIncluir.Name = "tsmIncluir";
-            tsmIncluir.Size = new Size(180, 22);
+            tsmIncluir.Size = new Size(121, 22);
             tsmIncluir.Text = "Incluir ";
+            tsmIncluir.Click += tsmIncluir_Click;
             // 
             // tsmEditar
             // 
             tsmEditar.Name = "tsmEditar";
-            tsmEditar.Size = new Size(180, 22);
+            tsmEditar.Size = new Size(121, 22);
             tsmEditar.Text = "Editar";
+            tsmEditar.Click += tsmEditar_Click;
             // 
             // tsmRemover
             // 
             tsmRemover.Name = "tsmRemover";
-            tsmRemover.Size = new Size(180, 22);
+            tsmRemover.Size = new Size(121, 22);
             tsmRemover.Text = "Remover";
+            tsmRemover.Click += tsmRemover_Click;
             // 
             // tsmStatus
             // 
-            tsmStatus.DropDownItems.AddRange(new ToolStripItem[] { tsmStatusConfirmado, tsmStatusCancelado, tsmStatusCompareceu });
+            tsmStatus.DropDownItems.AddRange(new ToolStripItem[] { tsmStatusConfirmado, tsmStatusCancelado, tsmStatusCompareceu, tsmStatusRemarcado });
             tsmStatus.Name = "tsmStatus";
-            tsmStatus.Size = new Size(180, 22);
+            tsmStatus.Size = new Size(121, 22);
             tsmStatus.Text = "Status";
             // 
             // tsmStatusConfirmado
@@ -210,18 +214,28 @@
             tsmStatusConfirmado.Name = "tsmStatusConfirmado";
             tsmStatusConfirmado.Size = new Size(180, 22);
             tsmStatusConfirmado.Text = "CONFIRMADO";
+            tsmStatusConfirmado.Click += tsmStatusConfirmado_Click;
             // 
             // tsmStatusCancelado
             // 
             tsmStatusCancelado.Name = "tsmStatusCancelado";
             tsmStatusCancelado.Size = new Size(180, 22);
             tsmStatusCancelado.Text = "COMPARECEU";
+            tsmStatusCancelado.Click += tsmStatusCompareceu_Click;
             // 
             // tsmStatusCompareceu
             // 
             tsmStatusCompareceu.Name = "tsmStatusCompareceu";
             tsmStatusCompareceu.Size = new Size(180, 22);
             tsmStatusCompareceu.Text = "CANCELADO";
+            tsmStatusCompareceu.Click += tsmStatusCancelado_Click;
+            // 
+            // tsmStatusRemarcado
+            // 
+            tsmStatusRemarcado.Name = "tsmStatusRemarcado";
+            tsmStatusRemarcado.Size = new Size(180, 22);
+            tsmStatusRemarcado.Text = "REMARCADO";
+            tsmStatusRemarcado.Click += tsmStatusRemarcado_Click;
             // 
             // Agenda
             // 
@@ -268,5 +282,6 @@
         private ToolStripMenuItem tsmStatusConfirmado;
         private ToolStripMenuItem tsmStatusCancelado;
         private ToolStripMenuItem tsmStatusCompareceu;
+        private ToolStripMenuItem tsmStatusRemarcado;
     }
 }
