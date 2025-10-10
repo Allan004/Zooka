@@ -58,14 +58,10 @@ namespace Zooka
                 using (var cmd = new MySqlCommand(comando, conn))
 
                 {
-                    try
-                    {
+                    
                         cmd.Parameters.AddWithValue("@nome", novonome);
-                    }
-                    catch
-                    {
-                        if(t) 
-                    }
+                    
+                    
                         cmd.Parameters.AddWithValue("@sexo", novosexo);
 
                         cmd.Parameters.AddWithValue("@raca", novoraca);
