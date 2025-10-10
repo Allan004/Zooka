@@ -83,9 +83,39 @@ namespace Zooka.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ativo_11 {
+            get {
+                object obj = ResourceManager.GetObject("Ativo 11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ativo_12 {
+            get {
+                object obj = ResourceManager.GetObject("Ativo 12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bem_Vindo__3_ {
             get {
                 object obj = ResourceManager.GetObject("Bem-Vindo (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap botao_cadastrar {
+            get {
+                object obj = ResourceManager.GetObject("botao-cadastrar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

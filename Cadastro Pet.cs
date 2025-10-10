@@ -58,28 +58,37 @@ namespace Zooka
                 using (var cmd = new MySqlCommand(comando, conn))
 
                 {
+                    try
+                    {
+                        cmd.Parameters.AddWithValue("@nome", novonome);
+                    }
+                    catch
+                    {
+                        if(t) 
+                    }
+                        cmd.Parameters.AddWithValue("@sexo", novosexo);
 
-                    cmd.Parameters.AddWithValue("@nome", novonome);
+                        cmd.Parameters.AddWithValue("@raca", novoraca);
 
-                    cmd.Parameters.AddWithValue("@sexo", novosexo);
+                        cmd.Parameters.AddWithValue("@peso", novopeso);
 
-                    cmd.Parameters.AddWithValue("@raca", novoraca);
+                        cmd.Parameters.AddWithValue("@pelagem", novopelagem);
 
-                    cmd.Parameters.AddWithValue("@peso", novopeso);
+                        cmd.Parameters.AddWithValue("@idade", novoidade);
 
-                    cmd.Parameters.AddWithValue("@pelagem", novopelagem);
+                        cmd.Parameters.AddWithValue("@idcliente", Convert.ToInt32(teste.Verificarcpf(cpf).Rows[0]["id_cliente"]));
 
-                    cmd.Parameters.AddWithValue("@idade", novoidade);
+                        cmd.Parameters.AddWithValue("@especie", novoespecie);
 
-                    cmd.Parameters.AddWithValue("@idcliente", Convert.ToInt32(teste.Verificarcpf(cpf).Rows[0]["id_cliente"]));
+                        cmd.Parameters.AddWithValue("@rg", novorg);
 
-                    cmd.Parameters.AddWithValue("@especie", novoespecie);
+                        conn.Open();
 
-                    cmd.Parameters.AddWithValue("@rg", novorg);
+                        cmd.ExecuteNonQuery();
+                    
+                   
 
-                    conn.Open();
-
-                    cmd.ExecuteNonQuery();
+                    
                 }
                 MessageBox.Show("Concluido!!!", "Notificação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 teste.Limpeza(this);
