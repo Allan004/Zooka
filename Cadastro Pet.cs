@@ -61,7 +61,6 @@ namespace Zooka
                     
                         cmd.Parameters.AddWithValue("@nome", novonome);
                     
-                    
                         cmd.Parameters.AddWithValue("@sexo", novosexo);
 
                         cmd.Parameters.AddWithValue("@raca", novoraca);
