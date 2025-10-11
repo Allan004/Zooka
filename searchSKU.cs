@@ -217,5 +217,22 @@ namespace Zooka
                 MessageBox.Show("Erro ao atualizar status: " + ex.Message);
             }
         }
+
+        private void btnSKU_editar_Click(object sender, EventArgs e)
+        {
+            if (dgvSKU_search.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um SKU para editar.");
+                return;
+            }
+
+            int idProduto = Convert.ToInt32(dgvSKU_search.SelectedRows[0].Cells["id_skuproduto"].Value);
+
+            CadastroSKU form = new CadastroSKU(idProduto);
+            form.ShowDialog();
+
+            CarregarProdutos(); // ATUALIZA O GRID
+        }
     }
+
 }

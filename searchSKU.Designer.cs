@@ -67,6 +67,7 @@
             btnSKU_editar.TextAlign = ContentAlignment.BottomCenter;
             btnSKU_editar.UseCompatibleTextRendering = true;
             btnSKU_editar.UseVisualStyleBackColor = false;
+            btnSKU_editar.Click += btnSKU_editar_Click;
             // 
             // btnSKU_des_atv
             // 

@@ -144,7 +144,7 @@
             btnSKU_criar.Name = "btnSKU_criar";
             btnSKU_criar.Size = new Size(76, 40);
             btnSKU_criar.TabIndex = 8;
-            btnSKU_criar.Text = "CRIAR SKU";
+            btnSKU_criar.Text = "OK";
             btnSKU_criar.TextAlign = ContentAlignment.BottomCenter;
             btnSKU_criar.UseCompatibleTextRendering = true;
             btnSKU_criar.UseVisualStyleBackColor = false;
