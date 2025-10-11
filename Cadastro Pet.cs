@@ -83,12 +83,12 @@ namespace Zooka
                     errorProvider1.SetError(txtnomepet, "O Campo nome é obrigatorio");
                     formularioValido = false;
                 }
-                else if (!int.TryParse(txtIdade.Text, out novoidade))
+                if (!int.TryParse(txtIdade.Text, out novoidade))
                 {
                     errorProvider1.SetError(txtIdade, "O Campo Idade so aceita Numeros");
                     formularioValido = false;
                 }
-                else if (!decimal.TryParse(txt_Peso.Text, out novopeso))
+                if (!decimal.TryParse(txt_Peso.Text, out novopeso))
                 {
                     errorProvider1.SetError(txt_Peso, "O Campo Peso so Aceita Numero inteiro e duas casas Decimais");
                     formularioValido = false;

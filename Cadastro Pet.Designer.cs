@@ -122,9 +122,9 @@
             boxRaca.FlatStyle = FlatStyle.Flat;
             boxRaca.FormattingEnabled = true;
             boxRaca.Items.AddRange(new object[] { "Labrador Retriever", "Siamês", "Golden Retriever", "Persa", "Bulldog Francês", "Maine Coon", "Pastor Alemão", "Ragdoll", "Poodle", "Bengal", "Beagle", "Sphynx", "Shih Tzu", "British Shorthair", "Chihuahua", "Abissínio", "Dachshund", "Birmanês", "Border Collie", "Scottish Fold", "Boxer", "Russian Blue", "Cocker Spaniel", "Savannah", "Husky Siberiano", "Oriental Shorthair", "Pug", "Chartreux", "Yorkshire Terrier", "American Shorthair", "Rottweiler", "Exotic Shorthair", "Doberman", "Angorá Turco", "Malamute do Alasca", "Cornish Rex", "Buldogue Inglês", "Balinês", "Pinscher Miniatura", "Havana Brown", "Maltês", "Burmês", "Akita Inu", "Tonquinês", "Bichon Frisé", "Manx", "Lhasa Apso", "Somali", "Basenji", "Ocicat", "Shar Pei", "Snowshoe", "Boston Terrier", "Singapura", "Setter Irlandês", "Peterbald", "Weimaraner", "Cymric", "Cão de Crista Chinês", "Munchkin", "Fox Terrier", "LaPerm", "Samoieda", "Selkirk Rex", "Schnauzer Miniatura", "American Curl", "Whippet", "Turkish Van", "Pekingese", "Japanese Bobtail", "Cão de Água Português", "Nebelung", "Cairn Terrier", "Ragamuffin", "Galgo Afegão", "Oriental Longhair", "Bloodhound", "Bombay", "Setter Inglês", "Javanês", "Bullmastiff", "Thai", "Cão de São Bernardo", "Chausie", "Buldogue Americano", "Khao Manee", "Borzoi", "Cão Esquimó Americano", "Skye Terrier", "Devon Rex", "Schipperke", "Toyger", "Leonberger", "Lykoi", "Cão de Montanha dos Pirineus", "Singapura", "Cão de Caça Afegão", "Pixie-Bob", "Terrier Tibetano", "Exotic Longhair" });
-            boxRaca.Location = new Point(313, 253);
+            boxRaca.Location = new Point(334, 253);
             boxRaca.Name = "boxRaca";
-            boxRaca.Size = new Size(137, 23);
+            boxRaca.Size = new Size(116, 23);
             boxRaca.TabIndex = 6;
             // 
             // comboEspecie
@@ -263,7 +263,7 @@
             label11.BackColor = Color.FromArgb(255, 241, 201);
             label11.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label11.ForeColor = SystemColors.ActiveCaptionText;
-            label11.Location = new Point(256, 254);
+            label11.Location = new Point(277, 253);
             label11.Name = "label11";
             label11.Size = new Size(51, 23);
             label11.TabIndex = 41;
@@ -310,6 +310,7 @@
             // errorProvider1
             // 
             errorProvider1.ContainerControl = this;
+            errorProvider1.Icon = (Icon)resources.GetObject("errorProvider1.Icon");
             // 
             // Cadastro_Pet
             // 
