@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cadastro_Pet));
             txtrganimal = new MaskedTextBox();
             txt_Peso = new TextBox();
@@ -51,8 +52,10 @@
             label3 = new Label();
             label5 = new Label();
             label2 = new Label();
+            errorProvider1 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // txtrganimal
@@ -62,14 +65,14 @@
             txtrganimal.Location = new Point(580, 172);
             txtrganimal.Mask = "00.000.000-0";
             txtrganimal.Name = "txtrganimal";
-            txtrganimal.Size = new Size(68, 24);
+            txtrganimal.Size = new Size(93, 24);
             txtrganimal.TabIndex = 2;
             // 
             // txt_Peso
             // 
             txt_Peso.BorderStyle = BorderStyle.None;
             txt_Peso.Font = new Font("Segoe UI", 13F);
-            txt_Peso.Location = new Point(741, 250);
+            txt_Peso.Location = new Point(805, 250);
             txt_Peso.Name = "txt_Peso";
             txt_Peso.Size = new Size(91, 24);
             txt_Peso.TabIndex = 8;
@@ -82,7 +85,6 @@
             txtnomepet.Name = "txtnomepet";
             txtnomepet.Size = new Size(270, 24);
             txtnomepet.TabIndex = 1;
-            txtnomepet.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -109,10 +111,10 @@
             // 
             txtcpfcliente.BorderStyle = BorderStyle.None;
             txtcpfcliente.Font = new Font("Segoe UI", 13F);
-            txtcpfcliente.Location = new Point(741, 171);
+            txtcpfcliente.Location = new Point(797, 170);
             txtcpfcliente.Mask = "000.000.000-00";
             txtcpfcliente.Name = "txtcpfcliente";
-            txtcpfcliente.Size = new Size(91, 24);
+            txtcpfcliente.Size = new Size(99, 24);
             txtcpfcliente.TabIndex = 9;
             // 
             // boxRaca
@@ -120,9 +122,9 @@
             boxRaca.FlatStyle = FlatStyle.Flat;
             boxRaca.FormattingEnabled = true;
             boxRaca.Items.AddRange(new object[] { "Labrador Retriever", "Siamês", "Golden Retriever", "Persa", "Bulldog Francês", "Maine Coon", "Pastor Alemão", "Ragdoll", "Poodle", "Bengal", "Beagle", "Sphynx", "Shih Tzu", "British Shorthair", "Chihuahua", "Abissínio", "Dachshund", "Birmanês", "Border Collie", "Scottish Fold", "Boxer", "Russian Blue", "Cocker Spaniel", "Savannah", "Husky Siberiano", "Oriental Shorthair", "Pug", "Chartreux", "Yorkshire Terrier", "American Shorthair", "Rottweiler", "Exotic Shorthair", "Doberman", "Angorá Turco", "Malamute do Alasca", "Cornish Rex", "Buldogue Inglês", "Balinês", "Pinscher Miniatura", "Havana Brown", "Maltês", "Burmês", "Akita Inu", "Tonquinês", "Bichon Frisé", "Manx", "Lhasa Apso", "Somali", "Basenji", "Ocicat", "Shar Pei", "Snowshoe", "Boston Terrier", "Singapura", "Setter Irlandês", "Peterbald", "Weimaraner", "Cymric", "Cão de Crista Chinês", "Munchkin", "Fox Terrier", "LaPerm", "Samoieda", "Selkirk Rex", "Schnauzer Miniatura", "American Curl", "Whippet", "Turkish Van", "Pekingese", "Japanese Bobtail", "Cão de Água Português", "Nebelung", "Cairn Terrier", "Ragamuffin", "Galgo Afegão", "Oriental Longhair", "Bloodhound", "Bombay", "Setter Inglês", "Javanês", "Bullmastiff", "Thai", "Cão de São Bernardo", "Chausie", "Buldogue Americano", "Khao Manee", "Borzoi", "Cão Esquimó Americano", "Skye Terrier", "Devon Rex", "Schipperke", "Toyger", "Leonberger", "Lykoi", "Cão de Montanha dos Pirineus", "Singapura", "Cão de Caça Afegão", "Pixie-Bob", "Terrier Tibetano", "Exotic Longhair" });
-            boxRaca.Location = new Point(313, 253);
+            boxRaca.Location = new Point(334, 253);
             boxRaca.Name = "boxRaca";
-            boxRaca.Size = new Size(137, 23);
+            boxRaca.Size = new Size(116, 23);
             boxRaca.TabIndex = 6;
             // 
             // comboEspecie
@@ -132,7 +134,7 @@
             comboEspecie.Items.AddRange(new object[] { "Leão  ", "Tigre  ", "Elefante  ", "Girafa  ", "Zebra  ", "Rinoceronte  ", "Hipopótamo  ", "Urso-pardo  ", "Urso-polar  ", "Lobo  ", "Raposa  ", "Cervo  ", "Veado  ", "Anta  ", "Bicho-preguiça  ", "Tamanduá-bandeira  ", "Capivara  ", "Onça-pintada  ", "Puma  ", "Gato-doméstico  ", "Cachorro-doméstico  ", "Coelho  ", "Lebre  ", "Cavalo  ", "Pônei  ", "Burro  ", "Jumento  ", "Vaca  ", "Boi  ", "Touro  ", "Ovelha  ", "Cabra  ", "Porco  ", "Galinha  ", "Galo  ", "Pato  ", "Ganso  ", "Peru  ", "Avestruz  ", "Ema  ", "Tatu  ", "Armadilho  ", "Jacaré  ", "Crocodilo  ", "Camaleão  ", "Lagarto  ", "Iguana  ", "Cobra  ", "Jararaca  ", "Sucuri  ", "Coral  ", "Peixe-palhaço  ", "Tubarão-branco  ", "Orca  ", "Golfinho  ", "Baleia-azul  ", "Foca  ", "Leão-marinho  ", "Morsa  ", "Pinguim  ", "Pelicano  ", "Garça  ", "Coruja  ", "Falcão  ", "Águia  ", "Gavião  ", "Papagaio  ", "Arara  ", "Canário  ", "Pardal  ", "Andorinha  ", "Beija-flor  ", "Morcego  ", "Esquilo  ", "Castor  ", "Lontra  ", "Rato  ", "Ratazana  ", "Camundongo  ", "Hamster  ", "Porquinho-da-índia  ", "Chinchila  ", "Macaco-prego  ", "Bugio  ", "Gorila  ", "Chimpanzé  ", "Orangotango  ", "Lêmure  ", "Suricata  ", "Canguru  ", "Coala  ", "Diabo-da-tasmânia  ", "Formiga  ", "Abelha  ", "Vespa  ", "Borboleta  ", "Mariposa  ", "Besouro  ", "Joaninha  ", "Grilo  ", "Gafanhoto  ", "Libélula  ", "Caracol  ", "Lesma  " });
             comboEspecie.Location = new Point(580, 211);
             comboEspecie.Name = "comboEspecie";
-            comboEspecie.Size = new Size(252, 23);
+            comboEspecie.Size = new Size(316, 23);
             comboEspecie.TabIndex = 4;
             // 
             // txtPelagem
@@ -200,7 +202,7 @@
             label9.BackColor = Color.FromArgb(255, 241, 201);
             label9.Font = new Font("Arial Narrow", 14.25F);
             label9.ForeColor = SystemColors.ActiveCaptionText;
-            label9.Location = new Point(686, 250);
+            label9.Location = new Point(750, 250);
             label9.Name = "label9";
             label9.Size = new Size(50, 23);
             label9.TabIndex = 37;
@@ -212,7 +214,7 @@
             label4.BackColor = Color.FromArgb(255, 241, 201);
             label4.Font = new Font("Arial Narrow", 14.25F);
             label4.ForeColor = SystemColors.ActiveCaptionText;
-            label4.Location = new Point(641, 172);
+            label4.Location = new Point(697, 171);
             label4.Name = "label4";
             label4.Size = new Size(96, 23);
             label4.TabIndex = 49;
@@ -261,7 +263,7 @@
             label11.BackColor = Color.FromArgb(255, 241, 201);
             label11.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label11.ForeColor = SystemColors.ActiveCaptionText;
-            label11.Location = new Point(256, 254);
+            label11.Location = new Point(277, 253);
             label11.Name = "label11";
             label11.Size = new Size(51, 23);
             label11.TabIndex = 41;
@@ -305,6 +307,11 @@
             label2.TabIndex = 23;
             label2.Text = "Nome:";
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            errorProvider1.Icon = (Icon)resources.GetObject("errorProvider1.Icon");
+            // 
             // Cadastro_Pet
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -338,6 +345,7 @@
             Load += Cadastro_Pet_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -365,5 +373,6 @@
         private Label label3;
         private Label label5;
         private Label label2;
+        private ErrorProvider errorProvider1;
     }   
 }
