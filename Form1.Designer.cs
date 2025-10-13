@@ -37,6 +37,7 @@
             cadastroDeSKUToolStripMenuItem = new ToolStripMenuItem();
             agendaToolStripMenuItem = new ToolStripMenuItem();
             estoqueToolStripMenuItem = new ToolStripMenuItem();
+            loginToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -51,10 +52,11 @@
             // 
             // cADASTROSToolStripMenuItem
             // 
-            cADASTROSToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroUsuarioToolStripMenuItem, cadastroClienteToolStripMenuItem, cadastroPetToolStripMenuItem, cadastroFuncionarioToolStripMenuItem, cadastroDeSKUToolStripMenuItem, agendaToolStripMenuItem });
+            cADASTROSToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroUsuarioToolStripMenuItem, cadastroClienteToolStripMenuItem, cadastroPetToolStripMenuItem, cadastroFuncionarioToolStripMenuItem, cadastroDeSKUToolStripMenuItem, agendaToolStripMenuItem, loginToolStripMenuItem });
             cADASTROSToolStripMenuItem.Name = "cADASTROSToolStripMenuItem";
             cADASTROSToolStripMenuItem.Size = new Size(86, 20);
             cADASTROSToolStripMenuItem.Text = "CADASTROS";
+            cADASTROSToolStripMenuItem.Click += cADASTROSToolStripMenuItem_Click;
             // 
             // cadastroUsuarioToolStripMenuItem
             // 
@@ -105,6 +107,13 @@
             estoqueToolStripMenuItem.Text = "ESTOQUE";
             estoqueToolStripMenuItem.Click += estoqueToolStripMenuItem_Click;
             // 
+            // loginToolStripMenuItem
+            // 
+            loginToolStripMenuItem.Name = "loginToolStripMenuItem";
+            loginToolStripMenuItem.Size = new Size(187, 22);
+            loginToolStripMenuItem.Text = "Login";
+            loginToolStripMenuItem.Click += loginToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -133,5 +142,6 @@
         private ToolStripMenuItem cadastroDeSKUToolStripMenuItem;
         private ToolStripMenuItem estoqueToolStripMenuItem;
         private ToolStripMenuItem agendaToolStripMenuItem;
+        private ToolStripMenuItem loginToolStripMenuItem;
     }
 }

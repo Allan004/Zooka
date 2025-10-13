@@ -107,5 +107,17 @@ namespace Zooka
             prof.MdiParent = this;
             prof.Show();
         }
+
+        private void cADASTROSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoginUsuario prof = new LoginUsuario();
+            prof.MdiParent = this;
+            prof.Show();
+        }
     }
 }
