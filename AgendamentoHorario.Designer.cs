@@ -30,7 +30,6 @@
         {
             txtDia = new TextBox();
             lblData = new Label();
-            lblStatusAgenda = new Label();
             btnSalvar = new Button();
             txtHora = new TextBox();
             lblHorario = new Label();
@@ -42,9 +41,7 @@
             txtServico = new TextBox();
             lblProfissional = new Label();
             lblServico = new Label();
-            lblStatusDia = new Label();
-            cmbStatusDia = new ComboBox();
-            cmbStatusAgenda = new ComboBox();
+            btnExcluir = new Button();
             SuspendLayout();
             // 
             // txtDia
@@ -63,17 +60,11 @@
             lblData.TabIndex = 1;
             lblData.Text = "Data";
             // 
-            // lblStatusAgenda
-            // 
-            lblStatusAgenda.AutoSize = true;
-            lblStatusAgenda.Location = new Point(406, 191);
-            lblStatusAgenda.Name = "lblStatusAgenda";
-            lblStatusAgenda.Size = new Size(83, 15);
-            lblStatusAgenda.TabIndex = 1;
-            lblStatusAgenda.Text = "Status Agenda";
-            // 
             // btnSalvar
             // 
+            btnSalvar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnSalvar.FlatAppearance.BorderColor = Color.Red;
+            btnSalvar.FlatAppearance.BorderSize = 7;
             btnSalvar.Location = new Point(703, 398);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(75, 23);
@@ -162,42 +153,23 @@
             lblServico.TabIndex = 1;
             lblServico.Text = "Serviço";
             // 
-            // lblStatusDia
+            // btnExcluir
             // 
-            lblStatusDia.AutoSize = true;
-            lblStatusDia.Location = new Point(406, 121);
-            lblStatusDia.Name = "lblStatusDia";
-            lblStatusDia.Size = new Size(59, 15);
-            lblStatusDia.TabIndex = 1;
-            lblStatusDia.Text = "Status Dia";
-            // 
-            // cmbStatusDia
-            // 
-            cmbStatusDia.FormattingEnabled = true;
-            cmbStatusDia.Location = new Point(406, 152);
-            cmbStatusDia.Name = "cmbStatusDia";
-            cmbStatusDia.Size = new Size(121, 23);
-            cmbStatusDia.TabIndex = 4;
-            // 
-            // cmbStatusAgenda
-            // 
-            cmbStatusAgenda.FormattingEnabled = true;
-            cmbStatusAgenda.Location = new Point(406, 209);
-            cmbStatusAgenda.Name = "cmbStatusAgenda";
-            cmbStatusAgenda.Size = new Size(121, 23);
-            cmbStatusAgenda.TabIndex = 4;
+            btnExcluir.Location = new Point(581, 398);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(75, 23);
+            btnExcluir.TabIndex = 5;
+            btnExcluir.Text = "Excluir";
+            btnExcluir.UseVisualStyleBackColor = true;
             // 
             // AgendamentoHorario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(cmbStatusAgenda);
-            Controls.Add(cmbStatusDia);
+            Controls.Add(btnExcluir);
             Controls.Add(txtHora);
             Controls.Add(btnSalvar);
-            Controls.Add(lblStatusDia);
-            Controls.Add(lblStatusAgenda);
             Controls.Add(lblHorario);
             Controls.Add(lblPet);
             Controls.Add(lblServico);
@@ -220,7 +192,6 @@
 
         private TextBox txtDia;
         private Label lblData;
-        private Label lblStatusAgenda;
         private Button btnSalvar;
         private TextBox txtHora;
         private Label lblHorario;
@@ -232,8 +203,6 @@
         private TextBox txtServico;
         private Label lblProfissional;
         private Label lblServico;
-        private Label lblStatusDia;
-        private ComboBox cmbStatusDia;
-        private ComboBox cmbStatusAgenda;
+        private Button btnExcluir;
     }
 }

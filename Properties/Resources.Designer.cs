@@ -83,6 +83,26 @@ namespace Zooka.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ativo_11 {
+            get {
+                object obj = ResourceManager.GetObject("Ativo 11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ativo_12 {
+            get {
+                object obj = ResourceManager.GetObject("Ativo 12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bem_Vindo__3_ {
             get {
                 object obj = ResourceManager.GetObject("Bem-Vindo (3)", resourceCulture);
@@ -93,9 +113,9 @@ namespace Zooka.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Blue_Flat_Color_UI_Login_Page_Desktop_Prototype {
+        internal static System.Drawing.Bitmap botao_cadastrar {
             get {
-                object obj = ResourceManager.GetObject("Blue Flat Color UI Login Page Desktop Prototype", resourceCulture);
+                object obj = ResourceManager.GetObject("botao-cadastrar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +146,16 @@ namespace Zooka.Properties {
         internal static System.Drawing.Bitmap jpeg__2_ {
             get {
                 object obj = ResourceManager.GetObject("jpeg (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zabumba {
+            get {
+                object obj = ResourceManager.GetObject("zabumba", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

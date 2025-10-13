@@ -24,7 +24,7 @@ namespace Zooka
 
         private void CadastroCliente_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -93,14 +93,22 @@ namespace Zooka
 
                     cmd.ExecuteNonQuery();
                 }
+                MessageBox.Show("Concluido!!!", "Notificação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                teste.Limpeza(this);
 
             }
-            teste.Limpeza(this);
-           
+            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
 
         }
 
-        
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

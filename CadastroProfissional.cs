@@ -5,30 +5,37 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Zooka
 {
-    
+
     public partial class CadastroProfissional : Form
     {
         consulta_cliente limpa = new consulta_cliente();
         public CadastroProfissional()
         {
             InitializeComponent();
+
         }
 
         private void CadastroProfissional_Load(object sender, EventArgs e)
         {
 
         }
-
+        int conta = 0;
         private void button1_Click(object sender, EventArgs e)
         {
+
+
+
             Conexao conexao = new Conexao();
+
 
 
             using (var conn = conexao.GetConnection())
@@ -83,12 +90,38 @@ namespace Zooka
 
                     cmd.ExecuteNonQuery();
 
-                    limpa.Limpeza(this);
+                    conta = 1;
 
 
                 }
+                MessageBox.Show("Concluido!!!", "Notificação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                limpa.Limpeza(this);
             }
 
+
+        }
+
+
+
+
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txttelefone_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void txtcidade_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

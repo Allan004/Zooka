@@ -37,19 +37,20 @@
             // lblDia
             // 
             lblDia.AutoSize = true;
-            lblDia.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDia.Location = new Point(10, 11);
+            lblDia.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDia.Location = new Point(105, 0);
             lblDia.Name = "lblDia";
-            lblDia.Size = new Size(28, 21);
+            lblDia.Size = new Size(27, 19);
             lblDia.TabIndex = 0;
             lblDia.Text = "00";
             // 
             // lblDetalheAgenda
             // 
             lblDetalheAgenda.AutoSize = true;
-            lblDetalheAgenda.Location = new Point(9, 61);
+            lblDetalheAgenda.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblDetalheAgenda.Location = new Point(9, 49);
             lblDetalheAgenda.Name = "lblDetalheAgenda";
-            lblDetalheAgenda.Size = new Size(0, 15);
+            lblDetalheAgenda.Size = new Size(0, 14);
             lblDetalheAgenda.TabIndex = 1;
             // 
             // ControlAgendaDias
@@ -60,7 +61,7 @@
             Controls.Add(lblDetalheAgenda);
             Controls.Add(lblDia);
             Name = "ControlAgendaDias";
-            Size = new Size(200, 100);
+            Size = new Size(238, 170);
             Load += ControlAgendaDias_Load_1;
             Click += ControleAgendaDias;
             ResumeLayout(false);

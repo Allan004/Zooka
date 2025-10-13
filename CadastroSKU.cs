@@ -18,6 +18,13 @@ namespace Zooka
         {
             InitializeComponent();
         }
+        private int? idEdicao = null;
+        public CadastroSKU(int idProduto)
+        {
+            InitializeComponent();
+            idEdicao = idProduto;
+        }
+
 
         private void btnSKU_search_Click(object sender, EventArgs e)
         {
@@ -39,8 +46,40 @@ namespace Zooka
             // DESABILITAR TEXTBOX DO ID
             txtSKU_id.Enabled = false;
 
-            // MOSTRAR PRÓXIMO ID AO CARREGAR O FORM
-            AtualizarProximoID();
+            // SE FOR EDIÇÃO, CARREGA OS DADOS DO PRODUTO
+            if (idEdicao.HasValue)
+            {
+                CarregarDadosParaEdicao(idEdicao.Value);
+            }
+            else
+            {
+                // MOSTRAR PRÓXIMO ID AO CARREGAR O FORM
+                AtualizarProximoID();
+
+            }
+        }
+        private void CarregarDadosParaEdicao(int id)
+        {
+            string connStr = "server=10.37.44.26;user id=root;password=root;database=Zooka";
+            string sql = "SELECT id_skuproduto, nome_produto, udm_produto, tipo_estoque FROM produto WHERE id_skuproduto = @id";
+
+            using (var conn = new MySqlConnection(connStr))
+            using (var cmd = new MySqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@id", id);
+                conn.Open();
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        txtSKU_id.Text = reader["id_skuproduto"].ToString();
+                        txtSKU_descricao.Text = reader["nome_produto"].ToString();
+                        cbSKU_udm.SelectedItem = reader["udm_produto"].ToString();
+                        cbSKU_estoque.SelectedItem = reader["tipo_estoque"].ToString();
+                    }
+                }
+            }
         }
         // FUNÇÃO PARA BUSCAR O ÚLTIMO ID E MOSTRAR O PRÓXIMO
         private void AtualizarProximoID()
@@ -69,15 +108,27 @@ namespace Zooka
         private void btnSKU_criar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtSKU_descricao.Text) ||
-                cbSKU_udm.SelectedIndex == -1 ||
-                cbSKU_estoque.SelectedIndex == -1)
+                    cbSKU_udm.SelectedIndex == -1 ||
+                    cbSKU_estoque.SelectedIndex == -1)
             {
                 MessageBox.Show("Preencha todos os campos!");
                 return;
             }
+
             string connStr = "server=10.37.44.26;user id=root;password=root;database=Zooka";
-            string sql = "INSERT INTO produto (nome_produto, udm_produto, tipo_estoque) " +
-                "VALUES (@nomeproduto, @udm, @tipoestoque)";
+            string sql;
+
+            if (idEdicao.HasValue)
+            {
+                // SE FOR EDIÇÃO
+                sql = "UPDATE produto SET nome_produto=@nomeproduto, udm_produto=@udm, tipo_estoque=@tipoestoque WHERE id_skuproduto=@id";
+            }
+            else
+            {
+                // SE FOR NOVO
+                sql = "INSERT INTO produto (nome_produto, udm_produto, tipo_estoque) " +
+                      "VALUES (@nomeproduto, @udm, @tipoestoque)";
+            }
 
             try
             {
@@ -88,23 +139,33 @@ namespace Zooka
                     cmd.Parameters.AddWithValue("@udm", cbSKU_udm.SelectedItem.ToString());
                     cmd.Parameters.AddWithValue("@tipoestoque", cbSKU_estoque.SelectedItem.ToString());
 
+                    if (idEdicao.HasValue)
+                        cmd.Parameters.AddWithValue("@id", idEdicao);
+
                     conn.Open();
                     cmd.ExecuteNonQuery();
                 }
 
+                MessageBox.Show(idEdicao.HasValue ? "SKU atualizado com sucesso!" : "SKU criado com sucesso!");
 
-                MessageBox.Show("SKU criado com sucesso!");
+                if (!idEdicao.HasValue)
+                {
+                    // LIMPAR CAMPOS PARA O PRÓXIMO CADASTRO
+                    txtSKU_descricao.Clear();
+                    cbSKU_udm.SelectedIndex = -1;
+                    cbSKU_estoque.SelectedIndex = -1;
 
-                // LIMPAR CAMPOS PARA O PRÓXIMO CADASTRO
-                txtSKU_descricao.Clear();
-                cbSKU_udm.SelectedIndex = -1;
-                cbSKU_estoque.SelectedIndex = -1;
-
-                AtualizarProximoID();
+                    AtualizarProximoID();
+                }
+                else
+                {
+                    // FECHAR FORM APÓS EDIÇÃO
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao criar SKU: " + ex.Message);
+                MessageBox.Show("Erro ao salvar SKU: " + ex.Message);
             }
         }
 

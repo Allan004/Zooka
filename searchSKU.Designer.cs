@@ -67,6 +67,7 @@
             btnSKU_editar.TextAlign = ContentAlignment.BottomCenter;
             btnSKU_editar.UseCompatibleTextRendering = true;
             btnSKU_editar.UseVisualStyleBackColor = false;
+            btnSKU_editar.Click += btnSKU_editar_Click;
             // 
             // btnSKU_des_atv
             // 
@@ -82,6 +83,7 @@
             btnSKU_des_atv.TextAlign = ContentAlignment.BottomCenter;
             btnSKU_des_atv.UseCompatibleTextRendering = true;
             btnSKU_des_atv.UseVisualStyleBackColor = false;
+            btnSKU_des_atv.Click += btnSKU_des_atv_Click;
             // 
             // txtSKUCad_search
             // 

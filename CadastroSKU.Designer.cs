@@ -45,7 +45,6 @@
             // 
             // btnSKU_cancelar
             // 
-            btnSKU_cancelar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btnSKU_cancelar.BackColor = Color.LightSteelBlue;
             btnSKU_cancelar.Font = new Font("Sans Serif Collection", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSKU_cancelar.ForeColor = Color.MidnightBlue;
@@ -73,7 +72,6 @@
             // 
             // txtSKU_id
             // 
-            txtSKU_id.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             txtSKU_id.BackColor = SystemColors.Window;
             txtSKU_id.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtSKU_id.ForeColor = Color.MidnightBlue;
@@ -136,7 +134,6 @@
             // 
             // btnSKU_criar
             // 
-            btnSKU_criar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btnSKU_criar.BackColor = Color.AliceBlue;
             btnSKU_criar.Font = new Font("Sans Serif Collection", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSKU_criar.ForeColor = Color.MidnightBlue;
@@ -144,7 +141,7 @@
             btnSKU_criar.Name = "btnSKU_criar";
             btnSKU_criar.Size = new Size(76, 40);
             btnSKU_criar.TabIndex = 8;
-            btnSKU_criar.Text = "CRIAR SKU";
+            btnSKU_criar.Text = "OK";
             btnSKU_criar.TextAlign = ContentAlignment.BottomCenter;
             btnSKU_criar.UseCompatibleTextRendering = true;
             btnSKU_criar.UseVisualStyleBackColor = false;
@@ -170,7 +167,6 @@
             // 
             // btnSKU_search
             // 
-            btnSKU_search.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btnSKU_search.BackColor = Color.AliceBlue;
             btnSKU_search.Font = new Font("Sans Serif Collection", 9.749998F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSKU_search.ForeColor = Color.MidnightBlue;
@@ -189,6 +185,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             BackColor = Color.AntiqueWhite;
             BackgroundImage = Properties.Resources.Design_sem_nome__1_;
             BackgroundImageLayout = ImageLayout.Stretch;
