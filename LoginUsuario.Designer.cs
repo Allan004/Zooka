@@ -99,7 +99,6 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Blue_Flat_Color_UI_Login_Page_Desktop_Prototype;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(senhaLogin);
@@ -109,6 +108,7 @@
             Controls.Add(linkCadastrar);
             Name = "LoginUsuario";
             Text = "LoginUsuario";
+            Load += LoginUsuario_Load;
             ResumeLayout(false);
             PerformLayout();
         }

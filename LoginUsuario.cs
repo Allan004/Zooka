@@ -19,14 +19,14 @@ namespace Zooka
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-          
-        {
-            CadastroCliente formCadastro = new CadastroCliente();
-            formCadastro.Show(); 
 
-           
-             this.Close(); 
-        }
+            {
+                CadastroCliente formCadastro = new CadastroCliente();
+                formCadastro.Show();
+
+
+                this.Close();
+            }
 
         }
 
@@ -49,6 +49,11 @@ namespace Zooka
         {
             txtSenhaLogin.UseSystemPasswordChar = !senhaLogin.Checked;
         }
+
+        private void LoginUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
-    
+
 }
