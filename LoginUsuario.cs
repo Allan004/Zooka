@@ -10,11 +10,45 @@ using System.Windows.Forms;
 
 namespace Zooka
 {
-    public partial class LoginUsuario: Form
+    public partial class LoginUsuario : Form
     {
         public LoginUsuario()
         {
             InitializeComponent();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+          
+        {
+            CadastroCliente formCadastro = new CadastroCliente();
+            formCadastro.Show(); 
+
+           
+             this.Close(); 
+        }
+
+        }
+
+        private void txtLoginUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSenhaLogin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            txtSenhaLogin.UseSystemPasswordChar = !senhaLogin.Checked;
+        }
     }
+    
 }

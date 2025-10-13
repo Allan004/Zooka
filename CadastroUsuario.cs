@@ -13,16 +13,23 @@ namespace Zooka
         public CadastroUsuario()
         {
             InitializeComponent();
+
+            this.Load += CadastroUsuario_Load;
+            this.chkMostrarSenha.CheckedChanged += chkMostrarSenha_CheckedChanged;
+            this.chkMostrarConfirmarSenha.CheckedChanged += chkMostrarConfirmarSenha_CheckedChanged;
+
             CarregarCombos();
         }
 
         private void CarregarCombos()
         {
-            // Preencher combos se necessário
+          
         }
 
         private void CadastroUsuario_Load(object sender, EventArgs e)
         {
+            txtSenha.UseSystemPasswordChar = true;
+            txtConfirmarSenha.UseSystemPasswordChar = true;
         }
 
         private async void btnCadastrar_Click_1(object sender, EventArgs e)
@@ -95,6 +102,16 @@ namespace Zooka
             }
         }
 
+        private void chkMostrarSenha_CheckedChanged(object sender, EventArgs e)
+        {
+            txtSenha.UseSystemPasswordChar = !chkMostrarSenha.Checked;
+        }
+
+        private void chkMostrarConfirmarSenha_CheckedChanged(object sender, EventArgs e)
+        {
+            txtConfirmarSenha.UseSystemPasswordChar = !chkMostrarConfirmarSenha.Checked;
+        }
+
         private async Task<string> GerarLoginUnicoAsync(string nome)
         {
             string baseLogin = nome.ToLower().Replace(" ", "");
@@ -134,26 +151,72 @@ namespace Zooka
             {
                 mensagem.From = new MailAddress("zookapetshop@gmail.com", "ZooKa Petshop");
                 mensagem.To.Add(emailDestino);
-                mensagem.Subject = "Cadastro realizado com sucesso!";
-                mensagem.Body = $@"
-Olá {nomeUsuario},
+                mensagem.Subject = "🎉 Cadastro realizado com sucesso!";
+                mensagem.IsBodyHtml = true;
 
-Seu cadastro foi concluído com sucesso!
+               
+                string corpoHtml = $@"
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+    <meta charset='UTF-8'>
+</head>
+<body style='margin: 0; padding: 0; background-color: #f2f6fa; font-family: Arial, sans-serif;'>
 
-Aqui estão seus dados de acesso:
+    <div style='max-width: 600px; margin: 30px auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05);'>
 
-Login: {login}
-Senha: {senha}
+     
+        <img src='https://i.imgur.com/XIHRKrO.png' alt='ZooKa Petshop' style='width: 100%; display: block;' />
 
-Guarde essas informações com segurança.
+       
+        <div style='padding: 30px; color: #333333;'>
 
-Você também ganhou 10% de desconto na sua primeira compra! Use o código BEMVINDO10 no checkout.
+            <h2 style='color: #4B0082; margin-top: 0;'>🐾 Olá, {nomeUsuario}!</h2>
 
-Com carinho,
-Equipe ZooKa Petshop";
+            <p style='font-size: 16px; line-height: 1.6;'>
+                🎉 Seu cadastro na <strong>ZooKa Petshop</strong> foi realizado com sucesso!
+            </p>
 
-                mensagem.IsBodyHtml = false;
+            <p style='font-size: 16px; line-height: 1.6;'>
+                Seja muito bem-vindo(a) à nossa família apaixonada por pets! Aqui, o cuidado e o carinho com os seus melhores amigos vêm sempre em primeiro lugar. 🐶🐱
+            </p>
 
+          
+            <div style='background-color: #f9f9f9; padding: 15px; border-radius: 6px; margin: 25px 0; font-size: 16px;'>
+                <p><strong>👤 Login:</strong> {login}<br>
+                <strong>🔒 Senha:</strong> {senha}</p>
+            </div>
+
+            <p style='font-size: 16px;'>✨ Guarde essas informações com carinho e segurança.</p>
+
+            
+            <p style='font-size: 16px;'>
+                🎁 Como forma de agradecimento, preparamos um presente especial para você:
+            </p>
+
+            <p style='font-size: 16px;'>
+                <strong>15% de desconto exclusivo</strong> na sua primeira compra!<br />
+                Use o código <strong style='color: #4B0082;'>ZOOKA15</strong> no checkout para aproveitar. 🛒
+            </p>
+
+            <p style='font-size: 14px; color: #666;'>Com carinho,<br>
+            🐾 Equipe ZooKa Petshop</p>
+        </div>
+
+      
+        <div style='background-color: #eeeeee; padding: 15px; text-align: center; font-size: 14px; color: #777777;'>
+            Siga-nos nas redes sociais:<br />
+            <strong>@ZooKaPetshop's</strong> no Instagram, Facebook e X
+        </div>
+    </div>
+</body>
+</html>";
+
+             
+                AlternateView htmlView = AlternateView.CreateAlternateViewFromString(corpoHtml, null, "text/html");
+                mensagem.AlternateViews.Add(htmlView);
+
+               
                 using (var smtp = new SmtpClient("smtp.gmail.com", 587))
                 {
                     smtp.EnableSsl = true;

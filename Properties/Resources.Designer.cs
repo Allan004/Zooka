@@ -93,6 +93,16 @@ namespace Zooka.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Blue_Flat_Color_UI_Login_Page_Desktop_Prototype {
+            get {
+                object obj = ResourceManager.GetObject("Blue Flat Color UI Login Page Desktop Prototype", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Captura_de_tela_2025_09_26_191727_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("Captura_de_tela_2025-09-26_191727-removebg-preview", resourceCulture);

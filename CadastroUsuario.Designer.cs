@@ -34,6 +34,8 @@
             txtEmail = new TextBox();
             txtNome = new TextBox();
             txtConfirmarSenha = new TextBox();
+            chkMostrarConfirmarSenha = new CheckBox();
+            chkMostrarSenha = new CheckBox();
             SuspendLayout();
             // 
             // txtSenha
@@ -42,7 +44,6 @@
             txtSenha.BorderStyle = BorderStyle.None;
             txtSenha.Location = new Point(474, 274);
             txtSenha.Name = "txtSenha";
-            txtSenha.PasswordChar = '*';
             txtSenha.Size = new Size(240, 16);
             txtSenha.TabIndex = 3;
             // 
@@ -86,9 +87,26 @@
             txtConfirmarSenha.BorderStyle = BorderStyle.None;
             txtConfirmarSenha.Location = new Point(474, 338);
             txtConfirmarSenha.Name = "txtConfirmarSenha";
-            txtConfirmarSenha.PasswordChar = '*';
             txtConfirmarSenha.Size = new Size(240, 16);
             txtConfirmarSenha.TabIndex = 8;
+            // 
+            // chkMostrarConfirmarSenha
+            // 
+            chkMostrarConfirmarSenha.AutoSize = true;
+            chkMostrarConfirmarSenha.Location = new Point(726, 340);
+            chkMostrarConfirmarSenha.Name = "chkMostrarConfirmarSenha";
+            chkMostrarConfirmarSenha.Size = new Size(15, 14);
+            chkMostrarConfirmarSenha.TabIndex = 9;
+            chkMostrarConfirmarSenha.UseVisualStyleBackColor = true;
+            // 
+            // chkMostrarSenha
+            // 
+            chkMostrarSenha.AutoSize = true;
+            chkMostrarSenha.Location = new Point(725, 276);
+            chkMostrarSenha.Name = "chkMostrarSenha";
+            chkMostrarSenha.Size = new Size(15, 14);
+            chkMostrarSenha.TabIndex = 10;
+            chkMostrarSenha.UseVisualStyleBackColor = true;
             // 
             // CadastroUsuario
             // 
@@ -98,6 +116,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(828, 463);
+            Controls.Add(chkMostrarSenha);
+            Controls.Add(chkMostrarConfirmarSenha);
             Controls.Add(txtConfirmarSenha);
             Controls.Add(txtNome);
             Controls.Add(txtEmail);
@@ -116,6 +136,8 @@
         private TextBox txtEmail;
         private TextBox txtNome;
         private TextBox txtConfirmarSenha;
+        private CheckBox chkMostrarConfirmarSenha;
+        private CheckBox chkMostrarSenha;
     }
 }
 
