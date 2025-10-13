@@ -62,7 +62,7 @@
             // 
             txtrganimal.BorderStyle = BorderStyle.None;
             txtrganimal.Font = new Font("Segoe UI", 13F);
-            txtrganimal.Location = new Point(641, 199);
+            txtrganimal.Location = new Point(641, 205);
             txtrganimal.Mask = "00.000.000-0";
             txtrganimal.Name = "txtrganimal";
             txtrganimal.Size = new Size(136, 24);
@@ -72,16 +72,16 @@
             // 
             txt_Peso.BorderStyle = BorderStyle.None;
             txt_Peso.Font = new Font("Segoe UI", 13F);
-            txt_Peso.Location = new Point(905, 276);
+            txt_Peso.Location = new Point(856, 295);
             txt_Peso.Name = "txt_Peso";
-            txt_Peso.Size = new Size(145, 24);
+            txt_Peso.Size = new Size(194, 24);
             txt_Peso.TabIndex = 8;
             // 
             // txtnomepet
             // 
             txtnomepet.BorderStyle = BorderStyle.None;
             txtnomepet.Font = new Font("Segoe UI", 13F);
-            txtnomepet.Location = new Point(219, 204);
+            txtnomepet.Location = new Point(228, 205);
             txtnomepet.Name = "txtnomepet";
             txtnomepet.Size = new Size(270, 24);
             txtnomepet.TabIndex = 1;
@@ -92,7 +92,7 @@
             label1.BackColor = Color.FromArgb(255, 241, 201);
             label1.Font = new Font("Arial Rounded MT Bold", 30F);
             label1.ForeColor = Color.FromArgb(215, 122, 40);
-            label1.Location = new Point(405, 55);
+            label1.Location = new Point(402, 27);
             label1.Name = "label1";
             label1.Size = new Size(340, 46);
             label1.TabIndex = 22;
@@ -102,7 +102,7 @@
             // 
             txtIdade.BorderStyle = BorderStyle.None;
             txtIdade.Font = new Font("Segoe UI", 13F);
-            txtIdade.Location = new Point(219, 277);
+            txtIdade.Location = new Point(228, 295);
             txtIdade.Name = "txtIdade";
             txtIdade.Size = new Size(70, 24);
             txtIdade.TabIndex = 5;
@@ -111,7 +111,7 @@
             // 
             txtcpfcliente.BorderStyle = BorderStyle.None;
             txtcpfcliente.Font = new Font("Segoe UI", 13F);
-            txtcpfcliente.Location = new Point(897, 196);
+            txtcpfcliente.Location = new Point(897, 205);
             txtcpfcliente.Mask = "000.000.000-00";
             txtcpfcliente.Name = "txtcpfcliente";
             txtcpfcliente.Size = new Size(153, 24);
@@ -122,7 +122,7 @@
             boxRaca.FlatStyle = FlatStyle.Flat;
             boxRaca.FormattingEnabled = true;
             boxRaca.Items.AddRange(new object[] { "Labrador Retriever", "Siamês", "Golden Retriever", "Persa", "Bulldog Francês", "Maine Coon", "Pastor Alemão", "Ragdoll", "Poodle", "Bengal", "Beagle", "Sphynx", "Shih Tzu", "British Shorthair", "Chihuahua", "Abissínio", "Dachshund", "Birmanês", "Border Collie", "Scottish Fold", "Boxer", "Russian Blue", "Cocker Spaniel", "Savannah", "Husky Siberiano", "Oriental Shorthair", "Pug", "Chartreux", "Yorkshire Terrier", "American Shorthair", "Rottweiler", "Exotic Shorthair", "Doberman", "Angorá Turco", "Malamute do Alasca", "Cornish Rex", "Buldogue Inglês", "Balinês", "Pinscher Miniatura", "Havana Brown", "Maltês", "Burmês", "Akita Inu", "Tonquinês", "Bichon Frisé", "Manx", "Lhasa Apso", "Somali", "Basenji", "Ocicat", "Shar Pei", "Snowshoe", "Boston Terrier", "Singapura", "Setter Irlandês", "Peterbald", "Weimaraner", "Cymric", "Cão de Crista Chinês", "Munchkin", "Fox Terrier", "LaPerm", "Samoieda", "Selkirk Rex", "Schnauzer Miniatura", "American Curl", "Whippet", "Turkish Van", "Pekingese", "Japanese Bobtail", "Cão de Água Português", "Nebelung", "Cairn Terrier", "Ragamuffin", "Galgo Afegão", "Oriental Longhair", "Bloodhound", "Bombay", "Setter Inglês", "Javanês", "Bullmastiff", "Thai", "Cão de São Bernardo", "Chausie", "Buldogue Americano", "Khao Manee", "Borzoi", "Cão Esquimó Americano", "Skye Terrier", "Devon Rex", "Schipperke", "Toyger", "Leonberger", "Lykoi", "Cão de Montanha dos Pirineus", "Singapura", "Cão de Caça Afegão", "Pixie-Bob", "Terrier Tibetano", "Exotic Longhair" });
-            boxRaca.Location = new Point(373, 277);
+            boxRaca.Location = new Point(373, 295);
             boxRaca.Name = "boxRaca";
             boxRaca.Size = new Size(116, 23);
             boxRaca.TabIndex = 6;
@@ -132,7 +132,7 @@
             comboEspecie.FlatStyle = FlatStyle.Flat;
             comboEspecie.FormattingEnabled = true;
             comboEspecie.Items.AddRange(new object[] { "Leão  ", "Tigre  ", "Elefante  ", "Girafa  ", "Zebra  ", "Rinoceronte  ", "Hipopótamo  ", "Urso-pardo  ", "Urso-polar  ", "Lobo  ", "Raposa  ", "Cervo  ", "Veado  ", "Anta  ", "Bicho-preguiça  ", "Tamanduá-bandeira  ", "Capivara  ", "Onça-pintada  ", "Puma  ", "Gato-doméstico  ", "Cachorro-doméstico  ", "Coelho  ", "Lebre  ", "Cavalo  ", "Pônei  ", "Burro  ", "Jumento  ", "Vaca  ", "Boi  ", "Touro  ", "Ovelha  ", "Cabra  ", "Porco  ", "Galinha  ", "Galo  ", "Pato  ", "Ganso  ", "Peru  ", "Avestruz  ", "Ema  ", "Tatu  ", "Armadilho  ", "Jacaré  ", "Crocodilo  ", "Camaleão  ", "Lagarto  ", "Iguana  ", "Cobra  ", "Jararaca  ", "Sucuri  ", "Coral  ", "Peixe-palhaço  ", "Tubarão-branco  ", "Orca  ", "Golfinho  ", "Baleia-azul  ", "Foca  ", "Leão-marinho  ", "Morsa  ", "Pinguim  ", "Pelicano  ", "Garça  ", "Coruja  ", "Falcão  ", "Águia  ", "Gavião  ", "Papagaio  ", "Arara  ", "Canário  ", "Pardal  ", "Andorinha  ", "Beija-flor  ", "Morcego  ", "Esquilo  ", "Castor  ", "Lontra  ", "Rato  ", "Ratazana  ", "Camundongo  ", "Hamster  ", "Porquinho-da-índia  ", "Chinchila  ", "Macaco-prego  ", "Bugio  ", "Gorila  ", "Chimpanzé  ", "Orangotango  ", "Lêmure  ", "Suricata  ", "Canguru  ", "Coala  ", "Diabo-da-tasmânia  ", "Formiga  ", "Abelha  ", "Vespa  ", "Borboleta  ", "Mariposa  ", "Besouro  ", "Joaninha  ", "Grilo  ", "Gafanhoto  ", "Libélula  ", "Caracol  ", "Lesma  " });
-            comboEspecie.Location = new Point(641, 237);
+            comboEspecie.Location = new Point(641, 250);
             comboEspecie.Name = "comboEspecie";
             comboEspecie.Size = new Size(409, 23);
             comboEspecie.TabIndex = 4;
@@ -141,7 +141,7 @@
             // 
             txtPelagem.BorderStyle = BorderStyle.None;
             txtPelagem.Font = new Font("Segoe UI", 13F);
-            txtPelagem.Location = new Point(219, 238);
+            txtPelagem.Location = new Point(228, 250);
             txtPelagem.Name = "txtPelagem";
             txtPelagem.Size = new Size(270, 24);
             txtPelagem.TabIndex = 3;
@@ -151,9 +151,9 @@
             boxSexo.FlatStyle = FlatStyle.Flat;
             boxSexo.FormattingEnabled = true;
             boxSexo.Items.AddRange(new object[] { "macho", "femea" });
-            boxSexo.Location = new Point(641, 276);
+            boxSexo.Location = new Point(641, 295);
             boxSexo.Name = "boxSexo";
-            boxSexo.Size = new Size(104, 23);
+            boxSexo.Size = new Size(136, 23);
             boxSexo.TabIndex = 7;
             boxSexo.SelectedIndexChanged += boxSexo_SelectedIndexChanged;
             // 
@@ -180,6 +180,7 @@
             pictureBox2.Size = new Size(1099, 556);
             pictureBox2.TabIndex = 56;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // button1
             // 
@@ -201,11 +202,11 @@
             // 
             label9.AutoSize = true;
             label9.BackColor = Color.FromArgb(255, 241, 201);
-            label9.Font = new Font("Arial Narrow", 14.25F);
+            label9.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
             label9.ForeColor = SystemColors.ActiveCaptionText;
-            label9.Location = new Point(850, 276);
+            label9.Location = new Point(797, 291);
             label9.Name = "label9";
-            label9.Size = new Size(50, 23);
+            label9.Size = new Size(53, 23);
             label9.TabIndex = 37;
             label9.Text = "Peso:";
             // 
@@ -213,11 +214,11 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.FromArgb(255, 241, 201);
-            label4.Font = new Font("Arial Narrow", 14.25F);
+            label4.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
             label4.ForeColor = SystemColors.ActiveCaptionText;
-            label4.Location = new Point(797, 197);
+            label4.Location = new Point(797, 205);
             label4.Name = "label4";
-            label4.Size = new Size(96, 23);
+            label4.Size = new Size(102, 23);
             label4.TabIndex = 49;
             label4.Text = "CPF Cliente:";
             // 
@@ -225,11 +226,11 @@
             // 
             label6.AutoSize = true;
             label6.BackColor = Color.FromArgb(255, 241, 201);
-            label6.Font = new Font("Arial Narrow", 14.25F);
+            label6.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
             label6.ForeColor = SystemColors.ActiveCaptionText;
-            label6.Location = new Point(547, 198);
+            label6.Location = new Point(547, 205);
             label6.Name = "label6";
-            label6.Size = new Size(88, 23);
+            label6.Size = new Size(94, 23);
             label6.TabIndex = 31;
             label6.Text = "RG Animal:";
             // 
@@ -237,11 +238,11 @@
             // 
             label12.AutoSize = true;
             label12.BackColor = Color.FromArgb(255, 241, 201);
-            label12.Font = new Font("Arial Narrow", 14.25F);
+            label12.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
             label12.ForeColor = SystemColors.ActiveCaptionText;
-            label12.Location = new Point(548, 237);
+            label12.Location = new Point(548, 250);
             label12.Name = "label12";
-            label12.Size = new Size(70, 23);
+            label12.Size = new Size(75, 23);
             label12.TabIndex = 43;
             label12.Text = "Especie:";
             // 
@@ -249,11 +250,11 @@
             // 
             label13.AutoSize = true;
             label13.BackColor = Color.FromArgb(255, 241, 201);
-            label13.Font = new Font("Arial Narrow", 14.25F);
+            label13.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
             label13.ForeColor = SystemColors.ActiveCaptionText;
-            label13.Location = new Point(548, 276);
+            label13.Location = new Point(548, 295);
             label13.Name = "label13";
-            label13.Size = new Size(50, 23);
+            label13.Size = new Size(53, 23);
             label13.TabIndex = 46;
             label13.Text = "Sexo:";
             label13.Click += label13_Click;
@@ -262,11 +263,11 @@
             // 
             label11.AutoSize = true;
             label11.BackColor = Color.FromArgb(255, 241, 201);
-            label11.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
             label11.ForeColor = SystemColors.ActiveCaptionText;
-            label11.Location = new Point(316, 277);
+            label11.Location = new Point(316, 295);
             label11.Name = "label11";
-            label11.Size = new Size(51, 23);
+            label11.Size = new Size(53, 23);
             label11.TabIndex = 41;
             label11.Text = "Raça:";
             // 
@@ -274,11 +275,11 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.FromArgb(255, 241, 201);
-            label3.Font = new Font("Arial Narrow", 14.25F);
+            label3.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
             label3.ForeColor = SystemColors.ActiveCaptionText;
-            label3.Location = new Point(145, 278);
+            label3.Location = new Point(145, 295);
             label3.Name = "label3";
-            label3.Size = new Size(49, 23);
+            label3.Size = new Size(52, 23);
             label3.TabIndex = 26;
             label3.Text = "Idade";
             // 
@@ -286,12 +287,12 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.FromArgb(255, 241, 201);
-            label5.Font = new Font("Arial Narrow", 14.25F);
+            label5.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
             label5.ForeColor = SystemColors.ActiveCaptionText;
-            label5.Location = new Point(145, 238);
+            label5.Location = new Point(145, 250);
             label5.Margin = new Padding(0);
             label5.Name = "label5";
-            label5.Size = new Size(80, 23);
+            label5.Size = new Size(84, 23);
             label5.TabIndex = 53;
             label5.Text = "Pelagem: ";
             label5.Click += label5_Click;
@@ -300,11 +301,11 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.FromArgb(255, 241, 201);
-            label2.Font = new Font("Arial Narrow", 14.25F);
+            label2.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
             label2.ForeColor = SystemColors.ActiveCaptionText;
-            label2.Location = new Point(145, 204);
+            label2.Location = new Point(145, 205);
             label2.Name = "label2";
-            label2.Size = new Size(56, 23);
+            label2.Size = new Size(59, 23);
             label2.TabIndex = 23;
             label2.Text = "Nome:";
             // 

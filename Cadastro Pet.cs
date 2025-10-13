@@ -41,19 +41,19 @@ namespace Zooka
             {
                 if (ctrl is System.Windows.Forms.TextBox txt && string.IsNullOrWhiteSpace(txt.Text))
                 {
-                    MessageBox.Show($"O campo '{txt.Name.Replace("txt","")}' está vazio.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"O campo '{txt.Name.Replace("txt", "")}' está vazio.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txt.Focus();
                     return;
                 }
             }
             bool formularioValido = true;
 
-            
+
             errorProvider1.Clear();
 
-           
-             
-        
+
+
+
 
 
             using (var conn = conexao.GetConnection())
@@ -70,7 +70,7 @@ namespace Zooka
                 int cpf = 0;
                 try
                 {
-                     cpf = Convert.ToInt32(teste.Verificarcpf(txtcpfcliente.Text.Replace(",", "").Replace("-", "")).Rows[0]["id_cliente"]);
+                    cpf = Convert.ToInt32(teste.Verificarcpf(txtcpfcliente.Text.Replace(",", "").Replace("-", "")).Rows[0]["id_cliente"]);
                 }
                 catch
                 {
@@ -145,6 +145,11 @@ namespace Zooka
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }

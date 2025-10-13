@@ -101,9 +101,9 @@ namespace Zooka
 
         }
 
-       
 
-       
+
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -112,7 +112,17 @@ namespace Zooka
 
         private void button1_Paint(object sender, PaintEventArgs e)
         {
-            
+
+        }
+
+        private void txttelefone_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void txtcidade_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
