@@ -128,7 +128,7 @@ namespace Zooka
         {
             dao++;
 
-                pictureBox1.BackgroundImage = Properties.Resources.Design_sem_nome__1_;
+            pictureBox1.BackgroundImage = Properties.Resources.Captura_de_tela_2025_09_26_191727_removebg_preview;
                 pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             
             
