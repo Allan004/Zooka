@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             menuStrip1 = new MenuStrip();
             cADASTROSToolStripMenuItem = new ToolStripMenuItem();
             cadastroUsuarioToolStripMenuItem = new ToolStripMenuItem();
@@ -36,9 +37,12 @@
             cadastroFuncionarioToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeSKUToolStripMenuItem = new ToolStripMenuItem();
             agendaToolStripMenuItem = new ToolStripMenuItem();
-            estoqueToolStripMenuItem = new ToolStripMenuItem();
             loginToolStripMenuItem = new ToolStripMenuItem();
+            estoqueToolStripMenuItem = new ToolStripMenuItem();
+            pictureBox1 = new PictureBox();
+            timer1 = new System.Windows.Forms.Timer(components);
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -46,7 +50,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { cADASTROSToolStripMenuItem, estoqueToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.Size = new Size(1184, 24);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -100,13 +104,6 @@
             agendaToolStripMenuItem.Text = "Agenda";
             agendaToolStripMenuItem.Click += agendaToolStripMenuItem_Click;
             // 
-            // estoqueToolStripMenuItem
-            // 
-            estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
-            estoqueToolStripMenuItem.Size = new Size(69, 20);
-            estoqueToolStripMenuItem.Text = "ESTOQUE";
-            estoqueToolStripMenuItem.Click += estoqueToolStripMenuItem_Click;
-            // 
             // loginToolStripMenuItem
             // 
             loginToolStripMenuItem.Name = "loginToolStripMenuItem";
@@ -114,11 +111,31 @@
             loginToolStripMenuItem.Text = "Login";
             loginToolStripMenuItem.Click += loginToolStripMenuItem_Click;
             // 
+            // estoqueToolStripMenuItem
+            // 
+            estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
+            estoqueToolStripMenuItem.Size = new Size(69, 20);
+            estoqueToolStripMenuItem.Text = "ESTOQUE";
+            estoqueToolStripMenuItem.Click += estoqueToolStripMenuItem_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(487, 104);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(484, 352);
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1184, 681);
+            Controls.Add(pictureBox1);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
@@ -127,6 +144,7 @@
             Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -143,5 +161,7 @@
         private ToolStripMenuItem estoqueToolStripMenuItem;
         private ToolStripMenuItem agendaToolStripMenuItem;
         private ToolStripMenuItem loginToolStripMenuItem;
+        private PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
