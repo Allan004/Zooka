@@ -132,6 +132,14 @@ namespace Zooka
 
             try
             {
+                var idExistente = VerificarSKU(txtSKU_descricao.Text);
+                if (idExistente.HasValue && !idEdicao.HasValue)
+                {
+                    MessageBox.Show($"Já existe um SKU com esse nome!\nID: {idExistente}",
+                        "Duplicado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 using (var conn = new MySqlConnection(connStr))
                 using (var cmd = new MySqlCommand(sql, conn))
                 {
@@ -174,5 +182,27 @@ namespace Zooka
             searchSKU searchForm = new searchSKU();
             searchForm.ShowDialog();
         }
+        private int? VerificarSKU(string nomeProduto)
+        {
+            string connStr = "server=10.37.44.26;user id=root;password=root;database=Zooka";
+
+            using (var conn = new MySqlConnection(connStr))
+            {
+                conn.Open();
+                string sql = "SELECT id_skuproduto FROM produto WHERE nome_produto = @nomeproduto";
+                using (var cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@nomeproduto", nomeProduto);
+                    var result = cmd.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return Convert.ToInt32(result);
+                    }
+                }
+            }
+
+            return null;
+        }
+
     }
 }
