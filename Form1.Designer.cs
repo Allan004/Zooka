@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             menuStrip1 = new MenuStrip();
             cADASTROSToolStripMenuItem = new ToolStripMenuItem();
             cadastroUsuarioToolStripMenuItem = new ToolStripMenuItem();
@@ -40,10 +38,7 @@
             agendaToolStripMenuItem = new ToolStripMenuItem();
             loginToolStripMenuItem = new ToolStripMenuItem();
             estoqueToolStripMenuItem = new ToolStripMenuItem();
-            pictureBox1 = new PictureBox();
-            timer1 = new System.Windows.Forms.Timer(components);
             menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -119,27 +114,11 @@
             estoqueToolStripMenuItem.Text = "ESTOQUE";
             estoqueToolStripMenuItem.Click += estoqueToolStripMenuItem_Click;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Location = new Point(0, 24);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1184, 657);
-            pictureBox1.TabIndex = 3;
-            pictureBox1.TabStop = false;
-            // 
-            // timer1
-            // 
-            timer1.Tick += timer1_Tick;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1184, 681);
-            Controls.Add(pictureBox1);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
@@ -148,7 +127,6 @@
             Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -165,7 +143,5 @@
         private ToolStripMenuItem estoqueToolStripMenuItem;
         private ToolStripMenuItem agendaToolStripMenuItem;
         private ToolStripMenuItem loginToolStripMenuItem;
-        private PictureBox pictureBox1;
-        private System.Windows.Forms.Timer timer1;
     }
 }

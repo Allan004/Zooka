@@ -153,10 +153,40 @@ namespace Zooka.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gatos {
+            get {
+                object obj = ResourceManager.GetObject("gatos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hamster {
+            get {
+                object obj = ResourceManager.GetObject("hamster", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap jpeg__2_ {
             get {
                 object obj = ResourceManager.GetObject("jpeg (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Byte[].
+        /// </summary>
+        internal static byte[] OIP {
+            get {
+                object obj = ResourceManager.GetObject("OIP", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         

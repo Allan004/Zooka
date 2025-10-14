@@ -11,7 +11,7 @@ namespace Zooka
         {
             InitializeComponent();
             TESTE();
-            timer1.Enabled = true;
+          
         }
 
         
@@ -123,15 +123,8 @@ namespace Zooka
             prof.MdiParent = this;
             prof.Show();
         }
-        int dao = 4;
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            dao++;
-
-            pictureBox1.BackgroundImage = Properties.Resources.Captura_de_tela_2025_09_26_191727_removebg_preview;
-                pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            
-            
-        }
+        
+        
+        
     }
 }
