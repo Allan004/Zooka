@@ -90,26 +90,8 @@ namespace Zooka
 
 
         }
-        private void btnEntrar_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Botão apertado!"); 
-
-            string login = txtLogin.Text;
-            string senha = txtSenha.Text;
-
-            UsuarioRepository usuarioRepo = new UsuarioRepository();
-
-            bool loginValido = usuarioRepo.ValidarLogin(login, senha);
-
-            if (loginValido)
-            {
-                MessageBox.Show("Bem-vindo à família Zooka!", "Login bem-sucedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Revise os campos e tente novamente.", "Erro no login", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        
         }
 
     }
-}
+
