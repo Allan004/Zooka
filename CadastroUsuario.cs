@@ -23,7 +23,7 @@ namespace Zooka
 
         private void CarregarCombos()
         {
-          
+
         }
 
         private void CadastroUsuario_Load(object sender, EventArgs e)
@@ -154,7 +154,7 @@ namespace Zooka
                 mensagem.Subject = "🎉 Cadastro realizado com sucesso!";
                 mensagem.IsBodyHtml = true;
 
-               
+
                 string corpoHtml = $@"
 <!DOCTYPE html>
 <html lang='pt-BR'>
@@ -212,11 +212,11 @@ namespace Zooka
 </body>
 </html>";
 
-             
+
                 AlternateView htmlView = AlternateView.CreateAlternateViewFromString(corpoHtml, null, "text/html");
                 mensagem.AlternateViews.Add(htmlView);
 
-               
+
                 using (var smtp = new SmtpClient("smtp.gmail.com", 587))
                 {
                     smtp.EnableSsl = true;
@@ -224,6 +224,11 @@ namespace Zooka
                     await smtp.SendMailAsync(mensagem);
                 }
             }
+        }
+
+        private void chkMostrarConfirmarSenha_CheckedChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

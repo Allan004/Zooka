@@ -2,15 +2,14 @@
 {
     partial class LoginUsuario
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        private System.Windows.Forms.LinkLabel linkCadastrar;
+        private System.Windows.Forms.TextBox txtLogin;
+        private System.Windows.Forms.TextBox txtSenha;
+        private System.Windows.Forms.CheckBox SenhaLogin;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,19 +19,14 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             linkCadastrar = new LinkLabel();
-            txtLoginUsuario = new TextBox();
-            txtSenhaLogin = new TextBox();
-            btnCadastrar = new Button();
-            senhaLogin = new CheckBox();
+            txtLogin = new TextBox();
+            txtSenha = new TextBox();
+            SenhaLogin = new CheckBox();
+            linkLabel1 = new LinkLabel();
+            btnEntrar = new Button();
             SuspendLayout();
             // 
             // linkCadastrar
@@ -48,63 +42,74 @@
             linkCadastrar.Text = "Cadastre-se";
             linkCadastrar.LinkClicked += linkLabel1_LinkClicked;
             // 
-            // txtLoginUsuario
+            // txtLogin
             // 
-            txtLoginUsuario.BackColor = Color.FromArgb(166, 166, 166);
-            txtLoginUsuario.BorderStyle = BorderStyle.None;
-            txtLoginUsuario.Location = new Point(58, 209);
-            txtLoginUsuario.Name = "txtLoginUsuario";
-            txtLoginUsuario.Size = new Size(240, 16);
-            txtLoginUsuario.TabIndex = 4;
-            txtLoginUsuario.TextChanged += txtLoginUsuario_TextChanged;
+            txtLogin.BackColor = Color.FromArgb(166, 166, 166);
+            txtLogin.BorderStyle = BorderStyle.None;
+            txtLogin.Location = new Point(58, 209);
+            txtLogin.Name = "txtLogin";
+            txtLogin.Size = new Size(240, 16);
+            txtLogin.TabIndex = 4;
             // 
-            // txtSenhaLogin
+            // txtSenha
             // 
-            txtSenhaLogin.BackColor = Color.FromArgb(166, 166, 166);
-            txtSenhaLogin.BorderStyle = BorderStyle.None;
-            txtSenhaLogin.Location = new Point(58, 293);
-            txtSenhaLogin.Name = "txtSenhaLogin";
-            txtSenhaLogin.Size = new Size(240, 16);
-            txtSenhaLogin.TabIndex = 5;
-            txtSenhaLogin.TextChanged += txtSenhaLogin_TextChanged;
+            txtSenha.BackColor = Color.FromArgb(166, 166, 166);
+            txtSenha.BorderStyle = BorderStyle.None;
+            txtSenha.Location = new Point(58, 293);
+            txtSenha.Name = "txtSenha";
+            txtSenha.Size = new Size(240, 16);
+            txtSenha.TabIndex = 5;
+            txtSenha.UseSystemPasswordChar = true;
             // 
-            // btnCadastrar
+            // SenhaLogin
             // 
-            btnCadastrar.BackColor = Color.FromArgb(255, 128, 0);
-            btnCadastrar.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
-            btnCadastrar.FlatAppearance.BorderSize = 0;
-            btnCadastrar.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 0);
-            btnCadastrar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 192, 128);
-            btnCadastrar.FlatStyle = FlatStyle.Flat;
-            btnCadastrar.Location = new Point(110, 357);
-            btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(127, 28);
-            btnCadastrar.TabIndex = 8;
-            btnCadastrar.Text = "Entrar";
-            btnCadastrar.UseVisualStyleBackColor = false;
-            btnCadastrar.Click += btnCadastrar_Click;
+            SenhaLogin.AutoSize = true;
+            SenhaLogin.BackColor = SystemColors.ButtonHighlight;
+            SenhaLogin.Location = new Point(329, 295);
+            SenhaLogin.Name = "SenhaLogin";
+            SenhaLogin.Size = new Size(15, 14);
+            SenhaLogin.TabIndex = 9;
+            SenhaLogin.UseVisualStyleBackColor = false;
             // 
-            // senhaLogin
+            // linkLabel1
             // 
-            senhaLogin.AutoSize = true;
-            senhaLogin.BackColor = SystemColors.ButtonHighlight;
-            senhaLogin.Location = new Point(329, 295);
-            senhaLogin.Name = "senhaLogin";
-            senhaLogin.Size = new Size(15, 14);
-            senhaLogin.TabIndex = 9;
-            senhaLogin.UseVisualStyleBackColor = false;
-            senhaLogin.CheckedChanged += checkBox1_CheckedChanged;
+            linkLabel1.BackColor = Color.White;
+            linkLabel1.LinkColor = Color.DodgerBlue;
+            linkLabel1.Location = new Point(196, 321);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(115, 15);
+            linkLabel1.TabIndex = 10;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Esqueceu a senha?";
+            // 
+            // btnEntrar
+            // 
+            btnEntrar.BackColor = Color.FromArgb(255, 128, 0);
+            btnEntrar.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
+            btnEntrar.FlatAppearance.BorderSize = 0;
+            btnEntrar.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 0);
+            btnEntrar.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 192, 128);
+            btnEntrar.FlatStyle = FlatStyle.Flat;
+            btnEntrar.Location = new Point(112, 356);
+            btnEntrar.Name = "btnEntrar";
+            btnEntrar.Size = new Size(127, 28);
+            btnEntrar.TabIndex = 12;
+            btnEntrar.Text = "Entrar";
+            btnEntrar.UseVisualStyleBackColor = false;
+            btnEntrar.Click += btnEntrar_Click;
             // 
             // LoginUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.Blue_Flat_Color_UI_Login_Page_Desktop_Prototype;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
-            Controls.Add(senhaLogin);
-            Controls.Add(btnCadastrar);
-            Controls.Add(txtSenhaLogin);
-            Controls.Add(txtLoginUsuario);
+            Controls.Add(btnEntrar);
+            Controls.Add(linkLabel1);
+            Controls.Add(SenhaLogin);
+            Controls.Add(txtSenha);
+            Controls.Add(txtLogin);
             Controls.Add(linkCadastrar);
             Name = "LoginUsuario";
             Text = "LoginUsuario";
@@ -112,13 +117,6 @@
             ResumeLayout(false);
             PerformLayout();
         }
-
-        #endregion
-
-        private LinkLabel linkCadastrar;
-        private TextBox txtLoginUsuario;
-        private TextBox txtSenhaLogin;
-        private Button btnCadastrar;
-        private CheckBox senhaLogin;
+        private Button btnEntrar;
     }
 }
