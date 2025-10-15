@@ -2,6 +2,7 @@ using MySql.Data.MySqlClient;
 using SisVendas;
 using System.Data;
 
+
 namespace Zooka
 {
     public partial class Form1 : Form
@@ -10,7 +11,10 @@ namespace Zooka
         {
             InitializeComponent();
             TESTE();
+
         }
+
+
 
         private void cadastroUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -85,6 +89,7 @@ namespace Zooka
 
 
 
+
         }
 
         private void agendaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -118,6 +123,16 @@ namespace Zooka
             LoginUsuario prof = new LoginUsuario();
             prof.MdiParent = this;
             prof.Show();
+        }
+        int add = 0;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            add++;
+
+            if (add == 1)
+            {
+                
+            }
         }
     }
 }

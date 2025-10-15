@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
 using SisVendas;
 using System;
 using System.Collections.Generic;
@@ -42,12 +43,25 @@ namespace Zooka
 
             Conexao conexao = new Conexao();
 
+            bool veri = true;
+
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is System.Windows.Forms.TextBox txt && string.IsNullOrWhiteSpace(txt.Text))
+                {
+                    MessageBox.Show($"O campo '{txt.Name.Replace("txt", "")}' está vazio.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txt.Focus();
+                    return;
+                }
+
+            }
+
 
             using (var conn = conexao.GetConnection())
             {
                 string novonome = txtnome.Text;
                 string novocpf = txtcpf.Text.Replace(",", "").Replace("-", "");
-                string novotelefone = txttelefone.Text.Replace(",", "").Replace("(", "").Replace(")", "");
+                string novotelefone = txttelefone.Text.Replace(",", "").Replace("(", "").Replace(")", "").Replace("-","");
                 string novorg = txtrg.Text.Replace(",", "").Replace("-", "");
                 string novoemail = txtemail.Text;
                 string novocep = txtcep.Text.Replace(",", "").Replace("-", "");
@@ -61,43 +75,60 @@ namespace Zooka
                 string comando = "INSERT INTO cliente (nome_cliente,genero,cpf_cliente,rg_cliente,nascimento_cliente,telefone_cliente,email_cliente,cep_cliente,logradouro_cliente,bairro_cliente,cidade_cliente,estado_cliente) " +
                     "VALUES (@nome,@genero,@cpf,@rg,STR_TO_DATE(@nascimento, '%d/%m/%Y'),@telefone,@email,@cep,@logradouro,@bairro,@cidade,@estado)";
 
+                DataRow[] vericpf = teste.InsertGeral("cliente").Select($"cpf_cliente = '{novocpf}'");
+                DataRow[] verirg = teste.InsertGeral("cliente").Select($"rg_cliente = '{novorg}'");
 
-                using (var cmd = new MySqlCommand(comando, conn))
+                if (vericpf.Length > 0)
+                {
+                    errorProvider1.SetError(txtcpf, "CPF ja Cadastrado");
+                    veri = false;
+                }
+                if (verirg.Length > 0)
+                {
+                    errorProvider1.SetError(txtrg, "RG ja Cadastrado");
+                    veri = false;
+                }
 
+
+                if (veri == true)
                 {
 
-                    cmd.Parameters.AddWithValue("@nome", novonome);
+                    using (var cmd = new MySqlCommand(comando, conn))
 
-                    cmd.Parameters.AddWithValue("@genero", novogenero);
+                    {
 
-                    cmd.Parameters.AddWithValue("@cpf", novocpf);
+                        cmd.Parameters.AddWithValue("@nome", novonome);
 
-                    cmd.Parameters.AddWithValue("@rg", novorg);
+                        cmd.Parameters.AddWithValue("@genero", novogenero);
 
-                    cmd.Parameters.AddWithValue("@nascimento", novodatanascimento);
+                        cmd.Parameters.AddWithValue("@cpf", novocpf);
 
-                    cmd.Parameters.AddWithValue("@telefone", novotelefone);
+                        cmd.Parameters.AddWithValue("@rg", novorg);
 
-                    cmd.Parameters.AddWithValue("@email", novoemail);
+                        cmd.Parameters.AddWithValue("@nascimento", novodatanascimento);
 
-                    cmd.Parameters.AddWithValue("@cep", novocep);
+                        cmd.Parameters.AddWithValue("@telefone", novotelefone);
 
-                    cmd.Parameters.AddWithValue("@logradouro", novologradouro);
+                        cmd.Parameters.AddWithValue("@email", novoemail);
 
-                    cmd.Parameters.AddWithValue("@bairro", novobairro);
+                        cmd.Parameters.AddWithValue("@cep", novocep);
 
-                    cmd.Parameters.AddWithValue("@cidade", novocidade);
+                        cmd.Parameters.AddWithValue("@logradouro", novologradouro);
 
-                    cmd.Parameters.AddWithValue("@estado", novoestado);
-                    conn.Open();
+                        cmd.Parameters.AddWithValue("@bairro", novobairro);
 
-                    cmd.ExecuteNonQuery();
+                        cmd.Parameters.AddWithValue("@cidade", novocidade);
+
+                        cmd.Parameters.AddWithValue("@estado", novoestado);
+                        conn.Open();
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    MessageBox.Show("Concluido!!!", "Notificação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    teste.Limpeza(this);
                 }
-                MessageBox.Show("Concluido!!!", "Notificação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                teste.Limpeza(this);
-
             }
-            
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -106,6 +137,16 @@ namespace Zooka
         }
 
         private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtrg_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }

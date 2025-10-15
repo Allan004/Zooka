@@ -92,7 +92,7 @@
             label1.BackColor = Color.FromArgb(255, 241, 201);
             label1.Font = new Font("Arial Rounded MT Bold", 30F);
             label1.ForeColor = Color.FromArgb(215, 122, 40);
-            label1.Location = new Point(402, 27);
+            label1.Location = new Point(403, 47);
             label1.Name = "label1";
             label1.Size = new Size(340, 46);
             label1.TabIndex = 22;

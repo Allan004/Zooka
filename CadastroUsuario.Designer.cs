@@ -98,6 +98,7 @@
             chkMostrarConfirmarSenha.Size = new Size(15, 14);
             chkMostrarConfirmarSenha.TabIndex = 9;
             chkMostrarConfirmarSenha.UseVisualStyleBackColor = true;
+            chkMostrarConfirmarSenha.CheckedChanged += chkMostrarConfirmarSenha_CheckedChanged_1;
             // 
             // chkMostrarSenha
             // 
