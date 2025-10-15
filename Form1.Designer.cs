@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             menuStrip1 = new MenuStrip();
             cADASTROSToolStripMenuItem = new ToolStripMenuItem();
             cadastroUsuarioToolStripMenuItem = new ToolStripMenuItem();
@@ -38,6 +39,7 @@
             agendaToolStripMenuItem = new ToolStripMenuItem();
             loginToolStripMenuItem = new ToolStripMenuItem();
             estoqueToolStripMenuItem = new ToolStripMenuItem();
+            timer1 = new System.Windows.Forms.Timer(components);
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -114,6 +116,11 @@
             estoqueToolStripMenuItem.Text = "ESTOQUE";
             estoqueToolStripMenuItem.Click += estoqueToolStripMenuItem_Click;
             // 
+            // timer1
+            // 
+            timer1.Interval = 2000;
+            timer1.Tick += timer1_Tick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -143,5 +150,6 @@
         private ToolStripMenuItem estoqueToolStripMenuItem;
         private ToolStripMenuItem agendaToolStripMenuItem;
         private ToolStripMenuItem loginToolStripMenuItem;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -30,6 +30,7 @@ namespace Zooka
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroProfissional));
             button1 = new Button();
             txtrg = new MaskedTextBox();
@@ -61,8 +62,10 @@ namespace Zooka
             textBox1 = new TextBox();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
+            errorProvider1 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -427,6 +430,11 @@ namespace Zooka
             pictureBox2.TabIndex = 57;
             pictureBox2.TabStop = false;
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            errorProvider1.Icon = (Icon)resources.GetObject("errorProvider1.Icon");
+            // 
             // CadastroProfissional
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -469,6 +477,7 @@ namespace Zooka
             Load += CadastroProfissional_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -505,5 +514,6 @@ namespace Zooka
         private TextBox textBox1;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private ErrorProvider errorProvider1;
     }
 }
