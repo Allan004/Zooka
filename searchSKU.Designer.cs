@@ -33,7 +33,6 @@
             btnSKU_editar = new Button();
             btnSKU_des_atv = new Button();
             txtSKUCad_search = new TextBox();
-            btnSKUCad_search = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvSKU_search).BeginInit();
             SuspendLayout();
             // 
@@ -89,25 +88,14 @@
             // 
             txtSKUCad_search.Location = new Point(24, 75);
             txtSKUCad_search.Name = "txtSKUCad_search";
-            txtSKUCad_search.Size = new Size(507, 23);
+            txtSKUCad_search.Size = new Size(598, 23);
             txtSKUCad_search.TabIndex = 11;
-            // 
-            // btnSKUCad_search
-            // 
-            btnSKUCad_search.Location = new Point(537, 75);
-            btnSKUCad_search.Name = "btnSKUCad_search";
-            btnSKUCad_search.Size = new Size(85, 26);
-            btnSKUCad_search.TabIndex = 12;
-            btnSKUCad_search.Text = "PESQUISAR";
-            btnSKUCad_search.UseVisualStyleBackColor = true;
-            btnSKUCad_search.Click += btnSKUCad_search_Click;
             // 
             // searchSKU
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1019, 571);
-            Controls.Add(btnSKUCad_search);
             Controls.Add(txtSKUCad_search);
             Controls.Add(btnSKU_des_atv);
             Controls.Add(btnSKU_editar);
@@ -126,6 +114,5 @@
         private Button btnSKU_editar;
         private Button btnSKU_des_atv;
         private TextBox txtSKUCad_search;
-        private Button btnSKUCad_search;
     }
 }
