@@ -15,7 +15,7 @@ namespace Zooka
         public DataTable Verificarcpf(string padrao)
         {
             string defi = padrao;
-            string sql =  "SELECT * FROM cliente WHERE cpf_cliente Like @cpf";
+            string sql = "SELECT * FROM cliente WHERE cpf_cliente Like @cpf";
             Conexao conexao = new Conexao();
             using (var conn = conexao.GetConnection())
             {
@@ -27,11 +27,25 @@ namespace Zooka
                     return dt;
                 }
             }
-
-
-
-
         }
+
+         public DataTable InsertGeral(string padrao)
+         {
+            string defi = padrao;
+            string sql = $"SELECT * FROM `{padrao}`";
+            Conexao conexao = new Conexao();
+            using (var conn = conexao.GetConnection())
+            {
+                using (MySqlDataAdapter da = new MySqlDataAdapter(sql, conn))
+                {
+                    
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+
+         }
         public void Limpeza(Control controle)
         {
 
