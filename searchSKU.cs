@@ -159,17 +159,21 @@ namespace Zooka
             }
         }
 
-        private void btnSKUCad_search_Click(object sender, EventArgs e)
-        {
-            string filtro = txtSKUCad_search.Text.Trim().ToLower();
+        // BOTÃO DE SEARCH FUNCIONAL, PORÉM NÃO VOU UTILIZÁ-LO NESSA OCASIÃO
 
-            if (dtOriginal == null) return;
+        //private void btnSKUCad_search_Click(object sender, EventArgs e)
 
-            // SEARCH FILTRADO
-            DataView dv = new DataView(dtOriginal);
-            dv.RowFilter = $"nome_produto LIKE '%{filtro}%' OR Convert(id_skuproduto, 'System.String') LIKE '%{filtro}%'";
-            dgvSKU_search.DataSource = dv;
-        }
+        //{
+        //    string filtro = txtSKUCad_search.Text.Trim().ToLower();
+
+        //    if (dtOriginal == null) return;
+
+        //    // SEARCH FILTRADO
+        //    DataView dv = new DataView(dtOriginal);
+        //    dv.RowFilter = $"nome_produto LIKE '%{filtro}%' OR Convert(id_skuproduto, 'System.String') LIKE '%{filtro}%'";
+        //    dgvSKU_search.DataSource = dv;
+
+        //}
 
         private void btnSKU_des_atv_Click(object sender, EventArgs e)
         {
