@@ -318,11 +318,6 @@
             label2.TabIndex = 23;
             label2.Text = "Nome:";
             // 
-            // errorProvider1
-            // 
-            errorProvider1.ContainerControl = this;
-            errorProvider1.Icon = (Icon)resources.GetObject("errorProvider1.Icon");
-            // 
             // Servico
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);

@@ -40,6 +40,7 @@
             loginToolStripMenuItem = new ToolStripMenuItem();
             estoqueToolStripMenuItem = new ToolStripMenuItem();
             timer1 = new System.Windows.Forms.Timer(components);
+            servicoToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             // 
             // cADASTROSToolStripMenuItem
             // 
-            cADASTROSToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroUsuarioToolStripMenuItem, cadastroClienteToolStripMenuItem, cadastroPetToolStripMenuItem, cadastroFuncionarioToolStripMenuItem, cadastroDeSKUToolStripMenuItem, agendaToolStripMenuItem, loginToolStripMenuItem });
+            cADASTROSToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroUsuarioToolStripMenuItem, cadastroClienteToolStripMenuItem, cadastroPetToolStripMenuItem, cadastroFuncionarioToolStripMenuItem, cadastroDeSKUToolStripMenuItem, agendaToolStripMenuItem, loginToolStripMenuItem, servicoToolStripMenuItem });
             cADASTROSToolStripMenuItem.Name = "cADASTROSToolStripMenuItem";
             cADASTROSToolStripMenuItem.Size = new Size(86, 20);
             cADASTROSToolStripMenuItem.Text = "CADASTROS";
@@ -121,6 +122,13 @@
             timer1.Interval = 2000;
             timer1.Tick += timer1_Tick;
             // 
+            // servicoToolStripMenuItem
+            // 
+            servicoToolStripMenuItem.Name = "servicoToolStripMenuItem";
+            servicoToolStripMenuItem.Size = new Size(187, 22);
+            servicoToolStripMenuItem.Text = "Servico";
+            servicoToolStripMenuItem.Click += servicoToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -151,5 +159,6 @@
         private ToolStripMenuItem agendaToolStripMenuItem;
         private ToolStripMenuItem loginToolStripMenuItem;
         private System.Windows.Forms.Timer timer1;
+        private ToolStripMenuItem servicoToolStripMenuItem;
     }
 }

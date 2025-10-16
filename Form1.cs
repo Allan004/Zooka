@@ -130,8 +130,15 @@ namespace Zooka
 
             if (add == 1)
             {
-                
+
             }
+        }
+
+        private void servicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Servico abrirservicico = new Servico();
+            abrirservicico.MdiParent = this;
+            abrirservicico.Show();
         }
     }
 }
