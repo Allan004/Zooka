@@ -73,6 +73,16 @@ namespace Zooka.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap aa {
+            get {
+                object obj = ResourceManager.GetObject("aa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Ativo_1 {
             get {
                 object obj = ResourceManager.GetObject("Ativo 1", resourceCulture);
@@ -106,16 +116,6 @@ namespace Zooka.Properties {
         internal static System.Drawing.Bitmap Bem_Vindo__3_ {
             get {
                 object obj = ResourceManager.GetObject("Bem-Vindo (3)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Blue_Flat_Color_UI_Login_Page_Desktop_Prototype {
-            get {
-                object obj = ResourceManager.GetObject("Blue Flat Color UI Login Page Desktop Prototype", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
