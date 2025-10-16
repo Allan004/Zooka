@@ -53,6 +53,7 @@
             label5 = new Label();
             label2 = new Label();
             errorProvider1 = new ErrorProvider(components);
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
@@ -314,12 +315,22 @@
             errorProvider1.ContainerControl = this;
             errorProvider1.Icon = (Icon)resources.GetObject("errorProvider1.Icon");
             // 
+            // button2
+            // 
+            button2.Location = new Point(950, 468);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 57;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // Cadastro_Pet
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(251, 228, 178);
             ClientSize = new Size(1147, 580);
+            Controls.Add(button2);
             Controls.Add(txtPelagem);
             Controls.Add(button1);
             Controls.Add(label5);
@@ -376,5 +387,6 @@
         private Label label5;
         private Label label2;
         private ErrorProvider errorProvider1;
+        private Button button2;
     }   
 }

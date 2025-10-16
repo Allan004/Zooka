@@ -140,5 +140,12 @@ namespace Zooka
             abrirservicico.MdiParent = this;
             abrirservicico.Show();
         }
+
+        private void oRDEMDECOMPRAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ordem_de_compra odc = new ordem_de_compra();
+            odc.MdiParent = this;
+            odc.Show();
+        }
     }
 }

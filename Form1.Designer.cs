@@ -38,15 +38,16 @@
             cadastroDeSKUToolStripMenuItem = new ToolStripMenuItem();
             agendaToolStripMenuItem = new ToolStripMenuItem();
             loginToolStripMenuItem = new ToolStripMenuItem();
+            servicoToolStripMenuItem = new ToolStripMenuItem();
             estoqueToolStripMenuItem = new ToolStripMenuItem();
             timer1 = new System.Windows.Forms.Timer(components);
-            servicoToolStripMenuItem = new ToolStripMenuItem();
+            oRDEMDECOMPRAToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { cADASTROSToolStripMenuItem, estoqueToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { cADASTROSToolStripMenuItem, estoqueToolStripMenuItem, oRDEMDECOMPRAToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1184, 24);
@@ -110,6 +111,13 @@
             loginToolStripMenuItem.Text = "Login";
             loginToolStripMenuItem.Click += loginToolStripMenuItem_Click;
             // 
+            // servicoToolStripMenuItem
+            // 
+            servicoToolStripMenuItem.Name = "servicoToolStripMenuItem";
+            servicoToolStripMenuItem.Size = new Size(187, 22);
+            servicoToolStripMenuItem.Text = "Servico";
+            servicoToolStripMenuItem.Click += servicoToolStripMenuItem_Click;
+            // 
             // estoqueToolStripMenuItem
             // 
             estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
@@ -122,12 +130,12 @@
             timer1.Interval = 2000;
             timer1.Tick += timer1_Tick;
             // 
-            // servicoToolStripMenuItem
+            // oRDEMDECOMPRAToolStripMenuItem
             // 
-            servicoToolStripMenuItem.Name = "servicoToolStripMenuItem";
-            servicoToolStripMenuItem.Size = new Size(187, 22);
-            servicoToolStripMenuItem.Text = "Servico";
-            servicoToolStripMenuItem.Click += servicoToolStripMenuItem_Click;
+            oRDEMDECOMPRAToolStripMenuItem.Name = "oRDEMDECOMPRAToolStripMenuItem";
+            oRDEMDECOMPRAToolStripMenuItem.Size = new Size(130, 20);
+            oRDEMDECOMPRAToolStripMenuItem.Text = "ORDEM DE COMPRA";
+            oRDEMDECOMPRAToolStripMenuItem.Click += oRDEMDECOMPRAToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -160,5 +168,6 @@
         private ToolStripMenuItem loginToolStripMenuItem;
         private System.Windows.Forms.Timer timer1;
         private ToolStripMenuItem servicoToolStripMenuItem;
+        private ToolStripMenuItem oRDEMDECOMPRAToolStripMenuItem;
     }
 }
