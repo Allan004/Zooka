@@ -1,5 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using SisVendas;
 using System;
 using System.Drawing;
 using System.Windows.Forms;

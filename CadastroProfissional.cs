@@ -1,5 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using SisVendas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,7 +28,7 @@ namespace Zooka
         {
 
         }
-        int conta = 0;
+        
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -126,7 +125,7 @@ namespace Zooka
 
                         cmd.ExecuteNonQuery();
 
-                        conta = 1;
+                        
                         MessageBox.Show("Concluido!!!", "Notificação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         limpa.Limpeza(this);
 

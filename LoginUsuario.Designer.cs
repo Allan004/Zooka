@@ -102,7 +102,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Blue_Flat_Color_UI_Login_Page_Desktop_Prototype;
+            //BackgroundImage = Properties.Resources.Blue_Flat_Color_UI_Login_Page_Desktop_Prototype;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(btnEntrar);

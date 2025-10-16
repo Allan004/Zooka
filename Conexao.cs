@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
 
-namespace SisVendas
+namespace Zooka
 
 {
 

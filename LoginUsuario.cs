@@ -1,5 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using SisVendas;
 using System;
 using System.Windows.Forms;
 
@@ -14,21 +13,21 @@ namespace Zooka
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            string login = txtLogin.Text;
-            string senha = txtSenha.Text;
+            //string login = txtLogin.Text;
+            //string senha = txtSenha.Text;
 
-            UsuarioRepository usuarioRepo = new UsuarioRepository();
+            //UsuarioRepository usuarioRepo = new UsuarioRepository();
 
-            bool loginValido = usuarioRepo.ValidarLogin(login, senha);
+            //bool loginValido = usuarioRepo.ValidarLogin(login, senha);
 
-            if (loginValido)
-            {
-                MessageBox.Show("Bem-vindo à família Zooka!", "Login bem-sucedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Revise os campos e tente novamente.", "Erro no login", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //if (loginValido)
+            //{
+            //    MessageBox.Show("Bem-vindo à família Zooka!", "Login bem-sucedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Revise os campos e tente novamente.", "Erro no login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -44,7 +43,7 @@ namespace Zooka
         }
     }
 
-    public class Conexao
+    /*public class Conexao
     {
         private string connectionString = "server=10.37.44.26;user id=root;password=root;database=Zooka";
 
@@ -52,11 +51,11 @@ namespace Zooka
         {
             return new MySqlConnection(connectionString);
         }
-    }
+    }*/
 
     public class UsuarioRepository
     {
-        public bool ValidarLogin(string login, string senha)
+       /* public bool ValidarLogin(string login, string senha)
         {
             try
             {
@@ -89,7 +88,7 @@ namespace Zooka
 
 
 
-        }
+        }*/
         
         }
 

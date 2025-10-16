@@ -1,6 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 using Mysqlx.Crud;
-using SisVendas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using SisVendas;
+
 
 namespace Zooka
 {
