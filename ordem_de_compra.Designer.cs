@@ -28,86 +28,92 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            textBox1 = new TextBox();
-            label2 = new Label();
-            textBox2 = new TextBox();
-            label3 = new Label();
-            textBox3 = new TextBox();
+            lblFornecedor = new Label();
+            txtFornecedor_oc = new TextBox();
+            lblComprador = new Label();
+            txtComprador = new TextBox();
+            lblNumeroOC = new Label();
             dgvItensOC = new DataGridView();
+            txtNumeroOC = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvItensOC).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // lblFornecedor
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(24, 25);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 0;
-            label1.Text = "label1";
+            lblFornecedor.AutoSize = true;
+            lblFornecedor.Location = new Point(24, 93);
+            lblFornecedor.Name = "lblFornecedor";
+            lblFornecedor.Size = new Size(82, 15);
+            lblFornecedor.TabIndex = 0;
+            lblFornecedor.Text = "FORNECEDOR";
             // 
-            // textBox1
+            // txtFornecedor_oc
             // 
-            textBox1.Location = new Point(24, 43);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(105, 23);
-            textBox1.TabIndex = 1;
+            txtFornecedor_oc.Location = new Point(24, 111);
+            txtFornecedor_oc.Name = "txtFornecedor_oc";
+            txtFornecedor_oc.Size = new Size(365, 23);
+            txtFornecedor_oc.TabIndex = 1;
             // 
-            // label2
+            // lblComprador
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(157, 25);
-            label2.Name = "label2";
-            label2.Size = new Size(38, 15);
-            label2.TabIndex = 2;
-            label2.Text = "label2";
+            lblComprador.AutoSize = true;
+            lblComprador.Location = new Point(134, 17);
+            lblComprador.Name = "lblComprador";
+            lblComprador.Size = new Size(81, 15);
+            lblComprador.TabIndex = 2;
+            lblComprador.Text = "COMPRADOR";
             // 
-            // textBox2
+            // txtComprador
             // 
-            textBox2.Location = new Point(157, 43);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(105, 23);
-            textBox2.TabIndex = 3;
+            txtComprador.Location = new Point(134, 35);
+            txtComprador.Name = "txtComprador";
+            txtComprador.Size = new Size(255, 23);
+            txtComprador.TabIndex = 3;
             // 
-            // label3
+            // lblNumeroOC
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(24, 89);
-            label3.Name = "label3";
-            label3.Size = new Size(38, 15);
-            label3.TabIndex = 4;
-            label3.Text = "label3";
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(24, 117);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(105, 23);
-            textBox3.TabIndex = 5;
+            lblNumeroOC.AutoSize = true;
+            lblNumeroOC.Location = new Point(24, 17);
+            lblNumeroOC.Name = "lblNumeroOC";
+            lblNumeroOC.Size = new Size(41, 15);
+            lblNumeroOC.TabIndex = 4;
+            lblNumeroOC.Text = "Nº OC";
             // 
             // dgvItensOC
             // 
             dgvItensOC.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvItensOC.Location = new Point(431, 43);
+            dgvItensOC.Location = new Point(467, 35);
             dgvItensOC.Name = "dgvItensOC";
             dgvItensOC.Size = new Size(270, 231);
             dgvItensOC.TabIndex = 6;
+            // 
+            // txtNumeroOC
+            // 
+            txtNumeroOC.BackColor = SystemColors.Window;
+            txtNumeroOC.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtNumeroOC.ForeColor = Color.MidnightBlue;
+            txtNumeroOC.Location = new Point(24, 35);
+            txtNumeroOC.Multiline = true;
+            txtNumeroOC.Name = "txtNumeroOC";
+            txtNumeroOC.Size = new Size(65, 23);
+            txtNumeroOC.TabIndex = 7;
+            txtNumeroOC.TextAlign = HorizontalAlignment.Center;
             // 
             // ordem_de_compra
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtNumeroOC);
             Controls.Add(dgvItensOC);
-            Controls.Add(textBox3);
-            Controls.Add(label3);
-            Controls.Add(textBox2);
-            Controls.Add(label2);
-            Controls.Add(textBox1);
-            Controls.Add(label1);
+            Controls.Add(lblNumeroOC);
+            Controls.Add(txtComprador);
+            Controls.Add(lblComprador);
+            Controls.Add(txtFornecedor_oc);
+            Controls.Add(lblFornecedor);
             Name = "ordem_de_compra";
             Text = "ordem_de_compra";
+            Load += ordem_de_compra_Load;
             ((System.ComponentModel.ISupportInitialize)dgvItensOC).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -115,12 +121,12 @@
 
         #endregion
 
-        private Label label1;
-        private TextBox textBox1;
-        private Label label2;
-        private TextBox textBox2;
-        private Label label3;
-        private TextBox textBox3;
+        private Label lblFornecedor;
+        private TextBox txtFornecedor_oc;
+        private Label lblComprador;
+        private TextBox txtComprador;
+        private Label lblNumeroOC;
         private DataGridView dgvItensOC;
+        private TextBox txtNumeroOC;
     }
 }
