@@ -108,6 +108,7 @@
             chkMostrarSenha.Size = new Size(15, 14);
             chkMostrarSenha.TabIndex = 10;
             chkMostrarSenha.UseVisualStyleBackColor = true;
+            chkMostrarSenha.CheckedChanged += chkMostrarSenha_CheckedChanged_1;
             // 
             // CadastroUsuario
             // 
