@@ -71,6 +71,7 @@
             SenhaLogin.Size = new Size(15, 14);
             SenhaLogin.TabIndex = 9;
             SenhaLogin.UseVisualStyleBackColor = false;
+            SenhaLogin.CheckedChanged += SenhaLogin_CheckedChanged_1;
             // 
             // linkLabel1
             // 
@@ -114,7 +115,7 @@
             Controls.Add(linkCadastrar);
             Name = "LoginUsuario";
             Text = "LoginUsuario";
-            Load += LoginUsuario_Load;
+            Load += LoginUsuario_Load_1;
             ResumeLayout(false);
             PerformLayout();
         }
