@@ -14,6 +14,9 @@ namespace Zooka
 {
     public partial class searchSKU : Form
     {
+        public int SelecionadoID { get; set; }
+        public string SelecionadoNome { get; set; }
+
         private DataTable dtOriginal;
 
         public searchSKU()

@@ -229,5 +229,10 @@ namespace Zooka
         {
 
         }
+
+        private void chkMostrarSenha_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
