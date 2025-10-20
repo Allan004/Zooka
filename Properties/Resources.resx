@@ -160,13 +160,22 @@
   <data name="OIP" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\OIP.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="excluir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\excluir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ativo 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ativo 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cachorros" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cachorros.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="hamster" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hamster.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Blue Flat Color UI Login Page Desktop Prototype (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Blue Flat Color UI Login Page Desktop Prototype (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Alterar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Alterar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

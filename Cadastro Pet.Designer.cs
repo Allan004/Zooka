@@ -317,12 +317,16 @@
             // 
             // button2
             // 
-            button2.Location = new Point(950, 468);
+            button2.BackgroundImage = Properties.Resources.Ativo_2;
+            button2.BackgroundImageLayout = ImageLayout.Stretch;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Location = new Point(1016, 526);
             button2.Name = "button2";
-            button2.Size = new Size(75, 23);
+            button2.Size = new Size(62, 23);
             button2.TabIndex = 57;
-            button2.Text = "button2";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Cadastro_Pet
             // 
