@@ -16,6 +16,7 @@ namespace Zooka
 {
     public partial class Cadastro_Pet : Form
     {
+        Consulta quin = new Consulta();
         consulta_cliente teste = new consulta_cliente();
         public Cadastro_Pet()
         {
@@ -150,6 +151,21 @@ namespace Zooka
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+           
+
+            Consulta cons = new Consulta();
+
+
+            cons.ShowDialog();
+
+            bool tt = true;
+            quin.receberbool(tt);
 
         }
     }
