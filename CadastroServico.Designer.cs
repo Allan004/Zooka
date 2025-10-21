@@ -50,6 +50,8 @@
             lblDescricao = new Label();
             txtTempo = new TextBox();
             lblTempo = new Label();
+            txtCodigo = new TextBox();
+            lblCodigo = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -57,9 +59,9 @@
             // 
             txtNome.BorderStyle = BorderStyle.None;
             txtNome.Font = new Font("Segoe UI", 13F);
-            txtNome.Location = new Point(89, 174);
+            txtNome.Location = new Point(226, 174);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(575, 24);
+            txtNome.Size = new Size(438, 24);
             txtNome.TabIndex = 1;
             // 
             // lblCadastroServicos
@@ -121,7 +123,7 @@
             lblNome.BackColor = Color.Transparent;
             lblNome.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
             lblNome.ForeColor = Color.FromArgb(215, 122, 40);
-            lblNome.Location = new Point(89, 148);
+            lblNome.Location = new Point(226, 148);
             lblNome.Name = "lblNome";
             lblNome.Size = new Size(54, 23);
             lblNome.TabIndex = 23;
@@ -171,7 +173,7 @@
             lblDescricao.BackColor = Color.Transparent;
             lblDescricao.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
             lblDescricao.ForeColor = Color.FromArgb(215, 122, 40);
-            lblDescricao.Location = new Point(339, 328);
+            lblDescricao.Location = new Point(333, 328);
             lblDescricao.Name = "lblDescricao";
             lblDescricao.Size = new Size(86, 23);
             lblDescricao.TabIndex = 23;
@@ -198,7 +200,28 @@
             lblTempo.TabIndex = 23;
             lblTempo.Text = "Tempo";
             // 
-            // Servico
+            // txtCodigo
+            // 
+            txtCodigo.BorderStyle = BorderStyle.None;
+            txtCodigo.Font = new Font("Segoe UI", 13F);
+            txtCodigo.Location = new Point(89, 174);
+            txtCodigo.Name = "txtCodigo";
+            txtCodigo.Size = new Size(108, 24);
+            txtCodigo.TabIndex = 1;
+            // 
+            // lblCodigo
+            // 
+            lblCodigo.AutoSize = true;
+            lblCodigo.BackColor = Color.Transparent;
+            lblCodigo.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
+            lblCodigo.ForeColor = Color.FromArgb(215, 122, 40);
+            lblCodigo.Location = new Point(89, 148);
+            lblCodigo.Name = "lblCodigo";
+            lblCodigo.Size = new Size(65, 23);
+            lblCodigo.TabIndex = 23;
+            lblCodigo.Text = "Código";
+            // 
+            // CadastroServico
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -210,14 +233,16 @@
             Controls.Add(lblDescricao);
             Controls.Add(lblCategoria);
             Controls.Add(lblTempo);
+            Controls.Add(lblCodigo);
             Controls.Add(lblNome);
             Controls.Add(pictureBox1);
             Controls.Add(txtPreco);
             Controls.Add(txtTempo);
+            Controls.Add(txtCodigo);
             Controls.Add(txtNome);
             Controls.Add(lblPreco);
             Controls.Add(lblCadastroServicos);
-            Name = "Servico";
+            Name = "CadastroServico";
             Text = "Servico";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -238,5 +263,7 @@
         private Label lblDescricao;
         private TextBox txtTempo;
         private Label lblTempo;
+        private TextBox txtCodigo;
+        private Label lblCodigo;
     }
 }

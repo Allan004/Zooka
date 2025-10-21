@@ -36,7 +36,7 @@
             button3 = new Button();
             btnEstoque = new Button();
             BtnOrdemdecompra = new Button();
-            button6 = new Button();
+            btnFornecedor = new Button();
             button7 = new Button();
             btnCliente = new Button();
             btnPet = new Button();
@@ -115,18 +115,19 @@
             BtnOrdemdecompra.Visible = false;
             BtnOrdemdecompra.Click += BtnOrdemdecompra_Click;
             // 
-            // button6
+            // btnFornecedor
             // 
-            button6.BackColor = Color.FromArgb(251, 228, 178);
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Arial Rounded MT Bold", 14.25F);
-            button6.Location = new Point(1, 355);
-            button6.Name = "button6";
-            button6.Size = new Size(218, 75);
-            button6.TabIndex = 8;
-            button6.UseVisualStyleBackColor = false;
-            button6.Visible = false;
-            button6.Click += button6_Click;
+            btnFornecedor.BackColor = Color.FromArgb(251, 228, 178);
+            btnFornecedor.FlatStyle = FlatStyle.Flat;
+            btnFornecedor.Font = new Font("Arial Rounded MT Bold", 14.25F);
+            btnFornecedor.Location = new Point(1, 355);
+            btnFornecedor.Name = "btnFornecedor";
+            btnFornecedor.Size = new Size(218, 75);
+            btnFornecedor.TabIndex = 8;
+            btnFornecedor.Text = "Fornecedor";
+            btnFornecedor.UseVisualStyleBackColor = false;
+            btnFornecedor.Visible = false;
+            btnFornecedor.Click += button6_Click;
             // 
             // button7
             // 
@@ -229,7 +230,7 @@
             Controls.Add(btnPet);
             Controls.Add(btnCliente);
             Controls.Add(button7);
-            Controls.Add(button6);
+            Controls.Add(btnFornecedor);
             Controls.Add(BtnOrdemdecompra);
             Controls.Add(btnEstoque);
             Controls.Add(button3);
@@ -241,6 +242,7 @@
             Name = "Form1";
             Padding = new Padding(218, 0, 0, 0);
             Text = "Form1";
+            Load += Form1_Load;
             ResumeLayout(false);
         }
 
@@ -251,7 +253,7 @@
         private Button button3;
         private Button btnEstoque;
         private Button BtnOrdemdecompra;
-        private Button button6;
+        private Button btnFornecedor;
         private Button button7;
         private Button btnCliente;
         private Button btnPet;

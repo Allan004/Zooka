@@ -24,7 +24,7 @@ namespace Zooka
                 button3.Visible = true;
                 btnEstoque.Visible = true;
                 BtnOrdemdecompra.Visible = true;
-                button6.Visible = true;
+                btnFornecedor.Visible = true;
                 button7.Visible = true;
             }
             if (fecharm == false)
@@ -33,7 +33,7 @@ namespace Zooka
                 button3.Visible = false;
                 btnEstoque.Visible = false;
                 BtnOrdemdecompra.Visible = false;
-                button6.Visible = false;
+                btnFornecedor.Visible = false;
                 button7.Visible = false;
 
             }
@@ -127,7 +127,8 @@ namespace Zooka
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            CadastroFornecedor abrirFornecedor = new CadastroFornecedor();
+            abrirFornecedor.Show();
         }
 
 
@@ -228,6 +229,11 @@ namespace Zooka
         }
 
         private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
