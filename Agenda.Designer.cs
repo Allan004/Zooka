@@ -59,6 +59,7 @@
             lpDay.Name = "lpDay";
             lpDay.Size = new Size(1828, 931);
             lpDay.TabIndex = 0;
+            lpDay.Paint += lpDay_Paint_1;
             // 
             // lblDomingo
             // 
@@ -89,7 +90,7 @@
             btnProximo.BackgroundImageLayout = ImageLayout.Zoom;
             btnProximo.FlatAppearance.BorderSize = 0;
             btnProximo.FlatStyle = FlatStyle.Flat;
-            btnProximo.Location = new Point(299, 20);
+            btnProximo.Location = new Point(433, 23);
             btnProximo.Name = "btnProximo";
             btnProximo.Size = new Size(64, 42);
             btnProximo.TabIndex = 3;
@@ -103,7 +104,7 @@
             btnAnterior.BackgroundImageLayout = ImageLayout.Zoom;
             btnAnterior.FlatAppearance.BorderSize = 0;
             btnAnterior.FlatStyle = FlatStyle.Flat;
-            btnAnterior.Location = new Point(229, 20);
+            btnAnterior.Location = new Point(363, 23);
             btnAnterior.Name = "btnAnterior";
             btnAnterior.Size = new Size(64, 42);
             btnAnterior.TabIndex = 3;
@@ -212,28 +213,28 @@
             // tsmStatusConfirmado
             // 
             tsmStatusConfirmado.Name = "tsmStatusConfirmado";
-            tsmStatusConfirmado.Size = new Size(180, 22);
+            tsmStatusConfirmado.Size = new Size(152, 22);
             tsmStatusConfirmado.Text = "CONFIRMADO";
             tsmStatusConfirmado.Click += tsmStatusConfirmado_Click;
             // 
             // tsmStatusCancelado
             // 
             tsmStatusCancelado.Name = "tsmStatusCancelado";
-            tsmStatusCancelado.Size = new Size(180, 22);
+            tsmStatusCancelado.Size = new Size(152, 22);
             tsmStatusCancelado.Text = "COMPARECEU";
             tsmStatusCancelado.Click += tsmStatusCompareceu_Click;
             // 
             // tsmStatusCompareceu
             // 
             tsmStatusCompareceu.Name = "tsmStatusCompareceu";
-            tsmStatusCompareceu.Size = new Size(180, 22);
+            tsmStatusCompareceu.Size = new Size(152, 22);
             tsmStatusCompareceu.Text = "CANCELADO";
             tsmStatusCompareceu.Click += tsmStatusCancelado_Click;
             // 
             // tsmStatusRemarcado
             // 
             tsmStatusRemarcado.Name = "tsmStatusRemarcado";
-            tsmStatusRemarcado.Size = new Size(180, 22);
+            tsmStatusRemarcado.Size = new Size(152, 22);
             tsmStatusRemarcado.Text = "REMARCADO";
             tsmStatusRemarcado.Click += tsmStatusRemarcado_Click;
             // 

@@ -317,7 +317,7 @@
             // 
             // button2
             // 
-            button2.BackgroundImage = Properties.Resources.Ativo_2;
+
             button2.BackgroundImageLayout = ImageLayout.Stretch;
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
