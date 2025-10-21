@@ -133,9 +133,9 @@ namespace Zooka.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Bem_Vindo__3_ {
+        internal static System.Drawing.Bitmap bb {
             get {
-                object obj = ResourceManager.GetObject("Bem-Vindo (3)", resourceCulture);
+                object obj = ResourceManager.GetObject("bb", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace Zooka.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Blue_Flat_Color_UI_Login_Page_Desktop_Prototype__1_ {
+        internal static System.Drawing.Bitmap Bem_Vindo__3_ {
             get {
-                object obj = ResourceManager.GetObject("Blue Flat Color UI Login Page Desktop Prototype (1)", resourceCulture);
+                object obj = ResourceManager.GetObject("Bem-Vindo (3)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,6 +176,26 @@ namespace Zooka.Properties {
         internal static System.Drawing.Bitmap Captura_de_tela_2025_09_26_191727_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("Captura_de_tela_2025-09-26_191727-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ccc {
+            get {
+                object obj = ResourceManager.GetObject("ccc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap contate_nos {
+            get {
+                object obj = ResourceManager.GetObject("contate-nos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
