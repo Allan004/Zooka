@@ -136,7 +136,7 @@ namespace Zooka
 
         private void servicoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Servico abrirservicico = new Servico();
+            CadastroServico abrirservicico = new CadastroServico();
             abrirservicico.MdiParent = this;
             abrirservicico.Show();
         }

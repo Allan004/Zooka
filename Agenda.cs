@@ -271,5 +271,10 @@ namespace Zooka
         }
 
         private void lpDay_Paint(object sender, PaintEventArgs e) { }
+
+        private void lpDay_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
