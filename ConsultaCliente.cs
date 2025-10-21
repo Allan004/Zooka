@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -75,8 +76,22 @@ namespace Zooka
             }
         }
 
-      
-        
+        public void ExcluirLinha(string table,string coluna,string comparacao)
+        {
+          
+            string sql = $"DELETE FROM {table} WHERE {coluna} = {comparacao}";
+            Conexao conexao = new Conexao();
+            using (var conn = conexao.GetConnection())
+            {
+                using (var cmd = new MySqlCommand(sql, conn))
+                {
+                    
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
 
 
     }

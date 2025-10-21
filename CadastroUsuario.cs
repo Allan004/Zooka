@@ -234,5 +234,10 @@ namespace Zooka
         {
 
         }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

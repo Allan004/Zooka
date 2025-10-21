@@ -80,6 +80,7 @@
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(240, 16);
             txtNome.TabIndex = 3;
+            txtNome.TextChanged += txtNome_TextChanged;
             // 
             // txtConfirmarSenha
             // 
