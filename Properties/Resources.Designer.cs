@@ -23,7 +23,7 @@ namespace Zooka.Properties {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
-        
+        internal static readonly object ppp;
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
@@ -126,16 +126,6 @@ namespace Zooka.Properties {
         internal static System.Drawing.Bitmap gatos {
             get {
                 object obj = ResourceManager.GetObject("gatos", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ppp {
-            get {
-                object obj = ResourceManager.GetObject("ppp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

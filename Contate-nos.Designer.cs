@@ -136,7 +136,7 @@
             // 
             // SeuTelefone
             // 
-            SeuTelefone.Location = new Point(470, 245);
+            SeuTelefone.Location = new Point(471, 244);
             SeuTelefone.Name = "SeuTelefone";
             SeuTelefone.Size = new Size(229, 23);
             SeuTelefone.TabIndex = 15;
