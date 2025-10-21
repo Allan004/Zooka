@@ -30,6 +30,7 @@ namespace Zooka
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Contate_nos));
             label1 = new Label();
             BtnEntrar = new Button();
             linkLabel1 = new LinkLabel();
@@ -156,7 +157,7 @@ namespace Zooka
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            BackgroundImage = Resources.ppp1;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(SuaMensagem);

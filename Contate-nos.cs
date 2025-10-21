@@ -104,12 +104,12 @@ namespace Zooka
             }
         }
 
-        // ====================== MÉTODO CORRIGIDO ======================
+        
         private async Task EnviarEmailConfirmacaoAsync(string emailDestino, string nome, string telefone)
         {
-            // ⚠️ Use o MESMO e-mail que você usou para gerar a senha de app
+            
             string remetente = "ZookaPetshop@gmail.com";
-            string senha = "qvwppccjasjlvbefc"; // sem espaços!
+            string senha = "qvwppccjasjlvbefc"; 
             string assunto = "Confirmação de Contato - Zooka";
             string corpo = $"Olá {nome},\n\n" +
                            $"Recebemos seu contato!\n\n" +
