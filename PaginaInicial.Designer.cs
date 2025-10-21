@@ -117,7 +117,7 @@
             // PaginaInicial
             // 
             AutoScaleMode = AutoScaleMode.None;
-
+            BackgroundImage = Properties.Resources.bb;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(linkLabel6);

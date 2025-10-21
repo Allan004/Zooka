@@ -1,4 +1,6 @@
-﻿namespace Zooka
+﻿using Zooka.Properties;
+
+namespace Zooka
 {
     partial class Contate_nos
     {
@@ -154,7 +156,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            BackgroundImage = Properties.Resources.ppp;
+            BackgroundImage = Resources.ppp1;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(SuaMensagem);
