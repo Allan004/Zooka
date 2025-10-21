@@ -59,7 +59,7 @@
             lpDay.Name = "lpDay";
             lpDay.Size = new Size(1828, 931);
             lpDay.TabIndex = 0;
-            lpDay.Paint += lpDay_Paint_1;
+
             // 
             // lblDomingo
             // 

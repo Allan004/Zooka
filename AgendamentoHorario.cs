@@ -2,24 +2,32 @@
 using System;
 using System.Windows.Forms;
 using System.Globalization;
+using System.Collections.Generic; // Necessário para usar List<string>
 
 namespace Zooka
 {
+    /// <summary>
+    /// Formulário responsável pelo CRUD (Criação, Edição, Exclusão) de um Agendamento Horário.
+    /// Contém lógica de UI, validação e acesso a dados (SQL).
+    /// </summary>
     public partial class AgendamentoHorario : Form
     {
-        consulta_cliente conulta = new consulta_cliente();
+        // Objetos de acesso a dados.
         Conexao conexao = new Conexao();
+        consulta_cliente conulta = new consulta_cliente(); // Mantido por compatibilidade
 
         private int _idAgendamentoParaEdicao = 0;
 
         public delegate void AgendamentoAlteradoHandler();
         public event AgendamentoAlteradoHandler AgendamentoAlterado = delegate { };
 
+        // Construtor para Inclusão.
         public AgendamentoHorario()
         {
             InitializeComponent();
         }
 
+        // Construtor para Edição.
         public AgendamentoHorario(int idAgendamento)
         {
             InitializeComponent();
@@ -28,11 +36,9 @@ namespace Zooka
 
         private void AgendamentoHorario_Load(object sender, EventArgs e)
         {
-            // O código de preenchimento dos ComboBoxes foi removido para resolver os erros de referência
-
-            // LÓGICA DE CARREGAMENTO DE DADOS
             if (_idAgendamentoParaEdicao > 0)
             {
+                // Modo Edição
                 CarregarDadosAgendamento(_idAgendamentoParaEdicao);
                 this.Text = "Editar Agendamento ID: " + _idAgendamentoParaEdicao;
                 btnSalvar.Text = "ATUALIZAR";
@@ -40,7 +46,7 @@ namespace Zooka
             }
             else
             {
-                // MODO NOVO
+                // Modo Novo: Inicializa campos com data/hora da tela anterior.
                 string diaString = ControlAgendaDias.static_dia;
 
                 if (int.TryParse(diaString, out int diaNumero))
@@ -52,13 +58,130 @@ namespace Zooka
                 txtHora.Text = Agenda.static_hora.ToString();
 
                 txtAgendaCliente.Text = string.Empty;
-                txtPet.Text = string.Empty;
+                LimparCampoPet(); // Limpa o ComboBox
                 txtProfissional.Text = string.Empty;
                 txtServico.Text = string.Empty;
 
                 btnExcluir.Visible = false;
             }
         }
+
+        // --- LÓGICA DE BUSCA DE PETS POR CLIENTE ---
+
+        /// <summary>
+        /// Manipula a digitação no campo Cliente para disparar a busca de pets.
+        /// </summary>
+        private void txtAgendaCliente_TextChanged(object sender, EventArgs e)
+        {
+            string nomeCompleto = txtAgendaCliente.Text.Trim();
+
+            // 1. Lógica de Limpeza: Se o campo está vazio, limpa a lista de pets.
+            if (string.IsNullOrWhiteSpace(nomeCompleto))
+            {
+                LimparCampoPet();
+                return;
+            }
+
+            // 2. Lógica de Gatilho: Só executa a busca se a string contiver um espaço (sobrenome).
+            if (nomeCompleto.Contains(" "))
+            {
+                // Se houver ambiguidade (vários clientes com o mesmo nome e sobrenome),
+                // seu GetIdPeloNome pegará o primeiro que encontrar (LIMIT 1).
+                CarregarPetsDoCliente();
+            }
+            else
+            {
+                // Se ainda for só o primeiro nome, limpa a lista para não mostrar pets de clientes errados.
+                LimparCampoPet();
+            }
+        }
+
+        /// <summary>
+        /// Função utilitária que limpa o ComboBox de pet.
+        /// </summary>
+        private void LimparCampoPet()
+        {
+            cmbPet.DataSource = null;
+            cmbPet.Text = string.Empty;
+        }
+
+        /// <summary>
+        /// Coordena a obtenção do ID do Cliente e, em seguida, a busca dos Pets vinculados.
+        /// </summary>
+        private void CarregarPetsDoCliente()
+        {
+            string nomeCliente = txtAgendaCliente.Text;
+            int idCliente = GetIdPeloNome("cliente", "id_cliente", "nome_cliente", nomeCliente);
+
+            // Zera a lista antes de tentar preencher
+            cmbPet.DataSource = null;
+
+            if (idCliente > 0)
+            {
+                try
+                {
+                    List<string> nomesDosPets = BuscarPetsPorClienteId(idCliente);
+
+                    if (nomesDosPets.Count > 0)
+                    {
+                        // Vincula a lista de nomes ao ComboBox
+                        cmbPet.DataSource = nomesDosPets;
+                        cmbPet.SelectedIndex = 0; // Seleciona o primeiro pet
+                    }
+                    else
+                    {
+                        cmbPet.Text = "Nenhum Pet encontrado.";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro ao carregar pets: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cmbPet.Text = "Erro na busca.";
+                }
+            }
+            else
+            {
+                cmbPet.Text = "Cliente não encontrado.";
+            }
+        }
+
+        /// <summary>
+        /// Acessa o banco de dados e retorna uma lista de nomes de pets vinculados a um ID de cliente.
+        /// </summary>
+        private List<string> BuscarPetsPorClienteId(int idCliente)
+        {
+            List<string> pets = new List<string>();
+
+            // *** ATENÇÃO: Altere 'id_cliente_fk' para o nome exato da sua coluna de chave estrangeira na tabela 'pet'. ***
+            string comando = "SELECT nome_pet FROM pet WHERE id_cliente = @idCliente";
+
+            using (var conn = conexao.GetConnection())
+            using (var cmd = new MySqlCommand(comando, conn))
+            {
+                try
+                {
+                    cmd.Parameters.AddWithValue("@idCliente", idCliente);
+                    conn.Open();
+
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        string nomePet = reader["nome_pet"].ToString();
+                        pets.Add(nomePet);
+                    }
+                    reader.Close();
+                }
+                catch (MySqlException ex)
+                {
+                    // Propaga a exceção para que o método chamador trate o erro.
+                    throw new Exception("Falha na consulta SQL de pets.", ex);
+                }
+            }
+            return pets;
+        }
+
+        // --- BOTÕES DE AÇÃO CRUD ---
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
@@ -80,7 +203,7 @@ namespace Zooka
             }
         }
 
-        // --- FUNÇÕES DE EXECUÇÃO ---
+        // --- MÉTODOS DE EXECUÇÃO ---
 
         private void ExecutarAtualizarAgendamento()
         {
@@ -99,12 +222,12 @@ namespace Zooka
             }
 
             string hora = txtHora.Text;
-            // O STATUS DEVE SER LIDO DO DB AQUI, OU DEFINIDO PELO MENU DE CONTEXTO
             string statusAgenda = "CONFIRMADO";
             string statusDia = "OCUPADO";
 
             int idCliente = GetIdPeloNome("cliente", "id_cliente", "nome_cliente", txtAgendaCliente.Text);
-            int idPet = GetIdPeloNome("pet", "id_pet", "nome_pet", txtPet.Text);
+            // Lendo o valor do ComboBox (cmbPet.Text)
+            int idPet = GetIdPeloNome("pet", "id_pet", "nome_pet", cmbPet.Text);
             int idProfissional = GetIdPeloNome("profissional", "id_profissional", "nome_profissional", txtProfissional.Text);
             int idServico = GetIdPeloNome("servico", "id_servico", "nome_servico", txtServico.Text);
 
@@ -174,7 +297,8 @@ namespace Zooka
             string statusDia = "OCUPADO";
 
             int idCliente = GetIdPeloNome("cliente", "id_cliente", "nome_cliente", txtAgendaCliente.Text);
-            int idPet = GetIdPeloNome("pet", "id_pet", "nome_pet", txtPet.Text);
+            // Lendo o valor do ComboBox (cmbPet.Text)
+            int idPet = GetIdPeloNome("pet", "id_pet", "nome_pet", cmbPet.Text);
             int idProfissional = GetIdPeloNome("profissional", "id_profissional", "nome_profissional", txtProfissional.Text);
             int idServico = GetIdPeloNome("servico", "id_servico", "nome_servico", txtServico.Text);
 
@@ -186,8 +310,15 @@ namespace Zooka
 
             using (var conn = conexao.GetConnection())
             {
-                string comando = "INSERT INTO agenda_vet (id_cliente, id_pet, id_profissional, id_servico, horario, data_agendamento , status_agenda_vet, status_dia_horario_agenda_vet) " +
-                                 "VALUES (@cliente, @pet, @profissional, @servico, @hora, @dia, @statusAgenda, @statusDia)";
+                string comando = $@"
+                        INSERT INTO agenda_vet (
+                                 id_cliente, id_pet, id_profissional, id_servico, horario, data_agendamento, 
+                                 status_agenda_vet, status_dia_horario_agenda_vet
+                        ) 
+                        VALUES (
+                                 @cliente, @pet, @profissional, @servico, 
+                                 @hora, @dia, @statusAgenda, @statusDia
+                        )";
                 try
                 {
                     using (var cmd = new MySqlCommand(comando, conn))
@@ -230,8 +361,7 @@ namespace Zooka
 
             using (var conn = conexao.GetConnection())
             {
-                string comando = "DELETE FROM agenda_vet WHERE id_agenda_vet = @idExclusao";
-
+                string comando = $@"DELETE FROM agenda_vet WHERE id_agenda_vet = @idExclusao";
                 try
                 {
                     using (var cmd = new MySqlCommand(comando, conn))
@@ -270,6 +400,7 @@ namespace Zooka
                 {
                     string nomeComCoringas = $"%{nomeBuscado.Trim()}%";
                     cmd.Parameters.AddWithValue("@nome", nomeComCoringas.ToLower());
+
                     conn.Open();
                     object resultado = cmd.ExecuteScalar();
 
@@ -289,9 +420,8 @@ namespace Zooka
 
         private void CarregarDadosAgendamento(int id)
         {
-            string comando = @"
-                SELECT 
-                    t1.*, t2.nome_cliente, t3.nome_pet, t4.nome_servico, t5.nome_profissional
+            string comando = $@"
+                SELECT t1.*, t2.nome_cliente, t3.nome_pet, t4.nome_servico, t5.nome_profissional
                 FROM agenda_vet t1
                 JOIN cliente t2 ON t1.id_cliente = t2.id_cliente 
                 JOIN pet t3 ON t1.id_pet = t3.id_pet 
@@ -311,20 +441,18 @@ namespace Zooka
 
                         if (reader.Read())
                         {
-                            // Converte a data do banco (AAAA-MM-DD) para o formato brasileiro (DD/MM/AAAA)
                             DateTime dataDoBanco = DateTime.Parse(reader["data_agendamento"].ToString());
                             txtDia.Text = dataDoBanco.ToString("dd/MM/yyyy");
 
                             txtHora.Text = reader["horario"].ToString();
 
                             txtAgendaCliente.Text = reader["nome_cliente"].ToString();
-                            txtPet.Text = reader["nome_pet"].ToString();
+
+                            // Carrega o pet selecionado do banco no ComboBox
+                            cmbPet.Text = reader["nome_pet"].ToString();
+
                             txtProfissional.Text = reader["nome_profissional"].ToString();
                             txtServico.Text = reader["nome_servico"].ToString();
-
-                            // Removido ComboBoxes de status, mas o código original pode ter lido esses campos:
-                            // cmbStatusAgenda.SelectedItem = reader["status_agenda_vet"].ToString();
-                            // cmbStatusDia.SelectedItem = reader["status_dia_horario_agenda_vet"].ToString();
                         }
                         reader.Dispose();
                     }

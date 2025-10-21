@@ -47,7 +47,6 @@
             Controls.Add(lblControleAgendaBrancoDia);
             Name = "ControlAgendaBranco";
             Size = new Size(238, 170);
-            Load += ControlAgendaBranco_Load;
             ResumeLayout(false);
             PerformLayout();
         }

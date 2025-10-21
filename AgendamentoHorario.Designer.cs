@@ -33,15 +33,15 @@
             btnSalvar = new Button();
             txtHora = new TextBox();
             lblHorario = new Label();
-            txtAgendaCliente = new TextBox();
             lblAgendaCliente = new Label();
-            txtPet = new TextBox();
             lblPet = new Label();
             txtProfissional = new TextBox();
             txtServico = new TextBox();
             lblProfissional = new Label();
             lblServico = new Label();
             btnExcluir = new Button();
+            cmbPet = new ComboBox();
+            txtAgendaCliente = new TextBox();
             SuspendLayout();
             // 
             // txtDia
@@ -89,13 +89,6 @@
             lblHorario.TabIndex = 1;
             lblHorario.Text = "Horário";
             // 
-            // txtAgendaCliente
-            // 
-            txtAgendaCliente.Location = new Point(92, 83);
-            txtAgendaCliente.Name = "txtAgendaCliente";
-            txtAgendaCliente.Size = new Size(250, 23);
-            txtAgendaCliente.TabIndex = 0;
-            // 
             // lblAgendaCliente
             // 
             lblAgendaCliente.AutoSize = true;
@@ -104,13 +97,6 @@
             lblAgendaCliente.Size = new Size(44, 15);
             lblAgendaCliente.TabIndex = 1;
             lblAgendaCliente.Text = "Cliente";
-            // 
-            // txtPet
-            // 
-            txtPet.Location = new Point(94, 139);
-            txtPet.Name = "txtPet";
-            txtPet.Size = new Size(248, 23);
-            txtPet.TabIndex = 0;
             // 
             // lblPet
             // 
@@ -162,11 +148,28 @@
             btnExcluir.Text = "Excluir";
             btnExcluir.UseVisualStyleBackColor = true;
             // 
+            // cmbPet
+            // 
+            cmbPet.FormattingEnabled = true;
+            cmbPet.Location = new Point(92, 139);
+            cmbPet.Name = "cmbPet";
+            cmbPet.Size = new Size(121, 23);
+            cmbPet.TabIndex = 6;
+            // 
+            // txtAgendaCliente
+            // 
+            txtAgendaCliente.Location = new Point(92, 83);
+            txtAgendaCliente.Name = "txtAgendaCliente";
+            txtAgendaCliente.Size = new Size(250, 23);
+            txtAgendaCliente.TabIndex = 0;
+            txtAgendaCliente.TextChanged += txtAgendaCliente_TextChanged;
+            // 
             // AgendamentoHorario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(cmbPet);
             Controls.Add(btnExcluir);
             Controls.Add(txtHora);
             Controls.Add(btnSalvar);
@@ -176,7 +179,6 @@
             Controls.Add(lblAgendaCliente);
             Controls.Add(lblProfissional);
             Controls.Add(lblData);
-            Controls.Add(txtPet);
             Controls.Add(txtServico);
             Controls.Add(txtProfissional);
             Controls.Add(txtAgendaCliente);
@@ -195,14 +197,14 @@
         private Button btnSalvar;
         private TextBox txtHora;
         private Label lblHorario;
-        private TextBox txtAgendaCliente;
         private Label lblAgendaCliente;
-        private TextBox txtPet;
         private Label lblPet;
         private TextBox txtProfissional;
         private TextBox txtServico;
         private Label lblProfissional;
         private Label lblServico;
         private Button btnExcluir;
+        private ComboBox cmbPet;
+        private TextBox txtAgendaCliente;
     }
 }
