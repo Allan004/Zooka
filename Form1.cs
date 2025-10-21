@@ -1,5 +1,7 @@
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Drawing;
+using System.Windows.Forms;
 
 
 namespace Zooka
@@ -9,51 +11,47 @@ namespace Zooka
         public Form1()
         {
             InitializeComponent();
-            TESTE();
-
-        }
-
-
-
-        private void cadastroUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-
-
-            CadastroUsuario abrirusuario = new CadastroUsuario();
-            abrirusuario.MdiParent = this;
-            abrirusuario.Show();
 
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+
+        public void fechamenu(bool fecharm)
         {
-
-        }
-        public DataTable TESTE()
-
-        {
-
-            string sql = "SELECT * FROM gridprod";
-
-            Conexao conexao = new Conexao();
-
-            using (var conn = conexao.GetConnection())
-
+            if (fecharm == true)
             {
+                button2.Visible = true;
+                button3.Visible = true;
+                btnEstoque.Visible = true;
+                BtnOrdemdecompra.Visible = true;
+                button6.Visible = true;
+                button7.Visible = true;
+            }
+            if (fecharm == false)
+            {
+                button2.Visible = false;
+                button3.Visible = false;
+                btnEstoque.Visible = false;
+                BtnOrdemdecompra.Visible = false;
+                button6.Visible = false;
+                button7.Visible = false;
 
-                using (MySqlDataAdapter da = new MySqlDataAdapter(sql, conn))
+            }
 
-                {
+        }
 
-                    DataTable dt = new DataTable();
-
-                    da.Fill(dt);
-
-                    return dt;
-
-                }
+        int cont = 0;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (cont == 0)
+            {
+                fechamenu(true);
+                cont = 1;
+            }
+            else
+            {
+                fechamenu(false);
+                cont = 0;
 
             }
 
@@ -61,91 +59,177 @@ namespace Zooka
 
         }
 
-        private void estoqueToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cadastroDeSKUToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-
-            CadastroSKU abrirsku = new CadastroSKU();
-            abrirsku.MdiParent = this;
-            abrirsku.Show();
-
-
-        }
-
-        private void cadastroClienteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-
-
-            CadastroCliente abrirform = new CadastroCliente();
-            abrirform.MdiParent = this;
-            abrirform.Show();
-
-
-
-
-        }
-
-        private void agendaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             Agenda agenda = new Agenda();
             agenda.Show();
         }
 
-        private void cadastroPetToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            Cadastro_Pet pet = new Cadastro_Pet();
-            pet.MdiParent = this;
-            pet.Show();
-
+            btnSku.Visible = true;
         }
-
-        private void cadastroFuncionarioToolStripMenuItem_Click(object sender, EventArgs e)
+        public void somelimpa(bool verifica)
         {
-            CadastroProfissional prof = new CadastroProfissional();
-            prof.MdiParent = this;
-            prof.Show();
-        }
-
-        private void cADASTROSToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LoginUsuario prof = new LoginUsuario();
-            prof.MdiParent = this;
-            prof.Show();
-        }
-        int add = 0;
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            add++;
-
-            if (add == 1)
+            if (verifica == true)
             {
+                btnCliente.Visible = true;
+                btnPet.Visible = true;
+                btnProfissional.Visible = true;
+                btnUsuario.Visible = true;
 
             }
+            if (verifica == false)
+            {
+                btnCliente.Visible = false;
+                btnPet.Visible = false;
+                btnProfissional.Visible = false;
+                btnUsuario.Visible = false;
+
+            }
+
+        }
+        int cont2 = 0;
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (cont2 == 0)
+            {
+                somelimpa(true);
+                cont2 = 1;
+            }
+            else
+            {
+                somelimpa(false);
+                cont2 = 0;
+            }
+
         }
 
-        private void servicoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button9_Click(object sender, EventArgs e)
         {
-            Servico abrirservicico = new Servico();
-            abrirservicico.MdiParent = this;
-            abrirservicico.Show();
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+            Cadastro_Pet pet = new Cadastro_Pet();
+            pet.TopLevel = false;
+            pet.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            pet.StartPosition = FormStartPosition.Manual;
+            pet.Location = new Point(0, 0);
+            pet.MdiParent = this;
+            pet.Show();
+            somelimpa(false);
+            fechamenu(false);
+            cont = 0;
+            cont2 = 0;
+
         }
 
-        private void oRDEMDECOMPRAToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)
         {
-            ordem_de_compra odc = new ordem_de_compra();
-            odc.MdiParent = this;
-            odc.Show();
+
+        }
+
+
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+            CadastroCliente abrirform = new CadastroCliente();
+            abrirform.TopLevel = false;
+            abrirform.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            abrirform.StartPosition = FormStartPosition.Manual;
+            abrirform.Location = new Point(0, 0);
+            abrirform.MdiParent = this;
+            abrirform.Show();
+            somelimpa(false);
+            fechamenu(false);
+            cont = 0;
+            cont2 = 0;
+        }
+
+        private void btnProfissional_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+            CadastroProfissional abrirform = new CadastroProfissional();
+            abrirform.TopLevel = false;
+            abrirform.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            abrirform.StartPosition = FormStartPosition.Manual;
+            abrirform.Location = new Point(0, 0);
+            abrirform.MdiParent = this;
+            abrirform.Show();
+            somelimpa(false);
+            fechamenu(false);
+            cont = 0;
+            cont2 = 0;
+        }
+
+        private void btnUsuario_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+            CadastroUsuario abrirform = new CadastroUsuario();
+            abrirform.TopLevel = false;
+            abrirform.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            abrirform.StartPosition = FormStartPosition.Manual;
+            abrirform.Location = new Point(0, 0);
+            abrirform.MdiParent = this;
+            abrirform.Show();
+            somelimpa(false);
+            fechamenu(false);
+            cont = 0;
+            cont2 = 0;
+        }
+
+        private void btnSku_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+            CadastroSKU abrirform = new CadastroSKU();
+            abrirform.TopLevel = false;
+            abrirform.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            abrirform.StartPosition = FormStartPosition.Manual;
+            abrirform.Location = new Point(0, 0);
+            abrirform.MdiParent = this;
+            abrirform.Show();
+            btnSku.Visible = false;
+            fechamenu(false);
+            cont = 0;
+            cont2 = 0;
+
+        }
+
+        private void BtnOrdemdecompra_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+            ordem_de_compra abrirform = new ordem_de_compra();
+            abrirform.TopLevel = false;
+            abrirform.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            abrirform.StartPosition = FormStartPosition.Manual;
+            abrirform.Location = new Point(0, 0);
+            abrirform.MdiParent = this;
+            abrirform.Show();
+            fechamenu(false);
+            cont = 0;
+            cont2 = 0;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
