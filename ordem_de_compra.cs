@@ -28,17 +28,10 @@ namespace Zooka
             txtNumeroOC.ForeColor = Color.Black;
             txtNumeroOC.TabStop = false;
 
-            // Impedir o usuário de mover/arrastar colunas
             dgvItensOC.AllowUserToOrderColumns = false;
-
-            // Impedir que o usuário redimensione colunas e linhas manualmente
             dgvItensOC.AllowUserToResizeColumns = false;
             dgvItensOC.AllowUserToResizeRows = false;
-
-            // Ajustar o tamanho das colunas automaticamente conforme o conteúdo
             dgvItensOC.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            // (Opcional) Ajusta o tamanho das linhas também
             dgvItensOC.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
 
@@ -57,14 +50,10 @@ namespace Zooka
 
             txtDataOC.Text = DateTime.Now.ToString("yyyy-MM-dd");
 
-            // CARREGA SKUs
             CarregarSKUsDoBanco();
-
             ConfigurarGrid();
             ConfigurarListaSugestoes();
             CarregarFormasPagamento();
-
-            // --> ADICIONADO: recalcular total sempre que o frete mudar
             txtFreteOC.TextChanged += (s, ev) => AtualizarTotalGeral();
             txtFreteOC.Leave += (s, ev) => AtualizarTotalGeral();
         }
@@ -82,9 +71,9 @@ namespace Zooka
                     adapter.Fill(dt);
 
                     cbPagamentoOC.DataSource = dt;
-                    cbPagamentoOC.DisplayMember = "forma_pagamento"; // o que aparece no ComboBox
-                    cbPagamentoOC.ValueMember = "id_fpagamento";     // o valor real
-                    cbPagamentoOC.SelectedIndex = -1;               // começa vazio
+                    cbPagamentoOC.DisplayMember = "forma_pagamento";
+                    cbPagamentoOC.ValueMember = "id_fpagamento";
+                    cbPagamentoOC.SelectedIndex = -1;
                 }
             }
         }
@@ -215,7 +204,6 @@ namespace Zooka
                 lstSuggestions.Visible = false;
             }
         }
-
         private void SelecionarSugestaoAtual()
         {
             if (lstSuggestions.SelectedItem == null || editingRow < 0) return;
@@ -268,7 +256,7 @@ namespace Zooka
 
             if (row.Cells["valorunit"].Value != null)
             {
-                // aceita "R$ 1.234,56" ou "1234,56" ou "1234.56"
+
                 if (!double.TryParse(Convert.ToString(row.Cells["valorunit"].Value), NumberStyles.Any, culture, out valorUnit))
                 {
                     string s = Convert.ToString(row.Cells["valorunit"].Value)
