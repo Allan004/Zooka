@@ -38,6 +38,13 @@
             txtDataOC = new TextBox();
             lblData = new Label();
             lblTotalOC = new TextBox();
+            btnSalvarOC = new Button();
+            lblTotal = new Label();
+            lblFrete = new Label();
+            txtFreteOC = new TextBox();
+            lblPagamento = new Label();
+            cbPagamentoOC = new ComboBox();
+            btnCriarSKU_OC = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvItensOC).BeginInit();
             SuspendLayout();
             // 
@@ -87,7 +94,7 @@
             dgvItensOC.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvItensOC.Location = new Point(441, 35);
             dgvItensOC.Name = "dgvItensOC";
-            dgvItensOC.Size = new Size(313, 373);
+            dgvItensOC.Size = new Size(722, 373);
             dgvItensOC.TabIndex = 6;
             // 
             // txtNumeroOC
@@ -120,16 +127,85 @@
             // 
             // lblTotalOC
             // 
-            lblTotalOC.Location = new Point(24, 229);
+            lblTotalOC.Location = new Point(24, 286);
             lblTotalOC.Name = "lblTotalOC";
             lblTotalOC.Size = new Size(105, 23);
             lblTotalOC.TabIndex = 10;
+            // 
+            // btnSalvarOC
+            // 
+            btnSalvarOC.Location = new Point(107, 332);
+            btnSalvarOC.Name = "btnSalvarOC";
+            btnSalvarOC.Size = new Size(75, 23);
+            btnSalvarOC.TabIndex = 11;
+            btnSalvarOC.Text = "CRIAR OC";
+            btnSalvarOC.UseVisualStyleBackColor = true;
+            btnSalvarOC.Click += btnSalvarOC_Click;
+            // 
+            // lblTotal
+            // 
+            lblTotal.AutoSize = true;
+            lblTotal.Location = new Point(24, 268);
+            lblTotal.Name = "lblTotal";
+            lblTotal.Size = new Size(41, 15);
+            lblTotal.TabIndex = 12;
+            lblTotal.Text = "TOTAL";
+            // 
+            // lblFrete
+            // 
+            lblFrete.AutoSize = true;
+            lblFrete.Location = new Point(24, 206);
+            lblFrete.Name = "lblFrete";
+            lblFrete.Size = new Size(39, 15);
+            lblFrete.TabIndex = 14;
+            lblFrete.Text = "FRETE";
+            // 
+            // txtFreteOC
+            // 
+            txtFreteOC.Location = new Point(24, 224);
+            txtFreteOC.Name = "txtFreteOC";
+            txtFreteOC.Size = new Size(105, 23);
+            txtFreteOC.TabIndex = 13;
+            // 
+            // lblPagamento
+            // 
+            lblPagamento.AutoSize = true;
+            lblPagamento.Location = new Point(284, 206);
+            lblPagamento.Name = "lblPagamento";
+            lblPagamento.Size = new Size(78, 15);
+            lblPagamento.TabIndex = 16;
+            lblPagamento.Text = "PAGAMENTO";
+            // 
+            // cbPagamentoOC
+            // 
+            cbPagamentoOC.FormattingEnabled = true;
+            cbPagamentoOC.Location = new Point(284, 224);
+            cbPagamentoOC.Name = "cbPagamentoOC";
+            cbPagamentoOC.Size = new Size(105, 23);
+            cbPagamentoOC.TabIndex = 17;
+            // 
+            // btnCriarSKU_OC
+            // 
+            btnCriarSKU_OC.Location = new Point(204, 332);
+            btnCriarSKU_OC.Name = "btnCriarSKU_OC";
+            btnCriarSKU_OC.Size = new Size(75, 23);
+            btnCriarSKU_OC.TabIndex = 18;
+            btnCriarSKU_OC.Text = "CRIAR SKU";
+            btnCriarSKU_OC.UseVisualStyleBackColor = true;
+            btnCriarSKU_OC.Click += btnCriarSKU_OC_Click;
             // 
             // ordem_de_compra
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1176, 450);
+            Controls.Add(btnCriarSKU_OC);
+            Controls.Add(cbPagamentoOC);
+            Controls.Add(lblPagamento);
+            Controls.Add(lblFrete);
+            Controls.Add(txtFreteOC);
+            Controls.Add(lblTotal);
+            Controls.Add(btnSalvarOC);
             Controls.Add(lblTotalOC);
             Controls.Add(txtDataOC);
             Controls.Add(lblData);
@@ -160,5 +236,12 @@
         private TextBox txtDataOC;
         private Label lblData;
         private TextBox lblTotalOC;
+        private Button btnSalvarOC;
+        private Label lblTotal;
+        private Label lblFrete;
+        private TextBox txtFreteOC;
+        private Label lblPagamento;
+        private ComboBox cbPagamentoOC;
+        private Button btnCriarSKU_OC;
     }
 }
