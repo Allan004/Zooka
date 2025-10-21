@@ -11,11 +11,25 @@ namespace Zooka
         public Form1()
         {
             InitializeComponent();
-
+            EstilizarFundoMDI();
 
         }
 
-
+        private void EstilizarFundoMDI()
+        {
+            foreach (Control ctl in this.Controls)
+            {
+                if (ctl is MdiClient client)
+                {
+                    client.BackColor = Color.LightBlue; 
+                    // ou qualquer outra cor
+                    // Para usar uma imagem:
+                    // client.BackgroundImage = Image.FromFile("caminho_para_imagem.jpg");
+                    // client.BackgroundImageLayout = ImageLayout.Stretch;
+                    break;
+                }
+            }
+        }
         public void fechamenu(bool fecharm)
         {
             if (fecharm == true)
