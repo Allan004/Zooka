@@ -83,26 +83,6 @@ namespace Zooka.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Alterar {
-            get {
-                object obj = ResourceManager.GetObject("Alterar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Ativo_1 {
-            get {
-                object obj = ResourceManager.GetObject("Ativo 1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Ativo_11 {
             get {
                 object obj = ResourceManager.GetObject("Ativo 11", resourceCulture);
@@ -123,79 +103,9 @@ namespace Zooka.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Ativo_2 {
-            get {
-                object obj = ResourceManager.GetObject("Ativo 2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bb {
-            get {
-                object obj = ResourceManager.GetObject("bb", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Bem_Vindo__3_ {
-            get {
-                object obj = ResourceManager.GetObject("Bem-Vindo (3)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap botao_cadastrar {
-            get {
-                object obj = ResourceManager.GetObject("botao-cadastrar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap cachorros {
-            get {
-                object obj = ResourceManager.GetObject("cachorros", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Captura_de_tela_2025_09_26_191727_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("Captura_de_tela_2025-09-26_191727-removebg-preview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ccc {
-            get {
-                object obj = ResourceManager.GetObject("ccc", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap contate_nos {
-            get {
-                object obj = ResourceManager.GetObject("contate-nos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,75 +123,9 @@ namespace Zooka.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-<<<<<<< HEAD
-        internal static System.Drawing.Bitmap fundo {
-            get {
-                object obj = ResourceManager.GetObject("fundo", resourceCulture);
-=======
-        internal static System.Drawing.Bitmap excluir {
-            get {
-                object obj = ResourceManager.GetObject("excluir", resourceCulture);
->>>>>>> 4799627fdf8b5a29fa0d8db9597fb7cdacee42c9
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap gatos {
             get {
                 object obj = ResourceManager.GetObject("gatos", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap hamster {
-            get {
-                object obj = ResourceManager.GetObject("hamster", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap jpeg__2_ {
-            get {
-                object obj = ResourceManager.GetObject("jpeg (2)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Byte[].
-        /// </summary>
-        internal static byte[] OIP {
-            get {
-                object obj = ResourceManager.GetObject("OIP", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap OK {
-            get {
-                object obj = ResourceManager.GetObject("OK", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap zabumba {
-            get {
-                object obj = ResourceManager.GetObject("zabumba", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

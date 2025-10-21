@@ -59,7 +59,7 @@
             // 
             // button2
             // 
-            button2.BackgroundImage = Properties.Resources.Alterar;
+
             button2.BackgroundImageLayout = ImageLayout.Stretch;
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
@@ -72,7 +72,7 @@
             // 
             // button3
             // 
-            button3.BackgroundImage = Properties.Resources.excluir;
+
             button3.BackgroundImageLayout = ImageLayout.Stretch;
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
@@ -85,7 +85,7 @@
             // 
             // button4
             // 
-            button4.BackgroundImage = Properties.Resources.OK;
+
             button4.BackgroundImageLayout = ImageLayout.Stretch;
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;

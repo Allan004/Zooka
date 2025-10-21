@@ -71,7 +71,7 @@ namespace Zooka
             // button1
             // 
             button1.BackColor = Color.FromArgb(255, 241, 201);
-            button1.BackgroundImage = Properties.Resources.zabumba;
+
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Sans Serif Collection", 15.7499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
