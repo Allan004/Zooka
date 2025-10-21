@@ -129,7 +129,7 @@
             // 
             // SeuEmail
             // 
-            SeuEmail.Location = new Point(466, 193);
+            SeuEmail.Location = new Point(466, 195);
             SeuEmail.Name = "SeuEmail";
             SeuEmail.Size = new Size(229, 23);
             SeuEmail.TabIndex = 14;
@@ -154,19 +154,19 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-
+            BackgroundImage = Properties.Resources.ppp;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(SuaMensagem);
             Controls.Add(SeuTelefone);
-            Controls.Add(SeuEmail);
-            Controls.Add(SeuNome);
             Controls.Add(linkLabel4);
             Controls.Add(linkLabel3);
             Controls.Add(linkLabel2);
             Controls.Add(linkLabel1);
             Controls.Add(BtnEntrar);
             Controls.Add(label1);
+            Controls.Add(SeuNome);
+            Controls.Add(SeuEmail);
             Name = "Contate_nos";
             Load += Contate_nos_Load;
             ResumeLayout(false);
