@@ -44,6 +44,7 @@
             btnSku = new Button();
             panel1 = new Panel();
             menuStrip1 = new MenuStrip();
+            button4 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -249,6 +250,15 @@
             menuStrip1.TabIndex = 18;
             menuStrip1.Text = "menuStrip1";
             // 
+            // button4
+            // 
+            button4.Location = new Point(486, 401);
+            button4.Name = "button4";
+            button4.Size = new Size(8, 8);
+            button4.TabIndex = 20;
+            button4.Text = "button4";
+            button4.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 15F);
@@ -256,6 +266,7 @@
             AutoSize = true;
             BackColor = Color.FromArgb(34, 61, 79);
             ClientSize = new Size(1155, 625);
+            Controls.Add(button4);
             Controls.Add(menuStrip1);
             Controls.Add(btnSku);
             Controls.Add(btnUsuario);
@@ -297,5 +308,6 @@
         private Button btnSku;
         private Panel panel1;
         private MenuStrip menuStrip1;
+        private Button button4;
     }
 }

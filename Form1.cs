@@ -21,7 +21,7 @@ namespace Zooka
             {
                 if (ctl is MdiClient client)
                 {
-                      client.BackColor = ColorTranslator.FromHtml("#edf1f3") ;
+                    //adasdasd  client.BackColor = ColorTranslator.FromHtml("#edf1f3") ;
 
                     break;
                 }
