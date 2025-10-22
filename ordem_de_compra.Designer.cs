@@ -136,7 +136,7 @@
             // 
             btnSalvarOC.Location = new Point(107, 332);
             btnSalvarOC.Name = "btnSalvarOC";
-            btnSalvarOC.Size = new Size(75, 23);
+            btnSalvarOC.Size = new Size(75, 39);
             btnSalvarOC.TabIndex = 11;
             btnSalvarOC.Text = "CRIAR OC";
             btnSalvarOC.UseVisualStyleBackColor = true;
@@ -170,7 +170,7 @@
             // lblPagamento
             // 
             lblPagamento.AutoSize = true;
-            lblPagamento.Location = new Point(284, 206);
+            lblPagamento.Location = new Point(248, 206);
             lblPagamento.Name = "lblPagamento";
             lblPagamento.Size = new Size(78, 15);
             lblPagamento.TabIndex = 16;
@@ -179,16 +179,16 @@
             // cbPagamentoOC
             // 
             cbPagamentoOC.FormattingEnabled = true;
-            cbPagamentoOC.Location = new Point(284, 224);
+            cbPagamentoOC.Location = new Point(248, 224);
             cbPagamentoOC.Name = "cbPagamentoOC";
-            cbPagamentoOC.Size = new Size(105, 23);
+            cbPagamentoOC.Size = new Size(141, 23);
             cbPagamentoOC.TabIndex = 17;
             // 
             // btnCriarSKU_OC
             // 
             btnCriarSKU_OC.Location = new Point(204, 332);
             btnCriarSKU_OC.Name = "btnCriarSKU_OC";
-            btnCriarSKU_OC.Size = new Size(75, 23);
+            btnCriarSKU_OC.Size = new Size(75, 39);
             btnCriarSKU_OC.TabIndex = 18;
             btnCriarSKU_OC.Text = "CRIAR SKU";
             btnCriarSKU_OC.UseVisualStyleBackColor = true;
@@ -198,7 +198,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1176, 450);
+            ClientSize = new Size(1187, 651);
             Controls.Add(btnCriarSKU_OC);
             Controls.Add(cbPagamentoOC);
             Controls.Add(lblPagamento);
