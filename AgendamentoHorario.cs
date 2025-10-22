@@ -152,7 +152,6 @@ namespace Zooka
         {
             List<string> pets = new List<string>();
 
-            // *** ATENÇÃO: Altere 'id_cliente_fk' para o nome exato da sua coluna de chave estrangeira na tabela 'pet'. ***
             string comando = "SELECT nome_pet FROM pet WHERE id_cliente = @idCliente";
 
             using (var conn = conexao.GetConnection())
@@ -239,7 +238,7 @@ namespace Zooka
 
             using (var conn = conexao.GetConnection())
             {
-                string comando = @"
+                string comando = $@"
                     UPDATE agenda_vet SET 
                         id_cliente = @cliente, id_pet = @pet, id_profissional = @profissional, 
                         id_servico = @servico, horario = @hora, data_agendamento = @dia, 

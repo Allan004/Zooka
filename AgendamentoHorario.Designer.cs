@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgendamentoHorario));
             txtDia = new TextBox();
             lblData = new Label();
             btnSalvar = new Button();
@@ -42,32 +43,44 @@
             btnExcluir = new Button();
             cmbPet = new ComboBox();
             txtAgendaCliente = new TextBox();
+            txtCpf = new TextBox();
+            lblCpf = new Label();
+            label1 = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtDia
             // 
-            txtDia.Location = new Point(92, 27);
+            txtDia.Location = new Point(41, 128);
             txtDia.Name = "txtDia";
-            txtDia.Size = new Size(250, 23);
+            txtDia.Size = new Size(121, 23);
             txtDia.TabIndex = 0;
             // 
             // lblData
             // 
             lblData.AutoSize = true;
-            lblData.Location = new Point(92, 9);
+            lblData.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
+            lblData.ForeColor = Color.FromArgb(215, 122, 40);
+            lblData.Location = new Point(41, 102);
             lblData.Name = "lblData";
-            lblData.Size = new Size(31, 15);
+            lblData.Size = new Size(44, 23);
             lblData.TabIndex = 1;
             lblData.Text = "Data";
             // 
             // btnSalvar
             // 
-            btnSalvar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnSalvar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            btnSalvar.BackgroundImage = (Image)resources.GetObject("btnSalvar.BackgroundImage");
+            btnSalvar.BackgroundImageLayout = ImageLayout.Stretch;
             btnSalvar.FlatAppearance.BorderColor = Color.Red;
-            btnSalvar.FlatAppearance.BorderSize = 7;
-            btnSalvar.Location = new Point(703, 398);
+            btnSalvar.FlatAppearance.BorderSize = 0;
+            btnSalvar.FlatStyle = FlatStyle.Flat;
+            btnSalvar.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnSalvar.ForeColor = Color.Transparent;
+            btnSalvar.Location = new Point(140, 450);
             btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(75, 23);
+            btnSalvar.Size = new Size(110, 34);
             btnSalvar.TabIndex = 2;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
@@ -75,117 +88,180 @@
             // 
             // txtHora
             // 
-            txtHora.Location = new Point(92, 196);
+            txtHora.Location = new Point(362, 128);
             txtHora.Name = "txtHora";
-            txtHora.Size = new Size(250, 23);
+            txtHora.Size = new Size(125, 23);
             txtHora.TabIndex = 3;
             // 
             // lblHorario
             // 
             lblHorario.AutoSize = true;
-            lblHorario.Location = new Point(94, 178);
+            lblHorario.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
+            lblHorario.ForeColor = Color.FromArgb(215, 122, 40);
+            lblHorario.Location = new Point(362, 102);
             lblHorario.Name = "lblHorario";
-            lblHorario.Size = new Size(47, 15);
+            lblHorario.Size = new Size(66, 23);
             lblHorario.TabIndex = 1;
             lblHorario.Text = "Horário";
             // 
             // lblAgendaCliente
             // 
             lblAgendaCliente.AutoSize = true;
-            lblAgendaCliente.Location = new Point(92, 65);
+            lblAgendaCliente.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
+            lblAgendaCliente.ForeColor = Color.FromArgb(215, 122, 40);
+            lblAgendaCliente.Location = new Point(273, 185);
             lblAgendaCliente.Name = "lblAgendaCliente";
-            lblAgendaCliente.Size = new Size(44, 15);
+            lblAgendaCliente.Size = new Size(62, 23);
             lblAgendaCliente.TabIndex = 1;
             lblAgendaCliente.Text = "Cliente";
             // 
             // lblPet
             // 
             lblPet.AutoSize = true;
-            lblPet.Location = new Point(94, 121);
+            lblPet.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
+            lblPet.ForeColor = Color.FromArgb(215, 122, 40);
+            lblPet.Location = new Point(41, 256);
             lblPet.Name = "lblPet";
-            lblPet.Size = new Size(24, 15);
+            lblPet.Size = new Size(34, 23);
             lblPet.TabIndex = 1;
             lblPet.Text = "Pet";
             // 
             // txtProfissional
             // 
-            txtProfissional.Location = new Point(406, 27);
+            txtProfissional.Location = new Point(41, 360);
             txtProfissional.Name = "txtProfissional";
-            txtProfissional.Size = new Size(250, 23);
+            txtProfissional.Size = new Size(209, 23);
             txtProfissional.TabIndex = 0;
             // 
             // txtServico
             // 
-            txtServico.Location = new Point(406, 83);
+            txtServico.Location = new Point(273, 360);
             txtServico.Name = "txtServico";
-            txtServico.Size = new Size(250, 23);
+            txtServico.Size = new Size(214, 23);
             txtServico.TabIndex = 0;
             // 
             // lblProfissional
             // 
             lblProfissional.AutoSize = true;
-            lblProfissional.Location = new Point(406, 9);
+            lblProfissional.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
+            lblProfissional.ForeColor = Color.FromArgb(215, 122, 40);
+            lblProfissional.Location = new Point(41, 334);
             lblProfissional.Name = "lblProfissional";
-            lblProfissional.Size = new Size(68, 15);
+            lblProfissional.Size = new Size(100, 23);
             lblProfissional.TabIndex = 1;
             lblProfissional.Text = "Profissional";
             // 
             // lblServico
             // 
             lblServico.AutoSize = true;
-            lblServico.Location = new Point(406, 65);
+            lblServico.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
+            lblServico.ForeColor = Color.FromArgb(215, 122, 40);
+            lblServico.Location = new Point(273, 334);
             lblServico.Name = "lblServico";
-            lblServico.Size = new Size(45, 15);
+            lblServico.Size = new Size(67, 23);
             lblServico.TabIndex = 1;
             lblServico.Text = "Serviço";
             // 
             // btnExcluir
             // 
-            btnExcluir.Location = new Point(581, 398);
+            btnExcluir.BackgroundImage = (Image)resources.GetObject("btnExcluir.BackgroundImage");
+            btnExcluir.BackgroundImageLayout = ImageLayout.Stretch;
+            btnExcluir.FlatAppearance.BorderColor = Color.FromArgb(169, 213, 186);
+            btnExcluir.FlatAppearance.BorderSize = 0;
+            btnExcluir.FlatStyle = FlatStyle.Flat;
+            btnExcluir.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnExcluir.ForeColor = Color.Snow;
+            btnExcluir.Location = new Point(273, 450);
             btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(75, 23);
+            btnExcluir.Size = new Size(110, 34);
             btnExcluir.TabIndex = 5;
             btnExcluir.Text = "Excluir";
-            btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.UseVisualStyleBackColor = false;
             // 
             // cmbPet
             // 
             cmbPet.FormattingEnabled = true;
-            cmbPet.Location = new Point(92, 139);
+            cmbPet.Location = new Point(41, 284);
             cmbPet.Name = "cmbPet";
             cmbPet.Size = new Size(121, 23);
             cmbPet.TabIndex = 6;
             // 
             // txtAgendaCliente
             // 
-            txtAgendaCliente.Location = new Point(92, 83);
+            txtAgendaCliente.Location = new Point(273, 211);
             txtAgendaCliente.Name = "txtAgendaCliente";
-            txtAgendaCliente.Size = new Size(250, 23);
+            txtAgendaCliente.Size = new Size(214, 23);
             txtAgendaCliente.TabIndex = 0;
             txtAgendaCliente.TextChanged += txtAgendaCliente_TextChanged;
+            // 
+            // txtCpf
+            // 
+            txtCpf.Location = new Point(41, 211);
+            txtCpf.Name = "txtCpf";
+            txtCpf.Size = new Size(209, 23);
+            txtCpf.TabIndex = 0;
+            txtCpf.TextChanged += txtAgendaCliente_TextChanged;
+            // 
+            // lblCpf
+            // 
+            lblCpf.AutoSize = true;
+            lblCpf.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
+            lblCpf.ForeColor = Color.FromArgb(215, 122, 40);
+            lblCpf.Location = new Point(41, 185);
+            lblCpf.Name = "lblCpf";
+            lblCpf.Size = new Size(41, 23);
+            lblCpf.TabIndex = 1;
+            lblCpf.Text = "CPF";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial Rounded MT Bold", 20F);
+            label1.ForeColor = Color.FromArgb(215, 122, 40);
+            label1.Location = new Point(186, 23);
+            label1.Name = "label1";
+            label1.Size = new Size(197, 32);
+            label1.TabIndex = 1;
+            label1.Text = "Agendamento";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(12, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
             // 
             // AgendamentoHorario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.FromArgb(251, 228, 178);
+            ClientSize = new Size(531, 523);
+            Controls.Add(pictureBox1);
             Controls.Add(cmbPet);
             Controls.Add(btnExcluir);
             Controls.Add(txtHora);
             Controls.Add(btnSalvar);
+            Controls.Add(label1);
             Controls.Add(lblHorario);
             Controls.Add(lblPet);
             Controls.Add(lblServico);
+            Controls.Add(lblCpf);
             Controls.Add(lblAgendaCliente);
             Controls.Add(lblProfissional);
             Controls.Add(lblData);
             Controls.Add(txtServico);
             Controls.Add(txtProfissional);
+            Controls.Add(txtCpf);
             Controls.Add(txtAgendaCliente);
             Controls.Add(txtDia);
             Name = "AgendamentoHorario";
             Text = "AgendamentoHorario";
             Load += AgendamentoHorario_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -206,5 +282,9 @@
         private Button btnExcluir;
         private ComboBox cmbPet;
         private TextBox txtAgendaCliente;
+        private TextBox txtCpf;
+        private Label lblCpf;
+        private Label label1;
+        private PictureBox pictureBox1;
     }
 }
