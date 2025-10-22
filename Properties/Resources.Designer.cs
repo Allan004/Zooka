@@ -103,9 +103,29 @@ namespace Zooka.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ativo_2 {
+            get {
+                object obj = ResourceManager.GetObject("Ativo 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bb {
             get {
                 object obj = ResourceManager.GetObject("bb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Botão_menu {
+            get {
+                object obj = ResourceManager.GetObject("Botão menu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,6 +186,16 @@ namespace Zooka.Properties {
         internal static System.Drawing.Bitmap ppp1 {
             get {
                 object obj = ResourceManager.GetObject("ppp1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zabumba {
+            get {
+                object obj = ResourceManager.GetObject("zabumba", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

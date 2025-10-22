@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             timer1 = new System.Windows.Forms.Timer(components);
             button1 = new Button();
             button2 = new Button();
@@ -44,29 +43,34 @@
             btnUsuario = new Button();
             btnSku = new Button();
             panel1 = new Panel();
+            menuStrip1 = new MenuStrip();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackColor = Color.FromArgb(0, 203, 173);
+            button1.BackgroundImage = Properties.Resources.Botão_menu;
             button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Location = new Point(1, 0);
             button1.Name = "button1";
-            button1.Size = new Size(218, 49);
+            button1.Size = new Size(218, 50);
             button1.TabIndex = 3;
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.BackColor = Color.FromArgb(251, 228, 178);
+            button2.BackColor = Color.FromArgb(34, 61, 79);
             button2.BackgroundImageLayout = ImageLayout.Zoom;
+            button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Arial Rounded MT Bold", 14.25F);
-            button2.Location = new Point(1, 55);
+            button2.ForeColor = SystemColors.ButtonHighlight;
+            button2.Location = new Point(1, 51);
             button2.Name = "button2";
-            button2.Size = new Size(218, 75);
+            button2.Size = new Size(218, 74);
             button2.TabIndex = 4;
             button2.Text = "Agenda";
             button2.UseVisualStyleBackColor = false;
@@ -75,10 +79,12 @@
             // 
             // button3
             // 
-            button3.BackColor = Color.FromArgb(251, 228, 178);
+            button3.BackColor = Color.FromArgb(34, 61, 79);
+            button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Arial Rounded MT Bold", 14.25F);
-            button3.Location = new Point(1, 130);
+            button3.ForeColor = SystemColors.ButtonHighlight;
+            button3.Location = new Point(1, 125);
             button3.Name = "button3";
             button3.Size = new Size(218, 75);
             button3.TabIndex = 5;
@@ -89,10 +95,12 @@
             // 
             // btnEstoque
             // 
-            btnEstoque.BackColor = Color.FromArgb(251, 228, 178);
+            btnEstoque.BackColor = Color.FromArgb(34, 61, 79);
+            btnEstoque.FlatAppearance.BorderSize = 0;
             btnEstoque.FlatStyle = FlatStyle.Flat;
             btnEstoque.Font = new Font("Arial Rounded MT Bold", 14.25F);
-            btnEstoque.Location = new Point(1, 205);
+            btnEstoque.ForeColor = SystemColors.ButtonHighlight;
+            btnEstoque.Location = new Point(1, 200);
             btnEstoque.Name = "btnEstoque";
             btnEstoque.Size = new Size(218, 75);
             btnEstoque.TabIndex = 6;
@@ -103,10 +111,12 @@
             // 
             // BtnOrdemdecompra
             // 
-            BtnOrdemdecompra.BackColor = Color.FromArgb(251, 228, 178);
+            BtnOrdemdecompra.BackColor = Color.FromArgb(34, 61, 79);
+            BtnOrdemdecompra.FlatAppearance.BorderSize = 0;
             BtnOrdemdecompra.FlatStyle = FlatStyle.Flat;
             BtnOrdemdecompra.Font = new Font("Arial Rounded MT Bold", 14.25F);
-            BtnOrdemdecompra.Location = new Point(1, 280);
+            BtnOrdemdecompra.ForeColor = SystemColors.ButtonHighlight;
+            BtnOrdemdecompra.Location = new Point(1, 275);
             BtnOrdemdecompra.Name = "BtnOrdemdecompra";
             BtnOrdemdecompra.Size = new Size(218, 75);
             BtnOrdemdecompra.TabIndex = 7;
@@ -117,10 +127,12 @@
             // 
             // btnFornecedor
             // 
-            btnFornecedor.BackColor = Color.FromArgb(251, 228, 178);
+            btnFornecedor.BackColor = Color.FromArgb(34, 61, 79);
+            btnFornecedor.FlatAppearance.BorderSize = 0;
             btnFornecedor.FlatStyle = FlatStyle.Flat;
             btnFornecedor.Font = new Font("Arial Rounded MT Bold", 14.25F);
-            btnFornecedor.Location = new Point(1, 355);
+            btnFornecedor.ForeColor = SystemColors.ButtonHighlight;
+            btnFornecedor.Location = new Point(1, 350);
             btnFornecedor.Name = "btnFornecedor";
             btnFornecedor.Size = new Size(218, 75);
             btnFornecedor.TabIndex = 8;
@@ -131,10 +143,11 @@
             // 
             // button7
             // 
-            button7.BackColor = Color.FromArgb(251, 228, 178);
+            button7.BackColor = Color.FromArgb(34, 61, 79);
+            button7.FlatAppearance.BorderSize = 0;
             button7.FlatStyle = FlatStyle.Flat;
             button7.Font = new Font("Arial Rounded MT Bold", 14.25F);
-            button7.Location = new Point(1, 430);
+            button7.Location = new Point(1, 425);
             button7.Name = "button7";
             button7.Size = new Size(218, 75);
             button7.TabIndex = 9;
@@ -143,10 +156,11 @@
             // 
             // btnCliente
             // 
-            btnCliente.BackColor = Color.FromArgb(251, 228, 178);
+            btnCliente.BackColor = Color.FromArgb(50, 85, 104);
+            btnCliente.FlatAppearance.BorderSize = 0;
             btnCliente.FlatStyle = FlatStyle.Flat;
             btnCliente.Font = new Font("Arial Rounded MT Bold", 9.75F);
-            btnCliente.Location = new Point(219, 130);
+            btnCliente.Location = new Point(219, 125);
             btnCliente.Name = "btnCliente";
             btnCliente.Size = new Size(165, 25);
             btnCliente.TabIndex = 11;
@@ -157,10 +171,11 @@
             // 
             // btnPet
             // 
-            btnPet.BackColor = Color.FromArgb(251, 228, 178);
+            btnPet.BackColor = Color.FromArgb(50, 85, 104);
+            btnPet.FlatAppearance.BorderSize = 0;
             btnPet.FlatStyle = FlatStyle.Flat;
             btnPet.Font = new Font("Arial Rounded MT Bold", 9.75F);
-            btnPet.Location = new Point(219, 155);
+            btnPet.Location = new Point(219, 150);
             btnPet.Name = "btnPet";
             btnPet.Size = new Size(165, 25);
             btnPet.TabIndex = 12;
@@ -171,10 +186,11 @@
             // 
             // btnProfissional
             // 
-            btnProfissional.BackColor = Color.FromArgb(251, 228, 178);
+            btnProfissional.BackColor = Color.FromArgb(50, 85, 104);
+            btnProfissional.FlatAppearance.BorderSize = 0;
             btnProfissional.FlatStyle = FlatStyle.Flat;
             btnProfissional.Font = new Font("Arial Rounded MT Bold", 9.75F);
-            btnProfissional.Location = new Point(219, 180);
+            btnProfissional.Location = new Point(219, 175);
             btnProfissional.Name = "btnProfissional";
             btnProfissional.Size = new Size(165, 25);
             btnProfissional.TabIndex = 12;
@@ -185,9 +201,10 @@
             // 
             // btnUsuario
             // 
-            btnUsuario.BackColor = Color.FromArgb(251, 228, 178);
+            btnUsuario.BackColor = Color.FromArgb(50, 85, 104);
+            btnUsuario.FlatAppearance.BorderSize = 0;
             btnUsuario.FlatStyle = FlatStyle.Flat;
-            btnUsuario.Location = new Point(219, 205);
+            btnUsuario.Location = new Point(219, 200);
             btnUsuario.Name = "btnUsuario";
             btnUsuario.Size = new Size(165, 25);
             btnUsuario.TabIndex = 12;
@@ -198,10 +215,11 @@
             // 
             // btnSku
             // 
-            btnSku.BackColor = Color.FromArgb(251, 228, 178);
+            btnSku.BackColor = Color.FromArgb(50, 85, 104);
+            btnSku.FlatAppearance.BorderSize = 0;
             btnSku.FlatStyle = FlatStyle.Flat;
             btnSku.Font = new Font("Arial Rounded MT Bold", 9.75F);
-            btnSku.Location = new Point(219, 205);
+            btnSku.Location = new Point(219, 200);
             btnSku.Name = "btnSku";
             btnSku.Size = new Size(165, 25);
             btnSku.TabIndex = 14;
@@ -212,18 +230,33 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(255, 241, 201);
+            panel1.BackColor = Color.FromArgb(34, 61, 79);
             panel1.Location = new Point(1, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(218, 3000);
             panel1.TabIndex = 16;
+            panel1.Paint += panel1_Paint;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.AutoSize = false;
+            menuStrip1.BackColor = Color.FromArgb(34, 61, 79);
+            menuStrip1.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            menuStrip1.Location = new Point(218, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.RightToLeft = RightToLeft.Yes;
+            menuStrip1.Size = new Size(937, 50);
+            menuStrip1.TabIndex = 18;
+            menuStrip1.Text = "menuStrip1";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
+            BackColor = Color.FromArgb(34, 61, 79);
             ClientSize = new Size(1155, 625);
+            Controls.Add(menuStrip1);
             Controls.Add(btnSku);
             Controls.Add(btnUsuario);
             Controls.Add(btnProfissional);
@@ -238,7 +271,9 @@
             Controls.Add(button1);
             Controls.Add(panel1);
             Font = new Font("Arial Rounded MT Bold", 9.75F);
+            ForeColor = SystemColors.ButtonHighlight;
             IsMdiContainer = true;
+            MainMenuStrip = menuStrip1;
             Name = "Form1";
             Padding = new Padding(218, 0, 0, 0);
             Text = "Form1";
@@ -261,5 +296,6 @@
         private Button btnUsuario;
         private Button btnSku;
         private Panel panel1;
+        private MenuStrip menuStrip1;
     }
 }

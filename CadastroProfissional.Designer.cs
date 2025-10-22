@@ -71,12 +71,13 @@ namespace Zooka
             // button1
             // 
             button1.BackColor = Color.FromArgb(255, 241, 201);
-
+            button1.BackgroundImage = Properties.Resources.zabumba;
             button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.FlatStyle = FlatStyle.Popup;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Sans Serif Collection", 15.7499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(346, 432);
+            button1.Location = new Point(352, 435);
             button1.Margin = new Padding(4);
             button1.Name = "button1";
             button1.Size = new Size(438, 95);

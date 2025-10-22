@@ -21,11 +21,8 @@ namespace Zooka
             {
                 if (ctl is MdiClient client)
                 {
-                    client.BackColor = Color.LightBlue; 
-                    // ou qualquer outra cor
-                    // Para usar uma imagem:
-                    // client.BackgroundImage = Image.FromFile("caminho_para_imagem.jpg");
-                    // client.BackgroundImageLayout = ImageLayout.Stretch;
+                      client.BackColor = ColorTranslator.FromHtml("#edf1f3") ;
+
                     break;
                 }
             }
@@ -78,10 +75,17 @@ namespace Zooka
             Agenda agenda = new Agenda();
             agenda.Show();
         }
-
+        
         private void button4_Click(object sender, EventArgs e)
         {
-            btnSku.Visible = true;
+            if( btnSku.Visible == false)
+            {
+                btnSku.Visible = true;
+            }
+            else    
+            {
+                btnSku.Visible = false;
+            }
         }
         public void somelimpa(bool verifica)
         {
@@ -248,6 +252,11 @@ namespace Zooka
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
