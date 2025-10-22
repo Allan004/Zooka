@@ -133,9 +133,9 @@ namespace Zooka.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Captura_de_tela_2025_09_26_191727_removebg_preview {
+        internal static System.Drawing.Bitmap Botão_menu1 {
             get {
-                object obj = ResourceManager.GetObject("Captura_de_tela_2025-09-26_191727-removebg-preview", resourceCulture);
+                object obj = ResourceManager.GetObject("Botão menu1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace Zooka.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Captura_de_tela_2025_09_26_191727_removebg_preview1 {
+        internal static System.Drawing.Bitmap Captura_de_tela_2025_09_26_191727_removebg_preview {
             get {
-                object obj = ResourceManager.GetObject("Captura_de_tela_2025-09-26_191727-removebg-preview1", resourceCulture);
+                object obj = ResourceManager.GetObject("Captura_de_tela_2025-09-26_191727-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
