@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             timer1 = new System.Windows.Forms.Timer(components);
             button1 = new Button();
             button2 = new Button();
@@ -49,6 +50,7 @@
             // button1
             // 
             button1.BackColor = Color.FromArgb(0, 203, 173);
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
@@ -66,7 +68,7 @@
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Arial Rounded MT Bold", 14.25F);
-            button2.ForeColor = SystemColors.ButtonHighlight;
+            button2.ForeColor = SystemColors.Control;
             button2.Location = new Point(1, 51);
             button2.Name = "button2";
             button2.Size = new Size(218, 74);
@@ -82,7 +84,7 @@
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Arial Rounded MT Bold", 14.25F);
-            button3.ForeColor = SystemColors.ButtonHighlight;
+            button3.ForeColor = SystemColors.Control;
             button3.Location = new Point(1, 125);
             button3.Name = "button3";
             button3.Size = new Size(218, 75);
@@ -98,7 +100,7 @@
             btnEstoque.FlatAppearance.BorderSize = 0;
             btnEstoque.FlatStyle = FlatStyle.Flat;
             btnEstoque.Font = new Font("Arial Rounded MT Bold", 14.25F);
-            btnEstoque.ForeColor = SystemColors.ButtonHighlight;
+            btnEstoque.ForeColor = SystemColors.Control;
             btnEstoque.Location = new Point(1, 200);
             btnEstoque.Name = "btnEstoque";
             btnEstoque.Size = new Size(218, 75);
@@ -114,7 +116,7 @@
             BtnOrdemdecompra.FlatAppearance.BorderSize = 0;
             BtnOrdemdecompra.FlatStyle = FlatStyle.Flat;
             BtnOrdemdecompra.Font = new Font("Arial Rounded MT Bold", 14.25F);
-            BtnOrdemdecompra.ForeColor = SystemColors.ButtonHighlight;
+            BtnOrdemdecompra.ForeColor = SystemColors.Control;
             BtnOrdemdecompra.Location = new Point(1, 275);
             BtnOrdemdecompra.Name = "BtnOrdemdecompra";
             BtnOrdemdecompra.Size = new Size(218, 75);
@@ -130,7 +132,7 @@
             btnFornecedor.FlatAppearance.BorderSize = 0;
             btnFornecedor.FlatStyle = FlatStyle.Flat;
             btnFornecedor.Font = new Font("Arial Rounded MT Bold", 14.25F);
-            btnFornecedor.ForeColor = SystemColors.ButtonHighlight;
+            btnFornecedor.ForeColor = SystemColors.Control;
             btnFornecedor.Location = new Point(1, 350);
             btnFornecedor.Name = "btnFornecedor";
             btnFornecedor.Size = new Size(218, 75);
@@ -159,6 +161,7 @@
             btnCliente.FlatAppearance.BorderSize = 0;
             btnCliente.FlatStyle = FlatStyle.Flat;
             btnCliente.Font = new Font("Arial Rounded MT Bold", 9.75F);
+            btnCliente.ForeColor = SystemColors.Control;
             btnCliente.Location = new Point(219, 125);
             btnCliente.Name = "btnCliente";
             btnCliente.Size = new Size(165, 25);
@@ -174,6 +177,7 @@
             btnPet.FlatAppearance.BorderSize = 0;
             btnPet.FlatStyle = FlatStyle.Flat;
             btnPet.Font = new Font("Arial Rounded MT Bold", 9.75F);
+            btnPet.ForeColor = SystemColors.Control;
             btnPet.Location = new Point(219, 150);
             btnPet.Name = "btnPet";
             btnPet.Size = new Size(165, 25);
@@ -189,6 +193,7 @@
             btnProfissional.FlatAppearance.BorderSize = 0;
             btnProfissional.FlatStyle = FlatStyle.Flat;
             btnProfissional.Font = new Font("Arial Rounded MT Bold", 9.75F);
+            btnProfissional.ForeColor = SystemColors.Control;
             btnProfissional.Location = new Point(219, 175);
             btnProfissional.Name = "btnProfissional";
             btnProfissional.Size = new Size(165, 25);
@@ -218,6 +223,7 @@
             btnSku.FlatAppearance.BorderSize = 0;
             btnSku.FlatStyle = FlatStyle.Flat;
             btnSku.Font = new Font("Arial Rounded MT Bold", 9.75F);
+            btnSku.ForeColor = SystemColors.Control;
             btnSku.Location = new Point(219, 200);
             btnSku.Name = "btnSku";
             btnSku.Size = new Size(165, 25);

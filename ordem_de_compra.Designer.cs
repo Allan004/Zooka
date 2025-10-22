@@ -51,6 +51,7 @@
             // lblFornecedor
             // 
             lblFornecedor.AutoSize = true;
+            lblFornecedor.ForeColor = Color.Black;
             lblFornecedor.Location = new Point(24, 149);
             lblFornecedor.Name = "lblFornecedor";
             lblFornecedor.Size = new Size(82, 15);
@@ -67,6 +68,7 @@
             // lblComprador
             // 
             lblComprador.AutoSize = true;
+            lblComprador.ForeColor = Color.Black;
             lblComprador.Location = new Point(24, 81);
             lblComprador.Name = "lblComprador";
             lblComprador.Size = new Size(81, 15);
@@ -83,6 +85,7 @@
             // lblNumeroOC
             // 
             lblNumeroOC.AutoSize = true;
+            lblNumeroOC.ForeColor = Color.Black;
             lblNumeroOC.Location = new Point(24, 17);
             lblNumeroOC.Name = "lblNumeroOC";
             lblNumeroOC.Size = new Size(41, 15);
@@ -119,6 +122,7 @@
             // lblData
             // 
             lblData.AutoSize = true;
+            lblData.ForeColor = Color.Black;
             lblData.Location = new Point(284, 17);
             lblData.Name = "lblData";
             lblData.Size = new Size(36, 15);
@@ -134,6 +138,7 @@
             // 
             // btnSalvarOC
             // 
+            btnSalvarOC.ForeColor = Color.Black;
             btnSalvarOC.Location = new Point(107, 332);
             btnSalvarOC.Name = "btnSalvarOC";
             btnSalvarOC.Size = new Size(75, 39);
@@ -145,6 +150,7 @@
             // lblTotal
             // 
             lblTotal.AutoSize = true;
+            lblTotal.ForeColor = Color.Black;
             lblTotal.Location = new Point(24, 268);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(41, 15);
@@ -154,6 +160,7 @@
             // lblFrete
             // 
             lblFrete.AutoSize = true;
+            lblFrete.ForeColor = Color.Black;
             lblFrete.Location = new Point(24, 206);
             lblFrete.Name = "lblFrete";
             lblFrete.Size = new Size(39, 15);
@@ -170,6 +177,7 @@
             // lblPagamento
             // 
             lblPagamento.AutoSize = true;
+            lblPagamento.ForeColor = Color.Black;
             lblPagamento.Location = new Point(248, 206);
             lblPagamento.Name = "lblPagamento";
             lblPagamento.Size = new Size(78, 15);
@@ -186,6 +194,7 @@
             // 
             // btnCriarSKU_OC
             // 
+            btnCriarSKU_OC.ForeColor = Color.Black;
             btnCriarSKU_OC.Location = new Point(204, 332);
             btnCriarSKU_OC.Name = "btnCriarSKU_OC";
             btnCriarSKU_OC.Size = new Size(75, 39);
@@ -201,20 +210,20 @@
             ClientSize = new Size(1187, 651);
             Controls.Add(btnCriarSKU_OC);
             Controls.Add(cbPagamentoOC);
-            Controls.Add(lblPagamento);
-            Controls.Add(lblFrete);
             Controls.Add(txtFreteOC);
-            Controls.Add(lblTotal);
             Controls.Add(btnSalvarOC);
             Controls.Add(lblTotalOC);
             Controls.Add(txtDataOC);
-            Controls.Add(lblData);
             Controls.Add(txtNumeroOC);
             Controls.Add(dgvItensOC);
-            Controls.Add(lblNumeroOC);
             Controls.Add(txtComprador);
-            Controls.Add(lblComprador);
             Controls.Add(txtFornecedor_oc);
+            Controls.Add(lblPagamento);
+            Controls.Add(lblFrete);
+            Controls.Add(lblTotal);
+            Controls.Add(lblData);
+            Controls.Add(lblNumeroOC);
+            Controls.Add(lblComprador);
             Controls.Add(lblFornecedor);
             Name = "ordem_de_compra";
             Text = "ordem_de_compra";
