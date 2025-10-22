@@ -78,14 +78,14 @@ namespace Zooka
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (btnSku.Visible == false)
-            {
-                btnSku.Visible = true;
-            }
-            else
-            {
-                btnSku.Visible = false;
-            }
+            //if (btnCadastroServico.Visible == false)
+            //{
+            //    btnCadastroServico.Visible = true;
+            //}
+            //else
+            //{
+            //    btnCadastroServico.Visible = false;
+            //}
         }
         public void somelimpa(bool verifica)
         {
@@ -95,6 +95,9 @@ namespace Zooka
                 btnPet.Visible = true;
                 btnProfissional.Visible = true;
                 btnUsuario.Visible = true;
+                btnSku.Visible = true;
+                btnCadastroServico.Visible = true;
+                btnCadastroFornecedor.Visible = true;
 
             }
             if (verifica == false)
@@ -103,7 +106,9 @@ namespace Zooka
                 btnPet.Visible = false;
                 btnProfissional.Visible = false;
                 btnUsuario.Visible = false;
-
+                btnSku.Visible = false;
+                btnCadastroServico.Visible = false;
+                btnCadastroFornecedor.Visible = false;
             }
 
         }
@@ -148,8 +153,6 @@ namespace Zooka
             CadastroFornecedor abrirFornecedor = new CadastroFornecedor();
             abrirFornecedor.Show();
         }
-
-
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
@@ -221,7 +224,6 @@ namespace Zooka
             abrirform.Location = new Point(0, 0);
             abrirform.MdiParent = this;
             abrirform.Show();
-            btnSku.Visible = false;
             fechamenu(false);
             cont = 0;
             cont2 = 0;
@@ -246,20 +248,41 @@ namespace Zooka
             cont2 = 0;
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void btnCadastroServico_Click(object sender, EventArgs e)
         {
-
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+            CadastroServico abrirform = new CadastroServico();
+            abrirform.TopLevel = false;
+            abrirform.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            abrirform.StartPosition = FormStartPosition.Manual;
+            abrirform.Location = new Point(0, 0);
+            abrirform.MdiParent = this;
+            abrirform.Show();
+            fechamenu(false);
+            cont = 0;
+            cont2 = 0;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btnCadastroFornecedor_Click(object sender, EventArgs e)
         {
-
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+            CadastroFornecedor abrirform = new CadastroFornecedor();
+            abrirform.TopLevel = false;
+            abrirform.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            abrirform.StartPosition = FormStartPosition.Manual;
+            abrirform.Location = new Point(0, 0);
+            abrirform.MdiParent = this;
+            abrirform.Show();
+            somelimpa(false);
+            fechamenu(false);
+            cont = 0;
+            cont2 = 0;
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
     }
 }

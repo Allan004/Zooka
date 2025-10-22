@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgendamentoHorario));
+            pictureBox2 = new PictureBox();
             txtDia = new TextBox();
             lblData = new Label();
             btnSalvar = new Button();
@@ -41,36 +42,61 @@
             lblProfissional = new Label();
             lblServico = new Label();
             btnExcluir = new Button();
-            cmbPet = new ComboBox();
             txtAgendaCliente = new TextBox();
-            txtCpf = new TextBox();
             lblCpf = new Label();
             label1 = new Label();
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            txtCpf = new MaskedTextBox();
+            txtObservacao = new RichTextBox();
+            lblObservacao = new Label();
+            lblEspecie = new Label();
+            lblRaca = new Label();
+            txtEspecie = new TextBox();
+            txtRaca = new TextBox();
+            panel1 = new Panel();
+            pictureBox3 = new PictureBox();
+            cmbPet = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox2.ErrorImage = null;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.InitialImage = null;
+            pictureBox2.Location = new Point(216, 149);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(109, 65);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 8;
+            pictureBox2.TabStop = false;
             // 
             // txtDia
             // 
-            txtDia.Location = new Point(41, 128);
+            txtDia.BackColor = Color.AliceBlue;
+            txtDia.Font = new Font("Arial", 12F);
+            txtDia.Location = new Point(34, 186);
             txtDia.Name = "txtDia";
-            txtDia.Size = new Size(121, 23);
+            txtDia.Size = new Size(121, 26);
             txtDia.TabIndex = 0;
+            txtDia.TextAlign = HorizontalAlignment.Center;
             // 
             // lblData
             // 
             lblData.AutoSize = true;
-            lblData.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
-            lblData.ForeColor = Color.FromArgb(215, 122, 40);
-            lblData.Location = new Point(41, 102);
+            lblData.Font = new Font("Gadugi", 12F);
+            lblData.ForeColor = Color.FromArgb(34, 61, 79);
+            lblData.Location = new Point(31, 164);
             lblData.Name = "lblData";
-            lblData.Size = new Size(44, 23);
+            lblData.Size = new Size(41, 19);
             lblData.TabIndex = 1;
             lblData.Text = "Data";
             // 
             // btnSalvar
             // 
-            btnSalvar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            btnSalvar.BackColor = Color.Transparent;
             btnSalvar.BackgroundImage = (Image)resources.GetObject("btnSalvar.BackgroundImage");
             btnSalvar.BackgroundImageLayout = ImageLayout.Stretch;
             btnSalvar.FlatAppearance.BorderColor = Color.Red;
@@ -78,92 +104,100 @@
             btnSalvar.FlatStyle = FlatStyle.Flat;
             btnSalvar.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnSalvar.ForeColor = Color.Transparent;
-            btnSalvar.Location = new Point(140, 450);
+            btnSalvar.Location = new Point(398, 683);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(110, 34);
             btnSalvar.TabIndex = 2;
             btnSalvar.Text = "Salvar";
-            btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.UseVisualStyleBackColor = false;
             btnSalvar.Click += btnSalvar_Click;
             // 
             // txtHora
             // 
-            txtHora.Location = new Point(362, 128);
+            txtHora.BackColor = Color.AliceBlue;
+            txtHora.Font = new Font("Arial", 12F);
+            txtHora.Location = new Point(383, 186);
             txtHora.Name = "txtHora";
-            txtHora.Size = new Size(125, 23);
+            txtHora.Size = new Size(125, 26);
             txtHora.TabIndex = 3;
+            txtHora.TextAlign = HorizontalAlignment.Center;
             // 
             // lblHorario
             // 
             lblHorario.AutoSize = true;
-            lblHorario.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
-            lblHorario.ForeColor = Color.FromArgb(215, 122, 40);
-            lblHorario.Location = new Point(362, 102);
+            lblHorario.Font = new Font("Gadugi", 12F);
+            lblHorario.ForeColor = Color.FromArgb(34, 61, 79);
+            lblHorario.Location = new Point(380, 164);
             lblHorario.Name = "lblHorario";
-            lblHorario.Size = new Size(66, 23);
+            lblHorario.Size = new Size(62, 19);
             lblHorario.TabIndex = 1;
             lblHorario.Text = "Horário";
             // 
             // lblAgendaCliente
             // 
             lblAgendaCliente.AutoSize = true;
-            lblAgendaCliente.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
-            lblAgendaCliente.ForeColor = Color.FromArgb(215, 122, 40);
-            lblAgendaCliente.Location = new Point(273, 185);
+            lblAgendaCliente.Font = new Font("Gadugi", 12F);
+            lblAgendaCliente.ForeColor = Color.FromArgb(34, 61, 79);
+            lblAgendaCliente.Location = new Point(173, 259);
             lblAgendaCliente.Name = "lblAgendaCliente";
-            lblAgendaCliente.Size = new Size(62, 23);
+            lblAgendaCliente.Size = new Size(57, 19);
             lblAgendaCliente.TabIndex = 1;
             lblAgendaCliente.Text = "Cliente";
             // 
             // lblPet
             // 
             lblPet.AutoSize = true;
-            lblPet.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
-            lblPet.ForeColor = Color.FromArgb(215, 122, 40);
-            lblPet.Location = new Point(41, 256);
+            lblPet.Font = new Font("Gadugi", 12F);
+            lblPet.ForeColor = Color.FromArgb(34, 61, 79);
+            lblPet.Location = new Point(34, 347);
             lblPet.Name = "lblPet";
-            lblPet.Size = new Size(34, 23);
+            lblPet.Size = new Size(31, 19);
             lblPet.TabIndex = 1;
             lblPet.Text = "Pet";
             // 
             // txtProfissional
             // 
-            txtProfissional.Location = new Point(41, 360);
+            txtProfissional.BackColor = Color.AliceBlue;
+            txtProfissional.Font = new Font("Arial", 12F);
+            txtProfissional.Location = new Point(31, 451);
             txtProfissional.Name = "txtProfissional";
-            txtProfissional.Size = new Size(209, 23);
+            txtProfissional.Size = new Size(188, 26);
             txtProfissional.TabIndex = 0;
             // 
             // txtServico
             // 
-            txtServico.Location = new Point(273, 360);
+            txtServico.BackColor = Color.AliceBlue;
+            txtServico.Font = new Font("Arial", 12F);
+            txtServico.Location = new Point(320, 451);
             txtServico.Name = "txtServico";
-            txtServico.Size = new Size(214, 23);
+            txtServico.Size = new Size(188, 26);
             txtServico.TabIndex = 0;
             // 
             // lblProfissional
             // 
             lblProfissional.AutoSize = true;
-            lblProfissional.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
-            lblProfissional.ForeColor = Color.FromArgb(215, 122, 40);
-            lblProfissional.Location = new Point(41, 334);
+            lblProfissional.Font = new Font("Gadugi", 12F);
+            lblProfissional.ForeColor = Color.FromArgb(34, 61, 79);
+            lblProfissional.Location = new Point(31, 429);
             lblProfissional.Name = "lblProfissional";
-            lblProfissional.Size = new Size(100, 23);
+            lblProfissional.Size = new Size(90, 19);
             lblProfissional.TabIndex = 1;
             lblProfissional.Text = "Profissional";
             // 
             // lblServico
             // 
             lblServico.AutoSize = true;
-            lblServico.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
-            lblServico.ForeColor = Color.FromArgb(215, 122, 40);
-            lblServico.Location = new Point(273, 334);
+            lblServico.Font = new Font("Gadugi", 12F);
+            lblServico.ForeColor = Color.FromArgb(34, 61, 79);
+            lblServico.Location = new Point(320, 429);
             lblServico.Name = "lblServico";
-            lblServico.Size = new Size(67, 23);
+            lblServico.Size = new Size(60, 19);
             lblServico.TabIndex = 1;
             lblServico.Text = "Serviço";
             // 
             // btnExcluir
             // 
+            btnExcluir.BackColor = Color.Transparent;
             btnExcluir.BackgroundImage = (Image)resources.GetObject("btnExcluir.BackgroundImage");
             btnExcluir.BackgroundImageLayout = ImageLayout.Stretch;
             btnExcluir.FlatAppearance.BorderColor = Color.FromArgb(169, 213, 186);
@@ -171,97 +205,184 @@
             btnExcluir.FlatStyle = FlatStyle.Flat;
             btnExcluir.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnExcluir.ForeColor = Color.Snow;
-            btnExcluir.Location = new Point(273, 450);
+            btnExcluir.Location = new Point(398, 723);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Size = new Size(110, 34);
             btnExcluir.TabIndex = 5;
             btnExcluir.Text = "Excluir";
             btnExcluir.UseVisualStyleBackColor = false;
             // 
-            // cmbPet
-            // 
-            cmbPet.FormattingEnabled = true;
-            cmbPet.Location = new Point(41, 284);
-            cmbPet.Name = "cmbPet";
-            cmbPet.Size = new Size(121, 23);
-            cmbPet.TabIndex = 6;
-            // 
             // txtAgendaCliente
             // 
-            txtAgendaCliente.Location = new Point(273, 211);
+            txtAgendaCliente.BackColor = Color.AliceBlue;
+            txtAgendaCliente.Font = new Font("Arial", 12F);
+            txtAgendaCliente.Location = new Point(179, 281);
             txtAgendaCliente.Name = "txtAgendaCliente";
-            txtAgendaCliente.Size = new Size(214, 23);
+            txtAgendaCliente.Size = new Size(329, 26);
             txtAgendaCliente.TabIndex = 0;
-            txtAgendaCliente.TextChanged += txtAgendaCliente_TextChanged;
-            // 
-            // txtCpf
-            // 
-            txtCpf.Location = new Point(41, 211);
-            txtCpf.Name = "txtCpf";
-            txtCpf.Size = new Size(209, 23);
-            txtCpf.TabIndex = 0;
-            txtCpf.TextChanged += txtAgendaCliente_TextChanged;
             // 
             // lblCpf
             // 
             lblCpf.AutoSize = true;
-            lblCpf.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold);
-            lblCpf.ForeColor = Color.FromArgb(215, 122, 40);
-            lblCpf.Location = new Point(41, 185);
+            lblCpf.Font = new Font("Gadugi", 12F);
+            lblCpf.ForeColor = Color.FromArgb(34, 61, 79);
+            lblCpf.Location = new Point(31, 259);
             lblCpf.Name = "lblCpf";
-            lblCpf.Size = new Size(41, 23);
+            lblCpf.Size = new Size(36, 19);
             lblCpf.TabIndex = 1;
             lblCpf.Text = "CPF";
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(34, 61, 79);
             label1.Font = new Font("Arial Rounded MT Bold", 20F);
             label1.ForeColor = Color.FromArgb(215, 122, 40);
-            label1.Location = new Point(186, 23);
+            label1.Location = new Point(193, 33);
             label1.Name = "label1";
             label1.Size = new Size(197, 32);
             label1.TabIndex = 1;
             label1.Text = "Agendamento";
             // 
-            // pictureBox1
+            // txtCpf
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(12, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(100, 50);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 7;
-            pictureBox1.TabStop = false;
+            txtCpf.BackColor = Color.AliceBlue;
+            txtCpf.Font = new Font("Arial", 12F);
+            txtCpf.Location = new Point(34, 281);
+            txtCpf.Mask = "000.000.000-00";
+            txtCpf.Name = "txtCpf";
+            txtCpf.Size = new Size(121, 26);
+            txtCpf.TabIndex = 9;
+            txtCpf.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // txtObservacao
+            // 
+            txtObservacao.BackColor = Color.AliceBlue;
+            txtObservacao.Font = new Font("Arial", 12F);
+            txtObservacao.Location = new Point(31, 545);
+            txtObservacao.Name = "txtObservacao";
+            txtObservacao.Size = new Size(477, 96);
+            txtObservacao.TabIndex = 10;
+            txtObservacao.Text = "";
+            // 
+            // lblObservacao
+            // 
+            lblObservacao.AutoSize = true;
+            lblObservacao.Font = new Font("Gadugi", 12F);
+            lblObservacao.ForeColor = Color.FromArgb(34, 61, 79);
+            lblObservacao.Location = new Point(31, 523);
+            lblObservacao.Name = "lblObservacao";
+            lblObservacao.Size = new Size(91, 19);
+            lblObservacao.TabIndex = 1;
+            lblObservacao.Text = "Observação";
+            // 
+            // lblEspecie
+            // 
+            lblEspecie.AutoSize = true;
+            lblEspecie.Font = new Font("Gadugi", 12F);
+            lblEspecie.ForeColor = Color.FromArgb(34, 61, 79);
+            lblEspecie.Location = new Point(173, 347);
+            lblEspecie.Name = "lblEspecie";
+            lblEspecie.Size = new Size(60, 19);
+            lblEspecie.TabIndex = 1;
+            lblEspecie.Text = "Espécie";
+            // 
+            // lblRaca
+            // 
+            lblRaca.AutoSize = true;
+            lblRaca.Font = new Font("Gadugi", 12F);
+            lblRaca.ForeColor = Color.FromArgb(34, 61, 79);
+            lblRaca.Location = new Point(357, 347);
+            lblRaca.Name = "lblRaca";
+            lblRaca.Size = new Size(42, 19);
+            lblRaca.TabIndex = 1;
+            lblRaca.Text = "Raça";
+            // 
+            // txtEspecie
+            // 
+            txtEspecie.BackColor = Color.AliceBlue;
+            txtEspecie.Font = new Font("Arial", 12F);
+            txtEspecie.Location = new Point(176, 369);
+            txtEspecie.Name = "txtEspecie";
+            txtEspecie.Size = new Size(151, 26);
+            txtEspecie.TabIndex = 0;
+            // 
+            // txtRaca
+            // 
+            txtRaca.BackColor = Color.AliceBlue;
+            txtRaca.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtRaca.Location = new Point(357, 369);
+            txtRaca.Name = "txtRaca";
+            txtRaca.Size = new Size(151, 26);
+            txtRaca.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(34, 61, 79);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(pictureBox3);
+            panel1.Location = new Point(-3, -1);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(548, 94);
+            panel1.TabIndex = 11;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(9, 24);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(100, 50);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 12;
+            pictureBox3.TabStop = false;
+            // 
+            // cmbPet
+            // 
+            cmbPet.BackColor = Color.AliceBlue;
+            cmbPet.Font = new Font("Arial", 12F);
+            cmbPet.FormattingEnabled = true;
+            cmbPet.Location = new Point(34, 369);
+            cmbPet.Name = "cmbPet";
+            cmbPet.Size = new Size(121, 26);
+            cmbPet.TabIndex = 12;
             // 
             // AgendamentoHorario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(251, 228, 178);
-            ClientSize = new Size(531, 523);
-            Controls.Add(pictureBox1);
+            BackColor = Color.White;
+            ClientSize = new Size(543, 776);
             Controls.Add(cmbPet);
+            Controls.Add(panel1);
+            Controls.Add(txtObservacao);
+            Controls.Add(txtCpf);
+            Controls.Add(pictureBox2);
             Controls.Add(btnExcluir);
             Controls.Add(txtHora);
             Controls.Add(btnSalvar);
-            Controls.Add(label1);
+            Controls.Add(lblRaca);
+            Controls.Add(lblEspecie);
             Controls.Add(lblHorario);
             Controls.Add(lblPet);
             Controls.Add(lblServico);
             Controls.Add(lblCpf);
             Controls.Add(lblAgendaCliente);
+            Controls.Add(lblObservacao);
             Controls.Add(lblProfissional);
             Controls.Add(lblData);
             Controls.Add(txtServico);
             Controls.Add(txtProfissional);
-            Controls.Add(txtCpf);
+            Controls.Add(txtRaca);
+            Controls.Add(txtEspecie);
             Controls.Add(txtAgendaCliente);
             Controls.Add(txtDia);
             Name = "AgendamentoHorario";
             Text = "AgendamentoHorario";
             Load += AgendamentoHorario_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -280,11 +401,20 @@
         private Label lblProfissional;
         private Label lblServico;
         private Button btnExcluir;
-        private ComboBox cmbPet;
         private TextBox txtAgendaCliente;
-        private TextBox txtCpf;
         private Label lblCpf;
         private Label label1;
-        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private MaskedTextBox txtCpf; // Mantido como o principal MaskedTextBox
+        private RichTextBox txtObservacao;
+        private Label lblObservacao;
+        private Label lblEspecie;
+        private Label lblRaca;
+        private TextBox txtEspecie;
+        private TextBox txtRaca;
+        private ComboBox cmbPet; // MANTER APENAS ESTA VERSÃO (RESOLVE A AMBIGUIDADE)
+        private Panel panel1;
+        private PictureBox pictureBox3;
+
     }
 }

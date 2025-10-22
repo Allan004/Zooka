@@ -42,9 +42,12 @@
             btnPet = new Button();
             btnProfissional = new Button();
             btnUsuario = new Button();
-            btnSku = new Button();
+            btnCadastroServico = new Button();
             panel1 = new Panel();
             menuStrip1 = new MenuStrip();
+            btnSku = new Button();
+            btnCadastroFornecedor = new Button();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // button1
@@ -85,7 +88,7 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Arial Rounded MT Bold", 14.25F);
             button3.ForeColor = SystemColors.Control;
-            button3.Location = new Point(1, 125);
+            button3.Location = new Point(0, 119);
             button3.Name = "button3";
             button3.Size = new Size(218, 75);
             button3.TabIndex = 5;
@@ -217,30 +220,30 @@
             btnUsuario.Visible = false;
             btnUsuario.Click += btnUsuario_Click;
             // 
-            // btnSku
+            // btnCadastroServico
             // 
-            btnSku.BackColor = Color.FromArgb(50, 85, 104);
-            btnSku.FlatAppearance.BorderSize = 0;
-            btnSku.FlatStyle = FlatStyle.Flat;
-            btnSku.Font = new Font("Arial Rounded MT Bold", 9.75F);
-            btnSku.ForeColor = SystemColors.Control;
-            btnSku.Location = new Point(219, 200);
-            btnSku.Name = "btnSku";
-            btnSku.Size = new Size(165, 25);
-            btnSku.TabIndex = 14;
-            btnSku.Text = "CadastroSku";
-            btnSku.UseVisualStyleBackColor = false;
-            btnSku.Visible = false;
-            btnSku.Click += btnSku_Click;
+            btnCadastroServico.BackColor = Color.FromArgb(50, 85, 104);
+            btnCadastroServico.FlatAppearance.BorderSize = 0;
+            btnCadastroServico.FlatStyle = FlatStyle.Flat;
+            btnCadastroServico.Font = new Font("Arial Rounded MT Bold", 9.75F);
+            btnCadastroServico.ForeColor = SystemColors.Control;
+            btnCadastroServico.Location = new Point(219, 250);
+            btnCadastroServico.Name = "btnCadastroServico";
+            btnCadastroServico.Size = new Size(165, 25);
+            btnCadastroServico.TabIndex = 14;
+            btnCadastroServico.Text = "Cadastro Serviço";
+            btnCadastroServico.UseVisualStyleBackColor = false;
+            btnCadastroServico.Visible = false;
+            btnCadastroServico.Click += btnCadastroServico_Click;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(34, 61, 79);
+            panel1.Controls.Add(button3);
             panel1.Location = new Point(1, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(218, 3000);
             panel1.TabIndex = 16;
-            panel1.Paint += panel1_Paint;
             // 
             // menuStrip1
             // 
@@ -254,6 +257,38 @@
             menuStrip1.TabIndex = 18;
             menuStrip1.Text = "menuStrip1";
             // 
+            // btnSku
+            // 
+            btnSku.BackColor = Color.FromArgb(50, 85, 104);
+            btnSku.FlatAppearance.BorderSize = 0;
+            btnSku.FlatStyle = FlatStyle.Flat;
+            btnSku.Font = new Font("Arial Rounded MT Bold", 9.75F);
+            btnSku.ForeColor = SystemColors.Control;
+            btnSku.Location = new Point(219, 225);
+            btnSku.Name = "btnSku";
+            btnSku.Size = new Size(165, 25);
+            btnSku.TabIndex = 14;
+            btnSku.Text = "CadastroSku";
+            btnSku.UseVisualStyleBackColor = false;
+            btnSku.Visible = false;
+            btnSku.Click += btnSku_Click;
+            // 
+            // btnCadastroFornecedor
+            // 
+            btnCadastroFornecedor.BackColor = Color.FromArgb(50, 85, 104);
+            btnCadastroFornecedor.FlatAppearance.BorderSize = 0;
+            btnCadastroFornecedor.FlatStyle = FlatStyle.Flat;
+            btnCadastroFornecedor.Font = new Font("Arial Rounded MT Bold", 9.75F);
+            btnCadastroFornecedor.ForeColor = SystemColors.Control;
+            btnCadastroFornecedor.Location = new Point(219, 275);
+            btnCadastroFornecedor.Name = "btnCadastroFornecedor";
+            btnCadastroFornecedor.Size = new Size(165, 25);
+            btnCadastroFornecedor.TabIndex = 11;
+            btnCadastroFornecedor.Text = "Cadastro Fornecedor";
+            btnCadastroFornecedor.UseVisualStyleBackColor = false;
+            btnCadastroFornecedor.Visible = false;
+            btnCadastroFornecedor.Click += btnCadastroFornecedor_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 15F);
@@ -263,15 +298,16 @@
             ClientSize = new Size(1155, 625);
             Controls.Add(menuStrip1);
             Controls.Add(btnSku);
+            Controls.Add(btnCadastroServico);
             Controls.Add(btnUsuario);
             Controls.Add(btnProfissional);
             Controls.Add(btnPet);
+            Controls.Add(btnCadastroFornecedor);
             Controls.Add(btnCliente);
             Controls.Add(button7);
             Controls.Add(btnFornecedor);
             Controls.Add(BtnOrdemdecompra);
             Controls.Add(btnEstoque);
-            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(panel1);
@@ -282,7 +318,7 @@
             Name = "Form1";
             Padding = new Padding(218, 0, 0, 0);
             Text = "Form1";
-            Load += Form1_Load;
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -299,8 +335,10 @@
         private Button btnPet;
         private Button btnProfissional;
         private Button btnUsuario;
-        private Button btnSku;
+        private Button btnCadastroServico;
         private Panel panel1;
         private MenuStrip menuStrip1;
+        private Button btnSku;
+        private Button btnCadastroFornecedor;
     }
 }

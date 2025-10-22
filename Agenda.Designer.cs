@@ -50,22 +50,30 @@
             tsmStatusCancelado = new ToolStripMenuItem();
             tsmStatusCompareceu = new ToolStripMenuItem();
             tsmStatusRemarcado = new ToolStripMenuItem();
+            panel1 = new Panel();
+            label6 = new Label();
+            pictureBox2 = new PictureBox();
+            pictureBox1 = new PictureBox();
             cmsAgendamento.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lpDay
             // 
-            lpDay.Location = new Point(12, 118);
+            lpDay.BackColor = Color.FromArgb(34, 61, 79);
+            lpDay.Location = new Point(1, 118);
             lpDay.Name = "lpDay";
-            lpDay.Size = new Size(1828, 931);
+            lpDay.Size = new Size(1736, 931);
             lpDay.TabIndex = 0;
-
             // 
             // lblDomingo
             // 
-            lblDomingo.BackColor = SystemColors.ActiveCaption;
+            lblDomingo.BackColor = Color.FromArgb(215, 122, 40);
             lblDomingo.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDomingo.Location = new Point(15, 91);
+            lblDomingo.ForeColor = Color.White;
+            lblDomingo.Location = new Point(4, 91);
             lblDomingo.Name = "lblDomingo";
             lblDomingo.Size = new Size(238, 25);
             lblDomingo.TabIndex = 1;
@@ -74,9 +82,10 @@
             // 
             // lblSegunda
             // 
-            lblSegunda.BackColor = SystemColors.ActiveCaption;
+            lblSegunda.BackColor = Color.FromArgb(215, 122, 40);
             lblSegunda.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            lblSegunda.Location = new Point(259, 90);
+            lblSegunda.ForeColor = Color.White;
+            lblSegunda.Location = new Point(251, 91);
             lblSegunda.Name = "lblSegunda";
             lblSegunda.Size = new Size(238, 25);
             lblSegunda.TabIndex = 1;
@@ -90,7 +99,7 @@
             btnProximo.BackgroundImageLayout = ImageLayout.Zoom;
             btnProximo.FlatAppearance.BorderSize = 0;
             btnProximo.FlatStyle = FlatStyle.Flat;
-            btnProximo.Location = new Point(433, 23);
+            btnProximo.Location = new Point(1288, 25);
             btnProximo.Name = "btnProximo";
             btnProximo.Size = new Size(64, 42);
             btnProximo.TabIndex = 3;
@@ -104,9 +113,9 @@
             btnAnterior.BackgroundImageLayout = ImageLayout.Zoom;
             btnAnterior.FlatAppearance.BorderSize = 0;
             btnAnterior.FlatStyle = FlatStyle.Flat;
-            btnAnterior.Location = new Point(363, 23);
+            btnAnterior.Location = new Point(1194, 25);
             btnAnterior.Name = "btnAnterior";
-            btnAnterior.Size = new Size(64, 42);
+            btnAnterior.Size = new Size(78, 42);
             btnAnterior.TabIndex = 3;
             btnAnterior.UseVisualStyleBackColor = false;
             btnAnterior.Click += btnAnterior_Click;
@@ -115,7 +124,8 @@
             // 
             lblMesAno.AutoSize = true;
             lblMesAno.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMesAno.Location = new Point(15, 9);
+            lblMesAno.ForeColor = Color.FromArgb(215, 122, 40);
+            lblMesAno.Location = new Point(1469, 17);
             lblMesAno.Name = "lblMesAno";
             lblMesAno.Size = new Size(200, 50);
             lblMesAno.TabIndex = 1;
@@ -123,9 +133,10 @@
             // 
             // label1
             // 
-            label1.BackColor = SystemColors.ActiveCaption;
+            label1.BackColor = Color.FromArgb(215, 122, 40);
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            label1.Location = new Point(503, 90);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(496, 91);
             label1.Name = "label1";
             label1.Size = new Size(238, 25);
             label1.TabIndex = 1;
@@ -134,9 +145,10 @@
             // 
             // label2
             // 
-            label2.BackColor = SystemColors.ActiveCaption;
+            label2.BackColor = Color.FromArgb(215, 122, 40);
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            label2.Location = new Point(747, 90);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(739, 91);
             label2.Name = "label2";
             label2.Size = new Size(238, 25);
             label2.TabIndex = 1;
@@ -145,9 +157,10 @@
             // 
             // label3
             // 
-            label3.BackColor = SystemColors.ActiveCaption;
+            label3.BackColor = Color.FromArgb(215, 122, 40);
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            label3.Location = new Point(991, 90);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(984, 91);
             label3.Name = "label3";
             label3.Size = new Size(238, 25);
             label3.TabIndex = 1;
@@ -156,9 +169,10 @@
             // 
             // label4
             // 
-            label4.BackColor = SystemColors.ActiveCaption;
+            label4.BackColor = Color.FromArgb(215, 122, 40);
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            label4.Location = new Point(1235, 90);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(1227, 91);
             label4.Name = "label4";
             label4.Size = new Size(238, 25);
             label4.TabIndex = 1;
@@ -167,9 +181,10 @@
             // 
             // label5
             // 
-            label5.BackColor = SystemColors.ActiveCaption;
+            label5.BackColor = Color.FromArgb(215, 122, 40);
             label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            label5.Location = new Point(1479, 90);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(1470, 91);
             label5.Name = "label5";
             label5.Size = new Size(238, 25);
             label5.TabIndex = 1;
@@ -238,14 +253,58 @@
             tsmStatusRemarcado.Text = "REMARCADO";
             tsmStatusRemarcado.Click += tsmStatusRemarcado_Click;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(34, 61, 79);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(btnAnterior);
+            panel1.Controls.Add(lblMesAno);
+            panel1.Controls.Add(btnProximo);
+            panel1.Location = new Point(1, 1);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1857, 87);
+            panel1.TabIndex = 2;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Arial Rounded MT Bold", 20F);
+            label6.ForeColor = Color.FromArgb(215, 122, 40);
+            label6.Location = new Point(697, 31);
+            label6.Name = "label6";
+            label6.Size = new Size(115, 32);
+            label6.TabIndex = 5;
+            label6.Text = "Agenda";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(812, 22);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(100, 50);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 4;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(11, 17);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            // 
             // Agenda
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1852, 1061);
-            Controls.Add(btnAnterior);
-            Controls.Add(btnProximo);
-            Controls.Add(lblMesAno);
+            BackColor = Color.White;
+            ClientSize = new Size(1726, 1061);
+            Controls.Add(panel1);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -258,8 +317,11 @@
             Text = "Agenda";
             Load += Agenda_Load;
             cmsAgendamento.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -284,5 +346,9 @@
         private ToolStripMenuItem tsmStatusCancelado;
         private ToolStripMenuItem tsmStatusCompareceu;
         private ToolStripMenuItem tsmStatusRemarcado;
+        private Panel panel1;
+        private Label label6;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }
