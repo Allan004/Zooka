@@ -21,7 +21,7 @@ namespace Zooka
             {
                 if (ctl is MdiClient client)
                 {
-                    client.BackColor = Color.LightBlue; 
+                    client.BackColor = Color.LightBlue;
                     // ou qualquer outra cor
                     // Para usar uma imagem:
                     // client.BackgroundImage = Image.FromFile("caminho_para_imagem.jpg");
@@ -250,6 +250,12 @@ namespace Zooka
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            ConsultaFornecedor fornecedor = new ConsultaFornecedor();
+            fornecedor.Show();
         }
     }
 }

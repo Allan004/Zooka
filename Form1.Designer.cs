@@ -140,6 +140,7 @@
             button7.TabIndex = 9;
             button7.UseVisualStyleBackColor = false;
             button7.Visible = false;
+            button7.Click += button7_Click_1;
             // 
             // btnCliente
             // 

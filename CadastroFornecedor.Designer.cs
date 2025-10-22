@@ -96,7 +96,7 @@
             // btnSalvar
             // 
             btnSalvar.BackColor = Color.FromArgb(169, 213, 186);
-            btnSalvar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnSalvar.BackgroundImageLayout = ImageLayout.Zoom;
             btnSalvar.FlatAppearance.BorderSize = 0;
             btnSalvar.FlatStyle = FlatStyle.Flat;
             btnSalvar.Font = new Font("Sans Serif Collection", 15.7499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
