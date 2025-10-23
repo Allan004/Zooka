@@ -59,7 +59,6 @@
             // 
             // button2
             // 
-
             button2.BackgroundImageLayout = ImageLayout.Stretch;
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
@@ -72,7 +71,6 @@
             // 
             // button3
             // 
-
             button3.BackgroundImageLayout = ImageLayout.Stretch;
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
@@ -85,7 +83,6 @@
             // 
             // button4
             // 
-
             button4.BackgroundImageLayout = ImageLayout.Stretch;
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
@@ -101,7 +98,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            BackColor = Color.FromArgb(251, 228, 178);
+            BackColor = Color.FromArgb(34, 61, 79);
             ClientSize = new Size(1362, 459);
             Controls.Add(button4);
             Controls.Add(button3);

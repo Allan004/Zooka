@@ -69,12 +69,13 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Arial Rounded MT Bold", 20F);
-            label1.ForeColor = Color.FromArgb(215, 122, 40);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(295, 34);
             label1.Name = "label1";
             label1.Size = new Size(292, 32);
             label1.TabIndex = 0;
             label1.Text = "CADASTRO CLIENTE";
+            label1.Click += label1_Click;
             // 
             // label2
             // 

@@ -72,7 +72,7 @@
             lblCadastroServicos.AutoSize = true;
             lblCadastroServicos.BackColor = Color.FromArgb(34, 61, 79);
             lblCadastroServicos.Font = new Font("Arial Rounded MT Bold", 20F);
-            lblCadastroServicos.ForeColor = Color.FromArgb(215, 122, 40);
+            lblCadastroServicos.ForeColor = Color.White;
             lblCadastroServicos.Location = new Point(146, 35);
             lblCadastroServicos.Name = "lblCadastroServicos";
             lblCadastroServicos.Size = new Size(315, 32);

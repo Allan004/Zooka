@@ -60,7 +60,7 @@ namespace Zooka
             {
                 string novonome = txtnome.Text;
                 string novocpf = txtcpf.Text.Replace(",", "").Replace("-", "");
-                string novotelefone = txttelefone.Text.Replace(",", "").Replace("(", "").Replace(")", "").Replace("-","");
+                string novotelefone = txttelefone.Text.Replace(",", "").Replace("(", "").Replace(")", "").Replace("-", "");
                 string novorg = txtrg.Text.Replace(",", "").Replace("-", "");
                 string novoemail = txtemail.Text;
                 string novocep = txtcep.Text.Replace(",", "").Replace("-", "");
@@ -146,6 +146,11 @@ namespace Zooka
         }
 
         private void txtrg_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

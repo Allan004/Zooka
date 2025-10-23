@@ -61,7 +61,7 @@
             // 
             // txtrganimal
             // 
-            txtrganimal.BackColor = Color.AliceBlue;
+            txtrganimal.BackColor = SystemColors.ActiveCaption;
             txtrganimal.Font = new Font("Arial", 12F);
             txtrganimal.Location = new Point(521, 153);
             txtrganimal.Mask = "00.000.000-0";
@@ -71,7 +71,7 @@
             // 
             // txt_Peso
             // 
-            txt_Peso.BackColor = Color.AliceBlue;
+            txt_Peso.BackColor = SystemColors.ActiveCaption;
             txt_Peso.Font = new Font("Arial", 12F);
             txt_Peso.Location = new Point(736, 243);
             txt_Peso.Name = "txt_Peso";
@@ -80,7 +80,7 @@
             // 
             // txtnomepet
             // 
-            txtnomepet.BackColor = Color.AliceBlue;
+            txtnomepet.BackColor = SystemColors.ActiveCaption;
             txtnomepet.Font = new Font("Arial", 12F);
             txtnomepet.Location = new Point(117, 153);
             txtnomepet.Name = "txtnomepet";
@@ -92,8 +92,8 @@
             lblPet.AutoSize = true;
             lblPet.BackColor = Color.Transparent;
             lblPet.Font = new Font("Arial Rounded MT Bold", 20F);
-            lblPet.ForeColor = Color.FromArgb(215, 122, 40);
-            lblPet.Location = new Point(413, 33);
+            lblPet.ForeColor = Color.White;
+            lblPet.Location = new Point(364, 29);
             lblPet.Name = "lblPet";
             lblPet.Size = new Size(227, 32);
             lblPet.TabIndex = 22;
@@ -101,7 +101,7 @@
             // 
             // txtIdade
             // 
-            txtIdade.BackColor = Color.AliceBlue;
+            txtIdade.BackColor = SystemColors.ActiveCaption;
             txtIdade.Font = new Font("Arial", 12F);
             txtIdade.Location = new Point(117, 243);
             txtIdade.Name = "txtIdade";
@@ -110,7 +110,7 @@
             // 
             // txtcpfcliente
             // 
-            txtcpfcliente.BackColor = Color.AliceBlue;
+            txtcpfcliente.BackColor = SystemColors.ActiveCaption;
             txtcpfcliente.Font = new Font("Arial", 12F);
             txtcpfcliente.Location = new Point(777, 153);
             txtcpfcliente.Mask = "000.000.000-00";
@@ -120,8 +120,8 @@
             // 
             // boxRaca
             // 
-            boxRaca.BackColor = Color.AliceBlue;
-            boxRaca.FlatStyle = FlatStyle.Flat;
+            boxRaca.BackColor = SystemColors.ActiveCaption;
+            boxRaca.FlatStyle = FlatStyle.Popup;
             boxRaca.Font = new Font("Arial", 12F);
             boxRaca.FormattingEnabled = true;
             boxRaca.Items.AddRange(new object[] { "Labrador Retriever", "Siamês", "Golden Retriever", "Persa", "Bulldog Francês", "Maine Coon", "Pastor Alemão", "Ragdoll", "Poodle", "Bengal", "Beagle", "Sphynx", "Shih Tzu", "British Shorthair", "Chihuahua", "Abissínio", "Dachshund", "Birmanês", "Border Collie", "Scottish Fold", "Boxer", "Russian Blue", "Cocker Spaniel", "Savannah", "Husky Siberiano", "Oriental Shorthair", "Pug", "Chartreux", "Yorkshire Terrier", "American Shorthair", "Rottweiler", "Exotic Shorthair", "Doberman", "Angorá Turco", "Malamute do Alasca", "Cornish Rex", "Buldogue Inglês", "Balinês", "Pinscher Miniatura", "Havana Brown", "Maltês", "Burmês", "Akita Inu", "Tonquinês", "Bichon Frisé", "Manx", "Lhasa Apso", "Somali", "Basenji", "Ocicat", "Shar Pei", "Snowshoe", "Boston Terrier", "Singapura", "Setter Irlandês", "Peterbald", "Weimaraner", "Cymric", "Cão de Crista Chinês", "Munchkin", "Fox Terrier", "LaPerm", "Samoieda", "Selkirk Rex", "Schnauzer Miniatura", "American Curl", "Whippet", "Turkish Van", "Pekingese", "Japanese Bobtail", "Cão de Água Português", "Nebelung", "Cairn Terrier", "Ragamuffin", "Galgo Afegão", "Oriental Longhair", "Bloodhound", "Bombay", "Setter Inglês", "Javanês", "Bullmastiff", "Thai", "Cão de São Bernardo", "Chausie", "Buldogue Americano", "Khao Manee", "Borzoi", "Cão Esquimó Americano", "Skye Terrier", "Devon Rex", "Schipperke", "Toyger", "Leonberger", "Lykoi", "Cão de Montanha dos Pirineus", "Singapura", "Cão de Caça Afegão", "Pixie-Bob", "Terrier Tibetano", "Exotic Longhair" });
@@ -132,8 +132,8 @@
             // 
             // comboEspecie
             // 
-            comboEspecie.BackColor = Color.AliceBlue;
-            comboEspecie.FlatStyle = FlatStyle.Flat;
+            comboEspecie.BackColor = SystemColors.ActiveCaption;
+            comboEspecie.FlatStyle = FlatStyle.Popup;
             comboEspecie.Font = new Font("Arial", 12F);
             comboEspecie.FormattingEnabled = true;
             comboEspecie.Items.AddRange(new object[] { "Leão  ", "Tigre  ", "Elefante  ", "Girafa  ", "Zebra  ", "Rinoceronte  ", "Hipopótamo  ", "Urso-pardo  ", "Urso-polar  ", "Lobo  ", "Raposa  ", "Cervo  ", "Veado  ", "Anta  ", "Bicho-preguiça  ", "Tamanduá-bandeira  ", "Capivara  ", "Onça-pintada  ", "Puma  ", "Gato-doméstico  ", "Cachorro-doméstico  ", "Coelho  ", "Lebre  ", "Cavalo  ", "Pônei  ", "Burro  ", "Jumento  ", "Vaca  ", "Boi  ", "Touro  ", "Ovelha  ", "Cabra  ", "Porco  ", "Galinha  ", "Galo  ", "Pato  ", "Ganso  ", "Peru  ", "Avestruz  ", "Ema  ", "Tatu  ", "Armadilho  ", "Jacaré  ", "Crocodilo  ", "Camaleão  ", "Lagarto  ", "Iguana  ", "Cobra  ", "Jararaca  ", "Sucuri  ", "Coral  ", "Peixe-palhaço  ", "Tubarão-branco  ", "Orca  ", "Golfinho  ", "Baleia-azul  ", "Foca  ", "Leão-marinho  ", "Morsa  ", "Pinguim  ", "Pelicano  ", "Garça  ", "Coruja  ", "Falcão  ", "Águia  ", "Gavião  ", "Papagaio  ", "Arara  ", "Canário  ", "Pardal  ", "Andorinha  ", "Beija-flor  ", "Morcego  ", "Esquilo  ", "Castor  ", "Lontra  ", "Rato  ", "Ratazana  ", "Camundongo  ", "Hamster  ", "Porquinho-da-índia  ", "Chinchila  ", "Macaco-prego  ", "Bugio  ", "Gorila  ", "Chimpanzé  ", "Orangotango  ", "Lêmure  ", "Suricata  ", "Canguru  ", "Coala  ", "Diabo-da-tasmânia  ", "Formiga  ", "Abelha  ", "Vespa  ", "Borboleta  ", "Mariposa  ", "Besouro  ", "Joaninha  ", "Grilo  ", "Gafanhoto  ", "Libélula  ", "Caracol  ", "Lesma  " });
@@ -144,7 +144,7 @@
             // 
             // txtPelagem
             // 
-            txtPelagem.BackColor = Color.AliceBlue;
+            txtPelagem.BackColor = SystemColors.ActiveCaption;
             txtPelagem.Font = new Font("Arial", 12F);
             txtPelagem.Location = new Point(117, 198);
             txtPelagem.Name = "txtPelagem";
@@ -153,8 +153,8 @@
             // 
             // boxSexo
             // 
-            boxSexo.BackColor = Color.AliceBlue;
-            boxSexo.FlatStyle = FlatStyle.Flat;
+            boxSexo.BackColor = SystemColors.ActiveCaption;
+            boxSexo.FlatStyle = FlatStyle.Popup;
             boxSexo.Font = new Font("Arial", 12F);
             boxSexo.FormattingEnabled = true;
             boxSexo.Items.AddRange(new object[] { "macho", "femea" });

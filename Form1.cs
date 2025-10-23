@@ -78,14 +78,14 @@ namespace Zooka
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //if (btnCadastroServico.Visible == false)
-            //{
-            //    btnCadastroServico.Visible = true;
-            //}
-            //else
-            //{
-            //    btnCadastroServico.Visible = false;
-            //}
+            if (btnCadastroServico.Visible == false)
+            {
+                btnCadastroServico.Visible = true;
+            }
+            else
+            {
+               btnCadastroServico.Visible = false;
+            }
         }
         public void somelimpa(bool verifica)
         {
@@ -150,8 +150,20 @@ namespace Zooka
 
         private void button6_Click(object sender, EventArgs e)
         {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
             CadastroFornecedor abrirFornecedor = new CadastroFornecedor();
+            abrirFornecedor.TopLevel = false;
+            abrirFornecedor.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            abrirFornecedor.StartPosition = FormStartPosition.Manual;
+            abrirFornecedor.Location = new Point(0, 0);
             abrirFornecedor.Show();
+            somelimpa(false);
+            fechamenu(false);
+            cont = 0;
+            cont2 = 0;
         }
 
         private void btnCliente_Click(object sender, EventArgs e)
