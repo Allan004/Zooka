@@ -474,14 +474,14 @@ namespace Zooka
             {
                 form.Close();
             }
-            Consulta consulta = new Consulta();
-            consulta.defineForms = "produto";
-            consulta.TopLevel = false;
-            consulta.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            consulta.StartPosition = FormStartPosition.Manual;
-            consulta.Location = new Point(0, 0);
-            consulta.MdiParent = this;
-            consulta.Show();
+            searchSKU abrirformulario = new searchSKU();
+
+            abrirformulario.TopLevel = false;
+            abrirformulario.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            abrirformulario.StartPosition = FormStartPosition.Manual;
+            abrirformulario.Location = new Point(0, 0);
+            abrirformulario.MdiParent = this;
+            abrirformulario.Show();
             somelimpa(false, 1);
             somelimpa(false, 2);
             fechamenu(false);
