@@ -1,16 +1,12 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Mail;
 using System.Net;
+using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Text.RegularExpressions;
+using System.Diagnostics; // necessário para abrir WhatsApp
 
 namespace Zooka
 {
@@ -40,11 +36,6 @@ namespace Zooka
             var Login_C = new LoginUsuario();
             Login_C.Show();
             this.Close();
-        }
-
-        private void Contate_nos_Load(object sender, EventArgs e)
-        {
-
         }
 
         private async void BtnEntrar_Click(object sender, EventArgs e)
@@ -88,10 +79,15 @@ namespace Zooka
 
             try
             {
+                // Envia e-mail
                 await EnviarEmailConfirmacaoAsync(novoemail, novonome, novotelefone);
 
+                // Abre WhatsApp
+                string mensagemWhatsApp = $"Olá {novonome}, recebemos seu contato no Zooka Petshop! 🐾\nEm breve entraremos em contato.";
+                AbrirWhatsAppComNumero(novotelefone, mensagemWhatsApp);
+
                 MessageBox.Show(
-                    "Informações validadas com sucesso! O e-mail de confirmação foi enviado.",
+                    "Informações validadas com sucesso! O e-mail de confirmação foi enviado e o WhatsApp foi aberto.",
                     "Sucesso",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
@@ -99,18 +95,16 @@ namespace Zooka
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao enviar o e-mail: " + ex.Message, "Erro",
+                MessageBox.Show("Erro ao enviar a confirmação: " + ex.Message, "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        
         private async Task EnviarEmailConfirmacaoAsync(string emailDestino, string nome, string telefone)
         {
-            
             string remetente = "ZookaPetshop@gmail.com";
-            string senha = "qvwppccjasjlvbefc"; 
-            string assunto = "Confirmação de Contato - Zooka";
+            string senha = "foyn xvnq tnyg zoqq"; // Use a senha de app do Gmail
+            string assunto = "Confirmação de Contato - Zooka 🐾";
             string corpo = $"Olá {nome},\n\n" +
                            $"Recebemos seu contato!\n\n" +
                            $"📧 E-mail: {emailDestino}\n" +
@@ -118,40 +112,53 @@ namespace Zooka
                            $"Em breve entraremos em contato.\n\n" +
                            $"Atenciosamente,\nEquipe Zooka 🐾";
 
-            try
+            using (var smtp = new SmtpClient("smtp.gmail.com", 587))
             {
-                using (var smtp = new SmtpClient("smtp.gmail.com", 587))
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential(remetente, senha);
+                smtp.EnableSsl = true;
+                System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
+                using (var mensagem = new MailMessage())
                 {
-                    smtp.EnableSsl = true;
-                    smtp.UseDefaultCredentials = false;
-                    smtp.Credentials = new NetworkCredential(remetente, senha);
+                    mensagem.From = new MailAddress(remetente, "Equipe Zooka 🐾");
+                    mensagem.To.Add(emailDestino);
+                    mensagem.Subject = assunto;
+                    mensagem.Body = corpo;
+                    mensagem.SubjectEncoding = Encoding.UTF8;
+                    mensagem.BodyEncoding = Encoding.UTF8;
+                    mensagem.IsBodyHtml = false;
 
-                    using (var mensagem = new MailMessage())
-                    {
-                        mensagem.From = new MailAddress(remetente, "Equipe Zooka");
-                        mensagem.To.Add(emailDestino);
-                        mensagem.Subject = assunto;
-                        mensagem.Body = corpo;
-                        mensagem.SubjectEncoding = Encoding.UTF8;
-                        mensagem.BodyEncoding = Encoding.UTF8;
-                        mensagem.IsBodyHtml = false;
-
-                        
-                        ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-
-                        await smtp.SendMailAsync(mensagem);
-                    }
+                    await smtp.SendMailAsync(mensagem);
                 }
             }
-            catch (SmtpException ex)
+        }
+
+        // NOVA FUNÇÃO: abre WhatsApp com número e mensagem
+        private void AbrirWhatsAppComNumero(string rawNumber, string mensagemOpcional = null)
+        {
+            string onlyDigits = Regex.Replace(rawNumber ?? "", @"\D", "");
+            if (string.IsNullOrEmpty(onlyDigits))
             {
-                MessageBox.Show($"Erro SMTP ({ex.StatusCode}): {ex.Message}", "Erro SMTP",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Telefone inválido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            onlyDigits = onlyDigits.TrimStart('0');
+            if (!onlyDigits.StartsWith("55")) onlyDigits = "55" + onlyDigits;
+
+            string waNumber = onlyDigits;
+            string encodedMsg = string.IsNullOrEmpty(mensagemOpcional) ? "" : $"?text={Uri.EscapeDataString(mensagemOpcional)}";
+            string url = $"https://wa.me/{waNumber}{encodedMsg}";
+
+            try
+            {
+                Process.Start(new ProcessStartInfo { FileName = url, UseShellExecute = true });
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro inesperado: " + ex.Message, "Erro",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Não foi possível abrir o WhatsApp: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
