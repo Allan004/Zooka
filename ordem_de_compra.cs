@@ -23,10 +23,41 @@ namespace Zooka
 
         private void ordem_de_compra_Load(object sender, EventArgs e)
         {
+            txtNomeFantasiaZooka_OC.Text = "Zooka";
+            txtRazaoSocialZooka_OC.Text = "Zooka Petshop e Clínica Veterinária Ltda";
+            txtCNPJZooka_OC.Text = "12.345.678/0001-99";
+
+            txtNomeFantasiaZooka_OC.Enabled = false;
+            txtNomeFantasiaZooka_OC.BackColor = Color.White;
+            txtNomeFantasiaZooka_OC.ForeColor = Color.Black;
+            txtNomeFantasiaZooka_OC.TabStop = false;
+
+            txtRazaoSocialZooka_OC.Enabled = false;
+            txtRazaoSocialZooka_OC.BackColor = Color.White;
+            txtRazaoSocialZooka_OC.ForeColor = Color.Black;
+            txtRazaoSocialZooka_OC.TabStop = false;
+
+            txtCNPJZooka_OC.Enabled = false;
+            txtCNPJZooka_OC.BackColor = Color.White;
+            txtCNPJZooka_OC.ForeColor = Color.Black;
+            txtCNPJZooka_OC.TabStop = false;
+
+
+
             txtNumeroOC.Enabled = false;
             txtNumeroOC.BackColor = Color.White;
             txtNumeroOC.ForeColor = Color.Black;
             txtNumeroOC.TabStop = false;
+
+            txtFornecedorCNPJ_OC.ReadOnly = true;
+            txtFornecedorCNPJ_OC.BackColor = Color.White;
+            txtFornecedorCNPJ_OC.ForeColor = Color.Gray;
+
+            txtFornecedorCNPJ_OC.Enabled = false;
+            txtFornecedorCNPJ_OC.BackColor = Color.White;
+            txtFornecedorCNPJ_OC.ForeColor = Color.Black;
+            txtFornecedorCNPJ_OC.TabStop = false;
+
 
             dgvItensOC.AllowUserToOrderColumns = false;
             dgvItensOC.AllowUserToResizeColumns = false;
@@ -34,17 +65,50 @@ namespace Zooka
             dgvItensOC.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvItensOC.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
-
             string connStr = "server=10.37.44.26;user id=root;password=root;database=Zooka";
             using (var conn = new MySqlConnection(connStr))
             {
                 conn.Open();
+
                 string query = "SELECT MAX(id_oc) FROM ordem_de_compra";
                 using (var cmd = new MySqlCommand(query, conn))
                 {
                     object result = cmd.ExecuteScalar();
                     int proximoID = (result == null || result == DBNull.Value) ? 1 : Convert.ToInt32(result) + 1;
                     txtNumeroOC.Text = proximoID.ToString();
+                }
+
+                string sqlFornec = "SELECT nomefantasia_fornecedor, razaosocial_fornecedor, cnpj_fornecedor FROM fornecedor WHERE status_fornecedor='ativo'";
+                using (var cmdF = new MySqlCommand(sqlFornec, conn))
+                using (var reader = cmdF.ExecuteReader())
+                {
+                    AutoCompleteStringCollection lista = new AutoCompleteStringCollection();
+                    var fornecedoresMap = new Dictionary<string, string>();
+
+                    while (reader.Read())
+                    {
+                        string nome = reader["nomefantasia_fornecedor"].ToString();
+                        string razao = reader["razaosocial_fornecedor"].ToString();
+                        string cnpj = reader["cnpj_fornecedor"].ToString();
+
+                        lista.Add(nome);
+                        lista.Add(razao);
+
+                        fornecedoresMap[nome] = cnpj;
+                        fornecedoresMap[razao] = cnpj;
+                    }
+
+                    txtFornecedor_oc.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                    txtFornecedor_oc.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                    txtFornecedor_oc.AutoCompleteCustomSource = lista;
+
+                    txtFornecedor_oc.TextChanged += (s, ev) =>
+                    {
+                        if (fornecedoresMap.TryGetValue(txtFornecedor_oc.Text.Trim(), out string cnpj))
+                            txtFornecedorCNPJ_OC.Text = cnpj;
+                        else
+                            txtFornecedorCNPJ_OC.Clear();
+                    };
                 }
             }
 
@@ -57,6 +121,7 @@ namespace Zooka
             txtFreteOC.TextChanged += (s, ev) => AtualizarTotalGeral();
             txtFreteOC.Leave += (s, ev) => AtualizarTotalGeral();
         }
+
         private void CarregarFormasPagamento()
         {
             string connStr = "server=10.37.44.26;user id=root;password=root;database=Zooka";
@@ -112,7 +177,6 @@ namespace Zooka
             dgvItensOC.Columns.Add("valorunit", "Valor Unitário");
             dgvItensOC.Columns.Add("valortotal", "Valor Total");
 
-
             dgvItensOC.Columns["id_skuproduto"].FillWeight = 60;
             dgvItensOC.Columns["produto"].FillWeight = 220;
             dgvItensOC.Columns["quantidade"].FillWeight = 70;
@@ -126,6 +190,11 @@ namespace Zooka
             dgvItensOC.Columns["valorunit"].DefaultCellStyle.Format = "C2";
             dgvItensOC.Columns["valortotal"].DefaultCellStyle.Format = "C2";
             dgvItensOC.Columns["valortotal"].ReadOnly = true;
+
+            // <<< FORÇA A COR DO TEXTO PRETO >>>
+            dgvItensOC.DefaultCellStyle.ForeColor = Color.Black;
+            dgvItensOC.RowsDefaultCellStyle.ForeColor = Color.Black;
+            dgvItensOC.AlternatingRowsDefaultCellStyle.ForeColor = Color.Black;
 
             dgvItensOC.EditingControlShowing += DgvItensOC_EditingControlShowing;
             dgvItensOC.CellEndEdit += dgvItensOC_CellEndEdit;
@@ -204,6 +273,7 @@ namespace Zooka
                 lstSuggestions.Visible = false;
             }
         }
+
         private void SelecionarSugestaoAtual()
         {
             if (lstSuggestions.SelectedItem == null || editingRow < 0) return;
@@ -256,7 +326,6 @@ namespace Zooka
 
             if (row.Cells["valorunit"].Value != null)
             {
-
                 if (!double.TryParse(Convert.ToString(row.Cells["valorunit"].Value), NumberStyles.Any, culture, out valorUnit))
                 {
                     string s = Convert.ToString(row.Cells["valorunit"].Value)
@@ -312,8 +381,7 @@ namespace Zooka
         private void btnSalvarOC_Click(object sender, EventArgs e)
         {
             string connStr = "server=10.37.44.26;user id=root;password=root;database=Zooka";
-
-            var culture = new System.Globalization.CultureInfo("pt-BR");
+            var culture = new CultureInfo("pt-BR");
 
             string nomeFornecedor = txtFornecedor_oc.Text.Trim();
             if (string.IsNullOrEmpty(nomeFornecedor))
@@ -342,10 +410,10 @@ namespace Zooka
             double frete = 0;
             if (!string.IsNullOrWhiteSpace(txtFreteOC.Text))
             {
-                if (!double.TryParse(txtFreteOC.Text, System.Globalization.NumberStyles.Any, culture, out frete))
+                if (!double.TryParse(txtFreteOC.Text, NumberStyles.Any, culture, out frete))
                 {
                     string s = txtFreteOC.Text.Replace("R$", "").Replace(" ", "").Replace(".", "").Replace(",", ".");
-                    if (!double.TryParse(s, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out frete))
+                    if (!double.TryParse(s, NumberStyles.Any, CultureInfo.InvariantCulture, out frete))
                     {
                         txtFreteOC.Focus();
                         MessageBox.Show("Valor do frete inválido!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -360,6 +428,10 @@ namespace Zooka
             {
                 var row = dgvItensOC.Rows[i];
                 if (row.IsNewRow) continue;
+
+                // fixa a cor do texto preto
+                foreach (DataGridViewCell cell in row.Cells)
+                    cell.Style.ForeColor = Color.Black;
 
                 if (row.Cells["id_skuproduto"].Value == null)
                 {
@@ -378,17 +450,17 @@ namespace Zooka
                 double qtd = 0;
                 if (row.Cells["quantidade"].Value != null)
                 {
-                    double.TryParse(Convert.ToString(row.Cells["quantidade"].Value), System.Globalization.NumberStyles.Any, culture, out qtd);
+                    double.TryParse(Convert.ToString(row.Cells["quantidade"].Value), NumberStyles.Any, culture, out qtd);
                 }
 
                 double unit = 0;
                 if (row.Cells["valorunit"].Value != null)
                 {
-                    var rawUnit = Convert.ToString(row.Cells["valorunit"].Value);
-                    if (!double.TryParse(rawUnit, System.Globalization.NumberStyles.Any, culture, out unit))
+                    string rawUnit = Convert.ToString(row.Cells["valorunit"].Value);
+                    if (!double.TryParse(rawUnit, NumberStyles.Any, culture, out unit))
                     {
                         string s = rawUnit.Replace("R$", "").Replace(" ", "").Replace(".", "").Replace(",", ".");
-                        double.TryParse(s, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out unit);
+                        double.TryParse(s, NumberStyles.Any, CultureInfo.InvariantCulture, out unit);
                     }
                 }
 
@@ -408,7 +480,12 @@ namespace Zooka
                     trans = conn.BeginTransaction();
 
                     int idFornecedor = 0;
-                    string sqlFornecedor = "SELECT id_fornecedor FROM fornecedor WHERE nomefantasia_fornecedor = @nome LIMIT 1";
+                    string sqlFornecedor = @"
+                       SELECT id_fornecedor 
+                       FROM fornecedor 
+                       WHERE nomefantasia_fornecedor = @nome OR razaosocial_fornecedor = @nome
+                       LIMIT 1";
+
                     using (var cmdF = new MySqlCommand(sqlFornecedor, conn, trans))
                     {
                         cmdF.Parameters.AddWithValue("@nome", nomeFornecedor);
@@ -416,9 +493,7 @@ namespace Zooka
                         if (result != null)
                             idFornecedor = Convert.ToInt32(result);
                         else
-                        {
                             throw new Exception("Fornecedor não encontrado!");
-                        }
                     }
 
                     int idProfissional = 0;
@@ -481,13 +556,10 @@ namespace Zooka
                     txtFornecedor_oc.Text = "";
                     txtDataOC.Text = DateTime.Now.ToString("yyyy-MM-dd");
                     if (int.TryParse(txtNumeroOC.Text, out int numeroAtu)) txtNumeroOC.Text = (numeroAtu + 1).ToString();
-
                     txtFreteOC.Text = "";
                     dgvItensOC.Rows.Clear();
-
                     AtualizarTotalGeral();
                     lblTotalOC.Text = (0.0).ToString("C2", culture);
-
                     txtComprador.Text = "";
                     cbPagamentoOC.SelectedIndex = -1;
                 }
@@ -495,19 +567,16 @@ namespace Zooka
                 {
                     try
                     {
-                        if (trans != null && trans.Connection != null)
-                            trans.Rollback();
+                        trans?.Rollback();
                     }
-                    catch
-                    {
-
-                    }
+                    catch { }
 
                     MessageBox.Show("Erro ao salvar: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
                 }
             }
+        
         }
+
         private void btnCriarSKU_OC_Click(object sender, EventArgs e)
         {
             CadastroSKU cadastroSKU = new CadastroSKU();

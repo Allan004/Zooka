@@ -204,5 +204,9 @@ namespace Zooka
             return null;
         }
 
+        private void btnSKU_cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

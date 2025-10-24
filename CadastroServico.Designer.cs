@@ -73,11 +73,11 @@
             lblCadastroServicos.BackColor = Color.FromArgb(34, 61, 79);
             lblCadastroServicos.Font = new Font("Arial Rounded MT Bold", 20F);
             lblCadastroServicos.ForeColor = Color.White;
-            lblCadastroServicos.Location = new Point(146, 35);
+            lblCadastroServicos.Location = new Point(180, 33);
             lblCadastroServicos.Name = "lblCadastroServicos";
-            lblCadastroServicos.Size = new Size(315, 32);
+            lblCadastroServicos.Size = new Size(243, 32);
             lblCadastroServicos.TabIndex = 22;
-            lblCadastroServicos.Text = "CADASTRO SERVIÇOS";
+            lblCadastroServicos.Text = "Cadastro Serviço";
             // 
             // btnSalvar
             // 
@@ -88,7 +88,7 @@
             btnSalvar.FlatStyle = FlatStyle.Flat;
             btnSalvar.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnSalvar.ForeColor = Color.White;
-            btnSalvar.Location = new Point(419, 502);
+            btnSalvar.Location = new Point(419, 491);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(110, 34);
             btnSalvar.TabIndex = 10;
@@ -241,7 +241,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(563, 548);
+            ClientSize = new Size(563, 537);
             Controls.Add(txtDescricao);
             Controls.Add(cmbCategoria);
             Controls.Add(btnSalvar);

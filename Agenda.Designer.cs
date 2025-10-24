@@ -65,7 +65,7 @@
             lpDay.BackColor = Color.FromArgb(34, 61, 79);
             lpDay.Location = new Point(1, 118);
             lpDay.Name = "lpDay";
-            lpDay.Size = new Size(1736, 931);
+            lpDay.Size = new Size(1735, 949);
             lpDay.TabIndex = 0;
             // 
             // lblDomingo
@@ -99,7 +99,7 @@
             btnProximo.BackgroundImageLayout = ImageLayout.Zoom;
             btnProximo.FlatAppearance.BorderSize = 0;
             btnProximo.FlatStyle = FlatStyle.Flat;
-            btnProximo.Location = new Point(1288, 25);
+            btnProximo.Location = new Point(1240, 25);
             btnProximo.Name = "btnProximo";
             btnProximo.Size = new Size(64, 42);
             btnProximo.TabIndex = 3;
@@ -113,7 +113,7 @@
             btnAnterior.BackgroundImageLayout = ImageLayout.Zoom;
             btnAnterior.FlatAppearance.BorderSize = 0;
             btnAnterior.FlatStyle = FlatStyle.Flat;
-            btnAnterior.Location = new Point(1194, 25);
+            btnAnterior.Location = new Point(1146, 25);
             btnAnterior.Name = "btnAnterior";
             btnAnterior.Size = new Size(78, 42);
             btnAnterior.TabIndex = 3;
@@ -124,8 +124,8 @@
             // 
             lblMesAno.AutoSize = true;
             lblMesAno.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMesAno.ForeColor = Color.FromArgb(215, 122, 40);
-            lblMesAno.Location = new Point(1469, 17);
+            lblMesAno.ForeColor = Color.White;
+            lblMesAno.Location = new Point(1397, 17);
             lblMesAno.Name = "lblMesAno";
             lblMesAno.Size = new Size(200, 50);
             lblMesAno.TabIndex = 1;
@@ -271,8 +271,8 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Arial Rounded MT Bold", 20F);
-            label6.ForeColor = Color.FromArgb(215, 122, 40);
-            label6.Location = new Point(697, 31);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(673, 31);
             label6.Name = "label6";
             label6.Size = new Size(115, 32);
             label6.TabIndex = 5;
@@ -281,7 +281,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(812, 22);
+            pictureBox2.Location = new Point(788, 22);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(100, 50);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
