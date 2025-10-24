@@ -239,6 +239,12 @@ namespace Zooka
 
             CarregarProdutos(); // ATUALIZA O GRID
         }
+
+        private void btnCriarSku_Search_Click(object sender, EventArgs e)
+        {
+            CadastroSKU cadastroSKU = new CadastroSKU();
+            cadastroSKU.ShowDialog();
+        }
     }
 
 }

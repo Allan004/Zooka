@@ -33,6 +33,7 @@
             btnSKU_editar = new Button();
             btnSKU_des_atv = new Button();
             txtSKUCad_search = new TextBox();
+            btnCriarSku_Search = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvSKU_search).BeginInit();
             SuspendLayout();
             // 
@@ -91,11 +92,28 @@
             txtSKUCad_search.Size = new Size(598, 23);
             txtSKUCad_search.TabIndex = 11;
             // 
+            // btnCriarSku_Search
+            // 
+            btnCriarSku_Search.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnCriarSku_Search.BackColor = Color.AliceBlue;
+            btnCriarSku_Search.Font = new Font("Sans Serif Collection", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCriarSku_Search.ForeColor = Color.MidnightBlue;
+            btnCriarSku_Search.Location = new Point(761, 446);
+            btnCriarSku_Search.Name = "btnCriarSku_Search";
+            btnCriarSku_Search.Size = new Size(76, 40);
+            btnCriarSku_Search.TabIndex = 12;
+            btnCriarSku_Search.Text = "CRIAR SKU";
+            btnCriarSku_Search.TextAlign = ContentAlignment.BottomCenter;
+            btnCriarSku_Search.UseCompatibleTextRendering = true;
+            btnCriarSku_Search.UseVisualStyleBackColor = false;
+            btnCriarSku_Search.Click += btnCriarSku_Search_Click;
+            // 
             // searchSKU
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1019, 571);
+            Controls.Add(btnCriarSku_Search);
             Controls.Add(txtSKUCad_search);
             Controls.Add(btnSKU_des_atv);
             Controls.Add(btnSKU_editar);
@@ -114,5 +132,6 @@
         private Button btnSKU_editar;
         private Button btnSKU_des_atv;
         private TextBox txtSKUCad_search;
+        private Button btnCriarSku_Search;
     }
 }

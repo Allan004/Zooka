@@ -56,6 +56,7 @@
             btnSKU_cancelar.TextAlign = ContentAlignment.BottomCenter;
             btnSKU_cancelar.UseCompatibleTextRendering = true;
             btnSKU_cancelar.UseVisualStyleBackColor = false;
+            btnSKU_cancelar.Click += btnSKU_cancelar_Click;
             // 
             // lblSKU_id
             // 
