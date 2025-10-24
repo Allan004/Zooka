@@ -8,6 +8,7 @@ namespace Zooka
 {
     public partial class Form1 : Form
     {
+        Consulta consulta = new Consulta();
         public Form1()
         {
             InitializeComponent();
@@ -183,6 +184,7 @@ namespace Zooka
             fechamenu(false);
             cont = 0;
             cont2 = 0;
+            cont3 = 0;
 
         }
 
@@ -203,6 +205,7 @@ namespace Zooka
             fechamenu(false);
             cont = 0;
             cont2 = 0;
+            cont3 = 0;
         }
 
         private void btnCliente_Click(object sender, EventArgs e)
@@ -223,6 +226,7 @@ namespace Zooka
             fechamenu(false);
             cont = 0;
             cont2 = 0;
+            cont3 = 0;
         }
 
         private void btnProfissional_Click(object sender, EventArgs e)
@@ -243,6 +247,7 @@ namespace Zooka
             fechamenu(false);
             cont = 0;
             cont2 = 0;
+            cont3 = 0;
         }
 
         private void btnUsuario_Click(object sender, EventArgs e)
@@ -263,6 +268,7 @@ namespace Zooka
             fechamenu(false);
             cont = 0;
             cont2 = 0;
+            cont3 = 0;
         }
 
         private void btnSku_Click(object sender, EventArgs e)
@@ -283,6 +289,7 @@ namespace Zooka
             fechamenu(false);
             cont = 0;
             cont2 = 0;
+            cont3 = 0;
 
         }
 
@@ -304,6 +311,7 @@ namespace Zooka
             fechamenu(false);
             cont = 0;
             cont2 = 0;
+            cont3 = 0;
         }
 
         private void btnCadastroServico_Click(object sender, EventArgs e)
@@ -324,6 +332,7 @@ namespace Zooka
             fechamenu(false);
             cont = 0;
             cont2 = 0;
+            cont3 = 0;
         }
 
         private void btnCadastroFornecedor_Click(object sender, EventArgs e)
@@ -342,15 +351,16 @@ namespace Zooka
             somelimpa(false, 1);
             somelimpa(false, 2);
             fechamenu(false);
-            
+
             cont = 0;
             cont2 = 0;
+            cont3 = 0;
         }
 
-        
+
         private void btnConsulta_Click(object sender, EventArgs e)
         {
-          if (cont3 == 0)
+            if (cont3 == 0)
             {
                 somelimpa(true, 2);
                 cont3 = 1;
@@ -360,6 +370,54 @@ namespace Zooka
                 somelimpa(false, 2);
                 cont3 = 0;
             }
+        }
+
+        private void btnConsultaCliente_Click(object sender, EventArgs e)
+        {
+            
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+            Consulta consulta = new Consulta();
+            consulta.defineForms = "cliente";
+            consulta.TopLevel = false;
+            consulta.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            consulta.StartPosition = FormStartPosition.Manual;
+            consulta.Location = new Point(0, 0);
+            consulta.MdiParent = this;
+            consulta.Show();
+            somelimpa(false, 1);
+            somelimpa(false, 2);
+            fechamenu(false);
+
+            cont = 0;
+            cont2 = 0;
+            cont3 = 0;
+
+        }
+
+        private void btnConsultaPet_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+            Consulta consulta = new Consulta();
+            consulta.defineForms = "pet";
+            consulta.TopLevel = false;
+            consulta.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            consulta.StartPosition = FormStartPosition.Manual;
+            consulta.Location = new Point(0, 0);
+            consulta.MdiParent = this;
+            consulta.Show();
+            somelimpa(false, 1);
+            somelimpa(false, 2);
+            fechamenu(false);
+
+            cont = 0;
+            cont2 = 0;
+            cont3 = 0;
         }
     }
 }

@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             dtgCliente = new DataGridView();
             textBox1 = new TextBox();
             button2 = new Button();
@@ -39,11 +42,35 @@
             // dtgCliente
             // 
             dtgCliente.BackgroundColor = SystemColors.ActiveBorder;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dtgCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dtgCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Arial", 12F);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dtgCliente.DefaultCellStyle = dataGridViewCellStyle2;
             dtgCliente.Dock = DockStyle.Bottom;
             dtgCliente.GridColor = Color.FromArgb(255, 241, 201);
             dtgCliente.Location = new Point(0, 38);
             dtgCliente.Name = "dtgCliente";
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dtgCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dtgCliente.Size = new Size(1362, 421);
             dtgCliente.TabIndex = 0;
             dtgCliente.CellContentClick += dtgCliente_CellContentClick;
@@ -56,6 +83,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(377, 32);
             textBox1.TabIndex = 2;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // button2
             // 
@@ -107,6 +135,7 @@
             Controls.Add(dtgCliente);
             Name = "Consulta";
             Text = "Consulta";
+            Load += Consulta_Load;
             ((System.ComponentModel.ISupportInitialize)dtgCliente).EndInit();
             ResumeLayout(false);
             PerformLayout();

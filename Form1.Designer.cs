@@ -370,6 +370,7 @@
             btnConsultaPet.Text = "Consulta Pet";
             btnConsultaPet.UseVisualStyleBackColor = false;
             btnConsultaPet.Visible = false;
+            btnConsultaPet.Click += btnConsultaPet_Click;
             // 
             // btnConsultaFornecedor
             // 
@@ -400,6 +401,7 @@
             btnConsultaCliente.Text = "Consulta Cliente";
             btnConsultaCliente.UseVisualStyleBackColor = false;
             btnConsultaCliente.Visible = false;
+            btnConsultaCliente.Click += btnConsultaCliente_Click;
             // 
             // Form1
             // 

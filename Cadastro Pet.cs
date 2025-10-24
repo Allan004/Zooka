@@ -158,7 +158,7 @@ namespace Zooka
             cons.ShowDialog();
 
             bool tt = true;
-            quin.receberbool(tt);
+          
 
         }
     }

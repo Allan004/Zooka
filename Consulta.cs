@@ -14,23 +14,23 @@ namespace Zooka
     public partial class Consulta : Form
     {
         consulta_cliente teste = new consulta_cliente();
+
+
+        public string defineForms { get; set; }
+
+
+
         public Consulta()
-        {   
-            InitializeComponent();
-            dtgCliente.DataSource = teste.InsertGeral("cliente");
-            if (ttt = true)
-            {
-                button3.Visible = false;
-                button2.Visible = false;
-                button4.Visible = false;
-            }
-        }
-        bool ttt = false;
-        public void receberbool(bool tt)
         {
-            ttt = tt;
-           
+
+            InitializeComponent();
+            dtgCliente.DefaultCellStyle.ForeColor = Color.Black;
+            dtgCliente.DefaultCellStyle.BackColor = Color.White;
+
         }
+
+
+
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -49,8 +49,8 @@ namespace Zooka
                 string id = Convert.ToString(dtgCliente.SelectedRows[0].Cells["id_cliente"].Value);
 
 
-                var confirmResult = MessageBox.Show("Tem certeza que deseja excluir esta linha?" , "Confirmação", MessageBoxButtons.YesNo);
-               
+                var confirmResult = MessageBox.Show("Tem certeza que deseja excluir esta linha?", "Confirmação", MessageBoxButtons.YesNo);
+
                 if (confirmResult == DialogResult.Yes)
                 {
                     teste.ExcluirLinha("cliente", "id_cliente", id);
@@ -67,6 +67,16 @@ namespace Zooka
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Consulta_Load(object sender, EventArgs e)
+        {
+            dtgCliente.DataSource = teste.InsertGeral(defineForms);
         }
     }
 }
