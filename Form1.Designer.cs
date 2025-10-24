@@ -37,7 +37,7 @@
             btnEstoque = new Button();
             BtnOrdemdecompra = new Button();
             btnFornecedor = new Button();
-            button7 = new Button();
+            btnConsulta = new Button();
             btnCliente = new Button();
             btnPet = new Button();
             btnProfissional = new Button();
@@ -47,6 +47,13 @@
             menuStrip1 = new MenuStrip();
             btnSku = new Button();
             btnCadastroFornecedor = new Button();
+            btnConsultaSku = new Button();
+            btnConsultaServico = new Button();
+            btnConsultaUsuario = new Button();
+            btnConsultaProfissional = new Button();
+            btnConsultaPet = new Button();
+            btnConsultaFornecedor = new Button();
+            btnConsultaCliente = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -72,7 +79,7 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Arial Rounded MT Bold", 14.25F);
             button2.ForeColor = SystemColors.Control;
-            button2.Location = new Point(1, 51);
+            button2.Location = new Point(0, 51);
             button2.Name = "button2";
             button2.Size = new Size(218, 74);
             button2.TabIndex = 4;
@@ -104,14 +111,14 @@
             btnEstoque.FlatStyle = FlatStyle.Flat;
             btnEstoque.Font = new Font("Arial Rounded MT Bold", 14.25F);
             btnEstoque.ForeColor = SystemColors.Control;
-            btnEstoque.Location = new Point(1, 200);
+            btnEstoque.Location = new Point(0, 200);
             btnEstoque.Name = "btnEstoque";
             btnEstoque.Size = new Size(218, 75);
             btnEstoque.TabIndex = 6;
             btnEstoque.Text = "Estoque";
             btnEstoque.UseVisualStyleBackColor = false;
             btnEstoque.Visible = false;
-            btnEstoque.Click += button4_Click;
+            btnEstoque.Click += btnEstoque_Click;
             // 
             // BtnOrdemdecompra
             // 
@@ -120,7 +127,7 @@
             BtnOrdemdecompra.FlatStyle = FlatStyle.Flat;
             BtnOrdemdecompra.Font = new Font("Arial Rounded MT Bold", 14.25F);
             BtnOrdemdecompra.ForeColor = SystemColors.Control;
-            BtnOrdemdecompra.Location = new Point(1, 275);
+            BtnOrdemdecompra.Location = new Point(0, 275);
             BtnOrdemdecompra.Name = "BtnOrdemdecompra";
             BtnOrdemdecompra.Size = new Size(218, 75);
             BtnOrdemdecompra.TabIndex = 7;
@@ -136,7 +143,7 @@
             btnFornecedor.FlatStyle = FlatStyle.Flat;
             btnFornecedor.Font = new Font("Arial Rounded MT Bold", 14.25F);
             btnFornecedor.ForeColor = SystemColors.Control;
-            btnFornecedor.Location = new Point(1, 350);
+            btnFornecedor.Location = new Point(0, 350);
             btnFornecedor.Name = "btnFornecedor";
             btnFornecedor.Size = new Size(218, 75);
             btnFornecedor.TabIndex = 8;
@@ -145,18 +152,20 @@
             btnFornecedor.Visible = false;
             btnFornecedor.Click += button6_Click;
             // 
-            // button7
+            // btnConsulta
             // 
-            button7.BackColor = Color.FromArgb(34, 61, 79);
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Arial Rounded MT Bold", 14.25F);
-            button7.Location = new Point(1, 425);
-            button7.Name = "button7";
-            button7.Size = new Size(218, 75);
-            button7.TabIndex = 9;
-            button7.UseVisualStyleBackColor = false;
-            button7.Visible = false;
+            btnConsulta.BackColor = Color.FromArgb(34, 61, 79);
+            btnConsulta.FlatAppearance.BorderSize = 0;
+            btnConsulta.FlatStyle = FlatStyle.Flat;
+            btnConsulta.Font = new Font("Arial Rounded MT Bold", 14.25F);
+            btnConsulta.Location = new Point(0, 425);
+            btnConsulta.Name = "btnConsulta";
+            btnConsulta.Size = new Size(218, 75);
+            btnConsulta.TabIndex = 9;
+            btnConsulta.Text = "Consultas";
+            btnConsulta.UseVisualStyleBackColor = false;
+            btnConsulta.Visible = false;
+            btnConsulta.Click += btnConsulta_Click;
             // 
             // btnCliente
             // 
@@ -165,7 +174,7 @@
             btnCliente.FlatStyle = FlatStyle.Flat;
             btnCliente.Font = new Font("Arial Rounded MT Bold", 9.75F);
             btnCliente.ForeColor = SystemColors.Control;
-            btnCliente.Location = new Point(219, 125);
+            btnCliente.Location = new Point(219, 119);
             btnCliente.Name = "btnCliente";
             btnCliente.Size = new Size(165, 25);
             btnCliente.TabIndex = 11;
@@ -181,7 +190,7 @@
             btnPet.FlatStyle = FlatStyle.Flat;
             btnPet.Font = new Font("Arial Rounded MT Bold", 9.75F);
             btnPet.ForeColor = SystemColors.Control;
-            btnPet.Location = new Point(219, 150);
+            btnPet.Location = new Point(219, 144);
             btnPet.Name = "btnPet";
             btnPet.Size = new Size(165, 25);
             btnPet.TabIndex = 12;
@@ -197,7 +206,7 @@
             btnProfissional.FlatStyle = FlatStyle.Flat;
             btnProfissional.Font = new Font("Arial Rounded MT Bold", 9.75F);
             btnProfissional.ForeColor = SystemColors.Control;
-            btnProfissional.Location = new Point(219, 175);
+            btnProfissional.Location = new Point(219, 169);
             btnProfissional.Name = "btnProfissional";
             btnProfissional.Size = new Size(165, 25);
             btnProfissional.TabIndex = 12;
@@ -211,7 +220,7 @@
             btnUsuario.BackColor = Color.FromArgb(50, 85, 104);
             btnUsuario.FlatAppearance.BorderSize = 0;
             btnUsuario.FlatStyle = FlatStyle.Flat;
-            btnUsuario.Location = new Point(219, 200);
+            btnUsuario.Location = new Point(219, 194);
             btnUsuario.Name = "btnUsuario";
             btnUsuario.Size = new Size(165, 25);
             btnUsuario.TabIndex = 12;
@@ -227,7 +236,7 @@
             btnCadastroServico.FlatStyle = FlatStyle.Flat;
             btnCadastroServico.Font = new Font("Arial Rounded MT Bold", 9.75F);
             btnCadastroServico.ForeColor = SystemColors.Control;
-            btnCadastroServico.Location = new Point(219, 250);
+            btnCadastroServico.Location = new Point(219, 244);
             btnCadastroServico.Name = "btnCadastroServico";
             btnCadastroServico.Size = new Size(165, 25);
             btnCadastroServico.TabIndex = 14;
@@ -264,7 +273,7 @@
             btnSku.FlatStyle = FlatStyle.Flat;
             btnSku.Font = new Font("Arial Rounded MT Bold", 9.75F);
             btnSku.ForeColor = SystemColors.Control;
-            btnSku.Location = new Point(219, 225);
+            btnSku.Location = new Point(219, 219);
             btnSku.Name = "btnSku";
             btnSku.Size = new Size(165, 25);
             btnSku.TabIndex = 14;
@@ -280,7 +289,7 @@
             btnCadastroFornecedor.FlatStyle = FlatStyle.Flat;
             btnCadastroFornecedor.Font = new Font("Arial Rounded MT Bold", 9.75F);
             btnCadastroFornecedor.ForeColor = SystemColors.Control;
-            btnCadastroFornecedor.Location = new Point(219, 275);
+            btnCadastroFornecedor.Location = new Point(219, 269);
             btnCadastroFornecedor.Name = "btnCadastroFornecedor";
             btnCadastroFornecedor.Size = new Size(165, 25);
             btnCadastroFornecedor.TabIndex = 11;
@@ -289,6 +298,109 @@
             btnCadastroFornecedor.Visible = false;
             btnCadastroFornecedor.Click += btnCadastroFornecedor_Click;
             // 
+            // btnConsultaSku
+            // 
+            btnConsultaSku.BackColor = Color.FromArgb(50, 85, 104);
+            btnConsultaSku.FlatAppearance.BorderSize = 0;
+            btnConsultaSku.FlatStyle = FlatStyle.Flat;
+            btnConsultaSku.Font = new Font("Arial Rounded MT Bold", 9.75F);
+            btnConsultaSku.ForeColor = SystemColors.Control;
+            btnConsultaSku.Location = new Point(219, 525);
+            btnConsultaSku.Name = "btnConsultaSku";
+            btnConsultaSku.Size = new Size(165, 25);
+            btnConsultaSku.TabIndex = 25;
+            btnConsultaSku.Text = "Consulta Sku";
+            btnConsultaSku.UseVisualStyleBackColor = false;
+            btnConsultaSku.Visible = false;
+            // 
+            // btnConsultaServico
+            // 
+            btnConsultaServico.BackColor = Color.FromArgb(50, 85, 104);
+            btnConsultaServico.FlatAppearance.BorderSize = 0;
+            btnConsultaServico.FlatStyle = FlatStyle.Flat;
+            btnConsultaServico.Font = new Font("Arial Rounded MT Bold", 9.75F);
+            btnConsultaServico.ForeColor = SystemColors.Control;
+            btnConsultaServico.Location = new Point(219, 550);
+            btnConsultaServico.Name = "btnConsultaServico";
+            btnConsultaServico.Size = new Size(165, 25);
+            btnConsultaServico.TabIndex = 26;
+            btnConsultaServico.Text = "Consulta Serviço";
+            btnConsultaServico.UseVisualStyleBackColor = false;
+            btnConsultaServico.Visible = false;
+            // 
+            // btnConsultaUsuario
+            // 
+            btnConsultaUsuario.BackColor = Color.FromArgb(50, 85, 104);
+            btnConsultaUsuario.FlatAppearance.BorderSize = 0;
+            btnConsultaUsuario.FlatStyle = FlatStyle.Flat;
+            btnConsultaUsuario.Location = new Point(219, 500);
+            btnConsultaUsuario.Name = "btnConsultaUsuario";
+            btnConsultaUsuario.Size = new Size(165, 25);
+            btnConsultaUsuario.TabIndex = 22;
+            btnConsultaUsuario.Text = "Consulta Usuario";
+            btnConsultaUsuario.UseVisualStyleBackColor = false;
+            btnConsultaUsuario.Visible = false;
+            // 
+            // btnConsultaProfissional
+            // 
+            btnConsultaProfissional.BackColor = Color.FromArgb(50, 85, 104);
+            btnConsultaProfissional.FlatAppearance.BorderSize = 0;
+            btnConsultaProfissional.FlatStyle = FlatStyle.Flat;
+            btnConsultaProfissional.Font = new Font("Arial Rounded MT Bold", 9.75F);
+            btnConsultaProfissional.ForeColor = SystemColors.Control;
+            btnConsultaProfissional.Location = new Point(219, 475);
+            btnConsultaProfissional.Name = "btnConsultaProfissional";
+            btnConsultaProfissional.Size = new Size(165, 25);
+            btnConsultaProfissional.TabIndex = 23;
+            btnConsultaProfissional.Text = "Consulta Profissional";
+            btnConsultaProfissional.UseVisualStyleBackColor = false;
+            btnConsultaProfissional.Visible = false;
+            // 
+            // btnConsultaPet
+            // 
+            btnConsultaPet.BackColor = Color.FromArgb(50, 85, 104);
+            btnConsultaPet.FlatAppearance.BorderSize = 0;
+            btnConsultaPet.FlatStyle = FlatStyle.Flat;
+            btnConsultaPet.Font = new Font("Arial Rounded MT Bold", 9.75F);
+            btnConsultaPet.ForeColor = SystemColors.Control;
+            btnConsultaPet.Location = new Point(219, 450);
+            btnConsultaPet.Name = "btnConsultaPet";
+            btnConsultaPet.Size = new Size(165, 25);
+            btnConsultaPet.TabIndex = 24;
+            btnConsultaPet.Text = "Consulta Pet";
+            btnConsultaPet.UseVisualStyleBackColor = false;
+            btnConsultaPet.Visible = false;
+            // 
+            // btnConsultaFornecedor
+            // 
+            btnConsultaFornecedor.BackColor = Color.FromArgb(50, 85, 104);
+            btnConsultaFornecedor.FlatAppearance.BorderSize = 0;
+            btnConsultaFornecedor.FlatStyle = FlatStyle.Flat;
+            btnConsultaFornecedor.Font = new Font("Arial Rounded MT Bold", 9.75F);
+            btnConsultaFornecedor.ForeColor = SystemColors.Control;
+            btnConsultaFornecedor.Location = new Point(219, 575);
+            btnConsultaFornecedor.Name = "btnConsultaFornecedor";
+            btnConsultaFornecedor.Size = new Size(165, 25);
+            btnConsultaFornecedor.TabIndex = 20;
+            btnConsultaFornecedor.Text = "Consulta Fornecedor";
+            btnConsultaFornecedor.UseVisualStyleBackColor = false;
+            btnConsultaFornecedor.Visible = false;
+            // 
+            // btnConsultaCliente
+            // 
+            btnConsultaCliente.BackColor = Color.FromArgb(50, 85, 104);
+            btnConsultaCliente.FlatAppearance.BorderSize = 0;
+            btnConsultaCliente.FlatStyle = FlatStyle.Flat;
+            btnConsultaCliente.Font = new Font("Arial Rounded MT Bold", 9.75F);
+            btnConsultaCliente.ForeColor = SystemColors.Control;
+            btnConsultaCliente.Location = new Point(219, 425);
+            btnConsultaCliente.Name = "btnConsultaCliente";
+            btnConsultaCliente.Size = new Size(165, 25);
+            btnConsultaCliente.TabIndex = 21;
+            btnConsultaCliente.Text = "Consulta Cliente";
+            btnConsultaCliente.UseVisualStyleBackColor = false;
+            btnConsultaCliente.Visible = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 15F);
@@ -296,6 +408,13 @@
             AutoSize = true;
             BackColor = Color.FromArgb(34, 61, 79);
             ClientSize = new Size(1155, 625);
+            Controls.Add(btnConsultaSku);
+            Controls.Add(btnConsultaServico);
+            Controls.Add(btnConsultaUsuario);
+            Controls.Add(btnConsultaProfissional);
+            Controls.Add(btnConsultaPet);
+            Controls.Add(btnConsultaFornecedor);
+            Controls.Add(btnConsultaCliente);
             Controls.Add(menuStrip1);
             Controls.Add(btnSku);
             Controls.Add(btnCadastroServico);
@@ -304,7 +423,7 @@
             Controls.Add(btnPet);
             Controls.Add(btnCadastroFornecedor);
             Controls.Add(btnCliente);
-            Controls.Add(button7);
+            Controls.Add(btnConsulta);
             Controls.Add(btnFornecedor);
             Controls.Add(BtnOrdemdecompra);
             Controls.Add(btnEstoque);
@@ -330,7 +449,7 @@
         private Button btnEstoque;
         private Button BtnOrdemdecompra;
         private Button btnFornecedor;
-        private Button button7;
+        private Button btnConsulta;
         private Button btnCliente;
         private Button btnPet;
         private Button btnProfissional;
@@ -340,5 +459,12 @@
         private MenuStrip menuStrip1;
         private Button btnSku;
         private Button btnCadastroFornecedor;
+        private Button btnConsultaSku;
+        private Button btnConsultaServico;
+        private Button btnConsultaUsuario;
+        private Button btnConsultaProfissional;
+        private Button btnConsultaPet;
+        private Button btnConsultaFornecedor;
+        private Button btnConsultaCliente;
     }
 }
