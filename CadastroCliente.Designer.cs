@@ -70,11 +70,11 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Arial Rounded MT Bold", 20F);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(295, 34);
+            label1.Location = new Point(181, 34);
             label1.Name = "label1";
-            label1.Size = new Size(292, 32);
+            label1.Size = new Size(235, 32);
             label1.TabIndex = 0;
-            label1.Text = "CADASTRO CLIENTE";
+            label1.Text = "Cadastro Cliente";
             label1.Click += label1_Click;
             // 
             // label2
@@ -83,11 +83,11 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Gadugi", 12F);
             label2.ForeColor = Color.FromArgb(34, 61, 79);
-            label2.Location = new Point(43, 136);
+            label2.Location = new Point(38, 118);
             label2.Name = "label2";
-            label2.Size = new Size(55, 19);
+            label2.Size = new Size(52, 19);
             label2.TabIndex = 1;
-            label2.Text = "Nome:";
+            label2.Text = "Nome";
             // 
             // label3
             // 
@@ -95,11 +95,11 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Gadugi", 12F);
             label3.ForeColor = Color.FromArgb(34, 61, 79);
-            label3.Location = new Point(468, 316);
+            label3.Location = new Point(318, 546);
             label3.Name = "label3";
-            label3.Size = new Size(58, 19);
+            label3.Size = new Size(55, 19);
             label3.TabIndex = 2;
-            label3.Text = "Estado:";
+            label3.Text = "Estado";
             // 
             // label4
             // 
@@ -107,11 +107,11 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Gadugi", 12F);
             label4.ForeColor = Color.FromArgb(34, 61, 79);
-            label4.Location = new Point(57, 182);
+            label4.Location = new Point(38, 188);
             label4.Name = "label4";
-            label4.Size = new Size(39, 19);
+            label4.Size = new Size(36, 19);
             label4.TabIndex = 3;
-            label4.Text = "CPF:";
+            label4.Text = "CPF";
             // 
             // label5
             // 
@@ -119,11 +119,11 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Gadugi", 12F);
             label5.ForeColor = Color.FromArgb(34, 61, 79);
-            label5.Location = new Point(455, 181);
+            label5.Location = new Point(360, 338);
             label5.Name = "label5";
-            label5.Size = new Size(71, 19);
+            label5.Size = new Size(68, 19);
             label5.TabIndex = 4;
-            label5.Text = "Telefone:";
+            label5.Text = "Telefone";
             // 
             // label6
             // 
@@ -131,11 +131,11 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Gadugi", 12F);
             label6.ForeColor = Color.FromArgb(34, 61, 79);
-            label6.Location = new Point(256, 181);
+            label6.Location = new Point(205, 186);
             label6.Name = "label6";
-            label6.Size = new Size(33, 19);
+            label6.Size = new Size(30, 19);
             label6.TabIndex = 5;
-            label6.Text = "RG:";
+            label6.Text = "RG";
             label6.Click += label6_Click;
             // 
             // label7
@@ -144,11 +144,11 @@
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Gadugi", 12F);
             label7.ForeColor = Color.FromArgb(34, 61, 79);
-            label7.Location = new Point(33, 223);
+            label7.Location = new Point(205, 261);
             label7.Name = "label7";
-            label7.Size = new Size(63, 19);
+            label7.Size = new Size(60, 19);
             label7.TabIndex = 6;
-            label7.Text = "Genero:";
+            label7.Text = "Genero";
             // 
             // label8
             // 
@@ -156,11 +156,11 @@
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Gadugi", 12F);
             label8.ForeColor = Color.FromArgb(34, 61, 79);
-            label8.Location = new Point(648, 223);
+            label8.Location = new Point(38, 410);
             label8.Name = "label8";
-            label8.Size = new Size(39, 19);
+            label8.Size = new Size(36, 19);
             label8.TabIndex = 7;
-            label8.Text = "CEP:";
+            label8.Text = "CEP";
             // 
             // label9
             // 
@@ -168,11 +168,11 @@
             label9.BackColor = Color.Transparent;
             label9.Font = new Font("Gadugi", 12F);
             label9.ForeColor = Color.FromArgb(34, 61, 79);
-            label9.Location = new Point(42, 316);
+            label9.Location = new Point(38, 480);
             label9.Name = "label9";
-            label9.Size = new Size(54, 19);
+            label9.Size = new Size(51, 19);
             label9.TabIndex = 8;
-            label9.Text = "Bairro:";
+            label9.Text = "Bairro";
             label9.Click += label9_Click;
             // 
             // label10
@@ -181,11 +181,11 @@
             label10.BackColor = Color.Transparent;
             label10.Font = new Font("Gadugi", 12F);
             label10.ForeColor = Color.FromArgb(34, 61, 79);
-            label10.Location = new Point(431, 223);
+            label10.Location = new Point(38, 261);
             label10.Name = "label10";
-            label10.Size = new Size(95, 19);
+            label10.Size = new Size(92, 19);
             label10.TabIndex = 9;
-            label10.Text = "Nascimento:";
+            label10.Text = "Nascimento";
             // 
             // label11
             // 
@@ -193,11 +193,11 @@
             label11.BackColor = Color.Transparent;
             label11.Font = new Font("Gadugi", 12F);
             label11.ForeColor = Color.FromArgb(34, 61, 79);
-            label11.Location = new Point(476, 137);
+            label11.Location = new Point(38, 338);
             label11.Name = "label11";
-            label11.Size = new Size(50, 19);
+            label11.Size = new Size(47, 19);
             label11.TabIndex = 10;
-            label11.Text = "Email:";
+            label11.Text = "Email";
             // 
             // label12
             // 
@@ -205,11 +205,11 @@
             label12.BackColor = Color.Transparent;
             label12.Font = new Font("Gadugi", 12F);
             label12.ForeColor = Color.FromArgb(34, 61, 79);
-            label12.Location = new Point(38, 271);
+            label12.Location = new Point(38, 546);
             label12.Name = "label12";
-            label12.Size = new Size(60, 19);
+            label12.Size = new Size(57, 19);
             label12.TabIndex = 11;
-            label12.Text = "Cidade:";
+            label12.Text = "Cidade";
             // 
             // label13
             // 
@@ -217,26 +217,26 @@
             label13.BackColor = Color.Transparent;
             label13.Font = new Font("Gadugi", 12F);
             label13.ForeColor = Color.FromArgb(34, 61, 79);
-            label13.Location = new Point(432, 271);
+            label13.Location = new Point(180, 410);
             label13.Name = "label13";
-            label13.Size = new Size(94, 19);
+            label13.Size = new Size(91, 19);
             label13.TabIndex = 12;
-            label13.Text = "Logradouro:";
+            label13.Text = "Logradouro";
             // 
             // txtnome
             // 
             txtnome.BackColor = Color.AliceBlue;
             txtnome.Font = new Font("Arial", 12F);
-            txtnome.Location = new Point(104, 134);
+            txtnome.Location = new Point(38, 140);
             txtnome.Name = "txtnome";
-            txtnome.Size = new Size(310, 26);
+            txtnome.Size = new Size(475, 26);
             txtnome.TabIndex = 1;
             // 
             // txtemail
             // 
             txtemail.BackColor = Color.AliceBlue;
             txtemail.Font = new Font("Arial", 12F);
-            txtemail.Location = new Point(532, 133);
+            txtemail.Location = new Point(38, 360);
             txtemail.Name = "txtemail";
             txtemail.Size = new Size(284, 26);
             txtemail.TabIndex = 7;
@@ -245,16 +245,16 @@
             // 
             txtlogradouro.BackColor = Color.AliceBlue;
             txtlogradouro.Font = new Font("Arial", 12F);
-            txtlogradouro.Location = new Point(532, 268);
+            txtlogradouro.Location = new Point(180, 432);
             txtlogradouro.Name = "txtlogradouro";
-            txtlogradouro.Size = new Size(284, 26);
+            txtlogradouro.Size = new Size(333, 26);
             txtlogradouro.TabIndex = 9;
             // 
             // txtbairro
             // 
             txtbairro.BackColor = Color.AliceBlue;
             txtbairro.Font = new Font("Arial", 12F);
-            txtbairro.Location = new Point(104, 313);
+            txtbairro.Location = new Point(38, 502);
             txtbairro.Name = "txtbairro";
             txtbairro.Size = new Size(310, 26);
             txtbairro.TabIndex = 11;
@@ -263,25 +263,25 @@
             // 
             txtcidade.BackColor = Color.AliceBlue;
             txtcidade.Font = new Font("Arial", 12F);
-            txtcidade.Location = new Point(104, 268);
+            txtcidade.Location = new Point(38, 568);
             txtcidade.Name = "txtcidade";
-            txtcidade.Size = new Size(310, 26);
+            txtcidade.Size = new Size(257, 26);
             txtcidade.TabIndex = 10;
             // 
             // txtestado
             // 
             txtestado.BackColor = Color.AliceBlue;
             txtestado.Font = new Font("Arial", 12F);
-            txtestado.Location = new Point(532, 313);
+            txtestado.Location = new Point(318, 568);
             txtestado.Name = "txtestado";
-            txtestado.Size = new Size(284, 26);
+            txtestado.Size = new Size(195, 26);
             txtestado.TabIndex = 12;
             // 
             // txtdata
             // 
             txtdata.BackColor = Color.AliceBlue;
             txtdata.Font = new Font("Arial", 12F);
-            txtdata.Location = new Point(532, 223);
+            txtdata.Location = new Point(38, 283);
             txtdata.Mask = "00/00/0000";
             txtdata.Name = "txtdata";
             txtdata.Size = new Size(110, 26);
@@ -291,7 +291,7 @@
             // 
             txttelefone.BackColor = Color.AliceBlue;
             txttelefone.Font = new Font("Arial", 12F);
-            txttelefone.Location = new Point(534, 181);
+            txttelefone.Location = new Point(360, 360);
             txttelefone.Mask = "(00)0 0000-0000";
             txttelefone.Name = "txttelefone";
             txttelefone.Size = new Size(153, 26);
@@ -304,7 +304,7 @@
             comboBox1.Font = new Font("Arial", 12F);
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Mulher Cisgênero", "Homem Cisgênero", "Mulher Transgênero", "Homem Transgênero", "Não Binárie", "Gênero Fluido", "Agênero", "Bigênero", "Trigênero", "Gênero Queer", "Gênero Demigênero", "Gênero Andrógeno", "Gênero Andrógino", "Gênero Apagado", "Gênero Clivado", "Gênero Enviado", "Gênero Fugitivo", "Gênero Híbrido", "Gênero Intermediário", "Gênero Livre", "Gênero Místico", "Gênero Padrão", "Gênero Queer Não Binário", "Gênero Radiante", "Gênero Sutil", "Gênero Solar", "Gênero Lunar", "Gênero Transfeminino", "Gênero Transmasculino", "Gênero Elevado", "Gênero Espiritual", "Gênero Específico", "Gênero Livre", "Gênero Metamórfico", "Gênero Mutante", "Gênero Natural", "Gênero Oculto", "Gênero Plural", "Gênero Preciso", "Gênero Profundo", "Gênero Resiliente", "Gênero Sagrado", "Gênero Secundário", "Gênero Superior", "Gênero Transcendente", "Gênero Universal", "Gênero Versátil", "Gênero Virtual", "Gênero Xenogênero", "Gênero Yin", "Gênero Yang", "Gênero Zero" });
-            comboBox1.Location = new Point(106, 223);
+            comboBox1.Location = new Point(205, 283);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(308, 26);
             comboBox1.TabIndex = 6;
@@ -314,7 +314,7 @@
             // 
             txtcep.BackColor = Color.AliceBlue;
             txtcep.Font = new Font("Arial", 12F);
-            txtcep.Location = new Point(709, 223);
+            txtcep.Location = new Point(38, 432);
             txtcep.Mask = "00.000-000";
             txtcep.Name = "txtcep";
             txtcep.Size = new Size(107, 26);
@@ -324,7 +324,7 @@
             // 
             txtcpf.BackColor = Color.AliceBlue;
             txtcpf.Font = new Font("Arial", 12F);
-            txtcpf.Location = new Point(106, 179);
+            txtcpf.Location = new Point(38, 208);
             txtcpf.Mask = "000.000.000-00";
             txtcpf.Name = "txtcpf";
             txtcpf.Size = new Size(124, 26);
@@ -334,7 +334,7 @@
             // 
             txtrg.BackColor = Color.AliceBlue;
             txtrg.Font = new Font("Arial", 12F);
-            txtrg.Location = new Point(295, 179);
+            txtrg.Location = new Point(205, 208);
             txtrg.Mask = "00.000.000-0";
             txtrg.Name = "txtrg";
             txtrg.Size = new Size(119, 26);
@@ -350,7 +350,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(706, 380);
+            button1.Location = new Point(403, 631);
             button1.Name = "button1";
             button1.Size = new Size(110, 34);
             button1.TabIndex = 21;
@@ -388,7 +388,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(857, 435);
+            ClientSize = new Size(547, 677);
             Controls.Add(panel1);
             Controls.Add(button1);
             Controls.Add(txtrg);
