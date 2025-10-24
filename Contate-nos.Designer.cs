@@ -171,7 +171,7 @@ namespace Zooka
             Controls.Add(SeuNome);
             Controls.Add(SeuEmail);
             Name = "Contate_nos";
-           
+            Load += Contate_nos_Load;
             ResumeLayout(false);
             PerformLayout();
         }

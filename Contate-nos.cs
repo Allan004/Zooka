@@ -161,5 +161,10 @@ namespace Zooka
                 MessageBox.Show("Não foi possível abrir o WhatsApp: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void Contate_nos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
