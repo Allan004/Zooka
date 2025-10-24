@@ -250,6 +250,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(1187, 651);
             Controls.Add(txtNomeFantasiaZooka_OC);
             Controls.Add(txtCNPJZooka_OC);
