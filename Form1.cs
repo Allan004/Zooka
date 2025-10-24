@@ -36,7 +36,7 @@ namespace Zooka
                 btnEstoque.Visible = true;
                 BtnOrdemdecompra.Visible = true;
                 btnFornecedor.Visible = true;
-                button7.Visible = true;
+                btnConsulta.Visible = true;
             }
             if (fecharm == false)
             {
@@ -45,24 +45,31 @@ namespace Zooka
                 btnEstoque.Visible = false;
                 BtnOrdemdecompra.Visible = false;
                 btnFornecedor.Visible = false;
-                button7.Visible = false;
+                btnConsulta.Visible = false;
 
             }
 
         }
 
         int cont = 0;
+        int cont3 = 0;
         private void button1_Click(object sender, EventArgs e)
         {
             if (cont == 0)
             {
+
                 fechamenu(true);
                 cont = 1;
+
             }
             else
             {
                 fechamenu(false);
                 cont = 0;
+                somelimpa(false, 1);
+                cont2 = 0;
+                somelimpa(false, 2);
+
 
             }
 
@@ -76,7 +83,7 @@ namespace Zooka
             agenda.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnEstoque_Click(object sender, EventArgs e)
         {
             if (btnCadastroServico.Visible == false)
             {
@@ -84,31 +91,61 @@ namespace Zooka
             }
             else
             {
-               btnCadastroServico.Visible = false;
+                btnCadastroServico.Visible = false;
             }
         }
-        public void somelimpa(bool verifica)
+        public void somelimpa(bool verificaSubmenu, int controleSubmenu)
         {
-            if (verifica == true)
+            if (controleSubmenu == 1)
             {
-                btnCliente.Visible = true;
-                btnPet.Visible = true;
-                btnProfissional.Visible = true;
-                btnUsuario.Visible = true;
-                btnSku.Visible = true;
-                btnCadastroServico.Visible = true;
-                btnCadastroFornecedor.Visible = true;
+                if (verificaSubmenu == true)
+                {
+                    btnCliente.Visible = true;
+                    btnPet.Visible = true;
+                    btnProfissional.Visible = true;
+                    btnUsuario.Visible = true;
+                    btnSku.Visible = true;
+                    btnCadastroServico.Visible = true;
+                    btnCadastroFornecedor.Visible = true;
 
+                }
+                if (verificaSubmenu == false)
+                {
+                    btnCliente.Visible = false;
+                    btnPet.Visible = false;
+                    btnProfissional.Visible = false;
+                    btnUsuario.Visible = false;
+                    btnSku.Visible = false;
+                    btnCadastroServico.Visible = false;
+                    btnCadastroFornecedor.Visible = false;
+                }
             }
-            if (verifica == false)
+            if (controleSubmenu == 2)
             {
-                btnCliente.Visible = false;
-                btnPet.Visible = false;
-                btnProfissional.Visible = false;
-                btnUsuario.Visible = false;
-                btnSku.Visible = false;
-                btnCadastroServico.Visible = false;
-                btnCadastroFornecedor.Visible = false;
+                if (verificaSubmenu == true)
+                {
+                    btnConsultaCliente.Visible = true;
+                    btnConsultaPet.Visible = true;
+                    btnConsultaProfissional.Visible = true;
+                    btnConsultaUsuario.Visible = true;
+                    btnConsultaSku.Visible = true;
+                    btnConsultaServico.Visible = true;
+                    btnConsultaFornecedor.Visible = true;
+                }
+
+                if (verificaSubmenu == false)
+                {
+                    btnConsultaCliente.Visible = false;
+                    btnConsultaPet.Visible = false;
+                    btnConsultaProfissional.Visible = false;
+                    btnConsultaUsuario.Visible = false;
+                    btnConsultaSku.Visible = false;
+                    btnConsultaServico.Visible = false;
+                    btnConsultaFornecedor.Visible = false;
+
+                }
+
+
             }
 
         }
@@ -117,12 +154,12 @@ namespace Zooka
         {
             if (cont2 == 0)
             {
-                somelimpa(true);
+                somelimpa(true, 1);
                 cont2 = 1;
             }
             else
             {
-                somelimpa(false);
+                somelimpa(false, 1);
                 cont2 = 0;
             }
 
@@ -141,7 +178,8 @@ namespace Zooka
             pet.Location = new Point(0, 0);
             pet.MdiParent = this;
             pet.Show();
-            somelimpa(false);
+            somelimpa(false, 1);
+            somelimpa(false, 2);
             fechamenu(false);
             cont = 0;
             cont2 = 0;
@@ -160,7 +198,8 @@ namespace Zooka
             abrirFornecedor.StartPosition = FormStartPosition.Manual;
             abrirFornecedor.Location = new Point(0, 0);
             abrirFornecedor.Show();
-            somelimpa(false);
+            somelimpa(false, 1);
+            somelimpa(false, 2);
             fechamenu(false);
             cont = 0;
             cont2 = 0;
@@ -179,7 +218,8 @@ namespace Zooka
             abrirform.Location = new Point(0, 0);
             abrirform.MdiParent = this;
             abrirform.Show();
-            somelimpa(false);
+            somelimpa(false, 1);
+            somelimpa(false, 2);
             fechamenu(false);
             cont = 0;
             cont2 = 0;
@@ -198,7 +238,8 @@ namespace Zooka
             abrirform.Location = new Point(0, 0);
             abrirform.MdiParent = this;
             abrirform.Show();
-            somelimpa(false);
+            somelimpa(false, 1);
+            somelimpa(false, 2);
             fechamenu(false);
             cont = 0;
             cont2 = 0;
@@ -217,7 +258,8 @@ namespace Zooka
             abrirform.Location = new Point(0, 0);
             abrirform.MdiParent = this;
             abrirform.Show();
-            somelimpa(false);
+            somelimpa(false, 1);
+            somelimpa(false, 2);
             fechamenu(false);
             cont = 0;
             cont2 = 0;
@@ -236,6 +278,8 @@ namespace Zooka
             abrirform.Location = new Point(0, 0);
             abrirform.MdiParent = this;
             abrirform.Show();
+            somelimpa(false, 1);
+            somelimpa(false, 2);
             fechamenu(false);
             cont = 0;
             cont2 = 0;
@@ -255,6 +299,8 @@ namespace Zooka
             abrirform.Location = new Point(0, 0);
             abrirform.MdiParent = this;
             abrirform.Show();
+            somelimpa(false, 1);
+            somelimpa(false, 2);
             fechamenu(false);
             cont = 0;
             cont2 = 0;
@@ -273,6 +319,8 @@ namespace Zooka
             abrirform.Location = new Point(0, 0);
             abrirform.MdiParent = this;
             abrirform.Show();
+            somelimpa(false, 1);
+            somelimpa(false, 2);
             fechamenu(false);
             cont = 0;
             cont2 = 0;
@@ -291,10 +339,27 @@ namespace Zooka
             abrirform.Location = new Point(0, 0);
             abrirform.MdiParent = this;
             abrirform.Show();
-            somelimpa(false);
+            somelimpa(false, 1);
+            somelimpa(false, 2);
             fechamenu(false);
+            
             cont = 0;
             cont2 = 0;
+        }
+
+        
+        private void btnConsulta_Click(object sender, EventArgs e)
+        {
+          if (cont3 == 0)
+            {
+                somelimpa(true, 2);
+                cont3 = 1;
+            }
+            else
+            {
+                somelimpa(false, 2);
+                cont3 = 0;
+            }
         }
     }
 }

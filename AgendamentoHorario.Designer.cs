@@ -237,7 +237,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.FromArgb(34, 61, 79);
             label1.Font = new Font("Arial Rounded MT Bold", 20F);
-            label1.ForeColor = Color.FromArgb(215, 122, 40);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(193, 33);
             label1.Name = "label1";
             label1.Size = new Size(197, 32);
