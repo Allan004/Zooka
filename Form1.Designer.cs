@@ -312,6 +312,7 @@
             btnConsultaSku.Text = "Consulta Sku";
             btnConsultaSku.UseVisualStyleBackColor = false;
             btnConsultaSku.Visible = false;
+            btnConsultaSku.Click += btnConsultaSku_Click;
             // 
             // btnConsultaServico
             // 
@@ -327,6 +328,7 @@
             btnConsultaServico.Text = "Consulta Serviço";
             btnConsultaServico.UseVisualStyleBackColor = false;
             btnConsultaServico.Visible = false;
+            btnConsultaServico.Click += btnConsultaServico_Click;
             // 
             // btnConsultaUsuario
             // 
@@ -340,6 +342,7 @@
             btnConsultaUsuario.Text = "Consulta Usuario";
             btnConsultaUsuario.UseVisualStyleBackColor = false;
             btnConsultaUsuario.Visible = false;
+            btnConsultaUsuario.Click += btnConsultaUsuario_Click;
             // 
             // btnConsultaProfissional
             // 
@@ -355,6 +358,7 @@
             btnConsultaProfissional.Text = "Consulta Profissional";
             btnConsultaProfissional.UseVisualStyleBackColor = false;
             btnConsultaProfissional.Visible = false;
+            btnConsultaProfissional.Click += btnConsultaProfissional_Click;
             // 
             // btnConsultaPet
             // 
@@ -386,6 +390,7 @@
             btnConsultaFornecedor.Text = "Consulta Fornecedor";
             btnConsultaFornecedor.UseVisualStyleBackColor = false;
             btnConsultaFornecedor.Visible = false;
+            btnConsultaFornecedor.Click += btnConsultaFornecedor_Click;
             // 
             // btnConsultaCliente
             // 
