@@ -238,7 +238,7 @@ namespace Zooka
             form.ShowDialog();
 
             CarregarProdutos(); // ATUALIZA O GRID
-        }
+        } 
 
         private void btnCriarSku_Search_Click(object sender, EventArgs e)
         {
