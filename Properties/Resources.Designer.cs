@@ -203,6 +203,16 @@ namespace Zooka.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap submenulogin {
+            get {
+                object obj = ResourceManager.GetObject("submenulogin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap zabumba {
             get {
                 object obj = ResourceManager.GetObject("zabumba", resourceCulture);
