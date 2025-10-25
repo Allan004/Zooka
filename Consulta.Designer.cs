@@ -28,52 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            dtgCliente = new DataGridView();
             textBox1 = new TextBox();
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dtgCliente).BeginInit();
+            dataGridView1 = new DataGridView();
+            label1 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // dtgCliente
-            // 
-            dtgCliente.BackgroundColor = SystemColors.ActiveBorder;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dtgCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dtgCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Arial", 12F);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dtgCliente.DefaultCellStyle = dataGridViewCellStyle2;
-            dtgCliente.Dock = DockStyle.Bottom;
-            dtgCliente.GridColor = Color.FromArgb(255, 241, 201);
-            dtgCliente.Location = new Point(0, 38);
-            dtgCliente.Name = "dtgCliente";
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dtgCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dtgCliente.Size = new Size(1362, 421);
-            dtgCliente.TabIndex = 0;
-            dtgCliente.CellContentClick += dtgCliente_CellContentClick;
             // 
             // textBox1
             // 
@@ -121,32 +83,53 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Dock = DockStyle.Bottom;
+            dataGridView1.Location = new Point(0, 37);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(1706, 422);
+            dataGridView1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            label1.Font = new Font("Arial Rounded MT Bold", 18.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(636, 4);
+            label1.Name = "label1";
+            label1.Size = new Size(564, 30);
+            label1.TabIndex = 5;
+            label1.Text = "label1";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // Consulta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = Color.FromArgb(34, 61, 79);
-            ClientSize = new Size(1362, 459);
+            ClientSize = new Size(1706, 459);
+            Controls.Add(label1);
+            Controls.Add(dataGridView1);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(textBox1);
-            Controls.Add(dtgCliente);
             Name = "Consulta";
             Text = "Consulta";
             Load += Consulta_Load;
-            ((System.ComponentModel.ISupportInitialize)dtgCliente).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private DataGridView dtgCliente;
         private TextBox textBox1;
         private Button button2;
         private Button button3;
         private Button button4;
+        private DataGridView dataGridView1;
+        private Label label1;
     }
 }

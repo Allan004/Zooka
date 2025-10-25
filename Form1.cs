@@ -374,7 +374,7 @@ namespace Zooka
 
         private void btnConsultaCliente_Click(object sender, EventArgs e)
         {
-            
+
             foreach (Form form in this.MdiChildren)
             {
                 form.Close();
@@ -418,6 +418,127 @@ namespace Zooka
             cont = 0;
             cont2 = 0;
             cont3 = 0;
+        }
+
+        private void btnConsultaProfissional_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+            Consulta consulta = new Consulta();
+            consulta.defineForms = "profissional";
+            consulta.TopLevel = false;
+            consulta.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            consulta.StartPosition = FormStartPosition.Manual;
+            consulta.Location = new Point(0, 0);
+            consulta.MdiParent = this;
+            consulta.Show();
+            somelimpa(false, 1);
+            somelimpa(false, 2);
+            fechamenu(false);
+
+            cont = 0;
+            cont2 = 0;
+            cont3 = 0;
+
+        }
+
+        private void btnConsultaUsuario_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+            Consulta consulta = new Consulta();
+            consulta.defineForms = "usuario";
+            consulta.TopLevel = false;
+            consulta.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            consulta.StartPosition = FormStartPosition.Manual;
+            consulta.Location = new Point(0, 0);
+            consulta.MdiParent = this;
+            consulta.Show();
+            somelimpa(false, 1);
+            somelimpa(false, 2);
+            fechamenu(false);
+
+            cont = 0;
+            cont2 = 0;
+            cont3 = 0;
+
+        }
+
+        private void btnConsultaSku_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+            searchSKU abrirformulario = new searchSKU();
+
+            abrirformulario.TopLevel = false;
+            abrirformulario.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            abrirformulario.StartPosition = FormStartPosition.Manual;
+            abrirformulario.Location = new Point(0, 0);
+            abrirformulario.MdiParent = this;
+            abrirformulario.Show();
+            somelimpa(false, 1);
+            somelimpa(false, 2);
+            fechamenu(false);
+
+            cont = 0;
+            cont2 = 0;
+            cont3 = 0;
+
+        }
+
+        private void btnConsultaServico_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+            Consulta consulta = new Consulta();
+            consulta.defineForms = "servico";
+            consulta.TopLevel = false;
+            consulta.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            consulta.StartPosition = FormStartPosition.Manual;
+            consulta.Location = new Point(0, 0);
+            consulta.MdiParent = this;
+            consulta.Show();
+            somelimpa(false, 1);
+            somelimpa(false, 2);
+            fechamenu(false);
+
+            cont = 0;
+            cont2 = 0;
+            cont3 = 0;
+
+        }
+
+        private void btnConsultaFornecedor_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+            Consulta consulta = new Consulta();
+            consulta.defineForms = "fornecedor";
+            consulta.TopLevel = false;
+            consulta.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            consulta.StartPosition = FormStartPosition.Manual;
+            consulta.Location = new Point(0, 0);
+            consulta.MdiParent = this;
+            consulta.Show();
+            somelimpa(false, 1);
+            somelimpa(false, 2);
+            fechamenu(false);
+
+            cont = 0;
+            cont2 = 0;
+            cont3 = 0;
+
+
         }
     }
 }

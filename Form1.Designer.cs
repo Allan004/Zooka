@@ -44,7 +44,6 @@
             btnUsuario = new Button();
             btnCadastroServico = new Button();
             panel1 = new Panel();
-            menuStrip1 = new MenuStrip();
             btnSku = new Button();
             btnCadastroFornecedor = new Button();
             btnConsultaSku = new Button();
@@ -54,7 +53,12 @@
             btnConsultaPet = new Button();
             btnConsultaFornecedor = new Button();
             btnConsultaCliente = new Button();
+            menuStrip1 = new MenuStrip();
+            toolStripMenuItem1 = new ToolStripMenuItem();
+            trocarUsuarioToolStripMenuItem = new ToolStripMenuItem();
+            sairToolStripMenuItem = new ToolStripMenuItem();
             panel1.SuspendLayout();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // button1
@@ -254,18 +258,6 @@
             panel1.Size = new Size(218, 3000);
             panel1.TabIndex = 16;
             // 
-            // menuStrip1
-            // 
-            menuStrip1.AutoSize = false;
-            menuStrip1.BackColor = Color.FromArgb(34, 61, 79);
-            menuStrip1.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            menuStrip1.Location = new Point(218, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.RightToLeft = RightToLeft.Yes;
-            menuStrip1.Size = new Size(937, 50);
-            menuStrip1.TabIndex = 18;
-            menuStrip1.Text = "menuStrip1";
-            // 
             // btnSku
             // 
             btnSku.BackColor = Color.FromArgb(50, 85, 104);
@@ -312,6 +304,7 @@
             btnConsultaSku.Text = "Consulta Sku";
             btnConsultaSku.UseVisualStyleBackColor = false;
             btnConsultaSku.Visible = false;
+            btnConsultaSku.Click += btnConsultaSku_Click;
             // 
             // btnConsultaServico
             // 
@@ -327,6 +320,7 @@
             btnConsultaServico.Text = "Consulta Serviço";
             btnConsultaServico.UseVisualStyleBackColor = false;
             btnConsultaServico.Visible = false;
+            btnConsultaServico.Click += btnConsultaServico_Click;
             // 
             // btnConsultaUsuario
             // 
@@ -340,6 +334,7 @@
             btnConsultaUsuario.Text = "Consulta Usuario";
             btnConsultaUsuario.UseVisualStyleBackColor = false;
             btnConsultaUsuario.Visible = false;
+            btnConsultaUsuario.Click += btnConsultaUsuario_Click;
             // 
             // btnConsultaProfissional
             // 
@@ -355,6 +350,7 @@
             btnConsultaProfissional.Text = "Consulta Profissional";
             btnConsultaProfissional.UseVisualStyleBackColor = false;
             btnConsultaProfissional.Visible = false;
+            btnConsultaProfissional.Click += btnConsultaProfissional_Click;
             // 
             // btnConsultaPet
             // 
@@ -386,6 +382,7 @@
             btnConsultaFornecedor.Text = "Consulta Fornecedor";
             btnConsultaFornecedor.UseVisualStyleBackColor = false;
             btnConsultaFornecedor.Visible = false;
+            btnConsultaFornecedor.Click += btnConsultaFornecedor_Click;
             // 
             // btnConsultaCliente
             // 
@@ -403,6 +400,50 @@
             btnConsultaCliente.Visible = false;
             btnConsultaCliente.Click += btnConsultaCliente_Click;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.AutoSize = false;
+            menuStrip1.BackColor = Color.FromArgb(34, 61, 79);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1 });
+            menuStrip1.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            menuStrip1.Location = new Point(218, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.RightToLeft = RightToLeft.Yes;
+            menuStrip1.Size = new Size(937, 50);
+            menuStrip1.Stretch = false;
+            menuStrip1.TabIndex = 30;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.AutoSize = false;
+            toolStripMenuItem1.BackgroundImage = Properties.Resources.submenulogin;
+            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { trocarUsuarioToolStripMenuItem, sairToolStripMenuItem });
+            toolStripMenuItem1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            toolStripMenuItem1.ForeColor = Color.White;
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(200, 50);
+            toolStripMenuItem1.Text = "Logout";
+            toolStripMenuItem1.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // trocarUsuarioToolStripMenuItem
+            // 
+            trocarUsuarioToolStripMenuItem.AutoSize = false;
+            trocarUsuarioToolStripMenuItem.BackColor = Color.FromArgb(145, 158, 167);
+            trocarUsuarioToolStripMenuItem.ForeColor = Color.White;
+            trocarUsuarioToolStripMenuItem.Name = "trocarUsuarioToolStripMenuItem";
+            trocarUsuarioToolStripMenuItem.Size = new Size(200, 22);
+            trocarUsuarioToolStripMenuItem.Text = "Trocar Usuario";
+            // 
+            // sairToolStripMenuItem
+            // 
+            sairToolStripMenuItem.AutoSize = false;
+            sairToolStripMenuItem.BackColor = Color.FromArgb(34, 61, 79);
+            sairToolStripMenuItem.ForeColor = Color.White;
+            sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            sairToolStripMenuItem.Size = new Size(200, 22);
+            sairToolStripMenuItem.Text = "Sair";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 15F);
@@ -417,7 +458,6 @@
             Controls.Add(btnConsultaPet);
             Controls.Add(btnConsultaFornecedor);
             Controls.Add(btnConsultaCliente);
-            Controls.Add(menuStrip1);
             Controls.Add(btnSku);
             Controls.Add(btnCadastroServico);
             Controls.Add(btnUsuario);
@@ -432,14 +472,16 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(panel1);
+            Controls.Add(menuStrip1);
             Font = new Font("Arial Rounded MT Bold", 9.75F);
             ForeColor = SystemColors.Control;
             IsMdiContainer = true;
-            MainMenuStrip = menuStrip1;
             Name = "Form1";
             Padding = new Padding(218, 0, 0, 0);
             Text = "Form1";
             panel1.ResumeLayout(false);
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -458,7 +500,6 @@
         private Button btnUsuario;
         private Button btnCadastroServico;
         private Panel panel1;
-        private MenuStrip menuStrip1;
         private Button btnSku;
         private Button btnCadastroFornecedor;
         private Button btnConsultaSku;
@@ -468,5 +509,9 @@
         private Button btnConsultaPet;
         private Button btnConsultaFornecedor;
         private Button btnConsultaCliente;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem trocarUsuarioToolStripMenuItem;
+        private ToolStripMenuItem sairToolStripMenuItem;
     }
 }
