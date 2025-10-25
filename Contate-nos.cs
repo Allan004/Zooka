@@ -79,11 +79,11 @@ namespace Zooka
 
             try
             {
-                // Envia e-mail
+                // Para enviar o email para o usuario cadastrado
                 await EnviarEmailConfirmacaoAsync(novoemail, novonome, novotelefone);
 
-                // Abre WhatsApp
-                string mensagemWhatsApp = $"Olá {novonome}, recebemos seu contato no Zooka Petshop! 🐾\nEm breve entraremos em contato.";
+                // Esse aqui abre o whatsap
+                string mensagemWhatsApp = $"Olá! Gostaria de saber mais sobre os serviços da Zooka Petshop 🐶✨";
                 AbrirWhatsAppComNumero(novotelefone, mensagemWhatsApp);
 
                 MessageBox.Show(
@@ -103,7 +103,7 @@ namespace Zooka
         private async Task EnviarEmailConfirmacaoAsync(string emailDestino, string nome, string telefone)
         {
             string remetente = "ZookaPetshop@gmail.com";
-            string senha = "foyn xvnq tnyg zoqq"; // Use a senha de app do Gmail
+            string senha = "foyn xvnq tnyg zoqq"; //Senha do nosso email zooka
             string assunto = "Confirmação de Contato - Zooka 🐾";
             string corpo = $"Olá {nome},\n\n" +
                            $"Recebemos seu contato!\n\n" +
@@ -135,7 +135,7 @@ namespace Zooka
             }
         }
 
-        // NOVA FUNÇÃO: abre WhatsApp com número e mensagem
+        // NOVA FUNÇÃO: ele  abre WhatsApp com número e mensagem
         private void AbrirWhatsAppComNumero(string rawNumber, string mensagemOpcional = null)
         {
             string onlyDigits = Regex.Replace(rawNumber ?? "", @"\D", "");

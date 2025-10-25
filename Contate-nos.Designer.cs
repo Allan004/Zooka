@@ -146,7 +146,7 @@ namespace Zooka
             // 
             // SuaMensagem
             // 
-            SuaMensagem.Location = new Point(470, 293);
+            SuaMensagem.Location = new Point(471, 293);
             SuaMensagem.Multiline = true;
             SuaMensagem.Name = "SuaMensagem";
             SuaMensagem.Size = new Size(225, 42);
@@ -171,7 +171,6 @@ namespace Zooka
             Controls.Add(SeuNome);
             Controls.Add(SeuEmail);
             Name = "Contate_nos";
-           
             ResumeLayout(false);
             PerformLayout();
         }

@@ -1,136 +1,149 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
-using System.Drawing;
 using System.Windows.Forms;
-using Google.Protobuf.WellKnownTypes;
 
 namespace Zooka
 {
-
     public partial class CadastroProfissional : Form
     {
         consulta_cliente limpa = new consulta_cliente();
+
         public CadastroProfissional()
         {
             InitializeComponent();
-            
         }
 
         private void CadastroProfissional_Load(object sender, EventArgs e)
         {
-
         }
-        
-        private void button1_Click(object sender, EventArgs e)
+
+        private async void button1_Click(object sender, EventArgs e)
         {
-
             Conexao conexao = new Conexao();
-
             bool veri = true;
 
+            // Validação de campos obrigatórios
             foreach (Control ctrl in this.Controls)
             {
-                if (ctrl is System.Windows.Forms.TextBox txt && string.IsNullOrWhiteSpace(txt.Text))
+                if (ctrl is TextBox txt && string.IsNullOrWhiteSpace(txt.Text))
                 {
                     MessageBox.Show($"O campo '{txt.Name.Replace("txt", "")}' está vazio.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txt.Focus();
                     return;
                 }
-
             }
-            
-
 
             errorProvider1.Clear();
 
-
-
-
             using (var conn = conexao.GetConnection())
             {
-                string novonome = txtnome.Text;
-                string novocpf = txtcpf.Text.Replace(",", "").Replace("-", "");
-                string novotelefone = txttelefone.Text.Replace(",", "").Replace("(", "").Replace(")", "");
-                string novorg = txtrg.Text.Replace(",", "").Replace("-", "");
-                string novoemail = txtemail.Text;
-                string novocep = txtcep.Text.Replace(",", "").Replace("-", "");
-                string novodatanascimento = txtdata.Text;
+                string novonome = txtnome.Text.Trim();
+                string novocpf = txtcpf.Text.Replace(",", "").Replace("-", "").Trim();
+                string novotelefone = txttelefone.Text.Replace("(", "").Replace(")", "").Replace("-", "").Trim();
+                string novorg = txtrg.Text.Replace(",", "").Replace("-", "").Trim();
+                string novoemail = txtemail.Text.Trim();
+                string novocep = txtcep.Text.Replace("-", "").Trim();
+                string novodatanascimento = txtdata.Text.Trim();
                 string novogenero = comboBox1.Text;
-                string novobairro = txtbairro.Text;
-                string novologradouro = txtlogradouro.Text;
-                string novocidade = txtcidade.Text;
-                string novoestado = txtestado.Text;
-                string novoespecializacao = textBox1.Text;
+                string novobairro = txtbairro.Text.Trim();
+                string novologradouro = txtlogradouro.Text.Trim();
+                string novocidade = txtcidade.Text.Trim();
+                string novoestado = txtestado.Text.Trim();
+                string novoespecializacao = textBox1.Text.Trim();
+
+                // 🔍 Verificação extra para o CEP
+                if (novocep.Length > 10)
+                {
+                    MessageBox.Show("CEP inválido! Verifique o valor digitado.", "Erro no CEP", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Geração automática de login e senha
+                string loginGerado = novonome.Split(' ')[0].ToLower() + novocpf.Substring(0, 3);
+                string novasenha = "zooka@" + DateTime.Now.Ticks.ToString().Substring(10);
+
+                string comando = @"INSERT INTO profissional 
+                        (nome_profissional, genero_profissional, cpf_profissional, rg_profissional, data_nasc_profissional,
+                         telefone_profissional, email_profissional, cep_profissional, logradouro_profissional,
+                         bairro_profissional, cidade_profissional, estado_profissional, especializacao_profissional,
+                         login_profissional, senha_profissional)
+                         VALUES (@nome, @genero, @cpf, @rg, STR_TO_DATE(@nascimento, '%d/%m/%Y'),
+                         @telefone, @email, @cep, @logradouro, @bairro, @cidade, @estado, 
+                         @especialidade, @login, @senha)";
 
 
-
-                string comando = "INSERT INTO profissional (nome_profissional,genero_profissional,cpf_profissional,rg_profissional,data_nasc_profissional,telefone_profissional,email_profissional,cep_profissional,logradouro_profissional,bairro_profissional,cidade_profissional,estado_profissional,especializacao_profissional) " +
-                    "VALUES (@nome,@genero,@cpf,@rg,STR_TO_DATE(@nascimento, '%d/%m/%Y'),@telefone,@email,@cep,@logradouro,@bairro,@cidade,@estado,@especialidade)";
-
-
+                // Verificação de duplicidade
                 DataRow[] vericpf = limpa.InsertGeral("profissional").Select($"cpf_profissional = '{novocpf}'");
                 DataRow[] verirg = limpa.InsertGeral("profissional").Select($"rg_profissional = '{novorg}'");
 
                 if (vericpf.Length > 0)
                 {
-                    errorProvider1.SetError(txtcpf, "CPF ja Cadastrado");
+                    errorProvider1.SetError(txtcpf, "CPF já cadastrado");
                     veri = false;
                 }
                 if (verirg.Length > 0)
                 {
-                    errorProvider1.SetError(txtrg, "RG ja Cadastrado");
+                    errorProvider1.SetError(txtrg, "RG já cadastrado");
                     veri = false;
                 }
 
-
-                if (veri == true)
+                if (veri)
                 {
-                    using (var cmd = new MySqlCommand(comando, conn))
-
+                    try
                     {
+                        using (var cmd = new MySqlCommand(comando, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@nome", novonome);
+                            cmd.Parameters.AddWithValue("@genero", novogenero);
+                            cmd.Parameters.AddWithValue("@cpf", novocpf);
+                            cmd.Parameters.AddWithValue("@rg", novorg);
+                            cmd.Parameters.AddWithValue("@nascimento", novodatanascimento);
+                            cmd.Parameters.AddWithValue("@telefone", novotelefone);
+                            cmd.Parameters.AddWithValue("@email", novoemail);
+                            cmd.Parameters.AddWithValue("@cep", novocep);
+                            cmd.Parameters.AddWithValue("@logradouro", novologradouro);
+                            cmd.Parameters.AddWithValue("@bairro", novobairro);
+                            cmd.Parameters.AddWithValue("@cidade", novocidade);
+                            cmd.Parameters.AddWithValue("@estado", novoestado);
+                            cmd.Parameters.AddWithValue("@especialidade", novoespecializacao);
 
-                        cmd.Parameters.AddWithValue("@nome", novonome);
+                            // ⚠️ Estes dois estavam faltando:
+                            cmd.Parameters.AddWithValue("@login", loginGerado);
+                            cmd.Parameters.AddWithValue("@senha", novasenha);
 
-                        cmd.Parameters.AddWithValue("@genero", novogenero);
+                            conn.Open();
+                            int linhasAfetadas = cmd.ExecuteNonQuery();
 
-                        cmd.Parameters.AddWithValue("@cpf", novocpf);
+                            if (linhasAfetadas > 0)
+                            {
+                                await EnviarEmailConfirmacaoAsync(novoemail, novonome, loginGerado, novasenha);
 
-                        cmd.Parameters.AddWithValue("@rg", novorg);
+                                MessageBox.Show(
+                                    $"Usuário cadastrado com sucesso!\n\nLogin: {loginGerado}\nEmail: {novoemail}",
+                                    "Cadastro realizado",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information
+                                );
 
-                        cmd.Parameters.AddWithValue("@nascimento", novodatanascimento);
-
-                        cmd.Parameters.AddWithValue("@telefone", novotelefone);
-
-                        cmd.Parameters.AddWithValue("@email", novoemail);
-
-                        cmd.Parameters.AddWithValue("@cep", novocep);
-
-                        cmd.Parameters.AddWithValue("@logradouro", novologradouro);
-
-                        cmd.Parameters.AddWithValue("@bairro", novobairro);
-
-                        cmd.Parameters.AddWithValue("@cidade", novocidade);
-
-                        cmd.Parameters.AddWithValue("@estado", novoestado);
-                        cmd.Parameters.AddWithValue("especialidade", novoespecializacao);
-                        conn.Open();
-
-                        cmd.ExecuteNonQuery();
-
-                        
-                        MessageBox.Show("Concluido!!!", "Notificação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        limpa.Limpeza(this);
-
+                                limpa.Limpeza(this);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Nenhuma linha foi inserida. Verifique o comando SQL.",
+                                    "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
                     }
-
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro durante o cadastro:\n" + ex.ToString(),
+                            "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
@@ -138,25 +151,47 @@ namespace Zooka
 
 
 
-
-        private void label1_Click(object sender, EventArgs e)
+       //parte de enviar o email da vitoria
+        private async Task EnviarEmailConfirmacaoAsync(string emailDestino, string nome, string loginGerado, string senhaGerada)
         {
+            string remetente = "ZookaPetshop@gmail.com";
+            string senha = "foyn xvnq tnyg zoqq"; // senha de app do Gmail
+            string assunto = "Confirmação de Cadastro - Zooka 🐾";
 
+            string corpo = $"Olá {nome},\n\n" +
+                           $"Seu cadastro como profissional foi concluído com sucesso!\n\n" +
+                           $"🧾 Login: {loginGerado}\n" +
+                           $"🔑 Senha: {senhaGerada}\n" +
+                           $"📧 E-mail: {emailDestino}\n\n" +
+                           $"Bem-vindo à equipe Zooka Petshop! 🐶✨\n\n" +
+                           $"Atenciosamente,\nEquipe Zooka 🐾";
+
+            using (var smtp = new SmtpClient("smtp.gmail.com", 587))
+            {
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential(remetente, senha);
+                smtp.EnableSsl = true;
+                System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
+                using (var mensagem = new MailMessage())
+                {
+                    mensagem.From = new MailAddress(remetente, "Equipe Zooka 🐾");
+                    mensagem.To.Add(emailDestino);
+                    mensagem.Subject = assunto;
+                    mensagem.Body = corpo;
+                    mensagem.SubjectEncoding = Encoding.UTF8;
+                    mensagem.BodyEncoding = Encoding.UTF8;
+                    mensagem.IsBodyHtml = false;
+
+                    await smtp.SendMailAsync(mensagem);
+                }
+            }
         }
 
-        private void button1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void txttelefone_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void txtcidade_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        private void button1_Paint(object sender, PaintEventArgs e) { }
+        private void label1_Click(object sender, EventArgs e) { }
+        private void txtcidade_TextChanged(object sender, EventArgs e) { }
+        private void txttelefone_MaskInputRejected(object sender, MaskInputRejectedEventArgs e) { }
     }
 }

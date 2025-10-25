@@ -9,21 +9,16 @@ namespace Zooka
         public LoginUsuario()
         {
             InitializeComponent();
-
-
-
             this.Load += LoginUsuario_Load;
         }
 
         private void LoginUsuario_Load(object sender, EventArgs e)
         {
-
             if (this.txtSenha != null)
             {
                 txtSenha.UseSystemPasswordChar = true;
             }
         }
-
 
         private void senhaLogin_CheckedChanged(object sender, EventArgs e)
         {
@@ -65,20 +60,15 @@ namespace Zooka
 
         private void SenhaLogin_CheckedChanged_1(object sender, EventArgs e)
         {
-           
             if (sender is CheckBox chk)
             {
-              
                 txtSenha.UseSystemPasswordChar = !chk.Checked;
             }
         }
-
     }
-
 
     public class DatabaseConnection
     {
-        
         private static readonly string connectionString = "server=10.37.44.26;user id=root;password=root;database=Zooka";
 
         public static MySqlConnection GetConnection()
@@ -89,7 +79,6 @@ namespace Zooka
 
     public class UsuarioRepository
     {
-        
         public static bool ValidarLogin(string login, string senha)
         {
             try
@@ -98,17 +87,31 @@ namespace Zooka
                 {
                     conn.Open();
 
-                    string query = "SELECT COUNT(*) FROM usuario WHERE login_usuario = @login AND senha_usuario = @senha";
-
-                    using (var cmd = new MySqlCommand(query, conn))
+                    // Primeiro tenta login de usuário normal
+                    string queryUsuario = "SELECT COUNT(*) FROM usuario WHERE login_usuario = @login AND senha_usuario = @senha";
+                    using (var cmd = new MySqlCommand(queryUsuario, conn))
                     {
                         cmd.Parameters.AddWithValue("@login", login);
                         cmd.Parameters.AddWithValue("@senha", senha);
 
-                        var result = cmd.ExecuteScalar();
-                        int count = Convert.ToInt32(result);
+                        int countUsuario = Convert.ToInt32(cmd.ExecuteScalar());
 
-                        return count > 0;
+                        if (countUsuario > 0)
+                        {
+                            return true; // login de usuário comum válido
+                        }
+                    }
+
+                    // Se não encontrou usuário, tenta profissional
+                    string queryProfissional = "SELECT COUNT(*) FROM profissional WHERE login_profissional = @login AND senha_profissional = @senha";
+                    using (var cmd = new MySqlCommand(queryProfissional, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@login", login);
+                        cmd.Parameters.AddWithValue("@senha", senha);
+
+                        int countProfissional = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        return countProfissional > 0; // retorna true se for profissional
                     }
                 }
             }
