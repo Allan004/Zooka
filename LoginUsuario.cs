@@ -38,7 +38,7 @@ namespace Zooka
 
             if (loginValido)
             {
-                MessageBox.Show("Bem-vindo à família Zooka!", "Login bem-sucedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
                 recebe.usarioo = txtLogin.Text;
                 recebe.Show();
                 this.Hide();

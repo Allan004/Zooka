@@ -38,7 +38,7 @@ namespace Zooka
                 button3.Visible = true;
                 btnEstoque.Visible = true;
                 BtnOrdemdecompra.Visible = true;
-                btnFornecedor.Visible = true;
+                
                 btnConsulta.Visible = true;
             }
             if (fecharm == false)
@@ -47,7 +47,7 @@ namespace Zooka
                 button3.Visible = false;
                 btnEstoque.Visible = false;
                 BtnOrdemdecompra.Visible = false;
-                btnFornecedor.Visible = false;
+                
                 btnConsulta.Visible = false;
 
             }
@@ -190,25 +190,7 @@ namespace Zooka
 
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            foreach (Form form in this.MdiChildren)
-            {
-                form.Close();
-            }
-            CadastroFornecedor abrirFornecedor = new CadastroFornecedor();
-            abrirFornecedor.TopLevel = false;
-            abrirFornecedor.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            abrirFornecedor.StartPosition = FormStartPosition.Manual;
-            abrirFornecedor.Location = new Point(0, 0);
-            abrirFornecedor.Show();
-            somelimpa(false, 1);
-            somelimpa(false, 2);
-            fechamenu(false);
-            cont = 0;
-            cont2 = 0;
-            cont3 = 0;
-        }
+        
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
