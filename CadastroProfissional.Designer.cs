@@ -77,7 +77,7 @@ namespace Zooka
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(827, 395);
+            button1.Location = new Point(337, 707);
             button1.Margin = new Padding(4);
             button1.Name = "button1";
             button1.Size = new Size(110, 34);
@@ -91,18 +91,18 @@ namespace Zooka
             // 
             txtrg.BackColor = Color.AliceBlue;
             txtrg.Font = new Font("Arial", 12F);
-            txtrg.Location = new Point(272, 193);
+            txtrg.Location = new Point(214, 214);
             txtrg.Margin = new Padding(4, 3, 4, 3);
             txtrg.Mask = "00.000.000-0";
             txtrg.Name = "txtrg";
-            txtrg.Size = new Size(175, 26);
+            txtrg.Size = new Size(108, 26);
             txtrg.TabIndex = 32;
             // 
             // txtcpf
             // 
             txtcpf.BackColor = Color.AliceBlue;
             txtcpf.Font = new Font("Arial", 12F);
-            txtcpf.Location = new Point(85, 193);
+            txtcpf.Location = new Point(85, 214);
             txtcpf.Margin = new Padding(4, 3, 4, 3);
             txtcpf.Mask = "000.000.000-00";
             txtcpf.Name = "txtcpf";
@@ -113,7 +113,7 @@ namespace Zooka
             // 
             txtcep.BackColor = Color.AliceBlue;
             txtcep.Font = new Font("Arial", 12F);
-            txtcep.Location = new Point(85, 285);
+            txtcep.Location = new Point(85, 500);
             txtcep.Margin = new Padding(4, 3, 4, 3);
             txtcep.Mask = "00.000-000";
             txtcep.Name = "txtcep";
@@ -127,17 +127,17 @@ namespace Zooka
             comboBox1.Font = new Font("Arial", 12F);
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Mulher Cisgênero", "Homem Cisgênero", "Mulher Transgênero", "Homem Transgênero", "Não Binárie", "Gênero Fluido", "Agênero", "Bigênero", "Trigênero", "Gênero Queer", "Gênero Demigênero", "Gênero Andrógeno", "Gênero Andrógino", "Gênero Apagado", "Gênero Clivado", "Gênero Enviado", "Gênero Fugitivo", "Gênero Híbrido", "Gênero Intermediário", "Gênero Livre", "Gênero Místico", "Gênero Padrão", "Gênero Queer Não Binário", "Gênero Radiante", "Gênero Sutil", "Gênero Solar", "Gênero Lunar", "Gênero Transfeminino", "Gênero Transmasculino", "Gênero Elevado", "Gênero Espiritual", "Gênero Específico", "Gênero Livre", "Gênero Metamórfico", "Gênero Mutante", "Gênero Natural", "Gênero Oculto", "Gênero Plural", "Gênero Preciso", "Gênero Profundo", "Gênero Resiliente", "Gênero Sagrado", "Gênero Secundário", "Gênero Superior", "Gênero Transcendente", "Gênero Universal", "Gênero Versátil", "Gênero Virtual", "Gênero Xenogênero", "Gênero Yin", "Gênero Yang", "Gênero Zero" });
-            comboBox1.Location = new Point(611, 237);
+            comboBox1.Location = new Point(273, 427);
             comboBox1.Margin = new Padding(4, 3, 4, 3);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(326, 26);
+            comboBox1.Size = new Size(173, 26);
             comboBox1.TabIndex = 33;
             // 
             // txttelefone
             // 
             txttelefone.BackColor = Color.AliceBlue;
             txttelefone.Font = new Font("Arial", 12F);
-            txttelefone.Location = new Point(611, 194);
+            txttelefone.Location = new Point(85, 353);
             txttelefone.Margin = new Padding(4, 3, 4, 3);
             txttelefone.Mask = "(00)0 0000-0000";
             txttelefone.Name = "txttelefone";
@@ -148,30 +148,30 @@ namespace Zooka
             // txtdata
             // 
             txtdata.BackColor = Color.AliceBlue;
-            txtdata.BorderStyle = BorderStyle.None;
             txtdata.Font = new Font("Arial", 12F);
-            txtdata.Location = new Point(841, 191);
+            txtdata.Location = new Point(350, 214);
             txtdata.Margin = new Padding(4, 3, 4, 3);
             txtdata.Mask = "00/00/0000";
             txtdata.Name = "txtdata";
-            txtdata.Size = new Size(96, 19);
+            txtdata.Size = new Size(96, 26);
             txtdata.TabIndex = 25;
+            txtdata.MaskInputRejected += txtdata_MaskInputRejected;
             // 
             // txtestado
             // 
             txtestado.BackColor = Color.AliceBlue;
             txtestado.Font = new Font("Arial", 12F);
-            txtestado.Location = new Point(611, 327);
+            txtestado.Location = new Point(85, 637);
             txtestado.Margin = new Padding(4, 3, 4, 3);
             txtestado.Name = "txtestado";
-            txtestado.Size = new Size(326, 26);
+            txtestado.Size = new Size(173, 26);
             txtestado.TabIndex = 45;
             // 
             // txtcidade
             // 
             txtcidade.BackColor = Color.AliceBlue;
             txtcidade.Font = new Font("Arial", 12F);
-            txtcidade.Location = new Point(767, 284);
+            txtcidade.Location = new Point(276, 571);
             txtcidade.Margin = new Padding(4, 3, 4, 3);
             txtcidade.Name = "txtcidade";
             txtcidade.Size = new Size(170, 26);
@@ -182,27 +182,27 @@ namespace Zooka
             // 
             txtbairro.BackColor = Color.AliceBlue;
             txtbairro.Font = new Font("Arial", 12F);
-            txtbairro.Location = new Point(85, 328);
+            txtbairro.Location = new Point(85, 571);
             txtbairro.Margin = new Padding(4, 3, 4, 3);
             txtbairro.Name = "txtbairro";
-            txtbairro.Size = new Size(362, 26);
+            txtbairro.Size = new Size(167, 26);
             txtbairro.TabIndex = 44;
             // 
             // txtlogradouro
             // 
             txtlogradouro.BackColor = Color.AliceBlue;
             txtlogradouro.Font = new Font("Arial", 12F);
-            txtlogradouro.Location = new Point(386, 284);
+            txtlogradouro.Location = new Point(231, 500);
             txtlogradouro.Margin = new Padding(4, 3, 4, 3);
             txtlogradouro.Name = "txtlogradouro";
-            txtlogradouro.Size = new Size(301, 26);
+            txtlogradouro.Size = new Size(216, 26);
             txtlogradouro.TabIndex = 40;
             // 
             // txtemail
             // 
             txtemail.BackColor = Color.AliceBlue;
             txtemail.Font = new Font("Arial", 12F);
-            txtemail.Location = new Point(85, 238);
+            txtemail.Location = new Point(85, 284);
             txtemail.Margin = new Padding(4, 3, 4, 3);
             txtemail.Name = "txtemail";
             txtemail.Size = new Size(362, 26);
@@ -224,12 +224,12 @@ namespace Zooka
             label13.BackColor = Color.Transparent;
             label13.Font = new Font("Gadugi", 12F);
             label13.ForeColor = Color.FromArgb(34, 61, 79);
-            label13.Location = new Point(281, 284);
+            label13.Location = new Point(231, 478);
             label13.Margin = new Padding(4, 0, 4, 0);
             label13.Name = "label13";
-            label13.Size = new Size(94, 19);
+            label13.Size = new Size(91, 19);
             label13.TabIndex = 46;
-            label13.Text = "Logradouro:";
+            label13.Text = "Logradouro";
             // 
             // label12
             // 
@@ -237,12 +237,12 @@ namespace Zooka
             label12.BackColor = Color.Transparent;
             label12.Font = new Font("Gadugi", 12F);
             label12.ForeColor = Color.FromArgb(34, 61, 79);
-            label12.Location = new Point(699, 287);
+            label12.Location = new Point(276, 549);
             label12.Margin = new Padding(4, 0, 4, 0);
             label12.Name = "label12";
-            label12.Size = new Size(60, 19);
+            label12.Size = new Size(57, 19);
             label12.TabIndex = 43;
-            label12.Text = "Cidade:";
+            label12.Text = "Cidade";
             // 
             // label11
             // 
@@ -250,7 +250,7 @@ namespace Zooka
             label11.BackColor = Color.Transparent;
             label11.Font = new Font("Gadugi", 12F);
             label11.ForeColor = Color.FromArgb(34, 61, 79);
-            label11.Location = new Point(27, 241);
+            label11.Location = new Point(85, 262);
             label11.Margin = new Padding(4, 0, 4, 0);
             label11.Name = "label11";
             label11.Size = new Size(50, 19);
@@ -263,12 +263,13 @@ namespace Zooka
             label10.BackColor = Color.Transparent;
             label10.Font = new Font("Gadugi", 12F);
             label10.ForeColor = Color.FromArgb(34, 61, 79);
-            label10.Location = new Point(734, 192);
+            label10.Location = new Point(350, 192);
             label10.Margin = new Padding(4, 0, 4, 0);
             label10.Name = "label10";
-            label10.Size = new Size(95, 19);
+            label10.Size = new Size(43, 19);
             label10.TabIndex = 39;
-            label10.Text = "Nascimento:";
+            label10.Text = "Nasc";
+            label10.Click += label10_Click;
             // 
             // label9
             // 
@@ -276,12 +277,12 @@ namespace Zooka
             label9.BackColor = Color.Transparent;
             label9.Font = new Font("Gadugi", 12F);
             label9.ForeColor = Color.FromArgb(34, 61, 79);
-            label9.Location = new Point(23, 331);
+            label9.Location = new Point(85, 549);
             label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
-            label9.Size = new Size(54, 19);
+            label9.Size = new Size(51, 19);
             label9.TabIndex = 37;
-            label9.Text = "Bairro:";
+            label9.Text = "Bairro";
             // 
             // label8
             // 
@@ -289,12 +290,12 @@ namespace Zooka
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Gadugi", 12F);
             label8.ForeColor = Color.FromArgb(34, 61, 79);
-            label8.Location = new Point(38, 288);
+            label8.Location = new Point(85, 478);
             label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
-            label8.Size = new Size(39, 19);
+            label8.Size = new Size(36, 19);
             label8.TabIndex = 35;
-            label8.Text = "CEP:";
+            label8.Text = "CEP";
             // 
             // label7
             // 
@@ -302,7 +303,7 @@ namespace Zooka
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Gadugi", 12F);
             label7.ForeColor = Color.FromArgb(34, 61, 79);
-            label7.Location = new Point(540, 238);
+            label7.Location = new Point(273, 405);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(63, 19);
@@ -315,12 +316,12 @@ namespace Zooka
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Gadugi", 12F);
             label6.ForeColor = Color.FromArgb(34, 61, 79);
-            label6.Location = new Point(231, 196);
+            label6.Location = new Point(214, 192);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(33, 19);
+            label6.Size = new Size(30, 19);
             label6.TabIndex = 31;
-            label6.Text = "RG:";
+            label6.Text = "RG";
             // 
             // label5
             // 
@@ -328,7 +329,7 @@ namespace Zooka
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Gadugi", 12F);
             label5.ForeColor = Color.FromArgb(34, 61, 79);
-            label5.Location = new Point(532, 197);
+            label5.Location = new Point(85, 331);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(71, 19);
@@ -341,12 +342,12 @@ namespace Zooka
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Gadugi", 12F);
             label4.ForeColor = Color.FromArgb(34, 61, 79);
-            label4.Location = new Point(38, 196);
+            label4.Location = new Point(85, 192);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(39, 19);
+            label4.Size = new Size(36, 19);
             label4.TabIndex = 27;
-            label4.Text = "CPF:";
+            label4.Text = "CPF";
             // 
             // label3
             // 
@@ -354,12 +355,12 @@ namespace Zooka
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Gadugi", 12F);
             label3.ForeColor = Color.FromArgb(34, 61, 79);
-            label3.Location = new Point(545, 330);
+            label3.Location = new Point(85, 615);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(58, 19);
+            label3.Size = new Size(55, 19);
             label3.TabIndex = 26;
-            label3.Text = "Estado:";
+            label3.Text = "Estado";
             // 
             // label2
             // 
@@ -367,7 +368,7 @@ namespace Zooka
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Gadugi", 12F);
             label2.ForeColor = Color.FromArgb(34, 61, 79);
-            label2.Location = new Point(22, 151);
+            label2.Location = new Point(85, 126);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(55, 19);
@@ -379,10 +380,10 @@ namespace Zooka
             label1.BackColor = Color.FromArgb(34, 61, 79);
             label1.Font = new Font("Arial Rounded MT Bold", 20F);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(173, 30);
+            label1.Location = new Point(112, 23);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(635, 43);
+            label1.Size = new Size(361, 43);
             label1.TabIndex = 22;
             label1.Text = "CADASTRO PROFISIONAL";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -394,7 +395,7 @@ namespace Zooka
             Especialidade.BackColor = Color.Transparent;
             Especialidade.Font = new Font("Gadugi", 12F);
             Especialidade.ForeColor = Color.FromArgb(34, 61, 79);
-            Especialidade.Location = new Point(498, 151);
+            Especialidade.Location = new Point(85, 405);
             Especialidade.Name = "Especialidade";
             Especialidade.Size = new Size(105, 19);
             Especialidade.TabIndex = 48;
@@ -404,9 +405,9 @@ namespace Zooka
             // 
             textBox1.BackColor = Color.AliceBlue;
             textBox1.Font = new Font("Arial", 12F);
-            textBox1.Location = new Point(611, 148);
+            textBox1.Location = new Point(85, 427);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(326, 26);
+            textBox1.Size = new Size(155, 26);
             textBox1.TabIndex = 49;
             // 
             // errorProvider1
@@ -439,7 +440,7 @@ namespace Zooka
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(975, 452);
+            ClientSize = new Size(511, 750);
             Controls.Add(button1);
             Controls.Add(textBox1);
             Controls.Add(Especialidade);

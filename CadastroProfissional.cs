@@ -151,7 +151,7 @@ namespace Zooka
 
 
 
-       //parte de enviar o email da vitoria
+        //parte de enviar o email da vitoria
         private async Task EnviarEmailConfirmacaoAsync(string emailDestino, string nome, string loginGerado, string senhaGerada)
         {
             string remetente = "ZookaPetshop@gmail.com";
@@ -193,5 +193,15 @@ namespace Zooka
         private void label1_Click(object sender, EventArgs e) { }
         private void txtcidade_TextChanged(object sender, EventArgs e) { }
         private void txttelefone_MaskInputRejected(object sender, MaskInputRejectedEventArgs e) { }
+
+        private void txtdata_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
