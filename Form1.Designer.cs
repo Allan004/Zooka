@@ -257,6 +257,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(218, 3000);
             panel1.TabIndex = 16;
+            panel1.Paint += panel1_Paint;
             // 
             // btnSku
             // 
@@ -413,6 +414,7 @@
             menuStrip1.Stretch = false;
             menuStrip1.TabIndex = 30;
             menuStrip1.Text = "menuStrip1";
+            menuStrip1.ItemClicked += menuStrip1_ItemClicked;
             // 
             // toolStripMenuItem1
             // 
@@ -425,6 +427,7 @@
             toolStripMenuItem1.Size = new Size(200, 50);
             toolStripMenuItem1.Text = "Logout";
             toolStripMenuItem1.TextAlign = ContentAlignment.MiddleLeft;
+            toolStripMenuItem1.Click += toolStripMenuItem1_Click;
             // 
             // trocarUsuarioToolStripMenuItem
             // 
@@ -434,6 +437,7 @@
             trocarUsuarioToolStripMenuItem.Name = "trocarUsuarioToolStripMenuItem";
             trocarUsuarioToolStripMenuItem.Size = new Size(200, 22);
             trocarUsuarioToolStripMenuItem.Text = "Trocar Usuario";
+            trocarUsuarioToolStripMenuItem.Click += trocarUsuarioToolStripMenuItem_Click;
             // 
             // sairToolStripMenuItem
             // 
@@ -443,6 +447,7 @@
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             sairToolStripMenuItem.Size = new Size(200, 22);
             sairToolStripMenuItem.Text = "Sair";
+            sairToolStripMenuItem.Click += sairToolStripMenuItem_Click_1;
             // 
             // Form1
             // 
@@ -479,6 +484,7 @@
             Name = "Form1";
             Padding = new Padding(218, 0, 0, 0);
             Text = "Form1";
+            Load += Form1_Load;
             panel1.ResumeLayout(false);
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

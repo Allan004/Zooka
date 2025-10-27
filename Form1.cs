@@ -8,6 +8,8 @@ namespace Zooka
 {
     public partial class Form1 : Form
     {
+
+        public string usarioo { get; set; }
         Consulta consulta = new Consulta();
         public Form1()
         {
@@ -539,6 +541,53 @@ namespace Zooka
             cont3 = 0;
 
 
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            toolStripMenuItem1.Text = usarioo;
+        }
+
+        private void trocarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoginUsuario recebe = new LoginUsuario();
+
+
+            this.Hide();
+
+            recebe.FormClosed += (s, args) => this.Show();
+            recebe.Show();
+
+
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+
+
+        }
+
+        private void sairToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            LoginUsuario login = (LoginUsuario)Application.OpenForms["LoginUsuario"];
+            login.Close(); // Fecha o form principal escondido
+            this.Close();  // Fecha o form atual}
         }
     }
 }
