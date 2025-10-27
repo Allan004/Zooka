@@ -561,6 +561,7 @@ namespace Zooka
         private void Form1_Load(object sender, EventArgs e)
         {
             toolStripMenuItem1.Text = usarioo;
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void trocarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)

@@ -68,7 +68,7 @@
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(1, 0);
+            button1.Location = new Point(0, 0);
             button1.Name = "button1";
             button1.Size = new Size(218, 50);
             button1.TabIndex = 3;
@@ -78,14 +78,13 @@
             // button2
             // 
             button2.BackColor = Color.FromArgb(34, 61, 79);
-            button2.BackgroundImageLayout = ImageLayout.Zoom;
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Arial Rounded MT Bold", 14.25F);
             button2.ForeColor = SystemColors.Control;
             button2.Location = new Point(0, 51);
             button2.Name = "button2";
-            button2.Size = new Size(218, 74);
+            button2.Size = new Size(218, 75);
             button2.TabIndex = 4;
             button2.Text = "Agenda";
             button2.UseVisualStyleBackColor = false;
@@ -253,9 +252,9 @@
             // 
             panel1.BackColor = Color.FromArgb(34, 61, 79);
             panel1.Controls.Add(button3);
-            panel1.Location = new Point(1, 0);
+            panel1.Location = new Point(-2, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(218, 3000);
+            panel1.Size = new Size(220, 3000);
             panel1.TabIndex = 16;
             panel1.Paint += panel1_Paint;
             // 
