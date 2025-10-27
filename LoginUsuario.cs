@@ -6,6 +6,7 @@ namespace Zooka
 {
     public partial class LoginUsuario : Form
     {
+        Form1 recebe = new Form1();
         public LoginUsuario()
         {
             InitializeComponent();
@@ -38,7 +39,13 @@ namespace Zooka
             if (loginValido)
             {
                 MessageBox.Show("Bem-vindo à família Zooka!", "Login bem-sucedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                recebe.usarioo = txtLogin.Text;
+                recebe.Show();
+                this.Hide();
+
+
                 // aqui você pode abrir o form principal e fechar o login, por exemplo
+
             }
             else
             {

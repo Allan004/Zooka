@@ -29,7 +29,8 @@ namespace Zooka
 
         }
 
-
+        string coluna0 = null;
+        string coluna1 = null;
 
 
         private void button4_Click(object sender, EventArgs e)
@@ -72,11 +73,25 @@ namespace Zooka
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+
+            string filtro = textBox1.Text.Trim().Replace("'", "''");
+            string coluna0 = dataGridView1.Columns[0].Name;
+            string coluna1 = dataGridView1.Columns[1].Name;
+
+            if (string.IsNullOrEmpty(filtro))
+            {
+                dataGridView1.DataSource = teste.InsertGeral(defineForms); ;
+                return;
+            }
+
+            DataView dv = new DataView(teste.InsertGeral(defineForms));
+            dv.RowFilter = $"Convert([{coluna0}], 'System.String') LIKE '%{filtro}%' OR Convert([{coluna1}], 'System.String') LIKE '%{filtro}%'";
+            dataGridView1.DataSource = dv;
         }
 
         private void Consulta_Load(object sender, EventArgs e)
         {
-            
+
             dataGridView1.DataSource = teste.InsertGeral(defineForms);
             label1.Text = "CONSULTA " + defineForms.ToUpper();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -84,6 +99,12 @@ namespace Zooka
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.AllowUserToResizeRows = false;
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
