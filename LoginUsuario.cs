@@ -65,6 +65,11 @@ namespace Zooka
                 txtSenha.UseSystemPasswordChar = !chk.Checked;
             }
         }
+
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 
     public class DatabaseConnection
