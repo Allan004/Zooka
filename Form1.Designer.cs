@@ -62,7 +62,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(0, 203, 173);
+            button1.BackColor = Color.FromArgb(34, 61, 79);
             button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatAppearance.BorderSize = 0;
