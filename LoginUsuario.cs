@@ -6,82 +6,56 @@ namespace Zooka
 {
     public partial class LoginUsuario : Form
     {
-        Form1 recebe = new Form1();
         public LoginUsuario()
         {
             InitializeComponent();
             this.Load += LoginUsuario_Load;
+           
         }
 
         private void LoginUsuario_Load(object sender, EventArgs e)
         {
-            if (this.txtSenha != null)
-            {
-                txtSenha.UseSystemPasswordChar = true;
-            }
-        }
-
-        private void senhaLogin_CheckedChanged(object sender, EventArgs e)
-        {
-            if (this.txtSenha != null && sender is CheckBox chk)
-            {
-                txtSenha.UseSystemPasswordChar = !chk.Checked;
-            }
+            txtSenha.UseSystemPasswordChar = true;
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            string login = txtLogin?.Text ?? string.Empty;
-            string senha = txtSenha?.Text ?? string.Empty;
+            string login = txtLogin.Text.Trim();
+            string senha = txtSenha.Text.Trim();
 
-            bool loginValido = UsuarioRepository.ValidarLogin(login, senha);
+            if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(senha))
+            {
+                MessageBox.Show("Preencha todos os campos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var resultado = UsuarioRepository.ValidarLoginTipo(login, senha);
+            bool loginValido = resultado.Item1;
+            bool isProfissional = resultado.Item2;
 
             if (loginValido)
             {
-                MessageBox.Show("Bem-vindo à família Zooka!", "Login bem-sucedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                recebe.usarioo = txtLogin.Text;
-                recebe.Show();
+                MessageBox.Show("Login bem-sucedido! Redefina sua senha.",
+                    "Zooka PetShop", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Abre o formulário de redefinição de senha
+                ResetarSenha telaReset = new ResetarSenha(login, isProfissional);
+                telaReset.Show();
                 this.Hide();
-
-
-                // aqui você pode abrir o form principal e fechar o login, por exemplo
-
             }
             else
             {
-                MessageBox.Show("Revise os campos e tente novamente.", "Erro no login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Revise os campos e tente novamente.",
+                    "Erro no login", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            var formCadastro = new CadastroUsuario();
-            formCadastro.Show();
-            this.Close();
-        }
-
-        private void LoginUsuario_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SenhaLogin_CheckedChanged_1(object sender, EventArgs e)
-        {
-            if (sender is CheckBox chk)
-            {
-                txtSenha.UseSystemPasswordChar = !chk.Checked;
-            }
-        }
-
-        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
         }
     }
 
+    // =============================== CONEXÃO COM O BANCO ===============================
     public class DatabaseConnection
     {
-        private static readonly string connectionString = "server=10.37.44.26;user id=root;password=root;database=Zooka";
+        private static readonly string connectionString =
+            "server=10.37.44.26;user id=root;password=root;database=Zooka";
 
         public static MySqlConnection GetConnection()
         {
@@ -89,9 +63,11 @@ namespace Zooka
         }
     }
 
+    // ============================= LOGIN VALIDATION =============================
     public class UsuarioRepository
     {
-        public static bool ValidarLogin(string login, string senha)
+        // Retorna (loginValido, isProfissional)
+        public static (bool, bool) ValidarLoginTipo(string login, string senha)
         {
             try
             {
@@ -99,38 +75,38 @@ namespace Zooka
                 {
                     conn.Open();
 
-                    // Primeiro tenta login de usuário normal
+                    // Verifica login de usuário comum
                     string queryUsuario = "SELECT COUNT(*) FROM usuario WHERE login_usuario = @login AND senha_usuario = @senha";
                     using (var cmd = new MySqlCommand(queryUsuario, conn))
                     {
                         cmd.Parameters.AddWithValue("@login", login);
                         cmd.Parameters.AddWithValue("@senha", senha);
-
                         int countUsuario = Convert.ToInt32(cmd.ExecuteScalar());
 
                         if (countUsuario > 0)
-                        {
-                            return true; // login de usuário comum válido
-                        }
+                            return (true, false); // É usuário comum
                     }
 
-                    // Se não encontrou usuário, tenta profissional
+                    // Verifica login de profissional
                     string queryProfissional = "SELECT COUNT(*) FROM profissional WHERE login_profissional = @login AND senha_profissional = @senha";
                     using (var cmd = new MySqlCommand(queryProfissional, conn))
                     {
                         cmd.Parameters.AddWithValue("@login", login);
                         cmd.Parameters.AddWithValue("@senha", senha);
-
                         int countProfissional = Convert.ToInt32(cmd.ExecuteScalar());
 
-                        return countProfissional > 0; // retorna true se for profissional
+                        if (countProfissional > 0)
+                            return (true, true); // É profissional
                     }
+
+                    return (false, false);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro no banco de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                MessageBox.Show("Erro no banco de dados: " + ex.Message,
+                    "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return (false, false);
             }
         }
     }

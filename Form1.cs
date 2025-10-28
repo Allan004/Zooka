@@ -258,7 +258,7 @@ namespace Zooka
             {
                 form.Close();
             }
-            CadastroUsuario abrirform = new CadastroUsuario();
+            CadastroProfissional abrirform = new CadastroProfissional();
             abrirform.TopLevel = false;
             abrirform.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             abrirform.StartPosition = FormStartPosition.Manual;
