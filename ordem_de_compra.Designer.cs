@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ordem_de_compra));
             lblFornecedor = new Label();
             txtFornecedor_oc = new TextBox();
             lblComprador = new Label();
@@ -50,67 +51,79 @@
             txtRazaoSocialZooka_OC = new TextBox();
             txtCNPJZooka_OC = new TextBox();
             txtNomeFantasiaZooka_OC = new TextBox();
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvItensOC).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lblFornecedor
             // 
             lblFornecedor.AutoSize = true;
-            lblFornecedor.ForeColor = Color.Black;
-            lblFornecedor.Location = new Point(24, 284);
+            lblFornecedor.Font = new Font("Gadugi", 12F);
+            lblFornecedor.ForeColor = Color.FromArgb(34, 61, 79);
+            lblFornecedor.Location = new Point(24, 380);
             lblFornecedor.Name = "lblFornecedor";
-            lblFornecedor.Size = new Size(82, 15);
+            lblFornecedor.Size = new Size(88, 19);
             lblFornecedor.TabIndex = 0;
-            lblFornecedor.Text = "FORNECEDOR";
+            lblFornecedor.Text = "Fornecedor";
             // 
             // txtFornecedor_oc
             // 
-            txtFornecedor_oc.Location = new Point(24, 302);
+            txtFornecedor_oc.BackColor = Color.AliceBlue;
+            txtFornecedor_oc.Font = new Font("Arial", 12F);
+            txtFornecedor_oc.Location = new Point(24, 402);
             txtFornecedor_oc.Name = "txtFornecedor_oc";
-            txtFornecedor_oc.Size = new Size(365, 23);
+            txtFornecedor_oc.Size = new Size(365, 26);
             txtFornecedor_oc.TabIndex = 1;
             // 
             // lblComprador
             // 
             lblComprador.AutoSize = true;
-            lblComprador.ForeColor = Color.Black;
-            lblComprador.Location = new Point(24, 224);
+            lblComprador.Font = new Font("Gadugi", 12F);
+            lblComprador.ForeColor = Color.FromArgb(34, 61, 79);
+            lblComprador.Location = new Point(24, 316);
             lblComprador.Name = "lblComprador";
-            lblComprador.Size = new Size(81, 15);
+            lblComprador.Size = new Size(89, 19);
             lblComprador.TabIndex = 2;
-            lblComprador.Text = "COMPRADOR";
+            lblComprador.Text = "Comprador";
             // 
             // txtComprador
             // 
-            txtComprador.Location = new Point(24, 242);
+            txtComprador.BackColor = Color.AliceBlue;
+            txtComprador.Font = new Font("Arial", 12F);
+            txtComprador.Location = new Point(24, 338);
             txtComprador.Name = "txtComprador";
-            txtComprador.Size = new Size(365, 23);
+            txtComprador.Size = new Size(365, 26);
             txtComprador.TabIndex = 3;
             // 
             // lblNumeroOC
             // 
             lblNumeroOC.AutoSize = true;
-            lblNumeroOC.ForeColor = Color.Black;
-            lblNumeroOC.Location = new Point(24, 172);
+            lblNumeroOC.Font = new Font("Gadugi", 12F);
+            lblNumeroOC.ForeColor = Color.FromArgb(34, 61, 79);
+            lblNumeroOC.Location = new Point(24, 263);
             lblNumeroOC.Name = "lblNumeroOC";
-            lblNumeroOC.Size = new Size(41, 15);
+            lblNumeroOC.Size = new Size(54, 19);
             lblNumeroOC.TabIndex = 4;
             lblNumeroOC.Text = "Nº OC";
             // 
             // dgvItensOC
             // 
             dgvItensOC.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvItensOC.Location = new Point(441, 35);
+            dgvItensOC.Location = new Point(441, 126);
             dgvItensOC.Name = "dgvItensOC";
             dgvItensOC.Size = new Size(722, 530);
             dgvItensOC.TabIndex = 6;
             // 
             // txtNumeroOC
             // 
-            txtNumeroOC.BackColor = SystemColors.Window;
-            txtNumeroOC.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtNumeroOC.ForeColor = Color.MidnightBlue;
-            txtNumeroOC.Location = new Point(24, 190);
+            txtNumeroOC.BackColor = Color.AliceBlue;
+            txtNumeroOC.Font = new Font("Arial", 12F);
+            txtNumeroOC.ForeColor = Color.Black;
+            txtNumeroOC.Location = new Point(24, 281);
             txtNumeroOC.Multiline = true;
             txtNumeroOC.Name = "txtNumeroOC";
             txtNumeroOC.Size = new Size(105, 23);
@@ -119,139 +132,204 @@
             // 
             // txtDataOC
             // 
-            txtDataOC.Location = new Point(284, 190);
+            txtDataOC.BackColor = Color.AliceBlue;
+            txtDataOC.Font = new Font("Arial", 12F);
+            txtDataOC.Location = new Point(284, 281);
             txtDataOC.Name = "txtDataOC";
-            txtDataOC.Size = new Size(105, 23);
+            txtDataOC.Size = new Size(105, 26);
             txtDataOC.TabIndex = 9;
             // 
             // lblData
             // 
             lblData.AutoSize = true;
-            lblData.ForeColor = Color.Black;
-            lblData.Location = new Point(284, 172);
+            lblData.Font = new Font("Gadugi", 12F);
+            lblData.ForeColor = Color.FromArgb(34, 61, 79);
+            lblData.Location = new Point(284, 263);
             lblData.Name = "lblData";
-            lblData.Size = new Size(36, 15);
+            lblData.Size = new Size(41, 19);
             lblData.TabIndex = 8;
-            lblData.Text = "DATA";
+            lblData.Text = "Data";
             // 
             // lblTotalOC
             // 
-            lblTotalOC.Location = new Point(24, 467);
+            lblTotalOC.BackColor = Color.AliceBlue;
+            lblTotalOC.Font = new Font("Arial", 12F);
+            lblTotalOC.Location = new Point(24, 599);
             lblTotalOC.Name = "lblTotalOC";
-            lblTotalOC.Size = new Size(105, 23);
+            lblTotalOC.Size = new Size(105, 26);
             lblTotalOC.TabIndex = 10;
             // 
             // btnSalvarOC
             // 
-            btnSalvarOC.ForeColor = Color.Black;
-            btnSalvarOC.Location = new Point(125, 531);
+            btnSalvarOC.BackColor = Color.Transparent;
+            btnSalvarOC.BackgroundImage = (Image)resources.GetObject("btnSalvarOC.BackgroundImage");
+            btnSalvarOC.BackgroundImageLayout = ImageLayout.Stretch;
+            btnSalvarOC.FlatStyle = FlatStyle.Flat;
+            btnSalvarOC.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnSalvarOC.ForeColor = Color.White;
+            btnSalvarOC.Location = new Point(937, 673);
             btnSalvarOC.Name = "btnSalvarOC";
-            btnSalvarOC.Size = new Size(75, 39);
+            btnSalvarOC.Size = new Size(110, 34);
             btnSalvarOC.TabIndex = 11;
             btnSalvarOC.Text = "CRIAR OC";
-            btnSalvarOC.UseVisualStyleBackColor = true;
+            btnSalvarOC.UseVisualStyleBackColor = false;
             btnSalvarOC.Click += btnSalvarOC_Click;
             // 
             // lblTotal
             // 
             lblTotal.AutoSize = true;
-            lblTotal.ForeColor = Color.Black;
-            lblTotal.Location = new Point(24, 449);
+            lblTotal.Font = new Font("Gadugi", 12F);
+            lblTotal.ForeColor = Color.FromArgb(34, 61, 79);
+            lblTotal.Location = new Point(24, 577);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(41, 15);
+            lblTotal.Size = new Size(43, 19);
             lblTotal.TabIndex = 12;
-            lblTotal.Text = "TOTAL";
+            lblTotal.Text = "Total";
             // 
             // txtFreteOC
             // 
-            txtFreteOC.Location = new Point(24, 412);
+            txtFreteOC.BackColor = Color.AliceBlue;
+            txtFreteOC.Font = new Font("Arial", 12F);
+            txtFreteOC.Location = new Point(24, 535);
             txtFreteOC.Name = "txtFreteOC";
-            txtFreteOC.Size = new Size(105, 23);
+            txtFreteOC.Size = new Size(105, 26);
             txtFreteOC.TabIndex = 13;
             // 
             // lblPagamento
             // 
             lblPagamento.AutoSize = true;
-            lblPagamento.ForeColor = Color.Black;
-            lblPagamento.Location = new Point(248, 394);
+            lblPagamento.Font = new Font("Gadugi", 12F);
+            lblPagamento.ForeColor = Color.FromArgb(34, 61, 79);
+            lblPagamento.Location = new Point(248, 513);
             lblPagamento.Name = "lblPagamento";
-            lblPagamento.Size = new Size(78, 15);
+            lblPagamento.Size = new Size(88, 19);
             lblPagamento.TabIndex = 16;
-            lblPagamento.Text = "PAGAMENTO";
+            lblPagamento.Text = "Pagamento";
             // 
             // cbPagamentoOC
             // 
+            cbPagamentoOC.BackColor = Color.AliceBlue;
+            cbPagamentoOC.FlatStyle = FlatStyle.Flat;
+            cbPagamentoOC.Font = new Font("Arial", 12F);
             cbPagamentoOC.FormattingEnabled = true;
-            cbPagamentoOC.Location = new Point(248, 412);
+            cbPagamentoOC.Location = new Point(248, 535);
             cbPagamentoOC.Name = "cbPagamentoOC";
-            cbPagamentoOC.Size = new Size(141, 23);
+            cbPagamentoOC.Size = new Size(141, 26);
             cbPagamentoOC.TabIndex = 17;
             // 
             // btnCriarSKU_OC
             // 
-            btnCriarSKU_OC.ForeColor = Color.Black;
-            btnCriarSKU_OC.Location = new Point(222, 531);
+            btnCriarSKU_OC.BackColor = Color.Transparent;
+            btnCriarSKU_OC.BackgroundImage = (Image)resources.GetObject("btnCriarSKU_OC.BackgroundImage");
+            btnCriarSKU_OC.BackgroundImageLayout = ImageLayout.Stretch;
+            btnCriarSKU_OC.FlatStyle = FlatStyle.Flat;
+            btnCriarSKU_OC.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnCriarSKU_OC.ForeColor = Color.White;
+            btnCriarSKU_OC.Location = new Point(1053, 673);
             btnCriarSKU_OC.Name = "btnCriarSKU_OC";
-            btnCriarSKU_OC.Size = new Size(75, 39);
+            btnCriarSKU_OC.Size = new Size(110, 34);
             btnCriarSKU_OC.TabIndex = 18;
             btnCriarSKU_OC.Text = "CRIAR SKU";
-            btnCriarSKU_OC.UseVisualStyleBackColor = true;
+            btnCriarSKU_OC.UseVisualStyleBackColor = false;
             btnCriarSKU_OC.Click += btnCriarSKU_OC_Click;
             // 
             // txtFornecedorCNPJ_OC
             // 
-            txtFornecedorCNPJ_OC.Location = new Point(24, 357);
+            txtFornecedorCNPJ_OC.BackColor = Color.AliceBlue;
+            txtFornecedorCNPJ_OC.Font = new Font("Arial", 12F);
+            txtFornecedorCNPJ_OC.Location = new Point(24, 467);
             txtFornecedorCNPJ_OC.Name = "txtFornecedorCNPJ_OC";
-            txtFornecedorCNPJ_OC.Size = new Size(147, 23);
+            txtFornecedorCNPJ_OC.Size = new Size(147, 26);
             txtFornecedorCNPJ_OC.TabIndex = 19;
             // 
             // lblFrete
             // 
             lblFrete.AutoSize = true;
-            lblFrete.ForeColor = Color.Black;
-            lblFrete.Location = new Point(24, 394);
+            lblFrete.Font = new Font("Gadugi", 12F);
+            lblFrete.ForeColor = Color.FromArgb(34, 61, 79);
+            lblFrete.Location = new Point(24, 513);
             lblFrete.Name = "lblFrete";
-            lblFrete.Size = new Size(39, 15);
+            lblFrete.Size = new Size(44, 19);
             lblFrete.TabIndex = 14;
-            lblFrete.Text = "FRETE";
+            lblFrete.Text = "Frete";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(24, 339);
+            label1.Font = new Font("Gadugi", 12F);
+            label1.ForeColor = Color.FromArgb(34, 61, 79);
+            label1.Location = new Point(24, 445);
             label1.Name = "label1";
-            label1.Size = new Size(112, 15);
+            label1.Size = new Size(129, 19);
             label1.TabIndex = 20;
-            label1.Text = "CNPJ FORNECEDOR";
+            label1.Text = "CNPJ Fornecedor";
             // 
             // txtRazaoSocialZooka_OC
             // 
-            txtRazaoSocialZooka_OC.Location = new Point(24, 64);
+            txtRazaoSocialZooka_OC.BackColor = Color.AliceBlue;
+            txtRazaoSocialZooka_OC.Font = new Font("Arial", 12F);
+            txtRazaoSocialZooka_OC.Location = new Point(24, 155);
             txtRazaoSocialZooka_OC.Name = "txtRazaoSocialZooka_OC";
-            txtRazaoSocialZooka_OC.Size = new Size(365, 23);
+            txtRazaoSocialZooka_OC.Size = new Size(365, 26);
             txtRazaoSocialZooka_OC.TabIndex = 22;
             // 
             // txtCNPJZooka_OC
             // 
-            txtCNPJZooka_OC.Location = new Point(24, 93);
+            txtCNPJZooka_OC.BackColor = Color.AliceBlue;
+            txtCNPJZooka_OC.Font = new Font("Arial", 12F);
+            txtCNPJZooka_OC.Location = new Point(24, 184);
             txtCNPJZooka_OC.Name = "txtCNPJZooka_OC";
-            txtCNPJZooka_OC.Size = new Size(147, 23);
+            txtCNPJZooka_OC.Size = new Size(147, 26);
             txtCNPJZooka_OC.TabIndex = 23;
             // 
             // txtNomeFantasiaZooka_OC
             // 
-            txtNomeFantasiaZooka_OC.Location = new Point(24, 35);
+            txtNomeFantasiaZooka_OC.BackColor = Color.AliceBlue;
+            txtNomeFantasiaZooka_OC.Font = new Font("Arial", 12F);
+            txtNomeFantasiaZooka_OC.Location = new Point(24, 126);
             txtNomeFantasiaZooka_OC.Name = "txtNomeFantasiaZooka_OC";
-            txtNomeFantasiaZooka_OC.Size = new Size(105, 23);
+            txtNomeFantasiaZooka_OC.Size = new Size(105, 26);
             txtNomeFantasiaZooka_OC.TabIndex = 24;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(34, 61, 79);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(label2);
+            panel1.Location = new Point(1, 1);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1187, 94);
+            panel1.TabIndex = 25;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(6, 22);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Arial Rounded MT Bold", 20F);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(483, 33);
+            label2.Name = "label2";
+            label2.Size = new Size(256, 32);
+            label2.TabIndex = 0;
+            label2.Text = "Ordem de Compra";
             // 
             // ordem_de_compra
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1187, 651);
+            ClientSize = new Size(1187, 728);
+            Controls.Add(panel1);
             Controls.Add(txtNomeFantasiaZooka_OC);
             Controls.Add(txtCNPJZooka_OC);
             Controls.Add(txtRazaoSocialZooka_OC);
@@ -278,6 +356,9 @@
             Text = "Ordem De Compras";
             Load += ordem_de_compra_Load;
             ((System.ComponentModel.ISupportInitialize)dgvItensOC).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -306,5 +387,8 @@
         private TextBox txtRazaoSocialZooka_OC;
         private TextBox txtCNPJZooka_OC;
         private TextBox txtNomeFantasiaZooka_OC;
+        private Panel panel1;
+        private Label label2;
+        private PictureBox pictureBox1;
     }
 }
