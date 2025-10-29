@@ -59,7 +59,7 @@
             btnSKU_cancelar.Name = "btnSKU_cancelar";
             btnSKU_cancelar.Size = new Size(110, 34);
             btnSKU_cancelar.TabIndex = 11;
-            btnSKU_cancelar.Text = "Cancelar";
+            btnSKU_cancelar.Text = "CANCELAR";
             btnSKU_cancelar.TextAlign = ContentAlignment.BottomCenter;
             btnSKU_cancelar.UseCompatibleTextRendering = true;
             btnSKU_cancelar.UseVisualStyleBackColor = false;
@@ -68,7 +68,7 @@
             // lblSKU_id
             // 
             lblSKU_id.BackColor = Color.Transparent;
-            lblSKU_id.Font = new Font("Gadugi", 12F);
+            lblSKU_id.Font = new Font("Gadugi", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSKU_id.ForeColor = Color.FromArgb(34, 61, 79);
             lblSKU_id.ImageAlign = ContentAlignment.MiddleLeft;
             lblSKU_id.Location = new Point(83, 120);
@@ -118,7 +118,7 @@
             // lblSKU_udm
             // 
             lblSKU_udm.BackColor = Color.Transparent;
-            lblSKU_udm.Font = new Font("Gadugi", 12F);
+            lblSKU_udm.Font = new Font("Gadugi", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSKU_udm.ForeColor = Color.FromArgb(34, 61, 79);
             lblSKU_udm.ImageAlign = ContentAlignment.MiddleLeft;
             lblSKU_udm.Location = new Point(83, 195);
@@ -131,14 +131,14 @@
             // lblSKU_estoque
             // 
             lblSKU_estoque.BackColor = Color.Transparent;
-            lblSKU_estoque.Font = new Font("Gadugi", 12F);
+            lblSKU_estoque.Font = new Font("Gadugi", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSKU_estoque.ForeColor = Color.FromArgb(34, 61, 79);
             lblSKU_estoque.ImageAlign = ContentAlignment.MiddleLeft;
             lblSKU_estoque.Location = new Point(208, 195);
             lblSKU_estoque.Name = "lblSKU_estoque";
             lblSKU_estoque.Size = new Size(93, 25);
             lblSKU_estoque.TabIndex = 6;
-            lblSKU_estoque.Text = "Estoque";
+            lblSKU_estoque.Text = "ESTOQUE";
             lblSKU_estoque.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // btnSKU_criar
@@ -153,7 +153,7 @@
             btnSKU_criar.Name = "btnSKU_criar";
             btnSKU_criar.Size = new Size(110, 34);
             btnSKU_criar.TabIndex = 8;
-            btnSKU_criar.Text = "Ok";
+            btnSKU_criar.Text = "OK";
             btnSKU_criar.TextAlign = ContentAlignment.BottomCenter;
             btnSKU_criar.UseCompatibleTextRendering = true;
             btnSKU_criar.UseVisualStyleBackColor = false;

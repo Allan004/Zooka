@@ -62,13 +62,13 @@
             // lblFornecedor
             // 
             lblFornecedor.AutoSize = true;
-            lblFornecedor.Font = new Font("Gadugi", 12F);
+            lblFornecedor.Font = new Font("Gadugi", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblFornecedor.ForeColor = Color.FromArgb(34, 61, 79);
             lblFornecedor.Location = new Point(24, 380);
             lblFornecedor.Name = "lblFornecedor";
-            lblFornecedor.Size = new Size(88, 19);
+            lblFornecedor.Size = new Size(114, 19);
             lblFornecedor.TabIndex = 0;
-            lblFornecedor.Text = "Fornecedor";
+            lblFornecedor.Text = "FORNECEDOR";
             // 
             // txtFornecedor_oc
             // 
@@ -82,13 +82,13 @@
             // lblComprador
             // 
             lblComprador.AutoSize = true;
-            lblComprador.Font = new Font("Gadugi", 12F);
+            lblComprador.Font = new Font("Gadugi", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblComprador.ForeColor = Color.FromArgb(34, 61, 79);
             lblComprador.Location = new Point(24, 316);
             lblComprador.Name = "lblComprador";
-            lblComprador.Size = new Size(89, 19);
+            lblComprador.Size = new Size(111, 19);
             lblComprador.TabIndex = 2;
-            lblComprador.Text = "Comprador";
+            lblComprador.Text = "COMPRADOR";
             // 
             // txtComprador
             // 
@@ -102,11 +102,11 @@
             // lblNumeroOC
             // 
             lblNumeroOC.AutoSize = true;
-            lblNumeroOC.Font = new Font("Gadugi", 12F);
+            lblNumeroOC.Font = new Font("Gadugi", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNumeroOC.ForeColor = Color.FromArgb(34, 61, 79);
             lblNumeroOC.Location = new Point(24, 263);
             lblNumeroOC.Name = "lblNumeroOC";
-            lblNumeroOC.Size = new Size(54, 19);
+            lblNumeroOC.Size = new Size(55, 19);
             lblNumeroOC.TabIndex = 4;
             lblNumeroOC.Text = "Nº OC";
             // 
@@ -121,7 +121,7 @@
             // txtNumeroOC
             // 
             txtNumeroOC.BackColor = Color.AliceBlue;
-            txtNumeroOC.Font = new Font("Arial", 12F);
+            txtNumeroOC.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtNumeroOC.ForeColor = Color.Black;
             txtNumeroOC.Location = new Point(24, 281);
             txtNumeroOC.Multiline = true;
@@ -138,17 +138,18 @@
             txtDataOC.Name = "txtDataOC";
             txtDataOC.Size = new Size(105, 26);
             txtDataOC.TabIndex = 9;
+            txtDataOC.TextAlign = HorizontalAlignment.Center;
             // 
             // lblData
             // 
             lblData.AutoSize = true;
-            lblData.Font = new Font("Gadugi", 12F);
+            lblData.Font = new Font("Gadugi", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblData.ForeColor = Color.FromArgb(34, 61, 79);
             lblData.Location = new Point(284, 263);
             lblData.Name = "lblData";
-            lblData.Size = new Size(41, 19);
+            lblData.Size = new Size(52, 19);
             lblData.TabIndex = 8;
-            lblData.Text = "Data";
+            lblData.Text = "DATA";
             // 
             // lblTotalOC
             // 
@@ -178,13 +179,13 @@
             // lblTotal
             // 
             lblTotal.AutoSize = true;
-            lblTotal.Font = new Font("Gadugi", 12F);
+            lblTotal.Font = new Font("Gadugi", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTotal.ForeColor = Color.FromArgb(34, 61, 79);
             lblTotal.Location = new Point(24, 577);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(43, 19);
+            lblTotal.Size = new Size(58, 19);
             lblTotal.TabIndex = 12;
-            lblTotal.Text = "Total";
+            lblTotal.Text = "TOTAL";
             // 
             // txtFreteOC
             // 
@@ -198,13 +199,13 @@
             // lblPagamento
             // 
             lblPagamento.AutoSize = true;
-            lblPagamento.Font = new Font("Gadugi", 12F);
+            lblPagamento.Font = new Font("Gadugi", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPagamento.ForeColor = Color.FromArgb(34, 61, 79);
             lblPagamento.Location = new Point(248, 513);
             lblPagamento.Name = "lblPagamento";
-            lblPagamento.Size = new Size(88, 19);
+            lblPagamento.Size = new Size(110, 19);
             lblPagamento.TabIndex = 16;
-            lblPagamento.Text = "Pagamento";
+            lblPagamento.Text = "PAGAMENTO";
             // 
             // cbPagamentoOC
             // 
@@ -245,29 +246,29 @@
             // lblFrete
             // 
             lblFrete.AutoSize = true;
-            lblFrete.Font = new Font("Gadugi", 12F);
+            lblFrete.Font = new Font("Gadugi", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblFrete.ForeColor = Color.FromArgb(34, 61, 79);
             lblFrete.Location = new Point(24, 513);
             lblFrete.Name = "lblFrete";
-            lblFrete.Size = new Size(44, 19);
+            lblFrete.Size = new Size(54, 19);
             lblFrete.TabIndex = 14;
-            lblFrete.Text = "Frete";
+            lblFrete.Text = "FRETE";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Gadugi", 12F);
+            label1.Font = new Font("Gadugi", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(34, 61, 79);
             label1.Location = new Point(24, 445);
             label1.Name = "label1";
-            label1.Size = new Size(129, 19);
+            label1.Size = new Size(158, 19);
             label1.TabIndex = 20;
-            label1.Text = "CNPJ Fornecedor";
+            label1.Text = "CNPJ FORNECEDOR";
             // 
             // txtRazaoSocialZooka_OC
             // 
             txtRazaoSocialZooka_OC.BackColor = Color.AliceBlue;
-            txtRazaoSocialZooka_OC.Font = new Font("Arial", 12F);
+            txtRazaoSocialZooka_OC.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtRazaoSocialZooka_OC.Location = new Point(24, 155);
             txtRazaoSocialZooka_OC.Name = "txtRazaoSocialZooka_OC";
             txtRazaoSocialZooka_OC.Size = new Size(365, 26);
@@ -276,16 +277,16 @@
             // txtCNPJZooka_OC
             // 
             txtCNPJZooka_OC.BackColor = Color.AliceBlue;
-            txtCNPJZooka_OC.Font = new Font("Arial", 12F);
+            txtCNPJZooka_OC.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtCNPJZooka_OC.Location = new Point(24, 184);
             txtCNPJZooka_OC.Name = "txtCNPJZooka_OC";
-            txtCNPJZooka_OC.Size = new Size(147, 26);
+            txtCNPJZooka_OC.Size = new Size(176, 26);
             txtCNPJZooka_OC.TabIndex = 23;
             // 
             // txtNomeFantasiaZooka_OC
             // 
             txtNomeFantasiaZooka_OC.BackColor = Color.AliceBlue;
-            txtNomeFantasiaZooka_OC.Font = new Font("Arial", 12F);
+            txtNomeFantasiaZooka_OC.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtNomeFantasiaZooka_OC.Location = new Point(24, 126);
             txtNomeFantasiaZooka_OC.Name = "txtNomeFantasiaZooka_OC";
             txtNomeFantasiaZooka_OC.Size = new Size(105, 26);
