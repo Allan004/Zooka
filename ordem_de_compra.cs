@@ -15,14 +15,18 @@ namespace Zooka
         private ListBox lstSuggestions = new ListBox();
         private int editingRow = -1;
         private TextBox currentEditingTextBox = null;
+        // Form1 abrirForm1 = new Form1();
+        public string nomeCompradorOC { get; set; }
+
 
         public ordem_de_compra()
         {
             InitializeComponent();
-        }
 
-        private void ordem_de_compra_Load(object sender, EventArgs e)
+        }
+        public void ordem_de_compra_Load(object sender, EventArgs e)
         {
+
             txtNomeFantasiaZooka_OC.Text = "Zooka";
             txtRazaoSocialZooka_OC.Text = "Zooka Petshop e Clínica Veterinária Ltda";
             txtCNPJZooka_OC.Text = "12.345.678/0001-99";
@@ -41,8 +45,6 @@ namespace Zooka
             txtCNPJZooka_OC.BackColor = Color.White;
             txtCNPJZooka_OC.ForeColor = Color.Black;
             txtCNPJZooka_OC.TabStop = false;
-
-
 
             txtNumeroOC.Enabled = false;
             txtNumeroOC.BackColor = Color.White;
@@ -120,6 +122,10 @@ namespace Zooka
             CarregarFormasPagamento();
             txtFreteOC.TextChanged += (s, ev) => AtualizarTotalGeral();
             txtFreteOC.Leave += (s, ev) => AtualizarTotalGeral();
+
+            // SEILA
+            txtComprador.Text = nomeCompradorOC;
+
         }
 
         private void CarregarFormasPagamento()

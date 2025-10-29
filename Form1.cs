@@ -10,6 +10,7 @@ namespace Zooka
     {
 
         public string usarioo { get; set; }
+
         Consulta consulta = new Consulta();
         public Form1()
         {
@@ -279,11 +280,13 @@ namespace Zooka
 
         private void BtnOrdemdecompra_Click(object sender, EventArgs e)
         {
+
             foreach (Form form in this.MdiChildren)
             {
                 form.Close();
             }
             ordem_de_compra abrirform = new ordem_de_compra();
+            abrirform.nomeCompradorOC = usarioo;
             abrirform.TopLevel = false;
             abrirform.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             abrirform.StartPosition = FormStartPosition.Manual;
@@ -296,6 +299,7 @@ namespace Zooka
             cont = 0;
             cont2 = 0;
             cont3 = 0;
+
         }
 
         private void btnCadastroServico_Click(object sender, EventArgs e)
@@ -544,6 +548,7 @@ namespace Zooka
         {
             toolStripMenuItem1.Text = usarioo;
             this.WindowState = FormWindowState.Maximized;
+
         }
 
         private void trocarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
