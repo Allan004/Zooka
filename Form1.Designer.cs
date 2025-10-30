@@ -56,6 +56,12 @@
             toolStripMenuItem1 = new ToolStripMenuItem();
             trocarUsuarioToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
+            atalhoCadastroCliente = new Button();
+            button4 = new Button();
+            button5 = new Button();
+            button6 = new Button();
+            button7 = new Button();
+            button8 = new Button();
             panel1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -392,7 +398,7 @@
             menuStrip1.Location = new Point(218, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.RightToLeft = RightToLeft.Yes;
-            menuStrip1.Size = new Size(937, 50);
+            menuStrip1.Size = new Size(1686, 50);
             menuStrip1.Stretch = false;
             menuStrip1.TabIndex = 30;
             menuStrip1.Text = "menuStrip1";
@@ -431,13 +437,103 @@
             sairToolStripMenuItem.Text = "Sair";
             sairToolStripMenuItem.Click += sairToolStripMenuItem_Click_1;
             // 
+            // atalhoCadastroCliente
+            // 
+            atalhoCadastroCliente.BackColor = Color.FromArgb(237, 241, 243);
+            atalhoCadastroCliente.BackgroundImage = (Image)resources.GetObject("atalhoCadastroCliente.BackgroundImage");
+            atalhoCadastroCliente.BackgroundImageLayout = ImageLayout.Stretch;
+            atalhoCadastroCliente.FlatAppearance.BorderSize = 0;
+            atalhoCadastroCliente.FlatStyle = FlatStyle.Flat;
+            atalhoCadastroCliente.Location = new Point(414, 200);
+            atalhoCadastroCliente.Name = "atalhoCadastroCliente";
+            atalhoCadastroCliente.Size = new Size(150, 150);
+            atalhoCadastroCliente.TabIndex = 2;
+            atalhoCadastroCliente.UseVisualStyleBackColor = false;
+            atalhoCadastroCliente.Click += atalhoCadastroCliente_Click;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.FromArgb(237, 241, 243);
+            button4.BackgroundImage = (Image)resources.GetObject("button4.BackgroundImage");
+            button4.BackgroundImageLayout = ImageLayout.Stretch;
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Location = new Point(644, 200);
+            button4.Name = "button4";
+            button4.Size = new Size(150, 150);
+            button4.TabIndex = 40;
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.FromArgb(237, 241, 243);
+            button5.BackgroundImage = (Image)resources.GetObject("button5.BackgroundImage");
+            button5.BackgroundImageLayout = ImageLayout.Stretch;
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Location = new Point(882, 200);
+            button5.Name = "button5";
+            button5.Size = new Size(150, 150);
+            button5.TabIndex = 41;
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.FromArgb(237, 241, 243);
+            button6.BackgroundImage = (Image)resources.GetObject("button6.BackgroundImage");
+            button6.BackgroundImageLayout = ImageLayout.Stretch;
+            button6.FlatAppearance.BorderSize = 0;
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.Location = new Point(1586, 200);
+            button6.Name = "button6";
+            button6.Size = new Size(150, 150);
+            button6.TabIndex = 44;
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
+            // 
+            // button7
+            // 
+            button7.BackColor = Color.FromArgb(237, 241, 243);
+            button7.BackgroundImage = (Image)resources.GetObject("button7.BackgroundImage");
+            button7.BackgroundImageLayout = ImageLayout.Stretch;
+            button7.FlatAppearance.BorderSize = 0;
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.Location = new Point(1348, 200);
+            button7.Name = "button7";
+            button7.Size = new Size(150, 150);
+            button7.TabIndex = 43;
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
+            // 
+            // button8
+            // 
+            button8.BackColor = Color.FromArgb(237, 241, 243);
+            button8.BackgroundImage = (Image)resources.GetObject("button8.BackgroundImage");
+            button8.BackgroundImageLayout = ImageLayout.Stretch;
+            button8.FlatAppearance.BorderSize = 0;
+            button8.FlatStyle = FlatStyle.Flat;
+            button8.Location = new Point(1118, 200);
+            button8.Name = "button8";
+            button8.Size = new Size(150, 150);
+            button8.TabIndex = 42;
+            button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = Color.FromArgb(34, 61, 79);
-            ClientSize = new Size(1155, 625);
+            ClientSize = new Size(1904, 1041);
+            Controls.Add(button6);
+            Controls.Add(button7);
+            Controls.Add(button8);
+            Controls.Add(button5);
+            Controls.Add(button4);
+            Controls.Add(atalhoCadastroCliente);
             Controls.Add(btnConsultaSku);
             Controls.Add(btnConsultaServico);
             Controls.Add(btnConsultaUsuario);
@@ -499,5 +595,11 @@
         private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem trocarUsuarioToolStripMenuItem;
         private ToolStripMenuItem sairToolStripMenuItem;
+        private Button atalhoCadastroCliente;
+        private Button button4;
+        private Button button5;
+        private Button button6;
+        private Button button7;
+        private Button button8;
     }
 }
