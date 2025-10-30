@@ -22,17 +22,17 @@ namespace Zooka
             string login = txtLogin.Text.Trim();
             string senha = txtSenha.Text.Trim();
 
-            // Verifica campos vazios
             if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(senha))
             {
-                MessageBox.Show("Preencha todos os campos.", "Aviso",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Preencha todos os campos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Valida o login e obtém os resultados
-            (bool loginValido, bool isProfissional, bool senhaTemporaria) =
-                UsuarioRepository.ValidarLoginTipo(login, senha);
+            // Agora pega 3 valores da função: loginValido, isProfissional e senhaTemporaria
+            var resultado = UsuarioRepository.ValidarLoginTipo(login, senha);
+            bool loginValido = resultado.Item1;
+            bool isProfissional = resultado.Item2;
+            bool senhaTemporaria = resultado.Item3;
 
             if (loginValido)
             {
@@ -67,8 +67,7 @@ namespace Zooka
     public static class DatabaseConnection
     {
         private static readonly string connectionString =
-            "server=10.37.44.26;user id=root;password=root;database=zooka;" +
-            "SslMode=Disabled;AllowPublicKeyRetrieval=True;";
+            "server=10.37.44.26;user id=root;password=root;database=zooka;SslMode=Disabled;AllowPublicKeyRetrieval=True;";
 
         public static MySqlConnection GetConnection()
         {
@@ -93,7 +92,6 @@ namespace Zooka
                                             FROM usuario 
                                             WHERE login_usuario = @login 
                                             AND senha_usuario = @senha";
-
                     using (var cmd = new MySqlCommand(queryUsuario, conn))
                     {
                         cmd.Parameters.AddWithValue("@login", login);
@@ -112,7 +110,6 @@ namespace Zooka
                                                  FROM profissional 
                                                  WHERE login_profissional = @login 
                                                  AND senha_profissional = @senha";
-
                     using (var cmd = new MySqlCommand(queryProfissional, conn))
                     {
                         cmd.Parameters.AddWithValue("@login", login);
@@ -126,7 +123,6 @@ namespace Zooka
                         }
                     }
 
-                    // Caso nenhum login seja encontrado
                     return (false, false, false);
                 }
             }
