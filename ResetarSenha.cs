@@ -64,5 +64,43 @@ namespace Zooka
                 MessageBox.Show("Erro ao atualizar senha: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string email = txtASenha.Text;
+                string novaSenha = txtASenhaC.Text;
+
+                string query = "UPDATE profissional SET senha_profissional = @senha WHERE email = @Email";
+
+                using (MySqlConnection conexao = new Conexao().GetConnection())
+                {
+                    conexao.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(query, conexao))
+                    {
+                        cmd.Parameters.AddWithValue("@senha", novaSenha);
+                        cmd.Parameters.AddWithValue("@Email", email);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Senha atualizada com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro no banco de dados: " + ex.Message);
+            }
+        }
+
+        private void btnSalvarSenha_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ResetarSenha_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

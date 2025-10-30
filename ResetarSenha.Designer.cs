@@ -96,6 +96,7 @@
             btnSalvarSenha.TabIndex = 13;
             btnSalvarSenha.Text = "Salvar";
             btnSalvarSenha.UseVisualStyleBackColor = false;
+            btnSalvarSenha.Click += btnSalvarSenha_Click_1;
             // 
             // ResetarSenha
             // 
@@ -112,7 +113,7 @@
             ForeColor = Color.DarkSlateBlue;
             Name = "ResetarSenha";
             Text = "AlterarSenha";
-            
+            Load += ResetarSenha_Load;
             ResumeLayout(false);
             PerformLayout();
         }

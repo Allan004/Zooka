@@ -96,7 +96,7 @@
             linkLabel1.TabIndex = 11;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Home";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            
             // 
             // linkLabel3
             // 

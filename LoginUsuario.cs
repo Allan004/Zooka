@@ -10,7 +10,6 @@ namespace Zooka
         {
             InitializeComponent();
             this.Load += LoginUsuario_Load;
-           
         }
 
         private void LoginUsuario_Load(object sender, EventArgs e)
@@ -23,25 +22,38 @@ namespace Zooka
             string login = txtLogin.Text.Trim();
             string senha = txtSenha.Text.Trim();
 
+            // Verifica campos vazios
             if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(senha))
             {
-                MessageBox.Show("Preencha todos os campos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Preencha todos os campos.", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            var resultado = UsuarioRepository.ValidarLoginTipo(login, senha);
-            bool loginValido = resultado.Item1;
-            bool isProfissional = resultado.Item2;
+            // Valida o login e obtém os resultados
+            (bool loginValido, bool isProfissional, bool senhaTemporaria) =
+                UsuarioRepository.ValidarLoginTipo(login, senha);
 
             if (loginValido)
             {
-                MessageBox.Show("Login bem-sucedido! Redefina sua senha.",
-                    "Zooka PetShop", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (senhaTemporaria)
+                {
+                    MessageBox.Show("Login bem-sucedido! Redefina sua senha.",
+                        "Zooka PetShop", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Abre o formulário de redefinição de senha
-                ResetarSenha telaReset = new ResetarSenha(login, isProfissional);
-                telaReset.Show();
-                this.Hide();
+                    ResetarSenha telaReset = new ResetarSenha(login, isProfissional);
+                    telaReset.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Login bem-sucedido! Bem-vindo(a) ao sistema.",
+                        "Zooka PetShop", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    Form1 menu = new Form1();
+                    menu.Show();
+                    this.Hide();
+                }
             }
             else
             {
@@ -52,10 +64,11 @@ namespace Zooka
     }
 
     // =============================== CONEXÃO COM O BANCO ===============================
-    public class DatabaseConnection
+    public static class DatabaseConnection
     {
         private static readonly string connectionString =
-            "server=10.37.44.26;user id=root;password=root;database=Zooka";
+            "server=10.37.44.26;user id=root;password=root;database=zooka;" +
+            "SslMode=Disabled;AllowPublicKeyRetrieval=True;";
 
         public static MySqlConnection GetConnection()
         {
@@ -64,10 +77,10 @@ namespace Zooka
     }
 
     // ============================= LOGIN VALIDATION =============================
-    public class UsuarioRepository
+    public static class UsuarioRepository
     {
-        // Retorna (loginValido, isProfissional)
-        public static (bool, bool) ValidarLoginTipo(string login, string senha)
+        // Retorna (loginValido, isProfissional, senhaTemporaria)
+        public static (bool, bool, bool) ValidarLoginTipo(string login, string senha)
         {
             try
             {
@@ -76,37 +89,52 @@ namespace Zooka
                     conn.Open();
 
                     // Verifica login de usuário comum
-                    string queryUsuario = "SELECT COUNT(*) FROM usuario WHERE login_usuario = @login AND senha_usuario = @senha";
+                    string queryUsuario = @"SELECT senha_temporaria 
+                                            FROM usuario 
+                                            WHERE login_usuario = @login 
+                                            AND senha_usuario = @senha";
+
                     using (var cmd = new MySqlCommand(queryUsuario, conn))
                     {
                         cmd.Parameters.AddWithValue("@login", login);
                         cmd.Parameters.AddWithValue("@senha", senha);
-                        int countUsuario = Convert.ToInt32(cmd.ExecuteScalar());
+                        var result = cmd.ExecuteScalar();
 
-                        if (countUsuario > 0)
-                            return (true, false); // É usuário comum
+                        if (result != null)
+                        {
+                            bool senhaTemp = Convert.ToBoolean(result);
+                            return (true, false, senhaTemp);
+                        }
                     }
 
                     // Verifica login de profissional
-                    string queryProfissional = "SELECT COUNT(*) FROM profissional WHERE login_profissional = @login AND senha_profissional = @senha";
+                    string queryProfissional = @"SELECT senha_temporaria 
+                                                 FROM profissional 
+                                                 WHERE login_profissional = @login 
+                                                 AND senha_profissional = @senha";
+
                     using (var cmd = new MySqlCommand(queryProfissional, conn))
                     {
                         cmd.Parameters.AddWithValue("@login", login);
                         cmd.Parameters.AddWithValue("@senha", senha);
-                        int countProfissional = Convert.ToInt32(cmd.ExecuteScalar());
+                        var result = cmd.ExecuteScalar();
 
-                        if (countProfissional > 0)
-                            return (true, true); // É profissional
+                        if (result != null)
+                        {
+                            bool senhaTemp = Convert.ToBoolean(result);
+                            return (true, true, senhaTemp);
+                        }
                     }
 
-                    return (false, false);
+                    // Caso nenhum login seja encontrado
+                    return (false, false, false);
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro no banco de dados: " + ex.Message,
                     "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return (false, false);
+                return (false, false, false);
             }
         }
     }
