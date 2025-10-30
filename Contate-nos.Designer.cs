@@ -79,7 +79,7 @@ namespace Zooka
             linkLabel1.TabIndex = 9;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Home";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            
             // 
             // linkLabel2
             // 

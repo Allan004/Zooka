@@ -41,7 +41,7 @@
             linkCadastrar.TabIndex = 0;
             linkCadastrar.TabStop = true;
             linkCadastrar.Text = "Cadastre-se";
-            linkCadastrar.LinkClicked += linkLabel1_LinkClicked;
+            
             // 
             // txtLogin
             // 
@@ -71,7 +71,7 @@
             SenhaLogin.Size = new Size(15, 14);
             SenhaLogin.TabIndex = 9;
             SenhaLogin.UseVisualStyleBackColor = false;
-            SenhaLogin.CheckedChanged += SenhaLogin_CheckedChanged_1;
+        
             // 
             // linkLabel1
             // 
@@ -83,10 +83,11 @@
             linkLabel1.TabIndex = 10;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Esqueceu a senha?";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked_1;
+          
             // 
             // btnEntrar
             // 
+            btnEntrar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btnEntrar.BackColor = Color.FromArgb(255, 128, 0);
             btnEntrar.FlatAppearance.BorderColor = Color.FromArgb(255, 128, 0);
             btnEntrar.FlatAppearance.BorderSize = 0;
@@ -116,7 +117,7 @@
             Controls.Add(linkCadastrar);
             Name = "LoginUsuario";
             Text = "LoginUsuario";
-            Load += LoginUsuario_Load_1;
+           
             ResumeLayout(false);
             PerformLayout();
         }

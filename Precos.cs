@@ -17,13 +17,7 @@ namespace Zooka
             InitializeComponent();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            var PaginaInicial = new PaginaInicial();
-            PaginaInicial.Show();
-            this.Close();
-        }
-
+       
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var Login_B = new LoginUsuario();
