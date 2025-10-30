@@ -15,14 +15,18 @@ namespace Zooka
         private ListBox lstSuggestions = new ListBox();
         private int editingRow = -1;
         private TextBox currentEditingTextBox = null;
+        // Form1 abrirForm1 = new Form1();
+        public string nomeCompradorOC { get; set; }
+
 
         public ordem_de_compra()
         {
             InitializeComponent();
-        }
 
-        private void ordem_de_compra_Load(object sender, EventArgs e)
+        }
+        public void ordem_de_compra_Load(object sender, EventArgs e)
         {
+
             txtNomeFantasiaZooka_OC.Text = "Zooka";
             txtRazaoSocialZooka_OC.Text = "Zooka Petshop e Clínica Veterinária Ltda";
             txtCNPJZooka_OC.Text = "12.345.678/0001-99";
@@ -42,12 +46,11 @@ namespace Zooka
             txtCNPJZooka_OC.ForeColor = Color.Black;
             txtCNPJZooka_OC.TabStop = false;
 
-
-
             txtNumeroOC.Enabled = false;
             txtNumeroOC.BackColor = Color.White;
             txtNumeroOC.ForeColor = Color.Black;
             txtNumeroOC.TabStop = false;
+
 
             txtFornecedorCNPJ_OC.ReadOnly = true;
             txtFornecedorCNPJ_OC.BackColor = Color.White;
@@ -58,6 +61,10 @@ namespace Zooka
             txtFornecedorCNPJ_OC.ForeColor = Color.Black;
             txtFornecedorCNPJ_OC.TabStop = false;
 
+            txtComprador.Enabled = false;
+            txtComprador.BackColor = Color.White;
+            txtComprador.ForeColor = Color.Black;
+            txtComprador.TabStop = false;
 
             dgvItensOC.AllowUserToOrderColumns = false;
             dgvItensOC.AllowUserToResizeColumns = false;
@@ -76,6 +83,20 @@ namespace Zooka
                     object result = cmd.ExecuteScalar();
                     int proximoID = (result == null || result == DBNull.Value) ? 1 : Convert.ToInt32(result) + 1;
                     txtNumeroOC.Text = proximoID.ToString();
+                }
+                string nomeProfissional = null;
+                string sqlProf = "SELECT nome_profissional FROM profissional WHERE login_profissional = @nome LIMIT 1";
+                using (var cmdP = new MySqlCommand(sqlProf, conn))
+                {
+                    cmdP.Parameters.AddWithValue("@nome", nomeCompradorOC);
+                    var result = cmdP.ExecuteScalar();
+                    if (result != null)
+                    {
+                        nomeProfissional = Convert.ToString(result);
+                        txtComprador.Text = nomeProfissional;
+                    }
+                    else
+                        throw new Exception("Comprador não encontrado!");
                 }
 
                 string sqlFornec = "SELECT nomefantasia_fornecedor, razaosocial_fornecedor, cnpj_fornecedor FROM fornecedor WHERE status_fornecedor='ativo'";
@@ -105,9 +126,20 @@ namespace Zooka
                     txtFornecedor_oc.TextChanged += (s, ev) =>
                     {
                         if (fornecedoresMap.TryGetValue(txtFornecedor_oc.Text.Trim(), out string cnpj))
-                            txtFornecedorCNPJ_OC.Text = cnpj;
+                        {
+                            // remove caracteres não numéricos
+                            string numeros = new string(cnpj.Where(char.IsDigit).ToArray());
+
+                            // formata se tiver 14 dígitos
+                            if (numeros.Length == 14)
+                                txtFornecedorCNPJ_OC.Text = Convert.ToUInt64(numeros).ToString(@"00\.000\.000\/0000\-00");
+                            else
+                                txtFornecedorCNPJ_OC.Text = cnpj; // fallback
+                        }
                         else
+                        {
                             txtFornecedorCNPJ_OC.Clear();
+                        }
                     };
                 }
             }
@@ -120,6 +152,10 @@ namespace Zooka
             CarregarFormasPagamento();
             txtFreteOC.TextChanged += (s, ev) => AtualizarTotalGeral();
             txtFreteOC.Leave += (s, ev) => AtualizarTotalGeral();
+
+            // SEILA
+           // txtComprador.Text = nomeCompradorOC;
+
         }
 
         private void CarregarFormasPagamento()
@@ -221,21 +257,46 @@ namespace Zooka
 
         private void DgvItensOC_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            if (dgvItensOC.CurrentCell.OwningColumn.Name == "produto")
+            TextBox txtEdit = e.Control as TextBox;
+            if (txtEdit == null) return;
+
+            txtEdit.KeyPress -= SomenteNumeros_KeyPress;
+            txtEdit.TextChanged -= ProdutoTextChanged;
+
+            string col = dgvItensOC.CurrentCell.OwningColumn.Name;
+
+            if (col == "produto")
             {
-                currentEditingTextBox = e.Control as TextBox;
-                if (currentEditingTextBox != null)
-                {
-                    currentEditingTextBox.TextChanged -= ProdutoTextChanged;
-                    currentEditingTextBox.TextChanged += ProdutoTextChanged;
-                    editingRow = dgvItensOC.CurrentCell.RowIndex;
-                }
+                currentEditingTextBox = txtEdit;
+                txtEdit.TextChanged += ProdutoTextChanged;
+                editingRow = dgvItensOC.CurrentCell.RowIndex;
+            }
+            else if (col == "quantidade" || col == "valorunit" || col == "id_skuproduto")
+            {
+                txtEdit.KeyPress += SomenteNumeros_KeyPress;
+            }
+            else if (col == "valortotal")
+            {
+                dgvItensOC.CurrentCell.ReadOnly = true;
+            }
+        }
+        private void SomenteNumeros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                e.KeyChar != ',' && e.KeyChar != '.')
+            {
+                e.Handled = true;
             }
         }
 
         private void ProdutoTextChanged(object sender, EventArgs e)
         {
             if (currentEditingTextBox == null) return;
+
+            if (dgvItensOC.CurrentCell == null ||
+                dgvItensOC.CurrentCell.OwningColumn.Name != "produto")
+                return;
+
             string texto = currentEditingTextBox.Text;
             AtualizarSugestoes(texto);
         }
@@ -315,6 +376,26 @@ namespace Zooka
 
             lstSuggestions.Visible = false;
             var row = dgvItensOC.Rows[e.RowIndex];
+
+            if (dgvItensOC.Columns[e.ColumnIndex].Name == "id_skuproduto")
+            {
+                if (row.Cells["id_skuproduto"].Value != null)
+                {
+                    int idDigitado;
+                    if (int.TryParse(row.Cells["id_skuproduto"].Value.ToString(), out idDigitado))
+                    {
+                        if (skusCache.TryGetValue(idDigitado, out string nomeProduto))
+                        {
+                            row.Cells["produto"].Value = nomeProduto;
+                        }
+                        else
+                        {
+                            row.Cells["produto"].Value = "";
+                        }
+                    }
+                }
+            }
+
 
             var culture = new CultureInfo("pt-BR");
             double qtd = 0, valorUnit = 0;
@@ -495,15 +576,16 @@ namespace Zooka
                         else
                             throw new Exception("Fornecedor não encontrado!");
                     }
-
+                    ///////////////////////////////////////
                     int idProfissional = 0;
-                    string sqlProf = "SELECT id_profissional FROM profissional WHERE nome_profissional = @nome LIMIT 1";
+                    string sqlProf = "SELECT id_profissional FROM profissional WHERE login_profissional = @nome LIMIT 1";
                     using (var cmdP = new MySqlCommand(sqlProf, conn, trans))
                     {
-                        cmdP.Parameters.AddWithValue("@nome", nomeComprador);
+                        cmdP.Parameters.AddWithValue("@nome", nomeCompradorOC);
                         var result = cmdP.ExecuteScalar();
-                        if (result != null)
+                        if (result != null) { 
                             idProfissional = Convert.ToInt32(result);
+                        }
                         else
                             throw new Exception("Comprador não encontrado!");
                     }
