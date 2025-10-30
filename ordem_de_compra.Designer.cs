@@ -93,7 +93,7 @@
             // txtComprador
             // 
             txtComprador.BackColor = Color.AliceBlue;
-            txtComprador.Font = new Font("Arial", 12F);
+            txtComprador.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtComprador.Location = new Point(24, 338);
             txtComprador.Name = "txtComprador";
             txtComprador.Size = new Size(365, 26);
@@ -172,7 +172,7 @@
             btnSalvarOC.Name = "btnSalvarOC";
             btnSalvarOC.Size = new Size(110, 34);
             btnSalvarOC.TabIndex = 11;
-            btnSalvarOC.Text = "CRIAR OC";
+            btnSalvarOC.Text = "SALVAR OC";
             btnSalvarOC.UseVisualStyleBackColor = false;
             btnSalvarOC.Click += btnSalvarOC_Click;
             // 
@@ -237,10 +237,10 @@
             // txtFornecedorCNPJ_OC
             // 
             txtFornecedorCNPJ_OC.BackColor = Color.AliceBlue;
-            txtFornecedorCNPJ_OC.Font = new Font("Arial", 12F);
+            txtFornecedorCNPJ_OC.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtFornecedorCNPJ_OC.Location = new Point(24, 467);
             txtFornecedorCNPJ_OC.Name = "txtFornecedorCNPJ_OC";
-            txtFornecedorCNPJ_OC.Size = new Size(147, 26);
+            txtFornecedorCNPJ_OC.Size = new Size(167, 26);
             txtFornecedorCNPJ_OC.TabIndex = 19;
             // 
             // lblFrete
