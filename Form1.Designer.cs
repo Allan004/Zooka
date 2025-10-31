@@ -561,6 +561,7 @@
             Name = "Form1";
             Padding = new Padding(218, 0, 0, 0);
             Text = "Form1";
+            FormClosing += Form1_FormClosing;
             Load += Form1_Load;
             panel1.ResumeLayout(false);
             menuStrip1.ResumeLayout(false);

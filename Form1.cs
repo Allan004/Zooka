@@ -88,7 +88,7 @@ namespace Zooka
 
         private void btnEstoque_Click(object sender, EventArgs e)
         {
-           
+
         }
         public void somelimpa(bool verificaSubmenu, int controleSubmenu)
         {
@@ -706,6 +706,11 @@ namespace Zooka
         {
             Agenda agenda = new Agenda();
             agenda.Show();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
