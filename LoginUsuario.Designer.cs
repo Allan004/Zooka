@@ -26,7 +26,6 @@
             txtLogin = new TextBox();
             txtSenha = new TextBox();
             SenhaLogin = new CheckBox();
-            linkLabel1 = new LinkLabel();
             btnEntrar = new Button();
             SuspendLayout();
             // 
@@ -37,11 +36,8 @@
             linkCadastrar.LinkColor = Color.DodgerBlue;
             linkCadastrar.Location = new Point(206, 147);
             linkCadastrar.Name = "linkCadastrar";
-            linkCadastrar.Size = new Size(69, 15);
+            linkCadastrar.Size = new Size(0, 15);
             linkCadastrar.TabIndex = 0;
-            linkCadastrar.TabStop = true;
-            linkCadastrar.Text = "Cadastre-se";
-            
             // 
             // txtLogin
             // 
@@ -71,19 +67,7 @@
             SenhaLogin.Size = new Size(15, 14);
             SenhaLogin.TabIndex = 9;
             SenhaLogin.UseVisualStyleBackColor = false;
-        
-            // 
-            // linkLabel1
-            // 
-            linkLabel1.BackColor = Color.White;
-            linkLabel1.LinkColor = Color.DodgerBlue;
-            linkLabel1.Location = new Point(196, 321);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(115, 15);
-            linkLabel1.TabIndex = 10;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Esqueceu a senha?";
-          
+            SenhaLogin.CheckedChanged += SenhaLogin_CheckedChanged;
             // 
             // btnEntrar
             // 
@@ -110,14 +94,12 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(btnEntrar);
-            Controls.Add(linkLabel1);
             Controls.Add(SenhaLogin);
             Controls.Add(txtSenha);
             Controls.Add(txtLogin);
             Controls.Add(linkCadastrar);
             Name = "LoginUsuario";
             Text = "LoginUsuario";
-           
             ResumeLayout(false);
             PerformLayout();
         }

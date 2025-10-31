@@ -71,10 +71,10 @@ namespace Zooka
                         (nome_profissional, genero_profissional, cpf_profissional, rg_profissional, data_nasc_profissional,
                          telefone_profissional, email_profissional, cep_profissional, logradouro_profissional,
                          bairro_profissional, cidade_profissional, estado_profissional, especializacao_profissional,
-                         login_profissional, senha_profissional)
+                         login_profissional, senha_profissional,senha_temporaria)
                          VALUES (@nome, @genero, @cpf, @rg, STR_TO_DATE(@nascimento, '%d/%m/%Y'),
                          @telefone, @email, @cep, @logradouro, @bairro, @cidade, @estado, 
-                         @especialidade, @login, @senha)";
+                         @especialidade, @login, @senha, @temp)";
 
 
                 // Verificação de duplicidade
@@ -111,6 +111,7 @@ namespace Zooka
                             cmd.Parameters.AddWithValue("@cidade", novocidade);
                             cmd.Parameters.AddWithValue("@estado", novoestado);
                             cmd.Parameters.AddWithValue("@especialidade", novoespecializacao);
+                            cmd.Parameters.AddWithValue("@temp", 1);
 
                             // ⚠️ Estes dois estavam faltando:
                             cmd.Parameters.AddWithValue("@login", loginGerado);

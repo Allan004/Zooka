@@ -44,6 +44,7 @@
             txtASenha.Location = new Point(37, 233);
             txtASenha.Multiline = true;
             txtASenha.Name = "txtASenha";
+            txtASenha.PasswordChar = '*';
             txtASenha.Size = new Size(312, 23);
             txtASenha.TabIndex = 4;
             txtASenha.TextAlign = HorizontalAlignment.Center;
@@ -56,6 +57,7 @@
             txtASenhaC.Location = new Point(37, 308);
             txtASenhaC.Multiline = true;
             txtASenhaC.Name = "txtASenhaC";
+            txtASenhaC.PasswordChar = '*';
             txtASenhaC.Size = new Size(312, 23);
             txtASenhaC.TabIndex = 5;
             txtASenhaC.TextAlign = HorizontalAlignment.Center;
@@ -69,6 +71,7 @@
             mostrarSenhaUm.Size = new Size(15, 14);
             mostrarSenhaUm.TabIndex = 10;
             mostrarSenhaUm.UseVisualStyleBackColor = false;
+            mostrarSenhaUm.CheckedChanged += mostrarSenhaUm_CheckedChanged;
             // 
             // MostarSenhaDois
             // 
@@ -79,6 +82,7 @@
             MostarSenhaDois.Size = new Size(15, 14);
             MostarSenhaDois.TabIndex = 11;
             MostarSenhaDois.UseVisualStyleBackColor = false;
+            MostarSenhaDois.CheckedChanged += MostarSenhaDois_CheckedChanged;
             // 
             // btnSalvarSenha
             // 
@@ -96,7 +100,7 @@
             btnSalvarSenha.TabIndex = 13;
             btnSalvarSenha.Text = "Salvar";
             btnSalvarSenha.UseVisualStyleBackColor = false;
-            btnSalvarSenha.Click += btnSalvarSenha_Click_1;
+            btnSalvarSenha.Click += btnSalvar_Click;
             // 
             // ResetarSenha
             // 

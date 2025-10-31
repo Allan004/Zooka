@@ -293,8 +293,8 @@ namespace Zooka
                 form.Close();
             }
             ordem_de_compra abrirform = new ordem_de_compra();
-            abrirform.nomeCompradorOC = usarioo;
             abrirform.TopLevel = false;
+            abrirform.nomeCompradorOC = usarioo;
             abrirform.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             abrirform.StartPosition = FormStartPosition.Manual;
             abrirform.Location = new Point(0, 0);
@@ -685,6 +685,7 @@ namespace Zooka
                 form.Close();
             }
             ordem_de_compra abrirform = new ordem_de_compra();
+            abrirform.nomeCompradorOC = usarioo;
             abrirform.TopLevel = false;
             abrirform.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             abrirform.StartPosition = FormStartPosition.Manual;

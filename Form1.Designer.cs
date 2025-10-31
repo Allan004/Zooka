@@ -62,6 +62,7 @@
             button6 = new Button();
             button7 = new Button();
             button8 = new Button();
+            label1 = new Label();
             panel1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -521,6 +522,17 @@
             button8.UseVisualStyleBackColor = false;
             button8.Click += button8_Click;
             // 
+            // label1
+            // 
+            label1.BackColor = Color.FromArgb(237, 241, 243);
+            label1.Font = new Font("Arial Rounded MT Bold", 40F);
+            label1.ForeColor = Color.FromArgb(34, 61, 79);
+            label1.Location = new Point(779, 75);
+            label1.Name = "label1";
+            label1.Size = new Size(684, 75);
+            label1.TabIndex = 46;
+            label1.Text = "Acessos Recomendados";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 15F);
@@ -528,6 +540,7 @@
             AutoSize = true;
             BackColor = Color.FromArgb(34, 61, 79);
             ClientSize = new Size(1904, 1041);
+            Controls.Add(label1);
             Controls.Add(button6);
             Controls.Add(button7);
             Controls.Add(button8);
@@ -601,5 +614,6 @@
         private Button button6;
         private Button button7;
         private Button button8;
+        private Label label1;
     }
 }

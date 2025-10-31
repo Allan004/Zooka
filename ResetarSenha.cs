@@ -41,20 +41,23 @@ namespace Zooka
                 {
                     conn.Open();
 
-                    string query = isProfissional
-                        ? "UPDATE profissional SET senha_profissional = @senha WHERE login_profissional = @login"
-                        : "UPDATE usuario SET senha_usuario = @senha WHERE login_usuario = @login";
+                    string query = "UPDATE profissional SET senha_profissional = @senha, senha_temporaria = @temp  WHERE login_profissional = @login";
+
+
+
 
                     using (var cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@senha", novaSenha);
                         cmd.Parameters.AddWithValue("@login", loginUsuario);
+                        cmd.Parameters.AddWithValue("@temp", 0);
                         cmd.ExecuteNonQuery();
                     }
 
                     MessageBox.Show("Senha redefinida com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     Form1 main = new Form1();
+                    main.usarioo = loginUsuario;
                     main.Show();
                     this.Close();
                 }
@@ -67,40 +70,77 @@ namespace Zooka
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string email = txtASenha.Text;
-                string novaSenha = txtASenhaC.Text;
+            //    try
+            //    {
+            //        string email = txtASenha.Text;
+            //        string novaSenha = txtASenhaC.Text;
 
-                string query = "UPDATE profissional SET senha_profissional = @senha WHERE email = @Email";
+            //        string query = "UPDATE profissional SET senha_profissional = @senha WHERE email = @Email";
 
-                using (MySqlConnection conexao = new Conexao().GetConnection())
-                {
-                    conexao.Open();
-                    using (MySqlCommand cmd = new MySqlCommand(query, conexao))
-                    {
-                        cmd.Parameters.AddWithValue("@senha", novaSenha);
-                        cmd.Parameters.AddWithValue("@Email", email);
-                        cmd.ExecuteNonQuery();
-                    }
-                }
+            //        using (MySqlConnection conexao = new Conexao().GetConnection())
+            //        {
+            //            conexao.Open();
+            //            using (MySqlCommand cmd = new MySqlCommand(query, conexao))
+            //            {
+            //                cmd.Parameters.AddWithValue("@senha", novaSenha);
+            //                cmd.Parameters.AddWithValue("@Email", email);
+            //                cmd.ExecuteNonQuery();
+            //            }
+            //        }
 
-                MessageBox.Show("Senha atualizada com sucesso!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro no banco de dados: " + ex.Message);
-            }
-        }
-
-        private void btnSalvarSenha_Click_1(object sender, EventArgs e)
-        {
-
+            //        MessageBox.Show("Senha atualizada com sucesso!");
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show("Erro no banco de dados: " + ex.Message);
+            //    }
         }
 
         private void ResetarSenha_Load(object sender, EventArgs e)
         {
 
+        }
+        bool controle = true;
+        private void mostrarSenhaUm_CheckedChanged(object sender, EventArgs e)
+        {
+
+
+            if (controle == true)
+            {
+
+
+                txtASenha.UseSystemPasswordChar = true;
+                
+                controle = false;
+            }
+            else
+            {
+
+
+                txtASenha.UseSystemPasswordChar = false;
+                
+                controle = true;
+            }
+        }
+        bool controle1 = true;
+        private void MostarSenhaDois_CheckedChanged(object sender, EventArgs e)
+        {
+            if (controle1 == true)
+            {
+
+
+                
+                txtASenhaC.UseSystemPasswordChar = true;
+                controle = false;
+            }
+            else
+            {
+
+
+               
+                txtASenhaC.UseSystemPasswordChar = false;
+                controle = true;
+            }
         }
     }
 }

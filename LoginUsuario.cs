@@ -8,6 +8,7 @@ namespace Zooka
     {
         public LoginUsuario()
         {
+
             InitializeComponent();
             this.Load += LoginUsuario_Load;
         }
@@ -36,8 +37,13 @@ namespace Zooka
 
             if (loginValido)
             {
+
+
+
                 if (senhaTemporaria)
                 {
+                    Form1 menu = new Form1();
+                    menu.usarioo = txtLogin.Text;
                     MessageBox.Show("Login bem-sucedido! Redefina sua senha.",
                         "Zooka PetShop", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -51,6 +57,7 @@ namespace Zooka
                         "Zooka PetShop", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     Form1 menu = new Form1();
+                    menu.usarioo = txtLogin.Text;
                     menu.Show();
                     this.Hide();
                 }
@@ -59,6 +66,25 @@ namespace Zooka
             {
                 MessageBox.Show("Revise os campos e tente novamente.",
                     "Erro no login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        bool controle = false;
+        private void SenhaLogin_CheckedChanged(object sender, EventArgs e)
+        {
+            if (controle == true)
+            {
+
+
+                txtSenha.UseSystemPasswordChar = true;
+                
+                controle = false;
+            }
+            else
+            {
+
+
+                txtSenha.UseSystemPasswordChar = false;
+                controle = true;
             }
         }
     }
