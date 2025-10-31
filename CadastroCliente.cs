@@ -125,6 +125,7 @@ namespace Zooka
                     }
                     MessageBox.Show("Concluido!!!", "Notificação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     teste.Limpeza(this);
+                    errorProvider1.Clear();
                 }
             }
 
